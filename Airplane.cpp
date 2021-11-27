@@ -5,3 +5,8 @@
 #include "Airplane.h"
 
 
+Airplane::Airplane(string plate) {
+
+
+
+}
