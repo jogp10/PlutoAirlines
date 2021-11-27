@@ -12,7 +12,7 @@
 using namespace std;
 
 class Airline {
-    list<Airplane> Airplanes;
+    list<Airplane> airplanes;
 
 public:
     /**
