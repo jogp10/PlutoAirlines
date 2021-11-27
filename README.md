@@ -1,2 +1,2 @@
 # PlutoAirlines
-Project for AED UC
+Pluto Airlines
