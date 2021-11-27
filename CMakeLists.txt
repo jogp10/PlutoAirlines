@@ -8,7 +8,8 @@ add_executable(PlutoAirlines main.cpp
         Airline/Ticket.cpp Airline/Ticket.h
         Airline/Luggage.cpp Airline/Luggage.h
         Airline/Flight.cpp Airline/Flight.h
-        Airline/Airline.cpp Airline/Airline.h)
+        Airline/Airline.cpp Airline/Airline.h
+        Airline/Service.h)
 
 
 # Doxygen Build

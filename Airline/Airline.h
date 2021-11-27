@@ -7,12 +7,11 @@
 
 #include "Airplane.h"
 #include <iostream>
-#include <list>
 
 using namespace std;
 
 class Airline {
-    list<Airplane> airplanes;
+    vector<Airplane> airplanes;
 
 public:
     /**
@@ -20,8 +19,8 @@ public:
      */
     Airline();
 
-    void setAirplanes(list<Airplane> airplanes);
-    list<Airplane> getAirplanes();
+    void setAirplanes(vector<Airplane> airplanes);
+    vector<Airplane> getAirplanes();
 
 };
 
