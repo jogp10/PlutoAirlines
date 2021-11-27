@@ -10,9 +10,30 @@
 #include "Luggage.h"
 
 class Ticket {
-    Ticket();
-    Ticket(Flight flight, Luggage luggage);
-    Ticket(Flight flight, Luggage luggage, int group);
+    int group;
+    Flight flight;
+    Luggage luggage;
+
+    /**
+     * Tickets
+     * @param flight
+     * @param luggage
+     * @param group
+     * Each Ticket must be related to a Flight, whether it can take Luggage and if the Ticket belongs to a
+     * Passenger that is travelling with a group or not.
+     */
+    Ticket(Flight flight, Luggage luggage = Luggage(0), int group = 0);
+
+public:
+    bool canBuyTicket();
+    void setFlight(Flight flight);
+    void setLuggage(Luggage luggage);
+    void setGroup(int group);
+
+    Flight getFlight();
+    Luggage getLuggage();
+    int getGroup();
+
 
 };
 
