@@ -4,3 +4,6 @@
 
 #include "Passenger.h"
 
+Passenger::Passenger() {
+    this->group = 0;
+}

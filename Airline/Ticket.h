@@ -10,7 +10,7 @@ class Ticket {
     Ticket();
     Ticket(Flight flight, Luggage luggage);
     Ticket(Flight flight, Luggage luggage, int group);
-    
+
 };
 
 #endif //PLUTOAIRLINES_TICKET_H
