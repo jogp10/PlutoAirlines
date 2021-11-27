@@ -11,9 +11,10 @@ using namespace std;
 
 class Airplane {
     string plate;
-
+public:
     explicit Airplane(string plate);
 
+private:
 
 
 };
