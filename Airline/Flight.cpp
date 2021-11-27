@@ -58,6 +58,6 @@ int Flight::getAvailableSeat() const {
     return availableSeat;
 }
 
-void Flight::minusAvailableSeats(int minus) {
-    this->availableSeat -= minus;
+void Flight::minusAvailableSeats(int ticketsBought) {
+    this->availableSeat -= ticketsBought;
 }
