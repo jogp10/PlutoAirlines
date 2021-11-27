@@ -3,17 +3,20 @@
 //
 
 #include "Airplane.h"
+#include <iostream>
+
+using namespace std;
 
 Airplane::Airplane(string plate, int capacity) {
     this->plate = plate;
     this->capacity = capacity;
 }
 
-void Airplane::setFlights(list <Flight> flights) {
+void Airplane::setFlights(list<Flight> flights) {
     this->flights = flights;
 }
 
-list <Flight> Airplane::getFlights() {
+list<Flight> Airplane::getFlights() {
     return flights;
 }
 
@@ -21,6 +24,6 @@ string Airplane::getPlate() {
     return plate;
 }
 
-int Airplane::getCapacity() {
+int Airplane::getCapacity() const {
     return capacity;
 }
