@@ -12,6 +12,10 @@ using namespace std;
 class Airplane {
     string plate;
 
+    explicit Airplane(string plate);
+
+
+
 };
 
 
