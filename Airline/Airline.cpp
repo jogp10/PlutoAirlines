@@ -6,10 +6,10 @@
 
 Airline::Airline() = default;
 
-void Airline::setAirplanes(list<Airplane> airplanes) {
-    this->Airplanes = Airplanes;
+void Airline::setAirplanes(list<Airplane> Airplanes) {
+    this->airplanes = Airplanes;
 }
 
 list<Airplane> Airline::getAirplanes() {
-    return Airplanes;
+    return airplanes;
 }

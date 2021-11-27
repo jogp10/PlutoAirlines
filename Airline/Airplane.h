@@ -16,6 +16,8 @@ class Airplane {
     list<Flight> flights;
 
 public:
+    Airplane() = default;
+
     /**
      * Airplane Constructor
      * @param plate
@@ -45,7 +47,7 @@ public:
      * Get Airplane's Capacity
      * @return
      */
-    int getCapacity(); // Get plane's capacity
+    int getCapacity() const; // Get plane's capacity
 
 };
 
