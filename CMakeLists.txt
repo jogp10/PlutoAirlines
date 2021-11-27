@@ -3,4 +3,4 @@ project(PlutoAirlines)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PlutoAirlines main.cpp)
+add_executable(PlutoAirlines main.cpp Airplane.cpp Airplane.h)
