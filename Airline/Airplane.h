@@ -29,10 +29,23 @@ public:
      */
     void setFlights(list<Flight> flights);
 
+    /**
+     * Get Airplane's flights
+     * @return
+     */
     list<Flight> getFlights(); // Get travel plan
-    string getPlate(); // Get plane's plate
-    int getCapacity(); // Get plane's capacity
 
+    /**
+     * Get Airplane's plate
+     * @return
+     */
+    string getPlate(); // Get plane's plate
+
+    /**
+     * Get Airplane's Capacity
+     * @return
+     */
+    int getCapacity(); // Get plane's capacity
 
 };
 
