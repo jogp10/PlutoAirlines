@@ -9,8 +9,16 @@
 class Luggage {
 public:
     int numBags;
+    /**
+     * obulamu! - x = number of Luggage bags
+     * @param x
+     */
     Luggage(int x);
-
+    /**
+     * obulamu! - Function to determine the number of bags!
+     * @param luggage
+     * @return
+     */
     bool haveLuggage(Luggage luggage);
 };
 
