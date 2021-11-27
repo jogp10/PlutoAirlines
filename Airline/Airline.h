@@ -20,7 +20,7 @@ public:
      */
     Airline();
 
-    void setAirplanes(list<Airplane> Airplanes);
+    void setAirplanes(list<Airplane> airplanes);
     list<Airplane> getAirplanes();
 
 };

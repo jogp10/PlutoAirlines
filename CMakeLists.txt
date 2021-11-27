@@ -4,7 +4,8 @@ set(CMAKE_CXX_STANDARD 14)
 
 
 add_executable(PlutoAirlines main.cpp Airline/Airplane.cpp Airline/Airplane.h Airline/Passenger.cpp Airline/Passenger.h
-                Airline/Luggage.cpp Airline/Luggage.h Airline/Ticket.cpp Airline/Ticket.h Airline/Airline.cpp Airline/Airline.h)
+                Airline/Luggage.cpp Airline/Luggage.h Airline/Ticket.cpp Airline/Ticket.h Airline/Airline.cpp Airline/Airline.h
+                Airline/Flight.cpp Airline/Flight.h)
 
 
 # Doxygen Build

@@ -4,11 +4,9 @@
 
 #include "Airline.h"
 
-Airline::Airline() {
+Airline::Airline() = default;
 
-}
-
-void Airline::setAirplanes(list<Airplane> Airplanes) {
+void Airline::setAirplanes(list<Airplane> airplanes) {
     this->Airplanes = Airplanes;
 }
 
