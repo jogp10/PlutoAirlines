@@ -10,7 +10,7 @@ class Luggage {
 public:
     int numBags;
     /**
-     * obulamu! - x = number of Luggage' bags
+     * obulamu! - x = number of Luggage bags
      * @param x
      */
     Luggage(int x);
