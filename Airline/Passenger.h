@@ -7,7 +7,10 @@
 
 
 class Passenger {
+    
 
+
+    bool canGetFlight();
 };
 
 
