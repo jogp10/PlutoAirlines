@@ -4,9 +4,23 @@
 
 #include "Airplane.h"
 
+Airplane::Airplane(string plate, int capacity) {
+    this->plate = plate;
+    this->capacity = capacity;
+}
 
-Airplane::Airplane(string plate) {
+void Airplane::setFlights(list <Flight> flights) {
+    this->flights = flights;
+}
 
+list <Flight> Airplane::getFlights() {
+    return flights;
+}
 
+string Airplane::getPlate() {
+    return plate;
+}
 
+int Airplane::getCapacity() {
+    return capacity;
 }

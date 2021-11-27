@@ -7,3 +7,11 @@
 Airline::Airline() {
 
 }
+
+void Airline::setAirplanes(list<Airplane> Airplanes) {
+    this->Airplanes = Airplanes;
+}
+
+list<Airplane> Airline::getAirplanes() {
+    return Airplanes;
+}

@@ -15,9 +15,13 @@ class Airline {
     list<Airplane> Airplanes;
 
 public:
+    /**
+     * Airline constructor
+     */
     Airline();
 
-private:
+    void setAirplanes(list<Airplane> Airplanes);
+    list<Airplane> getAirplanes();
 
 };
 

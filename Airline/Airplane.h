@@ -5,16 +5,33 @@
 #ifndef PLUTOAIRLINES_AIRPLANE_H
 #define PLUTOAIRLINES_AIRPLANE_H
 
+#include "Flight.h"
 #include <iostream>
 
 using namespace std;
 
 class Airplane {
     string plate;
-public:
-    explicit Airplane(string plate);
+    int capacity;
+    list<Flight> flights;
 
-private:
+public:
+    /**
+     * Airplane Constructor
+     * @param plate
+     * @param capacity
+     */
+    explicit Airplane(string plate, int capacity);
+
+    /**
+     * Travel plan
+     * @param flights
+     */
+    void setFlights(list<Flight> flights);
+
+    list<Flight> getFlights(); // Get travel plan
+    string getPlate(); // Get plane's plate
+    int getCapacity(); // Get plane's capacity
 
 
 };
