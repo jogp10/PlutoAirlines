@@ -3,3 +3,11 @@
 //
 
 #include "Luggage.h"
+
+Luggage::Luggage(int x) {
+    numBags = x;
+}
+bool Luggage::haveLuggage(Luggage luggage) {
+    if (luggage.numBags == 0) return false;
+    return true;
+}

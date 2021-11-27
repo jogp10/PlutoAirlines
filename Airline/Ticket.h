@@ -6,6 +6,9 @@
 #define PLUTOAIRLINES_TICKET_H
 
 
+#include "Flight.h"
+#include "Luggage.h"
+
 class Ticket {
     Ticket();
     Ticket(Flight flight, Luggage luggage);
