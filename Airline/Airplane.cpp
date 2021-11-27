@@ -24,6 +24,6 @@ string Airplane::getPlate() {
     return plate;
 }
 
-int Airplane::getCapacity() {
+int Airplane::getCapacity() const {
     return capacity;
 }

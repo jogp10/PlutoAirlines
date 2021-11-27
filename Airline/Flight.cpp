@@ -12,29 +12,29 @@ Flight::Flight(int flightNum, string departureDate, string departureLocal, strin
     this->flightDuration = flightDuration;
 }
 
-void Flight::setFLightNum(int flightNum) {
-    this->flightNum = flightNum;
+void Flight::setFLightNum(int flightnum) {
+    this->flightNum = flightnum;
 }
 
-void Flight::setDepartureDate(string departureDate) {
-    this->departureDate = departureDate;
+void Flight::setDepartureDate(string departuredate) {
+    this->departureDate = departuredate;
 }
 
-void Flight::setDepartureLocal(string departureLocal) {
-    this->departureLocal = departureLocal;
+void Flight::setDepartureLocal(string departurelocal) {
+    this->departureLocal = departurelocal;
 }
 
-void Flight::setArrivalLocal(string arrivalLocal) {
-    this->arrivalLocal = arrivalLocal;
+void Flight::setArrivalLocal(string arrivallocal) {
+    this->arrivalLocal = arrivallocal;
 }
 
-void Flight::setFlightDuration(int flightDuration) {
-    this->flightDuration = flightDuration;
+void Flight::setFlightDuration(int flightduration) {
+    this->flightDuration = flightduration;
 
 }
 
 
-int Flight::getFLightNum() {
+int Flight::getFLightNum() const {
     return flightNum;
 }
 
@@ -50,6 +50,14 @@ string Flight::getArrivalLocal() {
     return arrivalLocal;
 }
 
-int Flight::getFlightDuration() {
+int Flight::getFlightDuration() const {
     return flightDuration;
+}
+
+int Flight::getAvailableSeat() const {
+    return availableSeat;
+}
+
+void Flight::minusAvailableSeats(int minus) {
+    this->availableSeat -= minus;
 }

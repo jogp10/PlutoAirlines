@@ -12,6 +12,7 @@ using namespace std;
 class Flight {
     int flightNum, flightDuration;
     string departureDate, departureLocal, arrivalLocal;
+    int availableSeat;
 
 public:
 
@@ -28,19 +29,46 @@ public:
     Flight(int flightNum, string departureDate, string departureLocal, string arrivalLocal, int flightDuration);
 
     //Setters
+    /**
+     * Set Flight's number
+     * @param flightNum
+     */
     void setFLightNum(int flightNum);
+    /**
+     * Set Flight's Departure Date
+     * @param departureDate
+     */
     void setDepartureDate(string departureDate);
+    /**
+     * Set Flight's Departure Local
+     * @param departureLocal
+     */
     void setDepartureLocal(string departureLocal);
+    /**
+     * Set Flight's Arrival Local
+     * @param arrivalLocal
+     */
     void setArrivalLocal(string arrivalLocal);
+    /**
+     * Set Flight's Duration Time
+     * @param flightDuration
+     */
     void setFlightDuration(int flightDuration);
+    /**
+     * After the buy of *minus* tickets, will be AvailableSeats - Tickets Bought
+     * @param minus
+     */
+    void minusAvailableSeats(int minus);
+
 
     //Getters
-    int getFLightNum();
+    int getFLightNum() const;
     string getDepartureDate();
     string getDepartureLocal();
     string getArrivalLocal();
-    int getFlightDuration();
-    
+    int getFlightDuration() const;
+    int getAvailableSeat() const;
+
 };
 
 
