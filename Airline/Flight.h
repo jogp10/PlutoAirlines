@@ -7,7 +7,7 @@
 
 
 class Flight {
-
+    Flight();
 };
 
 
