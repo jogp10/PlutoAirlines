@@ -7,7 +7,11 @@
 
 
 class Luggage {
-    int jef;
+public:
+    int numBags;
+    Luggage(int x);
+
+    bool haveLuggage(Luggage luggage);
 };
 
 
