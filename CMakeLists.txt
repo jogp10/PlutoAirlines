@@ -21,7 +21,7 @@ if(DOXYGEN_FOUND)
     endif()
 
     set(DOXYGEN_IN "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile")
-    set(DOXYGEN_OUT "${CMAKE_CURRENT_BINARY_DIR}/docs/output")
+    set(DOXYGEN_OUT "${CMAKE_CURRENT_BINARY_DIR}/Airline")
     configure_file("${DOXYGEN_IN}" "${DOXYGEN_OUT}" @ONLY)
     message("Doxygen build started")
     add_custom_target(Doxygen ALL
