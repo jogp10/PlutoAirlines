@@ -7,19 +7,28 @@
 
 
 class Luggage {
-public:
+
     int numBags;
+
+public:
+
     /**
-     * obulamu! - x = number of Luggage bags
+     * obulamu! - numBags = number of Luggage bags
      * @param x
      */
-    Luggage(int x);
+
+    Luggage(int numBags);
+
     /**
      * obulamu! - Function to determine the number of bags!
      * @param luggage
      * @return
      */
+
     bool haveLuggage(Luggage luggage);
+
+    void setnumBags(int numBags);
+    int getnumBags();
 };
 
 

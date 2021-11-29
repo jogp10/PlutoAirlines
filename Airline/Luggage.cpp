@@ -4,8 +4,14 @@
 
 #include "Luggage.h"
 
-Luggage::Luggage(int x) {
-    numBags = x;
+Luggage::Luggage(int numBags) {
+    this->numBags= numBags;
+}
+void Luggage::setnumBags(int numBags) {
+    this->numBags = numBags;
+}
+int Luggage::getnumBags() {
+    return this->numBags;
 }
 bool Luggage::haveLuggage(Luggage luggage) {
     if (luggage.numBags == 0) return false;
