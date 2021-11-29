@@ -10,6 +10,7 @@
 
 class Passenger {
     int group;
+    Luggage luggage;
 
 
     /**
@@ -20,7 +21,7 @@ class Passenger {
      * group or is travelling alone;
      * If he is travelling alone, the value of group should be zero, otherwise it must be group number
      */
-    Passenger(Ticket ticket, int luggage = 0, int group = 0);
+    Passenger(Ticket ticket, int luggagE = 0, int group = 0);
 
 };
 
