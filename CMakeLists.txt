@@ -9,7 +9,10 @@ add_executable(PlutoAirlines main.cpp
         Airline/Luggage.cpp Airline/Luggage.h
         Airline/Flight.cpp Airline/Flight.h
         Airline/Airline.cpp Airline/Airline.h
-        Airline/Service.h)
+        Airline/Service.h
+
+        Tests/tests.cpp
+        )
 
 
 # Doxygen Build
@@ -32,3 +35,12 @@ if(DOXYGEN_FOUND)
 else(DOXYGEN_FOUND)
     message("Doxygen needs to be installed to generate the documentation.")
 endif(DOXYGEN_FOUND)
+
+
+# Google Tests
+
+add_subdirectory(lib/googletest-master)
+include_directories(lib/googletest-master/googletest/include)
+include_directories(lib/googletest-master/googlemock/include)
+
+target_link_libraries(PlutoAirlines gtest gtest_main)
