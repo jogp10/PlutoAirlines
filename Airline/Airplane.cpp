@@ -12,15 +12,27 @@ Airplane::Airplane(string plate, int capacity) {
     this->capacity = capacity;
 }
 
-void Airplane::setFlights(const vector<Flight>& flightS) {
-    for(auto flight: flightS)
+void Airplane::setPlate(const string &platE) {
+    this->plate = platE;
+}
+
+void Airplane::setCapacity(const int &capacitY) {
+    this->capacity = capacitY;
+}
+
+void Airplane::setFlights(const list<Flight>& flightS) {
+    for(const auto& flight: flightS)
     {
-        this->flights.push(flight);
+        this->flights.insert(flights.end(), 1, flight);
     }
 }
 
-Flight Airplane::getNextFlight() {
-    return flights.front();
+void Airplane::addService(const Service& service) {
+    services.push(service);
+}
+
+list<Flight> Airplane::getFlights() {
+    return flights;
 }
 
 string Airplane::getPlate() {
@@ -29,10 +41,6 @@ string Airplane::getPlate() {
 
 int Airplane::getCapacity() const {
     return capacity;
-}
-
-void Airplane::addService(Service service) {
-    services.push(service);
 }
 
 queue<Service> Airplane::getServices() {

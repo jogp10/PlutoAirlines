@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['luggage_24',['Luggage',['../classLuggage.html',1,'']]]
+  ['luggage_28',['Luggage',['../classLuggage.html',1,'']]]
 ];

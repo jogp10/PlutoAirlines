@@ -5,15 +5,19 @@
 \item 
 \mbox{\hyperlink{classAirplane_addc11ac89e2b15e2f8497fdf13cb344c}{Airplane}} (string plate, int capacity)
 \item 
-void \mbox{\hyperlink{classAirplane_a2f675c12fbbeb3a9f40a0b29cc1a22a2}{set\+Flights}} (const vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \&flights)
+void \mbox{\hyperlink{classAirplane_a21598d82903a80bdd34d23fa29af5427}{set\+Plate}} (const string \&platE)
 \item 
-\mbox{\hyperlink{classFlight}{Flight}} \mbox{\hyperlink{classAirplane_ac531cbce8d309ce1d5db01a703aeb98c}{get\+Next\+Flight}} ()
+void \mbox{\hyperlink{classAirplane_a714efdfcd3acca26c84fc4249be1ddde}{set\+Capacity}} (const int \&capacitY)
+\item 
+void \mbox{\hyperlink{classAirplane_a1ba720ce072787dfae5ec186c742e769}{set\+Flights}} (const list$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \&flightS)
+\item 
+void \mbox{\hyperlink{classAirplane_aefcaef4939707a27ebacb5737192380d}{add\+Service}} (const \mbox{\hyperlink{structService}{Service}} \&service)
 \item 
 string \mbox{\hyperlink{classAirplane_a9f845809ffdb1c779c8dcceadc756f1f}{get\+Plate}} ()
 \item 
 int \mbox{\hyperlink{classAirplane_a1c099b7dec0bfa86d5c0ff785ded0025}{get\+Capacity}} () const
 \item 
-void \mbox{\hyperlink{classAirplane_a2b1a56b5e584f47f5b84919e293a99ff}{add\+Service}} (\mbox{\hyperlink{structService}{Service}} service)
+list$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirplane_ab484bfc1b3591dc600dde460099b04ea}{get\+Flights}} ()
 \item 
 queue$<$ \mbox{\hyperlink{structService}{Service}} $>$ \mbox{\hyperlink{classAirplane_ac1ad0f09f5243cfb862a8caa6f5e7050}{get\+Services}} ()
 \item 
@@ -28,7 +32,7 @@ queue$<$ \mbox{\hyperlink{structService}{Service}} $>$ \mbox{\hyperlink{classAir
 \doxysubsubsection{\texorpdfstring{Airplane()}{Airplane()}}
 {\footnotesize\ttfamily Airplane\+::\+Airplane (\begin{DoxyParamCaption}\item[{string}]{plate,  }\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-\mbox{\hyperlink{classAirplane}{Airplane}} Constructor 
+
 \begin{DoxyParams}{Parameters}
 {\em plate} & \\
 \hline
@@ -38,13 +42,13 @@ queue$<$ \mbox{\hyperlink{structService}{Service}} $>$ \mbox{\hyperlink{classAir
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classAirplane_a2b1a56b5e584f47f5b84919e293a99ff}\label{classAirplane_a2b1a56b5e584f47f5b84919e293a99ff}} 
+\mbox{\Hypertarget{classAirplane_aefcaef4939707a27ebacb5737192380d}\label{classAirplane_aefcaef4939707a27ebacb5737192380d}} 
 \index{Airplane@{Airplane}!addService@{addService}}
 \index{addService@{addService}!Airplane@{Airplane}}
 \doxysubsubsection{\texorpdfstring{addService()}{addService()}}
-{\footnotesize\ttfamily void Airplane\+::add\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structService}{Service}}}]{service }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Airplane\+::add\+Service (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structService}{Service}} \&}]{service }\end{DoxyParamCaption})}
 
-Schedule a new service for the airplane 
+Schedule a new service for the \mbox{\hyperlink{classAirplane}{Airplane}} 
 \begin{DoxyParams}{Parameters}
 {\em service} & \\
 \hline
@@ -58,14 +62,14 @@ Schedule a new service for the airplane
 Get \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s Capacity \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirplane_ac531cbce8d309ce1d5db01a703aeb98c}\label{classAirplane_ac531cbce8d309ce1d5db01a703aeb98c}} 
-\index{Airplane@{Airplane}!getNextFlight@{getNextFlight}}
-\index{getNextFlight@{getNextFlight}!Airplane@{Airplane}}
-\doxysubsubsection{\texorpdfstring{getNextFlight()}{getNextFlight()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classFlight}{Flight}} Airplane\+::get\+Next\+Flight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{classAirplane_ab484bfc1b3591dc600dde460099b04ea}\label{classAirplane_ab484bfc1b3591dc600dde460099b04ea}} 
+\index{Airplane@{Airplane}!getFlights@{getFlights}}
+\index{getFlights@{getFlights}!Airplane@{Airplane}}
+\doxysubsubsection{\texorpdfstring{getFlights()}{getFlights()}}
+{\footnotesize\ttfamily list$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ Airplane\+::get\+Flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Get \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s flights \begin{DoxyReturn}{Returns}
-
+Get \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s \mbox{\hyperlink{classFlight}{Flight}} plan \begin{DoxyReturn}{Returns}
+list of flights 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classAirplane_abed8c359dd3ef69ce05156f923d3fd1b}\label{classAirplane_abed8c359dd3ef69ce05156f923d3fd1b}} 
 \index{Airplane@{Airplane}!getPastServices@{getPastServices}}
@@ -73,7 +77,7 @@ Get \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s flights \begin
 \doxysubsubsection{\texorpdfstring{getPastServices()}{getPastServices()}}
 {\footnotesize\ttfamily queue$<$ \mbox{\hyperlink{structService}{Service}} $>$ Airplane\+::get\+Past\+Services (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Get Past services done on the airplane \begin{DoxyReturn}{Returns}
+Get Past services done on the \mbox{\hyperlink{classAirplane}{Airplane}} \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classAirplane_a9f845809ffdb1c779c8dcceadc756f1f}\label{classAirplane_a9f845809ffdb1c779c8dcceadc756f1f}} 
@@ -91,18 +95,40 @@ Get \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s plate \begin{D
 \doxysubsubsection{\texorpdfstring{getServices()}{getServices()}}
 {\footnotesize\ttfamily queue$<$ \mbox{\hyperlink{structService}{Service}} $>$ Airplane\+::get\+Services (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-Get schedule services for the airplane \begin{DoxyReturn}{Returns}
+Get schedule services for the \mbox{\hyperlink{classAirplane}{Airplane}} \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirplane_a2f675c12fbbeb3a9f40a0b29cc1a22a2}\label{classAirplane_a2f675c12fbbeb3a9f40a0b29cc1a22a2}} 
+\mbox{\Hypertarget{classAirplane_a714efdfcd3acca26c84fc4249be1ddde}\label{classAirplane_a714efdfcd3acca26c84fc4249be1ddde}} 
+\index{Airplane@{Airplane}!setCapacity@{setCapacity}}
+\index{setCapacity@{setCapacity}!Airplane@{Airplane}}
+\doxysubsubsection{\texorpdfstring{setCapacity()}{setCapacity()}}
+{\footnotesize\ttfamily void Airplane\+::set\+Capacity (\begin{DoxyParamCaption}\item[{const int \&}]{capacitY }\end{DoxyParamCaption})}
+
+Set \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s capacity 
+\begin{DoxyParams}{Parameters}
+{\em capacity} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirplane_a1ba720ce072787dfae5ec186c742e769}\label{classAirplane_a1ba720ce072787dfae5ec186c742e769}} 
 \index{Airplane@{Airplane}!setFlights@{setFlights}}
 \index{setFlights@{setFlights}!Airplane@{Airplane}}
 \doxysubsubsection{\texorpdfstring{setFlights()}{setFlights()}}
-{\footnotesize\ttfamily void Airplane\+::set\+Flights (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \&}]{flights }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Airplane\+::set\+Flights (\begin{DoxyParamCaption}\item[{const list$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \&}]{flightS }\end{DoxyParamCaption})}
 
-Travel plan 
+Set \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s Travel plan 
 \begin{DoxyParams}{Parameters}
 {\em flights} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirplane_a21598d82903a80bdd34d23fa29af5427}\label{classAirplane_a21598d82903a80bdd34d23fa29af5427}} 
+\index{Airplane@{Airplane}!setPlate@{setPlate}}
+\index{setPlate@{setPlate}!Airplane@{Airplane}}
+\doxysubsubsection{\texorpdfstring{setPlate()}{setPlate()}}
+{\footnotesize\ttfamily void Airplane\+::set\+Plate (\begin{DoxyParamCaption}\item[{const string \&}]{platE }\end{DoxyParamCaption})}
+
+Set \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s plate 
+\begin{DoxyParams}{Parameters}
+{\em plate} & \\
 \hline
 \end{DoxyParams}
 

@@ -15,13 +15,22 @@ class Airline {
 
 public:
     /**
-     * Airline constructor
+     *
      */
     Airline();
 
+    /**
+     * Set Airline's airplanes
+     * @param airplanes
+     */
     void setAirplanes(vector<Airplane> airplanes);
-    vector<Airplane> getAirplanes();
 
+
+    /**
+     * Get Airline's airplanes
+     * @return
+     */
+    vector<Airplane> getAirplanes();
 };
 
 

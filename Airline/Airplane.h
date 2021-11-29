@@ -8,7 +8,7 @@
 #include "Flight.h"
 #include "Service.h"
 #include <iostream>
-#include <vector>
+#include <list>
 #include <queue>
 
 using namespace std;
@@ -16,61 +16,85 @@ using namespace std;
 class Airplane {
     string plate;
     int capacity;
-    queue<Flight> flights;
+    list<Flight> flights;
     queue<Service> services, servicesDone;
 
 public:
+    /**
+     *
+     */
     Airplane() = default;
 
+
     /**
-     * Airplane Constructor
+     *
      * @param plate
      * @param capacity
      */
     explicit Airplane(string plate, int capacity);
 
-    /**
-     * Travel plan
-     * @param flights
-     */
-    void setFlights(const vector<Flight>& flights);
 
     /**
-     * Get Airplane's flights
-     * @return
+     * Set Airplane's plate
+     * @param plate
      */
-    Flight getNextFlight(); // Get travel plan
+    void setPlate(const string& platE);
+
+
+    /**
+     * Set Airplane's capacity
+     * @param capacity
+     */
+    void setCapacity(const int& capacitY);
+
+
+    /**
+     * Set Airplane's Travel plan
+     * @param flights
+     */
+    void setFlights(const list<Flight>& flightS);
+
+
+    /**
+     * Schedule a new service for the Airplane
+     * @param service
+     */
+    void addService(const Service& service);
+
 
     /**
      * Get Airplane's plate
      * @return
      */
-    string getPlate(); // Get plane's plate
+    string getPlate();
+
 
     /**
      * Get Airplane's Capacity
      * @return
      */
-    int getCapacity() const; // Get plane's capacity
+    int getCapacity() const;
+
 
     /**
-     * Schedule a new service for the airplane
-     * @param service
+     * Get Airplane's Flight plan
+     * @return list of flights
      */
-    void addService(Service service);
+    list<Flight> getFlights();
+
 
     /**
-     * Get schedule services for the airplane
+     * Get schedule services for the Airplane
      * @return
      */
     queue<Service> getServices();
 
+
     /**
-     * Get Past services done on the airplane
+     * Get Past services done on the Airplane
      * @return
      */
     queue<Service> getPastServices();
-
 };
 
 
