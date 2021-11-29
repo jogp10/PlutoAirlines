@@ -9,7 +9,7 @@ using testing::Eq;
 
 
 TEST(airline_1, a_addAirplane){
-    cout<<endl<<"Testing 'addAirline'"<<endl;
+    cout<<endl<<"Testing 'addAirplane'"<<endl;
     Airline Pluto;
 
     EXPECT_EQ(0, Pluto.getAirplanes().size());
@@ -39,7 +39,7 @@ TEST(airline_1, a_addAirplane){
         Airplane t = airplanes.front();
         EXPECT_EQ(120, t.getCapacity());
         t = airplanes.back();
-        EXPECT_EQ("C1234", t.getPlate());
+        EXPECT_EQ("A3234", t.getPlate());
     }
 
 
