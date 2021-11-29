@@ -14,6 +14,7 @@ class Ticket {
     Flight flight;
     Luggage luggage;
 
+public:
     /**
      * Tickets
      * @param flight
@@ -22,17 +23,17 @@ class Ticket {
      * Each Ticket must be related to a Flight, whether it can take Luggage and if the Ticket belongs to a
      * Passenger that is travelling with a group or not.
      */
-    Ticket(Flight flight, Luggage luggage = Luggage(0), int group = 0);
+    Ticket(Flight flight, Luggage luggage = Luggage(0), int group = 1);
 
-public:
-    bool canBuyTicket();
+    //Setters
     void setFlight(Flight flight);
     void setLuggage(Luggage luggage);
     void setGroup(int group);
 
-    Flight getFlight();
-    Luggage getLuggage();
-    int getGroup();
+    //Getters
+    Flight const getFlight();
+    Luggage const getLuggage();
+    int const getGroup();
 
 
 };
