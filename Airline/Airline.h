@@ -7,22 +7,30 @@
 
 #include "Airplane.h"
 #include <iostream>
-#include <list>
 
 using namespace std;
 
 class Airline {
-    list<Airplane> airplanes;
+    vector<Airplane> airplanes;
 
 public:
     /**
-     * Airline constructor
+     *
      */
     Airline();
 
-    void setAirplanes(list<Airplane> airplanes);
-    list<Airplane> getAirplanes();
+    /**
+     * Set Airline's airplanes
+     * @param airplanes
+     */
+    void setAirplanes(vector<Airplane> airplanes);
 
+
+    /**
+     * Get Airline's airplanes
+     * @return
+     */
+    vector<Airplane> getAirplanes();
 };
 
 

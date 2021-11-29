@@ -8,7 +8,11 @@ add_executable(PlutoAirlines main.cpp
         Airline/Ticket.cpp Airline/Ticket.h
         Airline/Luggage.cpp Airline/Luggage.h
         Airline/Flight.cpp Airline/Flight.h
-        Airline/Airline.cpp Airline/Airline.h)
+        Airline/Airline.cpp Airline/Airline.h
+        Airline/Service.h
+
+        Tests/tests.cpp
+        )
 
 
 # Doxygen Build
@@ -20,7 +24,7 @@ if(DOXYGEN_FOUND)
     endif()
 
     set(DOXYGEN_IN "${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile")
-    set(DOXYGEN_OUT "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
+    set(DOXYGEN_OUT "${CMAKE_CURRENT_BINARY_DIR}/Airline")
     configure_file("${DOXYGEN_IN}" "${DOXYGEN_OUT}" @ONLY)
     message("Doxygen build started")
     add_custom_target(Doxygen ALL
@@ -31,3 +35,12 @@ if(DOXYGEN_FOUND)
 else(DOXYGEN_FOUND)
     message("Doxygen needs to be installed to generate the documentation.")
 endif(DOXYGEN_FOUND)
+
+
+# Google Tests
+
+add_subdirectory(lib/googletest-master)
+include_directories(lib/googletest-master/googletest/include)
+include_directories(lib/googletest-master/googlemock/include)
+
+target_link_libraries(PlutoAirlines gtest gtest_main)

@@ -17,7 +17,6 @@ class Flight {
 public:
 
     Flight() = default;
-
     /**
      * Flight Constructor
      * @param flightNum
@@ -55,10 +54,10 @@ public:
      */
     void setFlightDuration(int flightDuration);
     /**
-     * After the buy of *minus* tickets, will be AvailableSeats - Tickets Bought
+     * After the buy of x tickets, will be (AvailableSeats - x) Seats Available
      * @param minus
      */
-    void minusAvailableSeats(int minus);
+    void minusAvailableSeats(int ticketsBought);
 
 
     //Getters
