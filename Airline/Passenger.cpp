@@ -20,5 +20,5 @@ bool Passenger::canBuyTicket(Ticket ticket) {
 
 void Passenger::buyTicket(Ticket ticket) {
     this->ticket = ticket;
-    ticket.getFlight().minusAvailableSeats(group, luggage);
+    ticket.getFlight().minusAvailableSeats(group, this->luggage);
 }
