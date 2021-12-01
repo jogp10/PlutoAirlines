@@ -4,7 +4,7 @@
 
 #include "Passenger.h"
 
-Passenger::Passenger(Ticket ticket,int luggage, int group) {
+Passenger::Passenger(Ticket ticket, int luggage, int group) {
     this->group = group;
     this->luggage = Luggage(luggage);
 
