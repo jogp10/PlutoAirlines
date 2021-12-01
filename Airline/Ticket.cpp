@@ -23,7 +23,7 @@ void Ticket::setGroup(int group) {
     this->group = group;
 }
 
-Flight const Ticket::getFlight() { return this->flight; }
+Flight Ticket::getFlight() { return this->flight; }
 
 Luggage const Ticket::getLuggage() { return this->luggage; }
 
