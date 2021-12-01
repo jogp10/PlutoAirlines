@@ -13,13 +13,12 @@
 
 using namespace std;
 
-// TODO
-//  type, servicesDone
 
 class Airplane {
     string plate, type;
     int capacity;
-    list<Flight> flights, servicesDone;
+    list<Flight> flights;
+    list<Service> servicesDone;
     queue<Service> services;
 
 public:
@@ -34,7 +33,7 @@ public:
      * @param plate
      * @param capacity
      */
-    explicit Airplane(string plate, int capacity);
+    explicit Airplane(string plate, string type, int capacity);
 
 
     /**
@@ -43,6 +42,12 @@ public:
      */
     void setPlate(const string& platE);
 
+
+    /**
+     *  Set Airplane's type
+     * @param typE
+     */
+    void setType(const string& typE);
 
     /**
      * Set Airplane's capacity
@@ -59,6 +64,13 @@ public:
 
 
     /**
+     * Add new Flight to Travel plan
+     * @param flight
+     */
+    void addFlight(const Flight &flight);
+
+
+    /**
      * Schedule a new service for the Airplane
      * @param service
      */
@@ -70,6 +82,13 @@ public:
      * @return
      */
     string getPlate();
+
+
+    /**
+     * Get Airplane's type
+     * @return
+     */
+    string getType();
 
 
     /**
@@ -97,7 +116,7 @@ public:
      * Get Past services done on the Airplane
      * @return
      */
-    queue<Service> getPastServices();
+    list<Service> getPastServices();
 };
 
 

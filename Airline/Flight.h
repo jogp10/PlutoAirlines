@@ -12,8 +12,6 @@
 
 using namespace std;
 
-//TODO
-//vector luggage
 
 class Flight {
     int flightNum, flightDuration;

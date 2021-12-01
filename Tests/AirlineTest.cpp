@@ -14,10 +14,10 @@ TEST(airline_1, a_addAirplane){
 
     EXPECT_EQ(0, Pluto.getAirplanes().size());
 
-    Airplane a1("A1234", 120);
-    Airplane a2("B1234", 1200);
-    Airplane a3("A3234", 200);
-    Airplane a4("C1234", 150);
+    Airplane a1("Dora", "A1234", 120);
+    Airplane a2("Josefina", "B1234", 1200);
+    Airplane a3("Alberto", "A3234", 200);
+    Airplane a4("Paulo", "C1234", 150);
     Airplane a5{};
 
     vector<Airplane> airplanes;
@@ -39,13 +39,14 @@ TEST(airline_1, a_addAirplane){
         Airplane t = airplanes.front();
         EXPECT_EQ(120, t.getCapacity());
         t = airplanes.back();
-        EXPECT_EQ("A3234", t.getPlate());
+        EXPECT_EQ("A3234", t.getType());
     }
 
 
     Airline Pluto2;
 
-    a5.setPlate("D1232");
+    a5.setPlate("Quim Roscas");
+    a5.setType("D1232");
     a5.setCapacity(250);
 
     airplanes.clear();
@@ -62,7 +63,7 @@ TEST(airline_1, a_addAirplane){
 
     if(airplanes.size()==2) {
         Airplane t = airplanes.back();
-        EXPECT_EQ("D1232", t.getPlate());
+        EXPECT_EQ("D1232", t.getType());
         EXPECT_EQ(250, t.getCapacity());
     }
 
