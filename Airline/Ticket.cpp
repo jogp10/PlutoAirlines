@@ -9,8 +9,6 @@ Ticket::Ticket(Flight flight, Luggage luggage, int group) {
     this->luggage = luggage;
     this->group = group;
 
-    // When buying Tickets, the plane gets fuller by losing group
-    flight.minusAvailableSeats(group);
 }
 
 void Ticket::setFlight(Flight flight) {
