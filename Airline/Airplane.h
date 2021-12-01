@@ -13,11 +13,14 @@
 
 using namespace std;
 
+// TODO
+//  type, servicesDone
+
 class Airplane {
-    string plate;
+    string plate, type;
     int capacity;
-    list<Flight> flights;
-    queue<Service> services, servicesDone;
+    list<Flight> flights, servicesDone;
+    queue<Service> services;
 
 public:
     /**

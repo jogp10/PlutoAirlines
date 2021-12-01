@@ -5,14 +5,21 @@
 #ifndef PLUTOAIRLINES_FLIGHT_H
 #define PLUTOAIRLINES_FLIGHT_H
 
+#include "Luggage.h"
+
 #include <iostream>
+#include <vector>
 
 using namespace std;
+
+//TODO
+//vector luggage
 
 class Flight {
     int flightNum, flightDuration;
     string departureDate, departureLocal, arrivalLocal;
     int availableSeat;
+    vector<Luggage> luggage;
 
 public:
 
@@ -57,7 +64,7 @@ public:
      * After the buy of x tickets, will be (AvailableSeats - x) Seats Available
      * @param minus
      */
-    void minusAvailableSeats(int ticketsBought);
+    void minusAvailableSeats(int ticketsBought, Luggage luggage);
 
 
     //Getters
@@ -67,6 +74,7 @@ public:
     string getArrivalLocal();
     int getFlightDuration() const;
     int getAvailableSeat() const;
+    vector<Luggage> getLuggage() const;
 
 };
 
