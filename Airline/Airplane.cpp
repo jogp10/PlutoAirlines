@@ -7,13 +7,18 @@
 
 using namespace std;
 
-Airplane::Airplane(string plate, int capacity) {
+Airplane::Airplane(string plate, string type, int capacity) {
     this->plate = plate;
+    this->type = type;
     this->capacity = capacity;
 }
 
 void Airplane::setPlate(const string &platE) {
     this->plate = platE;
+}
+
+void Airplane::setType(const string &typE) {
+    this->type = typE;
 }
 
 void Airplane::setCapacity(const int &capacitY) {
@@ -25,6 +30,11 @@ void Airplane::setFlights(const list<Flight>& flightS) {
     {
         this->flights.insert(flights.end(), 1, flight);
     }
+}
+
+void Airplane::addFlight(const Flight &flight)
+{
+    flights.push_back(flight);
 }
 
 void Airplane::addService(const Service& service) {
@@ -39,6 +49,11 @@ string Airplane::getPlate() {
     return plate;
 }
 
+string Airplane::getType() {
+    return type;
+}
+
+
 int Airplane::getCapacity() const {
     return capacity;
 }
@@ -46,12 +61,12 @@ int Airplane::getCapacity() const {
 queue<Service> Airplane::getServices() {
     while(services.front().date < flights.front().getDepartureDate())
     {
-        servicesDone.push(services.front());
+        servicesDone.push_back(servicesDone.front());
         services.pop();
     }
     return services;
 }
 
-queue<Service> Airplane::getPastServices() {
+list<Service> Airplane::getPastServices() {
     return servicesDone;
 }
