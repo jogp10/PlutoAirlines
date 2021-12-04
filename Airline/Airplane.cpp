@@ -25,9 +25,10 @@ void Airplane::setCapacity(const int &capacitY) {
     this->capacity = capacitY;
 }
 
-void Airplane::setFlights(const list<Flight>& flightS) {
-    for(const auto& flight: flightS)
+void Airplane::setFlights(list<Flight>& flightS) {
+    for(auto& flight: flightS)
     {
+        flight.setAvailableSeats(capacity);
         this->flights.insert(flights.end(), 1, flight);
     }
 }
@@ -59,14 +60,19 @@ int Airplane::getCapacity() const {
 }
 
 queue<Service> Airplane::getServices() {
-    while(services.front().date < flights.front().getDepartureDate())
-    {
-        servicesDone.push_back(servicesDone.front());
-        services.pop();
-    }
+    updateServices();
     return services;
 }
 
 list<Service> Airplane::getPastServices() {
+    updateServices();
     return servicesDone;
+}
+
+void Airplane::updateServices() {
+    while(services.front().date < flights.front().getDepartureDate() && !(services.empty()))
+    {
+        servicesDone.push_back(services.front());
+        services.pop();
+    }
 }

@@ -59,6 +59,11 @@ public:
      */
     void setFlightDuration(int flightDuration);
     /**
+     * Set flight's max capacity
+     * @param capacity
+     */
+    void setAvailableSeats(int capacity);
+    /**
      * After the buy of x tickets, will be (AvailableSeats - x) Seats Available
      * @param minus
      */

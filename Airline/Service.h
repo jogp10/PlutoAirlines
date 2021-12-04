@@ -10,7 +10,7 @@
 struct Service
 {
     int type; // 0 for maintenance, 1 for clean
-    std::string date, name; // date of the service, name of the employee
+    string date, name; // date of the service, name of the employee
 };
 
 #endif //PLUTOAIRLINES_SERVICE_H

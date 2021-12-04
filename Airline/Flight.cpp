@@ -33,6 +33,10 @@ void Flight::setFlightDuration(int flightduration) {
 
 }
 
+void Flight::setAvailableSeats(int capacity) {
+    availableSeat = capacity;
+}
+
 
 int Flight::getFLightNum() const {
     return flightNum;

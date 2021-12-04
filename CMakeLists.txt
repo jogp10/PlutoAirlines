@@ -12,6 +12,7 @@ add_executable(PlutoAirlines main.cpp
         Airline/Service.h
 
         Tests/AirlineTest.cpp
+        Tests/AirplaneTest.cpp
         )
 
 

@@ -21,6 +21,9 @@ class Airplane {
     list<Service> servicesDone;
     queue<Service> services;
 
+private:
+    void updateServices();
+
 public:
     /**
      *
@@ -60,7 +63,7 @@ public:
      * Set Airplane's Travel plan
      * @param flights
      */
-    void setFlights(const list<Flight>& flightS);
+    void setFlights(list<Flight>& flightS);
 
 
     /**
