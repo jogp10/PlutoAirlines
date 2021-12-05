@@ -67,16 +67,44 @@ public:
      * After the buy of x tickets, will be (AvailableSeats - x) Seats Available
      * @param minus
      */
-    void minusAvailableSeats(int ticketsBought, Luggage luggage);
+    void minusAvailableSeats(int ticketsBought, Luggage luggage = Luggage(0));
 
 
     //Getters
+    /**
+     *  Get Flight's num
+     * @return
+     */
     int getFLightNum() const;
+    /**
+     *  Get Flight's departure date
+     * @return
+     */
     string getDepartureDate();
+    /**
+     *  Get Flight's departure local
+     * @return
+     */
     string getDepartureLocal();
+    /**
+     *  Get Flight's arrival local
+     * @return
+     */
     string getArrivalLocal();
+    /**
+     *  Get Flight's travel duration
+     * @return
+     */
     int getFlightDuration() const;
+    /**
+     *  Get Flight's available seat (remaining seat)
+     * @return
+     */
     int getAvailableSeat() const;
+    /**
+     *  Get Flight's luggage from passengers
+     * @return
+     */
     vector<Luggage> getLuggage() const;
 
 };

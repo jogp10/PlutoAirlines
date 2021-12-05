@@ -4,7 +4,6 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include "../Airline/Airplane.h"
-#include <string>
 #include <list>
 
 using testing::Eq;
@@ -60,15 +59,16 @@ TEST(airplane_1, a_setAirplane){
 
     Service s2;
     s2.type = 0;
-    s2.date = s1.date;
+    s2.date = "2023-01-01 12:00:00";
     s2.name = s1.name;
 
     a1.addService(s2);
-    list<Service> services(a1.getPastServices());
+    list<Service> servicesDoneTest(a1.getPastServices());
+    queue<Service> servicesTest(a1.getServices());
 
-    EXPECT_EQ(services.front().type, 1);
-    EXPECT_EQ(services.back().name, "José Alberto");
-    EXPECT_EQ(services.back().type, 0);
+    EXPECT_EQ(servicesTest.front().type, 0);
+    EXPECT_EQ(servicesDoneTest.front().name, "José Alberto");
+    EXPECT_EQ(servicesDoneTest.front().type, 1);
 
 
 

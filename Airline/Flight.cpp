@@ -62,9 +62,9 @@ int Flight::getAvailableSeat() const {
     return availableSeat;
 }
 
-void Flight::minusAvailableSeats(int ticketsBought, Luggage luggage) {
+void Flight::minusAvailableSeats(int ticketsBought, Luggage luggagE) {
     this->availableSeat -= ticketsBought;
-    this->luggage.push_back(luggage);
+    this->luggage.push_back(luggagE);
 }
 
 vector<Luggage> Flight::getLuggage() const {
