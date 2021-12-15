@@ -39,20 +39,17 @@ TEST(airplane_1, a_setAirplane){
     a1.setFlights(flights);
     list<Flight> flightsTest = a1.getFlights();
 
+    EXPECT_EQ(flightsTest.size(), 2);
     auto itr = flightsTest.begin();
     EXPECT_EQ(00365, itr->getFLightNum());
     itr++;
     EXPECT_EQ("2022-12-03 14:50:00", itr->getDepartureDate());
-    itr++;
-    EXPECT_EQ("2021-12-07 16:30:00", itr->getDepartureDate());
-    EXPECT_EQ("Lisbon", itr->getArrivalLocal());
-    EXPECT_EQ(1280, itr->getFlightDuration());
 
-    EXPECT_EQ(295, itr->getAvailableSeat());
+    EXPECT_EQ(295, flightsTest.front().getAvailableSeat());
 
     Service s1;
     s1.type = 1;
-    s1.date = "2022-01-01 12:00:00";
+    s1.date = "2021-01-01 12:00:00";
     s1.name = "José Alberto";
 
     a1.addService(s1);
@@ -69,7 +66,5 @@ TEST(airplane_1, a_setAirplane){
     EXPECT_EQ(servicesTest.front().type, 0);
     EXPECT_EQ(servicesDoneTest.front().name, "José Alberto");
     EXPECT_EQ(servicesDoneTest.front().type, 1);
-
-
 
 }
