@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ticket_35',['Ticket',['../classTicket.html',1,'Ticket'],['../classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1',1,'Ticket::Ticket()']]]
+  ['minusavailableseats_49',['minusAvailableSeats',['../classFlight.html#a7cab06d7036ca974eccda23f63f57f77',1,'Flight']]]
 ];

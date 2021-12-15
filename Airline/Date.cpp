@@ -25,6 +25,19 @@ Hour::Hour(int minutes) {
     minute = minutes%60;
 }
 
+void Hour::setHourMin(string houR) {
+    string hours, minutes;
+    for(int i=0; i<houR.size(); i++){
+        if(i<2){
+            hours+=houR[i];
+        }
+        else if(i>2){
+            minutes+=houR[i];
+        }
+    }
+    hour=stoi(hours); minute=stoi(minutes);
+}
+
 void Hour::setHour(const string& houR) {
     string hours;
     for(auto i:houR) hours+=i;
@@ -48,8 +61,19 @@ Hour Hour::operator+(const Hour& a){
     return *this;
 }
 
+bool Hour::operator<(const Hour &a) const {
+    if(this->hour==a.hour){
+        return minute<a.minute;
+    }
+    return hour<a.hour;
+}
 
-Date::Date(const string& date){
+bool Hour::operator==(const Hour &a) const {
+    return(hour==a.hour && minute==a.minute);
+}
+
+
+Date::Date(const string& date) : Hour(){
     convert(date);
 }
 
@@ -70,17 +94,16 @@ string Date::convert(const string& date){
                 minutes += date[i];
             }
         }
+        year = stoi(years); month = stoi(months); day = stoi(days); hour = stoi(hours); minute = (stoi(minutes));
     }else {
-        Hour h1(date);
-        hour=h1;
+        this->setHourMin(date);
     }
-    year = stoi(years); month = stoi(months); day = stoi(days); hour.setHour(stoi(hours)); hour.setMinute(stoi(minutes));
     return date;
 }
 
 string Date::getDate() {
     return to_string(year) + "-" + to_string(month) + "-" + to_string(day)
-           + " " + to_string(hour.getHour()) + ":" + to_string(hour.getMinute());
+           + " " + to_string(hour) + ":" + to_string(minute);
 }
 
 string Date::getNow() {
@@ -103,8 +126,8 @@ string Date::getNow() {
 
 bool Date::operator==(const Date &a) const{
     if(this->year==a.year && this->month==a.month &&
-       this->day==a.day && this->hour.getHour()==a.hour.getHour()
-       && this->hour.getMinute()==a.hour.getMinute()) return true;
+       this->day==a.day && this->hour==a.hour
+       && this->minute==a.minute) return true;
     return false;
 }
 
@@ -112,10 +135,10 @@ bool Date::operator<(const Date &a) const {
     if(this->year==a.year){
         if(this->month==a.month){
             if(this->day==a.day){
-                if(this->hour.getHour()==a.hour.getHour()){
-                    return this->hour.getMinute()<a.hour.getMinute();
+                if(this->hour==a.hour){
+                    return this->minute<a.minute;
                 }
-                return this->hour.getHour()<a.hour.getHour();
+                return this->hour<a.hour;
             }
             return this->day<a.day;
         }
@@ -125,9 +148,9 @@ bool Date::operator<(const Date &a) const {
 }
 
 Date Date::operator+(const Date &a) {
-    int befHour = hour.getHour();
+    int befHour = hour;
     this->hour= hour + a.hour;
-    if(hour.getHour() < befHour) ++day;
+    if(hour < befHour) ++day;
 
     this->day+=a.day;
     if(this->day>30){
@@ -146,6 +169,13 @@ Date Date::operator+(const Date &a) {
 }
 
 Date Date::operator+(const Hour &a) {
-    this->hour= hour + a;
+    this->minute+=a.getMinute();
+    if(minute>59){
+        minute-=59;
+        ++hour;
+    }
+    this->hour+=a.getHour();
+    if(hour>23) hour-=23;
+    this->day++;
     return *this;
 }

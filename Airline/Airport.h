@@ -11,8 +11,8 @@ enum TransType {TRAIN, SUBWAY, BUS};
 
 struct LandTransport{
     TransType transType;
-    int distance = 0;
-    vector<Date> schedule = vector<Date>();
+    double distance = 0;
+    vector<Hour> schedule = vector<Hour>();
 
     /**
      * Check LandTransport this < LandTransport a
@@ -39,14 +39,17 @@ struct LandTransport{
      * Get next passage of transport
      * @return Date
      */
-    Date next(){
-        Date now(Date::getNow());
-        Date min(*schedule.end());
+    Hour next(){
+        Date nowd(Date::getNow());
+        Hour now{};
+        now.setHour(nowd.getHour()); now.setMinute(nowd.getMinute());
+        Hour min("23:59");
         for(auto i:schedule){
             if(now<i && i<min){
                 min = i;
             }
         }
+        if(min.getHour()==23 && min.getMinute()==59) return Hour{};
         return min;
     }
 
@@ -56,13 +59,13 @@ struct LandTransport{
      * @param start_hour
      * @param end_hour
      */
-    void setSchedule(int frequency, Date start_hour, Date end_hour){
+    void setSchedule(Hour frequency, Hour start_hour, Hour end_hour){
         schedule.clear();
-        Date a = start_hour;
+        Hour a = start_hour;
         while(a<end_hour){
             schedule.insert(schedule.end(), a);
             //Date freq(frequency);
-            a = (a);
+            a = a+frequency;
         }
     }
 };
@@ -126,8 +129,7 @@ public:
      * Insert new Transport
      * @param landTransport
      */
-    void insert(LandTransport landTransport);
-
+    void insert(const LandTransport& landTransport);
 };
 
 

@@ -1,4 +1,31 @@
 var searchData=
 [
-  ['luggage_20',['Luggage',['../classLuggage.html',1,'Luggage'],['../classLuggage.html#a1635d12a770246bc545708a883f71e86',1,'Luggage::Luggage()']]]
+  ['getairplanes_15',['getAirplanes',['../classAirline.html#ab6d34940629c22da9f31d8bde20ccf48',1,'Airline']]],
+  ['getarrivallocal_16',['getArrivalLocal',['../classFlight.html#a5952846e07ec6331e2e2e456103a86bf',1,'Flight']]],
+  ['getavailableseat_17',['getAvailableSeat',['../classFlight.html#a077e763e07bbf2e9810aa04b1c875ed0',1,'Flight']]],
+  ['getbus_18',['getBus',['../classAirport.html#a8dce24059df742f8820736444add9f79',1,'Airport']]],
+  ['getbydistance_19',['getByDistance',['../classAirport.html#a9b467f963bfb806a40a031ba78840750',1,'Airport']]],
+  ['getcapacity_20',['getCapacity',['../classAirplane.html#a1c099b7dec0bfa86d5c0ff785ded0025',1,'Airplane']]],
+  ['getdate_21',['getDate',['../classDate.html#a600038992d5846240bc7ffa087f4bd00',1,'Date']]],
+  ['getday_22',['getDay',['../classDate.html#a0f253815240e70f4c39cb93cc68bd3f4',1,'Date']]],
+  ['getdeparturedate_23',['getDepartureDate',['../classFlight.html#a602c61f5b92ef438ee641dd00e3d136e',1,'Flight']]],
+  ['getdeparturelocal_24',['getDepartureLocal',['../classFlight.html#af2a354f321a41ffc8799a3985902551e',1,'Flight']]],
+  ['getflightduration_25',['getFlightDuration',['../classFlight.html#af50aa7964f902e5aafee0f1319ec6c12',1,'Flight']]],
+  ['getflightnum_26',['getFLightNum',['../classFlight.html#a02d3e18e8c437d29fccdd616ddd410d1',1,'Flight']]],
+  ['getflights_27',['getFlights',['../classAirplane.html#ab484bfc1b3591dc600dde460099b04ea',1,'Airplane']]],
+  ['gethour_28',['getHour',['../classHour.html#a44859e9acda4578bc3cfcad5d2f25585',1,'Hour::getHour()'],['../classDate.html#a7188665f3fc3ed656fb36078f0f8e1ca',1,'Date::getHour()']]],
+  ['getluggage_29',['getLuggage',['../classFlight.html#a4e9dd06e3abfcd00f0e0e34380fe88a9',1,'Flight']]],
+  ['getmaxdistance_30',['getMaxDistance',['../classAirport.html#a66159c13ecfcaf4d0d42616721689ff9',1,'Airport']]],
+  ['getmindistance_31',['getMinDistance',['../classAirport.html#ae8d370bdd8ed3972c9c98761723acbb4',1,'Airport']]],
+  ['getminute_32',['getMinute',['../classHour.html#a999278972c30bb258e0824ff3e45d65f',1,'Hour::getMinute()'],['../classDate.html#ae829bb9deb2ccc50858d7c464a348511',1,'Date::getMinute()']]],
+  ['getmonth_33',['getMonth',['../classDate.html#a332f6e3a2f6a40d73742b6dab7be0f64',1,'Date']]],
+  ['getnext_34',['getNext',['../classAirport.html#aeb45f23948ba85581afedf2c959db957',1,'Airport']]],
+  ['getnow_35',['getNow',['../classDate.html#a07566cfeb373a2dcba284ec63b1a7af4',1,'Date']]],
+  ['getpastservices_36',['getPastServices',['../classAirplane.html#aa4189a6de6cb006943665c9d742d07e3',1,'Airplane']]],
+  ['getplate_37',['getPlate',['../classAirplane.html#a9f845809ffdb1c779c8dcceadc756f1f',1,'Airplane']]],
+  ['getservices_38',['getServices',['../classAirplane.html#ac1ad0f09f5243cfb862a8caa6f5e7050',1,'Airplane']]],
+  ['getsubway_39',['getSubway',['../classAirport.html#a679b54ba55b857bedd881da832748b8c',1,'Airport']]],
+  ['gettrain_40',['getTrain',['../classAirport.html#a6fc1f4384f0f391dcd0ebd8541f3fd34',1,'Airport']]],
+  ['gettype_41',['getType',['../classAirplane.html#a66d7b9fd98dd7ca7239f202bc69d7549',1,'Airplane']]],
+  ['getyear_42',['getYear',['../classDate.html#a8b0869f34c2b38d108ab83ee2e770e5d',1,'Date']]]
 ];

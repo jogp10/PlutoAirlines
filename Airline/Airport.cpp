@@ -56,7 +56,7 @@ vector<LandTransport> Airport::getByDistance() {
     return bydistance;
 }
 
-void Airport::insert(LandTransport landTransport) {
+void Airport::insert(const LandTransport& landTransport) {
     bst.insert(landTransport);
 }
 

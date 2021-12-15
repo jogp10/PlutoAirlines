@@ -17,6 +17,8 @@ public:
     explicit Hour(string date);
     explicit Hour(int minutes);
 
+    void setHourMin(string houR);
+
     void setHour(int houR) { this->hour = houR;};
     void setHour(const string& hour);
 
@@ -36,7 +38,6 @@ public:
     int getMinute() const {return minute;};
 
 
-
     /**
      * Add two hours
      * @param a
@@ -44,15 +45,27 @@ public:
      */
     Hour operator+(const Hour& a);
 
+    /**
+     * Check if < than another Hour object
+     * @param a
+     * @return
+     */
+    bool operator<(const Hour &a) const;
+
+    /**
+     * Check if this equals another Hour object
+     * @param Comparable Hour
+     * @return true if equal
+     */
+    bool operator==(const Hour &a) const;
 
 };
 
 
 
-class Date{
+class Date: Hour{
 private:
     int year{}, month{}, day{};
-    Hour hour{};
 
     /**
      * Convert from string to fullfill all parameters of date
@@ -98,13 +111,13 @@ public:
      * Get hour of date
      * @return
      */
-    int getHour() {return hour.getHour();};
+    int getHour() {return hour;};
 
     /**
      * Get minute of date
      * @return
      */
-    int getMinute() {return hour.getMinute();};
+    int getMinute() {return minute;};
 
     /**
      * Check if this equals another Date object

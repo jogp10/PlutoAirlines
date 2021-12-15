@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['minusavailableseats_63',['minusAvailableSeats',['../classFlight.html#a7cab06d7036ca974eccda23f63f57f77',1,'Flight']]]
+  ['luggage_124',['Luggage',['../classLuggage.html#a1635d12a770246bc545708a883f71e86',1,'Luggage']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['luggage_39',['Luggage',['../classLuggage.html',1,'']]]
+  ['date_80',['Date',['../classDate.html',1,'']]]
 ];
