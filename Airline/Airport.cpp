@@ -4,11 +4,6 @@
 
 #include "Airport.h"
 
-Airport::Airport(string name1, string code1) : bst(BST<LandTransport>(LandTransport{})) {
-    this->name = name1;
-    this->code = code1;
-}
-
 vector<LandTransport> Airport::getSubway() {
     BSTItrIn<LandTransport> bstItrIn(this->bst) ;
     vector<LandTransport> subway;
@@ -74,10 +69,7 @@ LandTransport Airport::getMaxDistance() {
 }
 
 LandTransport Airport::getNext() {
-    Date date(Date::getNow());
-
     BSTItrLevel<LandTransport> bstItrLevel(bst);
-
 
     LandTransport min = bstItrLevel.retrieve();
     while(!bstItrLevel.isAtEnd()){

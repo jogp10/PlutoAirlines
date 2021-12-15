@@ -8,24 +8,131 @@
 
 using namespace std;
 
+
+class Hour{
+protected:
+    int hour, minute;
+public:
+    Hour() = default;
+    explicit Hour(string date);
+    explicit Hour(int minutes);
+
+    void setHour(int houR) { this->hour = houR;};
+    void setHour(const string& hour);
+
+    void setMinute(int minutE) { this->minute = minutE;};
+    void setMinute(const string& minute);
+
+    /**
+     * Get hour of date
+     * @return hour
+     */
+    int getHour() const {return hour;};
+
+    /**
+     * Get minute of date
+     * @return
+     */
+    int getMinute() const {return minute;};
+
+
+
+    /**
+     * Add two hours
+     * @param a
+     * @return
+     */
+    Hour operator+(const Hour& a);
+
+
+};
+
+
+
 class Date{
 private:
-    int year, month, day, hour, minute;
-    string convert(string Date);
+    int year{}, month{}, day{};
+    Hour hour{};
+
+    /**
+     * Convert from string to fullfill all parameters of date
+     * @param Date
+     * @return same string as input
+     */
+    string convert(const string& Date);
 public:
     Date() = default;
-    Date(string date);
-    string getDate();
-    static string getNow();
-    int getYear() {return year;};
-    int getMonth() {return month;};
-    int getDay() {return day;};
-    int getHour() {return hour;};
-    int getMinute() {return minute;};
+    explicit Date(const string& date);
 
-    Date& operator=(const Date &a);
+    /**
+     * Get Date in string "YYYY-MM-DD HH:MM"
+     * @return date
+     */
+    string getDate();
+
+    /**
+     * Get Now Date
+     * @return now
+     */
+    static string getNow();
+
+    /**
+     * Get year of date
+     * @return year
+     */
+    int getYear() const {return year;};
+
+    /**
+     * Get month of date
+     * @return month
+     */
+    int getMonth() const {return month;};
+
+    /**
+     * Get day of date
+     * @return day
+     */
+    int getDay() const {return day;};
+
+    /**
+     * Get hour of date
+     * @return
+     */
+    int getHour() {return hour.getHour();};
+
+    /**
+     * Get minute of date
+     * @return
+     */
+    int getMinute() {return hour.getMinute();};
+
+    /**
+     * Check if this equals another Date object
+     * @param Comparable Date
+     * @return true if equal
+     */
     bool operator==(const Date &a) const;
+
+    /**
+     * Check if < than another Date object
+     * @param a
+     * @return
+     */
     bool operator<(const Date &a) const;
+
+    /**
+     * Add two dates
+     * @param a
+     * @return
+     */
+    Date operator+(const Date &a);
+
+    /**
+     * Add a date with an hour
+     * @param a
+     * @return
+     */
+    Date operator+(const Hour &a);
 };
 
 
