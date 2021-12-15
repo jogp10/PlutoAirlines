@@ -81,8 +81,8 @@ LandTransport Airport::getNext() {
 
     LandTransport min = bstItrLevel.retrieve();
     while(!bstItrLevel.isAtEnd()){
-        bstItrLevel.advance();
         LandTransport landTransport = bstItrLevel.retrieve();
+        bstItrLevel.advance();
         if(landTransport.next()<min.next()) min = landTransport;
     }
     return min;

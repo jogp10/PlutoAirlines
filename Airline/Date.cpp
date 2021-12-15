@@ -18,19 +18,21 @@ string Date::getDate() {
 }
 
 string Date::getNow() {
-    time_t now = time(0);
-    struct tm tstruct;
-    char buf[80];
-    tstruct = *localtime(&now);
+    time_t t = time(0);
+    tm* now = localtime(&t);
+    string month = to_string(now->tm_mon+1),
+            day = to_string(now->tm_mday),
+            hour = to_string(now->tm_hour),
+            minute = to_string(now->tm_min);
+    if(month.size()==1) month = '0' + month;
+    if(day.size()==1) day = '0' + day;
+    if(hour.size()==1) hour = '0' + hour;
+    if(minute.size()==1) minute = '0' + minute;
 
-    strftime(buf, sizeof(buf), "&Y-&m-%d &X", &tstruct);
+    string date = (to_string(now->tm_year+1900) + '-' + month + '-' +
+                   day + ' ' + hour + ':' + minute);
 
-    string atm = "";
-    for(int i=0; i<16; ++i){
-        atm += buf[i];
-    }
-
-    return atm;
+    return date;
 }
 
 string Date::convert(string date){
