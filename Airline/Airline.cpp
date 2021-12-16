@@ -6,10 +6,10 @@
 
 Airline::Airline() = default;
 
-void Airline::setAirplanes(vector<Airplane> Airplanes) {
-    this->airplanes = Airplanes;
+void Airline::addAirplane(const Airplane& airplane) {
+    airplanes.push_back(airplane);
 }
 
-vector<Airplane> Airline::getAirplanes() {
-    return airplanes;
+void Airline::addAirport(const Airport& airport) {
+    airports.push_back(airport);
 }
