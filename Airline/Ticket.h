@@ -24,7 +24,7 @@ public:
      * Each Ticket must be related to a Flight, whether it can take Luggage and if the Ticket belongs to a
      * Passenger that is travelling with a group or not.
      */
-    explicit Ticket(Flight flight, Luggage luggage = Luggage(0), int group = 1);
+    explicit Ticket(Flight flight, int group = 1, Luggage luggage = Luggage(0));
 
     //Setters
     void setFlight(const Flight& flight);
