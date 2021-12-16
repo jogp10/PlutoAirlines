@@ -9,14 +9,14 @@ Passenger::Passenger(Ticket ticket, int luggage, int group) {
     if(canBuyTicket(ticket)) { buyTicket(ticket); }
 }
 
-bool Passenger::canBuyTicket(Ticket ticket) {
-    if(ticket.getFlight().getAvailableSeat() >= this->group) {
+bool Passenger::canBuyTicket(const Ticket& tickeT) const {
+    if(tickeT.getFlight().getAvailableSeat() >= this->group) {
         return true;
     }
     else return false;
 }
 
-void Passenger::buyTicket(Ticket ticket) {
-    this->ticket = ticket;
+void Passenger::buyTicket(const Ticket& tickeT) {
+    this->ticket = tickeT;
     ticket.getFlight().minusAvailableSeats(group, this->ticket.getLuggage());
 }

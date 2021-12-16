@@ -20,11 +20,12 @@ class Passenger {
      * group or is travelling alone;
      * If he is travelling alone, the value of group should be zero, otherwise it must be group number
      */
-    Passenger(Ticket ticket, int luggage = 0, int group = 1);
+public:
+    explicit Passenger(Ticket ticket, int luggage = 0, int group = 1);
+private:
+    bool canBuyTicket(const Ticket& ticket) const;
 
-    bool canBuyTicket(Ticket ticket);
-
-    void buyTicket(Ticket ticket);
+    void buyTicket(const Ticket& ticket);
 };
 
 

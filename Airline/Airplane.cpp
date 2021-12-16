@@ -54,8 +54,8 @@ queue<Flight> Airplane::getLastFlights(){
 Flight Airplane::getNextFlight() {
     updateFlights();
     Flight min = *flights.begin();
-    for(auto itr=flights.begin(); itr!=flights.end(); itr++){
-        if(itr->getDepartureDate()<min.getDepartureDate()) min = *itr;
+    for(auto & flight : flights){
+        if(flight.getDepartureDate()<min.getDepartureDate()) min = flight;
     }
     return min;
 }
