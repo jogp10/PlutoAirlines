@@ -25,25 +25,41 @@ void Airplane::setCapacity(const int &capacitY) {
     this->capacity = capacitY;
 }
 
-void Airplane::setFlights(const list<Flight>& flightS) {
-    for(const auto& flight: flightS)
+void Airplane::setFlights(list<Flight>& flightS) {
+    for(auto& flight: flightS)
     {
+        flight.setAvailableSeats(capacity);
         this->flights.insert(flights.end(), 1, flight);
     }
 }
 
-void Airplane::addFlight(const Flight &flight)
-{
-    flights.push_back(flight);
+void Airplane::addFlight(const Flight &flight) {
+    flights.insert(flights.end(), 1, flight);
 }
 
 void Airplane::addService(const Service& service) {
     services.push(service);
 }
 
-list<Flight> Airplane::getFlights() {
+list<Flight> Airplane::getFlights(){
+    updateFlights();
     return flights;
 }
+
+queue<Flight> Airplane::getLastFlights(){
+    updateFlights();
+    return last20flights;
+}
+
+Flight Airplane::getNextFlight() {
+    updateFlights();
+    Flight min = *flights.begin();
+    for(auto itr=flights.begin(); itr!=flights.end(); itr++){
+        if(itr->getDepartureDate()<min.getDepartureDate()) min = *itr;
+    }
+    return min;
+}
+
 
 string Airplane::getPlate() {
     return plate;
@@ -59,14 +75,30 @@ int Airplane::getCapacity() const {
 }
 
 queue<Service> Airplane::getServices() {
-    while(services.front().date < flights.front().getDepartureDate())
-    {
-        servicesDone.push_back(servicesDone.front());
-        services.pop();
-    }
+    updateServices();
     return services;
 }
 
 list<Service> Airplane::getPastServices() {
+    updateServices();
     return servicesDone;
+}
+
+void Airplane::updateServices() {
+    while(services.front().date < this->getNextFlight().getDepartureDate() && !(services.empty()))
+    {
+        servicesDone.push_back(services.front());
+        services.pop();
+    }
+}
+
+void Airplane::updateFlights() {
+    for(auto itr = flights.begin(); itr != flights.end(); ++itr){
+        string d1 = itr->getDepartureDate().getDate();
+        string d2 = Date::getNow();
+        if(!(itr->getDepartureDate().getDate()<Date::getNow())) continue;
+        last20flights.push(flights.front());
+        if(last20flights.size()>20)last20flights.pop();
+        flights.erase(itr--);
+    }
 }

@@ -1,0 +1,169 @@
+\hypertarget{classDate}{}\doxysection{Date Class Reference}
+\label{classDate}\index{Date@{Date}}
+
+
+Inheritance diagram for Date\+:
+% FIG 0
+
+
+Collaboration diagram for Date\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDate_a2cfff484dc003e37d24c8aa45019eabc}\label{classDate_a2cfff484dc003e37d24c8aa45019eabc}} 
+{\bfseries Date} (const string \&date)
+\item 
+string \mbox{\hyperlink{classDate_a600038992d5846240bc7ffa087f4bd00}{get\+Date}} ()
+\item 
+int \mbox{\hyperlink{classDate_a8b0869f34c2b38d108ab83ee2e770e5d}{get\+Year}} () const
+\item 
+int \mbox{\hyperlink{classDate_a332f6e3a2f6a40d73742b6dab7be0f64}{get\+Month}} () const
+\item 
+int \mbox{\hyperlink{classDate_a0f253815240e70f4c39cb93cc68bd3f4}{get\+Day}} () const
+\item 
+int \mbox{\hyperlink{classDate_a7188665f3fc3ed656fb36078f0f8e1ca}{get\+Hour}} ()
+\item 
+int \mbox{\hyperlink{classDate_ae829bb9deb2ccc50858d7c464a348511}{get\+Minute}} ()
+\item 
+bool \mbox{\hyperlink{classDate_a19346bf62edaa98948b98dadfcbbe8fa}{operator==}} (const \mbox{\hyperlink{classDate}{Date}} \&a) const
+\item 
+bool \mbox{\hyperlink{classDate_af468d767650dd04f9d5fed6fc98411a1}{operator$<$}} (const \mbox{\hyperlink{classDate}{Date}} \&a) const
+\item 
+\mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classDate_abba9a38458c6549fb2f01a64f9821b19}{operator+}} (const \mbox{\hyperlink{classDate}{Date}} \&a)
+\item 
+\mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classDate_a9146681767785bfc4cae871f2e3c675b}{operator+}} (const \mbox{\hyperlink{classHour}{Hour}} \&a)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classDate_a07566cfeb373a2dcba284ec63b1a7af4}{get\+Now}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDate_a600038992d5846240bc7ffa087f4bd00}\label{classDate_a600038992d5846240bc7ffa087f4bd00}} 
+\index{Date@{Date}!getDate@{getDate}}
+\index{getDate@{getDate}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getDate()}{getDate()}}
+{\footnotesize\ttfamily string Date\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get \mbox{\hyperlink{classDate}{Date}} in string \char`\"{}\+Y\+Y\+Y\+Y-\/\+M\+M-\/\+D\+D H\+H\+:\+M\+M\char`\"{} \begin{DoxyReturn}{Returns}
+date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a0f253815240e70f4c39cb93cc68bd3f4}\label{classDate_a0f253815240e70f4c39cb93cc68bd3f4}} 
+\index{Date@{Date}!getDay@{getDay}}
+\index{getDay@{getDay}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getDay()}{getDay()}}
+{\footnotesize\ttfamily int Date\+::get\+Day (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get day of date \begin{DoxyReturn}{Returns}
+day 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a7188665f3fc3ed656fb36078f0f8e1ca}\label{classDate_a7188665f3fc3ed656fb36078f0f8e1ca}} 
+\index{Date@{Date}!getHour@{getHour}}
+\index{getHour@{getHour}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getHour()}{getHour()}}
+{\footnotesize\ttfamily int Date\+::get\+Hour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get hour of date \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_ae829bb9deb2ccc50858d7c464a348511}\label{classDate_ae829bb9deb2ccc50858d7c464a348511}} 
+\index{Date@{Date}!getMinute@{getMinute}}
+\index{getMinute@{getMinute}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getMinute()}{getMinute()}}
+{\footnotesize\ttfamily int Date\+::get\+Minute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get minute of date \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a332f6e3a2f6a40d73742b6dab7be0f64}\label{classDate_a332f6e3a2f6a40d73742b6dab7be0f64}} 
+\index{Date@{Date}!getMonth@{getMonth}}
+\index{getMonth@{getMonth}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getMonth()}{getMonth()}}
+{\footnotesize\ttfamily int Date\+::get\+Month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get month of date \begin{DoxyReturn}{Returns}
+month 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a07566cfeb373a2dcba284ec63b1a7af4}\label{classDate_a07566cfeb373a2dcba284ec63b1a7af4}} 
+\index{Date@{Date}!getNow@{getNow}}
+\index{getNow@{getNow}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getNow()}{getNow()}}
+{\footnotesize\ttfamily string Date\+::get\+Now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get Now \mbox{\hyperlink{classDate}{Date}} \begin{DoxyReturn}{Returns}
+now 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a8b0869f34c2b38d108ab83ee2e770e5d}\label{classDate_a8b0869f34c2b38d108ab83ee2e770e5d}} 
+\index{Date@{Date}!getYear@{getYear}}
+\index{getYear@{getYear}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{getYear()}{getYear()}}
+{\footnotesize\ttfamily int Date\+::get\+Year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get year of date \begin{DoxyReturn}{Returns}
+year 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_abba9a38458c6549fb2f01a64f9821b19}\label{classDate_abba9a38458c6549fb2f01a64f9821b19}} 
+\index{Date@{Date}!operator+@{operator+}}
+\index{operator+@{operator+}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Date\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{a }\end{DoxyParamCaption})}
+
+Add two dates 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a9146681767785bfc4cae871f2e3c675b}\label{classDate_a9146681767785bfc4cae871f2e3c675b}} 
+\index{Date@{Date}!operator+@{operator+}}
+\index{operator+@{operator+}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Date\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHour}{Hour}} \&}]{a }\end{DoxyParamCaption})}
+
+Add a date with an hour 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_af468d767650dd04f9d5fed6fc98411a1}\label{classDate_af468d767650dd04f9d5fed6fc98411a1}} 
+\index{Date@{Date}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Date\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{a }\end{DoxyParamCaption}) const}
+
+Check if $<$ than another \mbox{\hyperlink{classDate}{Date}} object 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a19346bf62edaa98948b98dadfcbbe8fa}\label{classDate_a19346bf62edaa98948b98dadfcbbe8fa}} 
+\index{Date@{Date}!operator==@{operator==}}
+\index{operator==@{operator==}!Date@{Date}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Date\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDate}{Date}} \&}]{a }\end{DoxyParamCaption}) const}
+
+Check if this equals another \mbox{\hyperlink{classDate}{Date}} object 
+\begin{DoxyParams}{Parameters}
+{\em Comparable} & \mbox{\hyperlink{classDate}{Date}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Airline/Date.\+h\item 
+Airline/Date.\+cpp\end{DoxyCompactItemize}

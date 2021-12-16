@@ -71,9 +71,11 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1e6b1832189af0be16dabafc086614da"><td class="memItemLeft" align="right" valign="top"><a id="a1e6b1832189af0be16dabafc086614da"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>canBuyTicket</b> ()</td></tr>
-<tr class="separator:a1e6b1832189af0be16dabafc086614da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f0cb5428808b9023bb718a8f2ee5f1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1">Ticket</a> ()=default</td></tr>
+<tr class="separator:a24f0cb5428808b9023bb718a8f2ee5f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af174b493ead39429524aa4e9ee8066b7"><td class="memItemLeft" align="right" valign="top"><a id="af174b493ead39429524aa4e9ee8066b7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Ticket</b> (<a class="el" href="classFlight.html">Flight</a> flight, <a class="el" href="classLuggage.html">Luggage</a> luggage=<a class="el" href="classLuggage.html">Luggage</a>(0), int group=1)</td></tr>
+<tr class="separator:af174b493ead39429524aa4e9ee8066b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53fc01ec56b545648efbc943eb1e56bf"><td class="memItemLeft" align="right" valign="top"><a id="a53fc01ec56b545648efbc943eb1e56bf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setFlight</b> (<a class="el" href="classFlight.html">Flight</a> flight)</td></tr>
 <tr class="separator:a53fc01ec56b545648efbc943eb1e56bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -86,13 +88,47 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setGroup</b> (int gro
 <tr class="memitem:ac9eaf0ce476c3c3aaa4bf82cdfafa5c4"><td class="memItemLeft" align="right" valign="top"><a id="ac9eaf0ce476c3c3aaa4bf82cdfafa5c4"></a>
 <a class="el" href="classFlight.html">Flight</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getFlight</b> ()</td></tr>
 <tr class="separator:ac9eaf0ce476c3c3aaa4bf82cdfafa5c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf3ad057c8899a11ed92702b486bdd6a"><td class="memItemLeft" align="right" valign="top"><a id="adf3ad057c8899a11ed92702b486bdd6a"></a>
-<a class="el" href="classLuggage.html">Luggage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getLuggage</b> ()</td></tr>
-<tr class="separator:adf3ad057c8899a11ed92702b486bdd6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ed194d2f0449a2ef61e33b33f765354"><td class="memItemLeft" align="right" valign="top"><a id="a5ed194d2f0449a2ef61e33b33f765354"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getGroup</b> ()</td></tr>
-<tr class="separator:a5ed194d2f0449a2ef61e33b33f765354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9092c44cf7dd087e30e604dbcad7ec0"><td class="memItemLeft" align="right" valign="top"><a id="ac9092c44cf7dd087e30e604dbcad7ec0"></a>
+const <a class="el" href="classLuggage.html">Luggage</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getLuggage</b> ()</td></tr>
+<tr class="separator:ac9092c44cf7dd087e30e604dbcad7ec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df7c7e406dfc06d5d6f9cb70b2ee69c"><td class="memItemLeft" align="right" valign="top"><a id="a2df7c7e406dfc06d5d6f9cb70b2ee69c"></a>
+const int&#160;</td><td class="memItemRight" valign="bottom"><b>getGroup</b> ()</td></tr>
+<tr class="separator:a2df7c7e406dfc06d5d6f9cb70b2ee69c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a24f0cb5428808b9023bb718a8f2ee5f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f0cb5428808b9023bb718a8f2ee5f1">&#9670;&nbsp;</a></span>Ticket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ticket::Ticket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tickets </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flight</td><td></td></tr>
+    <tr><td class="paramname">luggage</td><td></td></tr>
+    <tr><td class="paramname">group</td><td>Each <a class="el" href="classTicket.html">Ticket</a> must be related to a <a class="el" href="classFlight.html">Flight</a>, whether it can take <a class="el" href="classLuggage.html">Luggage</a> and if the <a class="el" href="classTicket.html">Ticket</a> belongs to a <a class="el" href="classPassenger.html">Passenger</a> that is travelling with a group or not. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Airline/<a class="el" href="Ticket_8h_source.html">Ticket.h</a></li>
 <li>Airline/Ticket.cpp</li>

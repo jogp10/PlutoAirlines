@@ -6,17 +6,20 @@
 
 Flight::Flight(int flightNum, string departureDate, string departureLocal, string arrivalLocal, int flightDuration) {
     this->flightNum = flightNum;
-    this->departureDate = departureDate;
+    Date departuredate(departureDate);
+    this->departureDate = departuredate;
     this->departureLocal = departureLocal;
     this->arrivalLocal = arrivalLocal;
-    this->flightDuration = flightDuration;
+    Hour flightduration(flightDuration);
+    this->flightDuration = flightduration;
 }
 
 void Flight::setFLightNum(int flightnum) {
     this->flightNum = flightnum;
 }
 
-void Flight::setDepartureDate(string departuredate) {
+void Flight::setDepartureDate(const string& departuredatE) {
+    Date departuredate(departuredatE);
     this->departureDate = departuredate;
 }
 
@@ -28,9 +31,13 @@ void Flight::setArrivalLocal(string arrivallocal) {
     this->arrivalLocal = arrivallocal;
 }
 
-void Flight::setFlightDuration(int flightduration) {
+void Flight::setFlightDuration(int flightduratioN) {
+    Hour flightduration(flightduratioN);
     this->flightDuration = flightduration;
+}
 
+void Flight::setAvailableSeats(int capacity) {
+    availableSeat = capacity;
 }
 
 
@@ -38,7 +45,7 @@ int Flight::getFLightNum() const {
     return flightNum;
 }
 
-string Flight::getDepartureDate() {
+Date Flight::getDepartureDate() {
     return departureDate;
 }
 
@@ -50,7 +57,7 @@ string Flight::getArrivalLocal() {
     return arrivalLocal;
 }
 
-int Flight::getFlightDuration() const {
+Hour Flight::getFlightDuration() const {
     return flightDuration;
 }
 
@@ -58,13 +65,18 @@ int Flight::getAvailableSeat() const {
     return availableSeat;
 }
 
-void Flight::minusAvailableSeats(int ticketsBought, Luggage luggage) {
+void Flight::minusAvailableSeats(int ticketsBought, Luggage luggagE) {
     this->availableSeat -= ticketsBought;
-    this->luggage.push_back(luggage);
+    this->luggage.push_back(luggagE);
+    numTotalBags += luggagE.getnumBags();
 }
 
 vector<Luggage> Flight::getLuggage() const {
     return luggage;
+}
+
+int Flight::getnumTotalBags() const{
+    return numTotalBags;
 }
 
 

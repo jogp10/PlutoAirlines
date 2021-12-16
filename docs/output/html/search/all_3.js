@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['haveluggage_10',['haveLuggage',['../classLuggage.html#aabb4221ac01f71b5cf4106a7fbfc695f',1,'Luggage']]]
+  ['flight_14',['Flight',['../classFlight.html',1,'Flight'],['../classFlight.html#a724086e6ac319bfa680167a23ebdef6a',1,'Flight::Flight()']]]
 ];

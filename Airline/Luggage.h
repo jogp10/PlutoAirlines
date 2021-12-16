@@ -7,7 +7,7 @@
 
 
 class Luggage {
-    int numBags;
+    int numBags{};
 public:
 
     Luggage() = default;
@@ -23,7 +23,7 @@ public:
      * @param luggage
      * @return
      */
-    bool haveLuggage(Luggage luggage);
+    bool haveLuggage();
 
     void setnumBags(int numBags);
     int getnumBags();

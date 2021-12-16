@@ -7,6 +7,7 @@
 
 #include "Flight.h"
 #include "Service.h"
+#include "Date.h"
 #include <iostream>
 #include <list>
 #include <queue>
@@ -16,10 +17,15 @@ using namespace std;
 
 class Airplane {
     string plate, type;
-    int capacity;
+    int capacity{};
+    queue<Flight> last20flights;
     list<Flight> flights;
     list<Service> servicesDone;
     queue<Service> services;
+
+private:
+    void updateServices();
+    void updateFlights();
 
 public:
     /**
@@ -60,7 +66,7 @@ public:
      * Set Airplane's Travel plan
      * @param flights
      */
-    void setFlights(const list<Flight>& flightS);
+    void setFlights(list<Flight>& flightS);
 
 
     /**
@@ -103,6 +109,18 @@ public:
      * @return list of flights
      */
     list<Flight> getFlights();
+
+    /**
+     * Get Airplane's Last Flights
+     * @return
+     */
+    queue<Flight> getLastFlights();
+
+    /**
+     *
+     * @return
+     */
+    Flight getNextFlight();
 
 
     /**

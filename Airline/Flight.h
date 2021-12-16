@@ -6,6 +6,7 @@
 #define PLUTOAIRLINES_FLIGHT_H
 
 #include "Luggage.h"
+#include "Date.h"
 
 #include <iostream>
 #include <vector>
@@ -14,10 +15,13 @@ using namespace std;
 
 
 class Flight {
-    int flightNum, flightDuration;
-    string departureDate, departureLocal, arrivalLocal;
+    int flightNum;
+    Hour flightDuration;
+    Date departureDate;
+    string departureLocal, arrivalLocal;
     int availableSeat;
     vector<Luggage> luggage;
+    int numTotalBags=0;
 
 public:
 
@@ -42,7 +46,7 @@ public:
      * Set Flight's Departure Date
      * @param departureDate
      */
-    void setDepartureDate(string departureDate);
+    void setDepartureDate(const string& departureDate);
     /**
      * Set Flight's Departure Local
      * @param departureLocal
@@ -59,20 +63,58 @@ public:
      */
     void setFlightDuration(int flightDuration);
     /**
+     * Set flight's max capacity
+     * @param capacity
+     */
+    void setAvailableSeats(int capacity);
+    /**
      * After the buy of x tickets, will be (AvailableSeats - x) Seats Available
      * @param minus
      */
-    void minusAvailableSeats(int ticketsBought, Luggage luggage);
+    void minusAvailableSeats(int ticketsBought, Luggage luggage = Luggage(0));
 
 
     //Getters
+    /**
+     *  Get Flight's num
+     * @return
+     */
     int getFLightNum() const;
-    string getDepartureDate();
+    /**
+     *  Get Flight's departure date
+     * @return
+     */
+    Date getDepartureDate();
+    /**
+     *  Get Flight's departure local
+     * @return
+     */
     string getDepartureLocal();
+    /**
+     *  Get Flight's arrival local
+     * @return
+     */
     string getArrivalLocal();
-    int getFlightDuration() const;
+    /**
+     *  Get Flight's travel duration
+     * @return
+     */
+    Hour getFlightDuration() const;
+    /**
+     *  Get Flight's available seat (remaining seat)
+     * @return
+     */
     int getAvailableSeat() const;
+    /**
+     *  Get Flight's luggage from passengers
+     * @return
+     */
     vector<Luggage> getLuggage() const;
+    /**
+     * Get Flight's total number of bags;
+     * @return
+     */
+    int getnumTotalBags() const;
 
 };
 

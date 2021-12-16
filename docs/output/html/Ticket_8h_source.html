@@ -85,26 +85,29 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classFlight.html">Flight</a> flight;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classLuggage.html">Luggage</a> luggage;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classTicket.html">Ticket</a>(<a class="code" href="classFlight.html">Flight</a> flight, <a class="code" href="classLuggage.html">Luggage</a> luggage = <a class="code" href="classLuggage.html">Luggage</a>(0), <span class="keywordtype">int</span> group = 0);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> canBuyTicket();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">void</span> setFlight(<a class="code" href="classFlight.html">Flight</a> flight);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> setLuggage(<a class="code" href="classLuggage.html">Luggage</a> luggage);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> setGroup(<span class="keywordtype">int</span> group);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classFlight.html">Flight</a> getFlight();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classLuggage.html">Luggage</a> getLuggage();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> getGroup();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1">Ticket</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1">Ticket</a>(<a class="code" href="classFlight.html">Flight</a> flight, <a class="code" href="classLuggage.html">Luggage</a> luggage = <a class="code" href="classLuggage.html">Luggage</a>(0), <span class="keywordtype">int</span> group = 1);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//Setters</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> setFlight(<a class="code" href="classFlight.html">Flight</a> flight);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> setLuggage(<a class="code" href="classLuggage.html">Luggage</a> luggage);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> setGroup(<span class="keywordtype">int</span> group);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//Getters</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classFlight.html">Flight</a> getFlight();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classLuggage.html">Luggage</a> <span class="keyword">const</span> getLuggage();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> <span class="keyword">const</span> getGroup();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_TICKET_H</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_TICKET_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassTicket_html"><div class="ttname"><a href="classTicket.html">Ticket</a></div><div class="ttdef"><b>Definition:</b> Ticket.h:12</div></div>
 <div class="ttc" id="aclassLuggage_html"><div class="ttname"><a href="classLuggage.html">Luggage</a></div><div class="ttdef"><b>Definition:</b> Luggage.h:9</div></div>
-<div class="ttc" id="aclassFlight_html"><div class="ttname"><a href="classFlight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.h:12</div></div>
+<div class="ttc" id="aclassFlight_html"><div class="ttname"><a href="classFlight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.h:17</div></div>
+<div class="ttc" id="aclassTicket_html_a24f0cb5428808b9023bb718a8f2ee5f1"><div class="ttname"><a href="classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1">Ticket::Ticket</a></div><div class="ttdeci">Ticket()=default</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

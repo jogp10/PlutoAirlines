@@ -13,7 +13,7 @@ void Luggage::setnumBags(int numBags) {
 int Luggage::getnumBags() {
     return this->numBags;
 }
-bool Luggage::haveLuggage(Luggage luggage) {
-    if (luggage.numBags == 0) return false;
+bool Luggage::haveLuggage() {
+    if (numBags == 0) return false;
     return true;
 }
