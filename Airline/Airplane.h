@@ -73,7 +73,7 @@ public:
      * Add new Flight to Travel plan
      * @param flight
      */
-    void addFlight(const Flight &flight);
+    void addFlight(Flight &flight);
 
 
     /**

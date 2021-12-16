@@ -4,19 +4,20 @@
 
 #include "Passenger.h"
 
-Passenger::Passenger(Ticket ticket, int luggage, int group) {
-    this->group = group;
-    if(canBuyTicket(ticket)) { buyTicket(ticket); }
+Passenger::Passenger(Ticket ticket) {
+    buyTicket(ticket);
 }
 
-bool Passenger::canBuyTicket(Ticket ticket) {
-    if(ticket.getFlight().getAvailableSeat() >= this->group) {
+bool Passenger::canBuyTicket(const Ticket& tickeT) const {
+    if(tickeT.getFlight().getAvailableSeat() >= tickeT.getGroup()) {
         return true;
     }
     else return false;
 }
 
-void Passenger::buyTicket(Ticket ticket) {
-    this->ticket = ticket;
-    ticket.getFlight().minusAvailableSeats(group, this->ticket.getLuggage());
+bool Passenger::buyTicket(Ticket& tickeT) {
+    if(!canBuyTicket(tickeT)) return false;
+    this->ticket = tickeT;
+    ticket.getFlight().minusAvailableSeats(ticket.getGroup(), this->ticket.getLuggage());
+    return true;
 }

@@ -4,30 +4,26 @@
 
 #include "Ticket.h"
 
-Ticket::Ticket(Flight flight, Luggage luggage, int group) {
-    this->flight = flight;
-    this->luggage = luggage;
-    this->group = group;
-
+Ticket::Ticket(Flight flight, int group, Luggage luggage): flight(flight), luggage(luggage), group(group){
 }
 
-void Ticket::setFlight(Flight flight) {
-    this->flight = flight;
+void Ticket::setFlight(const Flight& flighT) {
+    this->flight = flighT;
 }
 
-void Ticket::setLuggage(Luggage luggage) {
-    this->luggage = luggage;
+void Ticket::setLuggage(const Luggage& luggagE) {
+    this->luggage = luggagE;
 }
 
-void Ticket::setGroup(int group) {
-    this->group = group;
+void Ticket::setGroup(int grouP) {
+    this->group = grouP;
 }
 
-Flight Ticket::getFlight() { return this->flight; }
+Flight Ticket::getFlight() const { return this->flight; }
 
-Luggage const Ticket::getLuggage() { return this->luggage; }
+Luggage Ticket::getLuggage() const{ return this->luggage; }
 
-int const Ticket::getGroup() { return this->group; }
+int Ticket::getGroup() const{ return this->group; }
 
 
 

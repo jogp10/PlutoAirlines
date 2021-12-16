@@ -7,6 +7,7 @@
 
 #include "Luggage.h"
 #include "Date.h"
+#include "Airport.h"
 
 #include <iostream>
 #include <vector>
