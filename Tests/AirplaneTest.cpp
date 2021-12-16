@@ -49,14 +49,14 @@ TEST(airplane_1, a_setAirplane){
     EXPECT_EQ(295, flightsTest.front().getAvailableSeat());
 
     Service s1;
-    s1.type = 1;
+    s1.type = MAINTENANCE;
     s1.date = Date("2021-01-01 12:00:00");
     s1.name = "José Alberto";
 
     a1.addService(s1);
 
     Service s2;
-    s2.type = 0;
+    s2.type = CLEAN;
     s2.date = Date("2023-01-01 12:00:00");
     s2.name = s1.name;
 
@@ -64,8 +64,8 @@ TEST(airplane_1, a_setAirplane){
     list<Service> servicesDoneTest(a1.getPastServices());
     queue<Service> servicesTest(a1.getServices());
 
-    EXPECT_EQ(servicesTest.front().type, 0);
+    EXPECT_EQ(servicesTest.front().type, MAINTENANCE);
     EXPECT_EQ(servicesDoneTest.front().name, "José Alberto");
-    EXPECT_EQ(servicesDoneTest.front().type, 1);
+    EXPECT_EQ(servicesDoneTest.front().type, CLEAN);
 
 }

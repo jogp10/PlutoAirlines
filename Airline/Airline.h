@@ -12,6 +12,7 @@ using namespace std;
 
 class Airline {
     vector<Airplane> airplanes;
+    vector<A
 
 public:
     /**

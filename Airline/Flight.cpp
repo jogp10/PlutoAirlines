@@ -18,7 +18,7 @@ void Flight::setFLightNum(int flightnum) {
     this->flightNum = flightnum;
 }
 
-void Flight::setDepartureDate(string departuredatE) {
+void Flight::setDepartureDate(const string& departuredatE) {
     Date departuredate(departuredatE);
     this->departureDate = departuredate;
 }
