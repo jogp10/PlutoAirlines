@@ -6,7 +6,6 @@
 #include "../Airline/Airline.h"
 #include "../Airline/Airplane.h"
 #include <string>
-#include "performance.h"
 
 using testing::Eq;
 

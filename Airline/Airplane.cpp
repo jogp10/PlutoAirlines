@@ -33,7 +33,8 @@ void Airplane::setFlights(list<Flight>& flightS) {
     }
 }
 
-void Airplane::addFlight(const Flight &flight) {
+void Airplane::addFlight(Flight &flight) {
+    flight.setAvailableSeats(capacity);
     flights.insert(flights.end(), 1, flight);
 }
 
