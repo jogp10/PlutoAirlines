@@ -13,6 +13,7 @@ add_executable(PlutoAirlines main.cpp
         Airline/Date.cpp Airline/Date.h
         Airline/Service.h
         Airline/bst.h
+        Airline/LuggageTransport.h
 
         Tests/AirlineTest.cpp
         Tests/AirplaneTest.cpp
@@ -20,6 +21,7 @@ add_executable(PlutoAirlines main.cpp
         Tests/AirportTest.cpp
         Tests/TicketTest.cpp
         Tests/PassengerTest.cpp)
+
 
 
 # Doxygen Build
