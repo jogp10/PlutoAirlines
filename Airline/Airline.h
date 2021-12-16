@@ -16,9 +16,6 @@ class Airline {
     vector<Airport> airports;
 
 public:
-    /**
-     *
-     */
     Airline();
 
     /**

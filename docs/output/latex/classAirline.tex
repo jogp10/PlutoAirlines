@@ -3,31 +3,81 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classAirline_a8485242b13829e471f5c3246d4f6478f}{set\+Airplanes}} (vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ airplanes)
+void \mbox{\hyperlink{classAirline_ad0845f956e052dccc6e5d6be83227358}{set\+Airplanes}} (vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ airplaneS)
 \item 
-vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ \mbox{\hyperlink{classAirline_ab6d34940629c22da9f31d8bde20ccf48}{get\+Airplanes}} ()
+void \mbox{\hyperlink{classAirline_a100dd0acf1bcc79403f980efc2f1d3cb}{set\+Airports}} (vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ airportS)
+\item 
+void \mbox{\hyperlink{classAirline_aa0faede3a4fbcb22d065e22e2fc1f043}{add\+Airplane}} (const \mbox{\hyperlink{classAirplane}{Airplane}} \&airplane)
+\item 
+void \mbox{\hyperlink{classAirline_a77fcb6fe064ab325e654de79e475495c}{add\+Airport}} (const \mbox{\hyperlink{classAirport}{Airport}} \&airport)
+\item 
+vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ \mbox{\hyperlink{classAirline_a0aed31b32abe5c44c9ec4e6dea18feb8}{get\+Airplanes}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{classAirline_a9ae578987bdddabc462d4c895292151d}{get\+Airports}} ()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classAirline_ab6d34940629c22da9f31d8bde20ccf48}\label{classAirline_ab6d34940629c22da9f31d8bde20ccf48}} 
+\mbox{\Hypertarget{classAirline_aa0faede3a4fbcb22d065e22e2fc1f043}\label{classAirline_aa0faede3a4fbcb22d065e22e2fc1f043}} 
+\index{Airline@{Airline}!addAirplane@{addAirplane}}
+\index{addAirplane@{addAirplane}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{addAirplane()}{addAirplane()}}
+{\footnotesize\ttfamily void Airline\+::add\+Airplane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAirplane}{Airplane}} \&}]{airplane }\end{DoxyParamCaption})}
+
+Add airplane 
+\begin{DoxyParams}{Parameters}
+{\em airplane} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a77fcb6fe064ab325e654de79e475495c}\label{classAirline_a77fcb6fe064ab325e654de79e475495c}} 
+\index{Airline@{Airline}!addAirport@{addAirport}}
+\index{addAirport@{addAirport}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{addAirport()}{addAirport()}}
+{\footnotesize\ttfamily void Airline\+::add\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAirport}{Airport}} \&}]{airport }\end{DoxyParamCaption})}
+
+Add airport 
+\begin{DoxyParams}{Parameters}
+{\em airport} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a0aed31b32abe5c44c9ec4e6dea18feb8}\label{classAirline_a0aed31b32abe5c44c9ec4e6dea18feb8}} 
 \index{Airline@{Airline}!getAirplanes@{getAirplanes}}
 \index{getAirplanes@{getAirplanes}!Airline@{Airline}}
 \doxysubsubsection{\texorpdfstring{getAirplanes()}{getAirplanes()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ Airline\+::get\+Airplanes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classAirplane}{Airplane}}$>$ Airline\+::get\+Airplanes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airplanes \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirline_a8485242b13829e471f5c3246d4f6478f}\label{classAirline_a8485242b13829e471f5c3246d4f6478f}} 
+\mbox{\Hypertarget{classAirline_a9ae578987bdddabc462d4c895292151d}\label{classAirline_a9ae578987bdddabc462d4c895292151d}} 
+\index{Airline@{Airline}!getAirports@{getAirports}}
+\index{getAirports@{getAirports}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{getAirports()}{getAirports()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classAirport}{Airport}}$>$ Airline\+::get\+Airports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airport \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_ad0845f956e052dccc6e5d6be83227358}\label{classAirline_ad0845f956e052dccc6e5d6be83227358}} 
 \index{Airline@{Airline}!setAirplanes@{setAirplanes}}
 \index{setAirplanes@{setAirplanes}!Airline@{Airline}}
 \doxysubsubsection{\texorpdfstring{setAirplanes()}{setAirplanes()}}
-{\footnotesize\ttfamily void Airline\+::set\+Airplanes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$}]{airplanes }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Airline\+::set\+Airplanes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$}]{airplaneS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Set \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airplanes 
 \begin{DoxyParams}{Parameters}
 {\em airplanes} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a100dd0acf1bcc79403f980efc2f1d3cb}\label{classAirline_a100dd0acf1bcc79403f980efc2f1d3cb}} 
+\index{Airline@{Airline}!setAirports@{setAirports}}
+\index{setAirports@{setAirports}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{setAirports()}{setAirports()}}
+{\footnotesize\ttfamily void Airline\+::set\+Airports (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airportS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airport 
+\begin{DoxyParams}{Parameters}
+{\em airports} & \\
 \hline
 \end{DoxyParams}
 

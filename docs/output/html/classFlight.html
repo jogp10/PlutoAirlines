@@ -75,8 +75,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a724086e6ac319bfa680167a23ebdef6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8100f09504fdfdd4ed257991d7a15b03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlight.html#a8100f09504fdfdd4ed257991d7a15b03">setFLightNum</a> (int flightNum)</td></tr>
 <tr class="separator:a8100f09504fdfdd4ed257991d7a15b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37064602af72cab3598a3845a932a54e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlight.html#a37064602af72cab3598a3845a932a54e">setDepartureDate</a> (string departureDate)</td></tr>
-<tr class="separator:a37064602af72cab3598a3845a932a54e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4be9ea633977825d1c91bc074ce95f88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlight.html#a4be9ea633977825d1c91bc074ce95f88">setDepartureDate</a> (const string &amp;departureDate)</td></tr>
+<tr class="separator:a4be9ea633977825d1c91bc074ce95f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea7d3339f8bc7ceca62cd84df429829"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlight.html#aeea7d3339f8bc7ceca62cd84df429829">setDepartureLocal</a> (string departureLocal)</td></tr>
 <tr class="separator:aeea7d3339f8bc7ceca62cd84df429829"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1bff74b8a3a1a31dfdab860cfb99bb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlight.html#ae1bff74b8a3a1a31dfdab860cfb99bb0">setArrivalLocal</a> (string arrivalLocal)</td></tr>
@@ -101,6 +101,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a077e763e07bbf2e9810aa04b1c875ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e9dd06e3abfcd00f0e0e34380fe88a9"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classLuggage.html">Luggage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlight.html#a4e9dd06e3abfcd00f0e0e34380fe88a9">getLuggage</a> () const</td></tr>
 <tr class="separator:a4e9dd06e3abfcd00f0e0e34380fe88a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4be218d20b38cf2f09bd0e93fdd12c8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFlight.html#ad4be218d20b38cf2f09bd0e93fdd12c8">getnumTotalBags</a> () const</td></tr>
+<tr class="separator:ad4be218d20b38cf2f09bd0e93fdd12c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a724086e6ac319bfa680167a23ebdef6a"></a>
@@ -146,7 +148,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p><a class="el" href="classFlight.html">Flight</a> Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flightNum</td><td></td></tr>
     <tr><td class="paramname">departureDate</td><td></td></tr>
@@ -286,6 +288,24 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad4be218d20b38cf2f09bd0e93fdd12c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4be218d20b38cf2f09bd0e93fdd12c8">&#9670;&nbsp;</a></span>getnumTotalBags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Flight::getnumTotalBags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get <a class="el" href="classFlight.html">Flight</a>'s total number of bags; </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a7cab06d7036ca974eccda23f63f57f77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7cab06d7036ca974eccda23f63f57f77">&#9670;&nbsp;</a></span>minusAvailableSeats()</h2>
 
@@ -368,8 +388,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a37064602af72cab3598a3845a932a54e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37064602af72cab3598a3845a932a54e">&#9670;&nbsp;</a></span>setDepartureDate()</h2>
+<a id="a4be9ea633977825d1c91bc074ce95f88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4be9ea633977825d1c91bc074ce95f88">&#9670;&nbsp;</a></span>setDepartureDate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -377,7 +397,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void Flight::setDepartureDate </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
+          <td class="paramtype">const string &amp;&#160;</td>
           <td class="paramname"><em>departureDate</em></td><td>)</td>
           <td></td>
         </tr>

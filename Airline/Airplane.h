@@ -28,11 +28,7 @@ private:
     void updateFlights();
 
 public:
-    /**
-     *
-     */
     Airplane() = default;
-
 
     /**
      *
@@ -117,7 +113,7 @@ public:
     queue<Flight> getLastFlights();
 
     /**
-     *
+     * Get Airplane's Next Flight
      * @return
      */
     Flight getNextFlight();

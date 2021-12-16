@@ -38,20 +38,20 @@ public:
     }
     /**
      *
-     * @param transType1
-     * @param distance1
-     * @param freq1
+     * @param transType
+     * @param distance
+     * @param freq
      * @param start_hour
      * @param end_hour
      */
     LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"));
     /**
-     *
+     *  Get Transport type
      * @return
      */
     TransType getTransType() const {return transType;};
     /**
-     *
+     * Get Transport distance to the airport
      * @return
      */
     double getDistance() const {return distance;};

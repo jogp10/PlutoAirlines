@@ -28,7 +28,7 @@ public:
 
     Flight() = default;
     /**
-     * Flight Constructor
+     *
      * @param flightNum
      * @param departureDate
      * @param departureLocal

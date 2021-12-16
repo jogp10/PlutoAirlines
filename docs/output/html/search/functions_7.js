@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['next_130',['next',['../structLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f',1,'LandTransport']]]
+  ['minusavailableseats_158',['minusAvailableSeats',['../classFlight.html#a7cab06d7036ca974eccda23f63f57f77',1,'Flight']]]
 ];

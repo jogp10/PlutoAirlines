@@ -11,19 +11,25 @@
 class Passenger {
     Ticket ticket;
 
-    /**
-     * Meaning of Passenger
-     * @param luggage
-     * @param group
-     * We need to know if the passenger has/can buy a Ticket based on available seats and point out whether he has a
-     * group or is travelling alone;
-     * If he is travelling alone, the value of group should be zero, otherwise it must be group number
-     */
 public:
     Passenger() = default;
+    /**
+     *
+     * @param ticket
+     */
     explicit Passenger(Ticket ticket);
+    /**
+     * Buy the ticket if posible
+     * @param ticket
+     * @return
+     */
     bool buyTicket(Ticket& ticket);
 private:
+    /**
+     * Check if there is available seats at airplane
+     * @param ticket
+     * @return
+     */
     bool canBuyTicket(const Ticket& ticket) const;
 };
 

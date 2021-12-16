@@ -27,13 +27,37 @@ public:
     explicit Ticket(Flight flight, int group = 1, Luggage luggage = Luggage(0));
 
     //Setters
+    /**
+     * Set Ticket's flight
+     * @param flight
+     */
     void setFlight(const Flight& flight);
+    /**
+     * Set Ticket's luggage
+     * @param luggage
+     */
     void setLuggage(const Luggage& luggage);
+    /**
+     * Set Ticket's group
+     * @param group
+     */
     void setGroup(int group);
 
     //Getters
+    /**
+     * get Ticket's flight
+     * @return
+     */
     Flight getFlight() const;
+    /**
+     * get Ticket's luggage
+     * @return
+     */
     Luggage getLuggage() const;
+    /**
+     * get Ticket's number of seats it represent
+     * @return
+     */
     int getGroup() const;
 
 };

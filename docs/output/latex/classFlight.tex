@@ -7,7 +7,7 @@
 \item 
 void \mbox{\hyperlink{classFlight_a8100f09504fdfdd4ed257991d7a15b03}{set\+F\+Light\+Num}} (int flight\+Num)
 \item 
-void \mbox{\hyperlink{classFlight_a37064602af72cab3598a3845a932a54e}{set\+Departure\+Date}} (string departure\+Date)
+void \mbox{\hyperlink{classFlight_a4be9ea633977825d1c91bc074ce95f88}{set\+Departure\+Date}} (const string \&departure\+Date)
 \item 
 void \mbox{\hyperlink{classFlight_aeea7d3339f8bc7ceca62cd84df429829}{set\+Departure\+Local}} (string departure\+Local)
 \item 
@@ -32,6 +32,8 @@ string \mbox{\hyperlink{classFlight_a5952846e07ec6331e2e2e456103a86bf}{get\+Arri
 int \mbox{\hyperlink{classFlight_a077e763e07bbf2e9810aa04b1c875ed0}{get\+Available\+Seat}} () const
 \item 
 vector$<$ \mbox{\hyperlink{classLuggage}{Luggage}} $>$ \mbox{\hyperlink{classFlight_a4e9dd06e3abfcd00f0e0e34380fe88a9}{get\+Luggage}} () const
+\item 
+int \mbox{\hyperlink{classFlight_ad4be218d20b38cf2f09bd0e93fdd12c8}{getnum\+Total\+Bags}} () const
 \end{DoxyCompactItemize}
 
 
@@ -42,7 +44,7 @@ vector$<$ \mbox{\hyperlink{classLuggage}{Luggage}} $>$ \mbox{\hyperlink{classFli
 \doxysubsubsection{\texorpdfstring{Flight()}{Flight()}}
 {\footnotesize\ttfamily Flight\+::\+Flight (\begin{DoxyParamCaption}\item[{int}]{flight\+Num,  }\item[{string}]{departure\+Date,  }\item[{string}]{departure\+Local,  }\item[{string}]{arrival\+Local,  }\item[{int}]{flight\+Duration }\end{DoxyParamCaption})}
 
-\mbox{\hyperlink{classFlight}{Flight}} Constructor 
+
 \begin{DoxyParams}{Parameters}
 {\em flight\+Num} & \\
 \hline
@@ -121,6 +123,15 @@ Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s num \begin{DoxyRet
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s luggage from passengers \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classFlight_ad4be218d20b38cf2f09bd0e93fdd12c8}\label{classFlight_ad4be218d20b38cf2f09bd0e93fdd12c8}} 
+\index{Flight@{Flight}!getnumTotalBags@{getnumTotalBags}}
+\index{getnumTotalBags@{getnumTotalBags}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{getnumTotalBags()}{getnumTotalBags()}}
+{\footnotesize\ttfamily int Flight\+::getnum\+Total\+Bags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s total number of bags; \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{classFlight_a7cab06d7036ca974eccda23f63f57f77}\label{classFlight_a7cab06d7036ca974eccda23f63f57f77}} 
 \index{Flight@{Flight}!minusAvailableSeats@{minusAvailableSeats}}
 \index{minusAvailableSeats@{minusAvailableSeats}!Flight@{Flight}}
@@ -154,11 +165,11 @@ Set flight\textquotesingle{}s max capacity
 {\em capacity} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classFlight_a37064602af72cab3598a3845a932a54e}\label{classFlight_a37064602af72cab3598a3845a932a54e}} 
+\mbox{\Hypertarget{classFlight_a4be9ea633977825d1c91bc074ce95f88}\label{classFlight_a4be9ea633977825d1c91bc074ce95f88}} 
 \index{Flight@{Flight}!setDepartureDate@{setDepartureDate}}
 \index{setDepartureDate@{setDepartureDate}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{setDepartureDate()}{setDepartureDate()}}
-{\footnotesize\ttfamily void Flight\+::set\+Departure\+Date (\begin{DoxyParamCaption}\item[{string}]{departure\+Date }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Flight\+::set\+Departure\+Date (\begin{DoxyParamCaption}\item[{const string \&}]{departure\+Date }\end{DoxyParamCaption})}
 
 Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Departure \mbox{\hyperlink{classDate}{Date}} 
 \begin{DoxyParams}{Parameters}

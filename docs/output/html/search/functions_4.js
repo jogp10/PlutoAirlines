@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['insert_127',['insert',['../classAirport.html#ab5fd8315348fef2bee893f95b7dcac2b',1,'Airport']]]
+  ['haveluggage_153',['haveLuggage',['../classLuggage.html#a31f8c6200d2f555d142688bd5e04e109',1,'Luggage']]],
+  ['hour_154',['Hour',['../classHour.html#aea5de9fb3eea94c6fcc42976825bc417',1,'Hour::Hour(string date)'],['../classHour.html#aee9a75c66d8b9f63aa48b1146c93185d',1,'Hour::Hour(int minutes)']]]
 ];

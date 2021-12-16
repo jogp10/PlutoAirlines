@@ -14,15 +14,43 @@ protected:
     int hour, minute;
 public:
     Hour() = default;
+    /**
+     *
+     * @param date
+     */
     explicit Hour(string date);
+    /**
+     *
+     * @param minutes
+     */
     explicit Hour(int minutes);
 
+    /**
+     * Set Hour & Minute
+     * @param houR
+     */
     void setHourMin(string houR);
 
+    /**
+     * set Hour
+     * @param houR
+     */
     void setHour(int houR) { this->hour = houR;};
+    /**
+     * set Hour
+     * @param hour
+     */
     void setHour(const string& hour);
 
+    /**
+     * set Minute
+     * @param minutE
+     */
     void setMinute(int minutE) { this->minute = minutE;};
+    /**
+     * set Minute
+     * @param minute
+     */
     void setMinute(const string& minute);
 
     /**

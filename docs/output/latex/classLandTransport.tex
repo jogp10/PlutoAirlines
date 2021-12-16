@@ -1,0 +1,120 @@
+\hypertarget{classLandTransport}{}\doxysection{Land\+Transport Class Reference}
+\label{classLandTransport}\index{LandTransport@{LandTransport}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classLandTransport_a80b89791d47db964f965de24600e6de0}{operator$<$}} (const \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&a) const
+\item 
+bool \mbox{\hyperlink{classLandTransport_ab7be127da978624952956d31e674e9be}{operator==}} (const \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&a) const
+\item 
+\mbox{\hyperlink{classLandTransport_ad5b85149327f40f293b30a0560f6d095}{Land\+Transport}} (Trans\+Type trans\+Type1, double distance1=0, \mbox{\hyperlink{classHour}{Hour}} freq1=\mbox{\hyperlink{classHour}{Hour}}(\char`\"{}24\+:00\char`\"{}), \mbox{\hyperlink{classHour}{Hour}} start\+\_\+hour=\mbox{\hyperlink{classHour}{Hour}}(\char`\"{}08\+:00\char`\"{}), \mbox{\hyperlink{classHour}{Hour}} end\+\_\+hour=\mbox{\hyperlink{classHour}{Hour}}(\char`\"{}23\+:00\char`\"{}))
+\item 
+Trans\+Type \mbox{\hyperlink{classLandTransport_a593fa2fd17de6645a25e79b280dd68bf}{get\+Trans\+Type}} () const
+\item 
+double \mbox{\hyperlink{classLandTransport_ac3b02f7c6e5ccfad2a374ae792f993d3}{get\+Distance}} () const
+\item 
+\mbox{\hyperlink{classHour}{Hour}} \mbox{\hyperlink{classLandTransport_aa5d21ac39d960c8df02f7e4c5ff9100f}{next}} ()
+\item 
+void \mbox{\hyperlink{classLandTransport_a8beedb16ba09ecd58a794f45303b5871}{set\+Schedule}} (\mbox{\hyperlink{classHour}{Hour}} frequency, \mbox{\hyperlink{classHour}{Hour}} start\+\_\+hour, \mbox{\hyperlink{classHour}{Hour}} end\+\_\+hour)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLandTransport_ad5b85149327f40f293b30a0560f6d095}\label{classLandTransport_ad5b85149327f40f293b30a0560f6d095}} 
+\index{LandTransport@{LandTransport}!LandTransport@{LandTransport}}
+\index{LandTransport@{LandTransport}!LandTransport@{LandTransport}}
+\doxysubsubsection{\texorpdfstring{LandTransport()}{LandTransport()}}
+{\footnotesize\ttfamily Land\+Transport\+::\+Land\+Transport (\begin{DoxyParamCaption}\item[{Trans\+Type}]{trans\+Type1,  }\item[{double}]{distance1 = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classHour}{Hour}}}]{freq1 = {\ttfamily \mbox{\hyperlink{classHour}{Hour}}(\char`\"{}24\+:00\char`\"{})},  }\item[{\mbox{\hyperlink{classHour}{Hour}}}]{start\+\_\+hour = {\ttfamily \mbox{\hyperlink{classHour}{Hour}}(\char`\"{}08\+:00\char`\"{})},  }\item[{\mbox{\hyperlink{classHour}{Hour}}}]{end\+\_\+hour = {\ttfamily \mbox{\hyperlink{classHour}{Hour}}(\char`\"{}23\+:00\char`\"{})} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em trans\+Type} & \\
+\hline
+{\em distance} & \\
+\hline
+{\em freq} & \\
+\hline
+{\em start\+\_\+hour} & \\
+\hline
+{\em end\+\_\+hour} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLandTransport_ac3b02f7c6e5ccfad2a374ae792f993d3}\label{classLandTransport_ac3b02f7c6e5ccfad2a374ae792f993d3}} 
+\index{LandTransport@{LandTransport}!getDistance@{getDistance}}
+\index{getDistance@{getDistance}!LandTransport@{LandTransport}}
+\doxysubsubsection{\texorpdfstring{getDistance()}{getDistance()}}
+{\footnotesize\ttfamily double Land\+Transport\+::get\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get Transport distance to the airport \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLandTransport_a593fa2fd17de6645a25e79b280dd68bf}\label{classLandTransport_a593fa2fd17de6645a25e79b280dd68bf}} 
+\index{LandTransport@{LandTransport}!getTransType@{getTransType}}
+\index{getTransType@{getTransType}!LandTransport@{LandTransport}}
+\doxysubsubsection{\texorpdfstring{getTransType()}{getTransType()}}
+{\footnotesize\ttfamily Trans\+Type Land\+Transport\+::get\+Trans\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get Transport type \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLandTransport_aa5d21ac39d960c8df02f7e4c5ff9100f}\label{classLandTransport_aa5d21ac39d960c8df02f7e4c5ff9100f}} 
+\index{LandTransport@{LandTransport}!next@{next}}
+\index{next@{next}!LandTransport@{LandTransport}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHour}{Hour}} Land\+Transport\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get next passage of transport \begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classDate}{Date}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLandTransport_a80b89791d47db964f965de24600e6de0}\label{classLandTransport_a80b89791d47db964f965de24600e6de0}} 
+\index{LandTransport@{LandTransport}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!LandTransport@{LandTransport}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Land\+Transport\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&}]{a }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check \mbox{\hyperlink{classLandTransport}{Land\+Transport}} this $<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} a 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if this $<$ a 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLandTransport_ab7be127da978624952956d31e674e9be}\label{classLandTransport_ab7be127da978624952956d31e674e9be}} 
+\index{LandTransport@{LandTransport}!operator==@{operator==}}
+\index{operator==@{operator==}!LandTransport@{LandTransport}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Land\+Transport\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&}]{a }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Check if \mbox{\hyperlink{classLandTransport}{Land\+Transport}} this == \mbox{\hyperlink{classLandTransport}{Land\+Transport}} a 
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classLandTransport}{Land\+Transport}}} & a \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equals 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLandTransport_a8beedb16ba09ecd58a794f45303b5871}\label{classLandTransport_a8beedb16ba09ecd58a794f45303b5871}} 
+\index{LandTransport@{LandTransport}!setSchedule@{setSchedule}}
+\index{setSchedule@{setSchedule}!LandTransport@{LandTransport}}
+\doxysubsubsection{\texorpdfstring{setSchedule()}{setSchedule()}}
+{\footnotesize\ttfamily void Land\+Transport\+::set\+Schedule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHour}{Hour}}}]{frequency,  }\item[{\mbox{\hyperlink{classHour}{Hour}}}]{start\+\_\+hour,  }\item[{\mbox{\hyperlink{classHour}{Hour}}}]{end\+\_\+hour }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set transport schedule 
+\begin{DoxyParams}{Parameters}
+{\em frequency} & of the passages \\
+\hline
+{\em start\+\_\+hour} & \\
+\hline
+{\em end\+\_\+hour} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Airline/Airport.\+h\item 
+Airline/Airport.\+cpp\end{DoxyCompactItemize}

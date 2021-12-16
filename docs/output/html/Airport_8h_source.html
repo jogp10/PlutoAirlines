@@ -78,100 +78,109 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;bst.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Date.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">enum</span> TransType {TRAIN, SUBWAY, BUS};</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">enum</span> TransType {NONE, TRAIN, SUBWAY, BUS};</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structLandTransport.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structLandTransport.html">LandTransport</a>{</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classLandTransport.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLandTransport.html">LandTransport</a>{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    TransType transType;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">double</span> distance = 0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    vector&lt;Hour&gt; schedule = vector&lt;Hour&gt;();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structLandTransport.html#a80b89791d47db964f965de24600e6de0">   22</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="structLandTransport.html#a80b89791d47db964f965de24600e6de0">operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="structLandTransport.html">LandTransport</a>&amp; a)<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> this-&gt;distance&lt;a.distance;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structLandTransport.html#ab7be127da978624952956d31e674e9be">   31</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="structLandTransport.html#ab7be127da978624952956d31e674e9be">operator==</a>(<span class="keyword">const</span> <a class="code" href="structLandTransport.html">LandTransport</a> &amp;a)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span>(this-&gt;distance==a.distance &amp;&amp; this-&gt;schedule==a.schedule &amp;&amp; this-&gt;transType==a.transType){</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f">   42</a></span>&#160;    <a class="code" href="classHour.html">Hour</a> <a class="code" href="structLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f">next</a>(){</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classDate.html">Date</a> nowd(<a class="code" href="classDate.html#a07566cfeb373a2dcba284ec63b1a7af4">Date::getNow</a>());</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classHour.html">Hour</a> now{};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        now.setHour(nowd.<a class="code" href="classDate.html#a7188665f3fc3ed656fb36078f0f8e1ca">getHour</a>()); now.setMinute(nowd.<a class="code" href="classDate.html#ae829bb9deb2ccc50858d7c464a348511">getMinute</a>());</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classHour.html">Hour</a> min(<span class="stringliteral">&quot;23:59&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i:schedule){</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span>(now&lt;i &amp;&amp; i&lt;min){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                min = i;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span>(min.<a class="code" href="classHour.html#a44859e9acda4578bc3cfcad5d2f25585">getHour</a>()==23 &amp;&amp; min.<a class="code" href="classHour.html#a999278972c30bb258e0824ff3e45d65f">getMinute</a>()==59) <span class="keywordflow">return</span> <a class="code" href="classHour.html">Hour</a>{};</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> min;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structLandTransport.html#a8beedb16ba09ecd58a794f45303b5871">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="structLandTransport.html#a8beedb16ba09ecd58a794f45303b5871">setSchedule</a>(<a class="code" href="classHour.html">Hour</a> frequency, <a class="code" href="classHour.html">Hour</a> start_hour, <a class="code" href="classHour.html">Hour</a> end_hour){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        schedule.clear();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classHour.html">Hour</a> a = start_hour;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">while</span>(a&lt;end_hour){</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            schedule.insert(schedule.end(), a);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">//Date freq(frequency);</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            a = a+frequency;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classAirport.html">   73</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAirport.html">Airport</a> {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">string</span> name;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">string</span> code;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classBST.html">BST&lt;LandTransport&gt;</a> bst;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classAirport.html#aaab58643598c54505617a0f24a420784">   84</a></span>&#160;    <a class="code" href="classAirport.html#aaab58643598c54505617a0f24a420784">Airport</a>(<span class="keywordtype">string</span> name1, <span class="keywordtype">string</span> code1): name(name1), code(code1), bst(<a class="code" href="classBST.html">BST</a>&lt;<a class="code" href="structLandTransport.html">LandTransport</a>&gt;(<a class="code" href="structLandTransport.html">LandTransport</a>{})){};</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a679b54ba55b857bedd881da832748b8c">getSubway</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a6fc1f4384f0f391dcd0ebd8541f3fd34">getTrain</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a8dce24059df742f8820736444add9f79">getBus</a>();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a9b467f963bfb806a40a031ba78840750">getByDistance</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="structLandTransport.html">LandTransport</a> <a class="code" href="classAirport.html#ae8d370bdd8ed3972c9c98761723acbb4">getMinDistance</a>();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="structLandTransport.html">LandTransport</a> <a class="code" href="classAirport.html#a66159c13ecfcaf4d0d42616721689ff9">getMaxDistance</a>();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="structLandTransport.html">LandTransport</a> <a class="code" href="classAirport.html#aeb45f23948ba85581afedf2c959db957">getNext</a>();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAirport.html#ab5fd8315348fef2bee893f95b7dcac2b">insert</a>(<span class="keyword">const</span> <a class="code" href="structLandTransport.html">LandTransport</a>&amp; landTransport);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;};</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif //MAIN_CPP_AIRPORT_H</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">double</span> distance;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classHour.html">Hour</a> freq;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    vector&lt;Hour&gt; schedule = vector&lt;Hour&gt;();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classLandTransport.html#a80b89791d47db964f965de24600e6de0">   24</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLandTransport.html#a80b89791d47db964f965de24600e6de0">operator&lt;</a>(<span class="keyword">const</span> <a class="code" href="classLandTransport.html">LandTransport</a>&amp; a)<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> this-&gt;distance&lt;a.distance;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classLandTransport.html#ab7be127da978624952956d31e674e9be">   33</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classLandTransport.html#ab7be127da978624952956d31e674e9be">operator==</a>(<span class="keyword">const</span> <a class="code" href="classLandTransport.html">LandTransport</a> &amp;a)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span>(this-&gt;distance==a.distance &amp;&amp; this-&gt;schedule==a.schedule &amp;&amp; this-&gt;transType==a.transType){</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classLandTransport.html#ad5b85149327f40f293b30a0560f6d095">LandTransport</a>(TransType transType1, <span class="keywordtype">double</span> distance1=0, <a class="code" href="classHour.html">Hour</a> freq1=<a class="code" href="classHour.html">Hour</a>(<span class="stringliteral">&quot;24:00&quot;</span>), <a class="code" href="classHour.html">Hour</a> start_hour=<a class="code" href="classHour.html">Hour</a>(<span class="stringliteral">&quot;08:00&quot;</span>), <a class="code" href="classHour.html">Hour</a> end_hour=<a class="code" href="classHour.html">Hour</a>(<span class="stringliteral">&quot;23:00&quot;</span>));</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classLandTransport.html#a593fa2fd17de6645a25e79b280dd68bf">   52</a></span>&#160;    TransType <a class="code" href="classLandTransport.html#a593fa2fd17de6645a25e79b280dd68bf">getTransType</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> transType;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classLandTransport.html#ac3b02f7c6e5ccfad2a374ae792f993d3">   57</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classLandTransport.html#ac3b02f7c6e5ccfad2a374ae792f993d3">getDistance</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> distance;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f">   63</a></span>&#160;    <a class="code" href="classHour.html">Hour</a> <a class="code" href="classLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f">next</a>(){</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classDate.html">Date</a> nowd(<a class="code" href="classDate.html#a07566cfeb373a2dcba284ec63b1a7af4">Date::getNow</a>());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classHour.html">Hour</a> now{};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        now.<a class="code" href="classHour.html#a463f969bd1fed2df155ef170c1aa60f6">setHour</a>(nowd.<a class="code" href="classDate.html#a7188665f3fc3ed656fb36078f0f8e1ca">getHour</a>()); now.setMinute(nowd.<a class="code" href="classDate.html#ae829bb9deb2ccc50858d7c464a348511">getMinute</a>());</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="classHour.html">Hour</a> min(<span class="stringliteral">&quot;23:59&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> i:schedule){</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">if</span>(now&lt;i &amp;&amp; i&lt;min){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                min = i;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span>(min.<a class="code" href="classHour.html#a44859e9acda4578bc3cfcad5d2f25585">getHour</a>()==23 &amp;&amp; min.<a class="code" href="classHour.html#a999278972c30bb258e0824ff3e45d65f">getMinute</a>()==59) <span class="keywordflow">return</span> <a class="code" href="classHour.html">Hour</a>{};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> min;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classLandTransport.html#a8beedb16ba09ecd58a794f45303b5871">   83</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLandTransport.html#a8beedb16ba09ecd58a794f45303b5871">setSchedule</a>(<a class="code" href="classHour.html">Hour</a> frequency, <a class="code" href="classHour.html">Hour</a> start_hour, <a class="code" href="classHour.html">Hour</a> end_hour){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        schedule.clear();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classHour.html">Hour</a> a = start_hour;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">while</span>(a&lt;end_hour){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            schedule.insert(schedule.end(), a);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">//Date freq(frequency);</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            a = a+frequency;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classAirport.html">   94</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAirport.html">Airport</a> {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">string</span> name;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">string</span> code;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="classBST.html">BST&lt;LandTransport&gt;</a> bst;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classAirport.html#aaab58643598c54505617a0f24a420784">  105</a></span>&#160;    <a class="code" href="classAirport.html#aaab58643598c54505617a0f24a420784">Airport</a>(<span class="keywordtype">string</span> name1, <span class="keywordtype">string</span> code1): name(name1), code(code1), bst(<a class="code" href="classLandTransport.html">LandTransport</a>(NONE)){};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a679b54ba55b857bedd881da832748b8c">getSubway</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a6fc1f4384f0f391dcd0ebd8541f3fd34">getTrain</a>();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a8dce24059df742f8820736444add9f79">getBus</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    vector&lt;LandTransport&gt; <a class="code" href="classAirport.html#a9b467f963bfb806a40a031ba78840750">getByDistance</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="classLandTransport.html">LandTransport</a> <a class="code" href="classAirport.html#ae8d370bdd8ed3972c9c98761723acbb4">getMinDistance</a>();</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="classLandTransport.html">LandTransport</a> <a class="code" href="classAirport.html#a66159c13ecfcaf4d0d42616721689ff9">getMaxDistance</a>();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="classLandTransport.html">LandTransport</a> <a class="code" href="classAirport.html#aeb45f23948ba85581afedf2c959db957">getNext</a>();</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAirport.html#ab5fd8315348fef2bee893f95b7dcac2b">insert</a>(<span class="keyword">const</span> <a class="code" href="classLandTransport.html">LandTransport</a>&amp; landTransport);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif //MAIN_CPP_AIRPORT_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassBST_html"><div class="ttname"><a href="classBST.html">BST&lt; LandTransport &gt;</a></div></div>
-<div class="ttc" id="astructLandTransport_html_ab7be127da978624952956d31e674e9be"><div class="ttname"><a href="structLandTransport.html#ab7be127da978624952956d31e674e9be">LandTransport::operator==</a></div><div class="ttdeci">bool operator==(const LandTransport &amp;a) const</div><div class="ttdef"><b>Definition:</b> Airport.h:31</div></div>
-<div class="ttc" id="aclassAirport_html_a66159c13ecfcaf4d0d42616721689ff9"><div class="ttname"><a href="classAirport.html#a66159c13ecfcaf4d0d42616721689ff9">Airport::getMaxDistance</a></div><div class="ttdeci">LandTransport getMaxDistance()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:67</div></div>
-<div class="ttc" id="aclassHour_html_a44859e9acda4578bc3cfcad5d2f25585"><div class="ttname"><a href="classHour.html#a44859e9acda4578bc3cfcad5d2f25585">Hour::getHour</a></div><div class="ttdeci">int getHour() const</div><div class="ttdef"><b>Definition:</b> Date.h:32</div></div>
-<div class="ttc" id="aclassAirport_html_a8dce24059df742f8820736444add9f79"><div class="ttname"><a href="classAirport.html#a8dce24059df742f8820736444add9f79">Airport::getBus</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getBus()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:33</div></div>
-<div class="ttc" id="aclassDate_html_ae829bb9deb2ccc50858d7c464a348511"><div class="ttname"><a href="classDate.html#ae829bb9deb2ccc50858d7c464a348511">Date::getMinute</a></div><div class="ttdeci">int getMinute()</div><div class="ttdef"><b>Definition:</b> Date.h:120</div></div>
-<div class="ttc" id="aclassAirport_html_ae8d370bdd8ed3972c9c98761723acbb4"><div class="ttname"><a href="classAirport.html#ae8d370bdd8ed3972c9c98761723acbb4">Airport::getMinDistance</a></div><div class="ttdeci">LandTransport getMinDistance()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:63</div></div>
+<div class="ttc" id="aclassLandTransport_html_a80b89791d47db964f965de24600e6de0"><div class="ttname"><a href="classLandTransport.html#a80b89791d47db964f965de24600e6de0">LandTransport::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const LandTransport &amp;a) const</div><div class="ttdef"><b>Definition:</b> Airport.h:24</div></div>
+<div class="ttc" id="aclassAirport_html_a66159c13ecfcaf4d0d42616721689ff9"><div class="ttname"><a href="classAirport.html#a66159c13ecfcaf4d0d42616721689ff9">Airport::getMaxDistance</a></div><div class="ttdeci">LandTransport getMaxDistance()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:72</div></div>
+<div class="ttc" id="aclassHour_html_a44859e9acda4578bc3cfcad5d2f25585"><div class="ttname"><a href="classHour.html#a44859e9acda4578bc3cfcad5d2f25585">Hour::getHour</a></div><div class="ttdeci">int getHour() const</div><div class="ttdef"><b>Definition:</b> Date.h:60</div></div>
+<div class="ttc" id="aclassAirport_html_a8dce24059df742f8820736444add9f79"><div class="ttname"><a href="classAirport.html#a8dce24059df742f8820736444add9f79">Airport::getBus</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getBus()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:38</div></div>
+<div class="ttc" id="aclassLandTransport_html_a8beedb16ba09ecd58a794f45303b5871"><div class="ttname"><a href="classLandTransport.html#a8beedb16ba09ecd58a794f45303b5871">LandTransport::setSchedule</a></div><div class="ttdeci">void setSchedule(Hour frequency, Hour start_hour, Hour end_hour)</div><div class="ttdef"><b>Definition:</b> Airport.h:83</div></div>
+<div class="ttc" id="aclassDate_html_ae829bb9deb2ccc50858d7c464a348511"><div class="ttname"><a href="classDate.html#ae829bb9deb2ccc50858d7c464a348511">Date::getMinute</a></div><div class="ttdeci">int getMinute()</div><div class="ttdef"><b>Definition:</b> Date.h:148</div></div>
+<div class="ttc" id="aclassAirport_html_ae8d370bdd8ed3972c9c98761723acbb4"><div class="ttname"><a href="classAirport.html#ae8d370bdd8ed3972c9c98761723acbb4">Airport::getMinDistance</a></div><div class="ttdeci">LandTransport getMinDistance()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:68</div></div>
 <div class="ttc" id="aclassHour_html"><div class="ttname"><a href="classHour.html">Hour</a></div><div class="ttdef"><b>Definition:</b> Date.h:12</div></div>
-<div class="ttc" id="astructLandTransport_html"><div class="ttname"><a href="structLandTransport.html">LandTransport</a></div><div class="ttdef"><b>Definition:</b> Airport.h:12</div></div>
-<div class="ttc" id="aclassAirport_html_aaab58643598c54505617a0f24a420784"><div class="ttname"><a href="classAirport.html#aaab58643598c54505617a0f24a420784">Airport::Airport</a></div><div class="ttdeci">Airport(string name1, string code1)</div><div class="ttdef"><b>Definition:</b> Airport.h:84</div></div>
-<div class="ttc" id="aclassAirport_html_ab5fd8315348fef2bee893f95b7dcac2b"><div class="ttname"><a href="classAirport.html#ab5fd8315348fef2bee893f95b7dcac2b">Airport::insert</a></div><div class="ttdeci">void insert(const LandTransport &amp;landTransport)</div><div class="ttdef"><b>Definition:</b> Airport.cpp:59</div></div>
+<div class="ttc" id="aclassLandTransport_html"><div class="ttname"><a href="classLandTransport.html">LandTransport</a></div><div class="ttdef"><b>Definition:</b> Airport.h:12</div></div>
+<div class="ttc" id="aclassLandTransport_html_ab7be127da978624952956d31e674e9be"><div class="ttname"><a href="classLandTransport.html#ab7be127da978624952956d31e674e9be">LandTransport::operator==</a></div><div class="ttdeci">bool operator==(const LandTransport &amp;a) const</div><div class="ttdef"><b>Definition:</b> Airport.h:33</div></div>
+<div class="ttc" id="aclassAirport_html_aaab58643598c54505617a0f24a420784"><div class="ttname"><a href="classAirport.html#aaab58643598c54505617a0f24a420784">Airport::Airport</a></div><div class="ttdeci">Airport(string name1, string code1)</div><div class="ttdef"><b>Definition:</b> Airport.h:105</div></div>
+<div class="ttc" id="aclassAirport_html_ab5fd8315348fef2bee893f95b7dcac2b"><div class="ttname"><a href="classAirport.html#ab5fd8315348fef2bee893f95b7dcac2b">Airport::insert</a></div><div class="ttdeci">void insert(const LandTransport &amp;landTransport)</div><div class="ttdef"><b>Definition:</b> Airport.cpp:64</div></div>
+<div class="ttc" id="aclassLandTransport_html_ac3b02f7c6e5ccfad2a374ae792f993d3"><div class="ttname"><a href="classLandTransport.html#ac3b02f7c6e5ccfad2a374ae792f993d3">LandTransport::getDistance</a></div><div class="ttdeci">double getDistance() const</div><div class="ttdef"><b>Definition:</b> Airport.h:57</div></div>
 <div class="ttc" id="aclassDate_html_a07566cfeb373a2dcba284ec63b1a7af4"><div class="ttname"><a href="classDate.html#a07566cfeb373a2dcba284ec63b1a7af4">Date::getNow</a></div><div class="ttdeci">static string getNow()</div><div class="ttdef"><b>Definition:</b> Date.cpp:118</div></div>
-<div class="ttc" id="aclassHour_html_a999278972c30bb258e0824ff3e45d65f"><div class="ttname"><a href="classHour.html#a999278972c30bb258e0824ff3e45d65f">Hour::getMinute</a></div><div class="ttdeci">int getMinute() const</div><div class="ttdef"><b>Definition:</b> Date.h:38</div></div>
-<div class="ttc" id="aclassAirport_html"><div class="ttname"><a href="classAirport.html">Airport</a></div><div class="ttdef"><b>Definition:</b> Airport.h:73</div></div>
-<div class="ttc" id="aclassAirport_html_a6fc1f4384f0f391dcd0ebd8541f3fd34"><div class="ttname"><a href="classAirport.html#a6fc1f4384f0f391dcd0ebd8541f3fd34">Airport::getTrain</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getTrain()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:20</div></div>
-<div class="ttc" id="astructLandTransport_html_a80b89791d47db964f965de24600e6de0"><div class="ttname"><a href="structLandTransport.html#a80b89791d47db964f965de24600e6de0">LandTransport::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const LandTransport &amp;a) const</div><div class="ttdef"><b>Definition:</b> Airport.h:22</div></div>
-<div class="ttc" id="astructLandTransport_html_a8beedb16ba09ecd58a794f45303b5871"><div class="ttname"><a href="structLandTransport.html#a8beedb16ba09ecd58a794f45303b5871">LandTransport::setSchedule</a></div><div class="ttdeci">void setSchedule(Hour frequency, Hour start_hour, Hour end_hour)</div><div class="ttdef"><b>Definition:</b> Airport.h:62</div></div>
-<div class="ttc" id="aclassAirport_html_a679b54ba55b857bedd881da832748b8c"><div class="ttname"><a href="classAirport.html#a679b54ba55b857bedd881da832748b8c">Airport::getSubway</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getSubway()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:7</div></div>
-<div class="ttc" id="aclassAirport_html_aeb45f23948ba85581afedf2c959db957"><div class="ttname"><a href="classAirport.html#aeb45f23948ba85581afedf2c959db957">Airport::getNext</a></div><div class="ttdeci">LandTransport getNext()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:71</div></div>
-<div class="ttc" id="aclassDate_html_a7188665f3fc3ed656fb36078f0f8e1ca"><div class="ttname"><a href="classDate.html#a7188665f3fc3ed656fb36078f0f8e1ca">Date::getHour</a></div><div class="ttdeci">int getHour()</div><div class="ttdef"><b>Definition:</b> Date.h:114</div></div>
-<div class="ttc" id="aclassAirport_html_a9b467f963bfb806a40a031ba78840750"><div class="ttname"><a href="classAirport.html#a9b467f963bfb806a40a031ba78840750">Airport::getByDistance</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getByDistance()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:46</div></div>
-<div class="ttc" id="aclassDate_html"><div class="ttname"><a href="classDate.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:66</div></div>
-<div class="ttc" id="astructLandTransport_html_aa5d21ac39d960c8df02f7e4c5ff9100f"><div class="ttname"><a href="structLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f">LandTransport::next</a></div><div class="ttdeci">Hour next()</div><div class="ttdef"><b>Definition:</b> Airport.h:42</div></div>
+<div class="ttc" id="aclassHour_html_a999278972c30bb258e0824ff3e45d65f"><div class="ttname"><a href="classHour.html#a999278972c30bb258e0824ff3e45d65f">Hour::getMinute</a></div><div class="ttdeci">int getMinute() const</div><div class="ttdef"><b>Definition:</b> Date.h:66</div></div>
+<div class="ttc" id="aclassLandTransport_html_ad5b85149327f40f293b30a0560f6d095"><div class="ttname"><a href="classLandTransport.html#ad5b85149327f40f293b30a0560f6d095">LandTransport::LandTransport</a></div><div class="ttdeci">LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour(&quot;24:00&quot;), Hour start_hour=Hour(&quot;08:00&quot;), Hour end_hour=Hour(&quot;23:00&quot;))</div><div class="ttdef"><b>Definition:</b> Airport.cpp:7</div></div>
+<div class="ttc" id="aclassAirport_html"><div class="ttname"><a href="classAirport.html">Airport</a></div><div class="ttdef"><b>Definition:</b> Airport.h:94</div></div>
+<div class="ttc" id="aclassAirport_html_a6fc1f4384f0f391dcd0ebd8541f3fd34"><div class="ttname"><a href="classAirport.html#a6fc1f4384f0f391dcd0ebd8541f3fd34">Airport::getTrain</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getTrain()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:25</div></div>
+<div class="ttc" id="aclassAirport_html_a679b54ba55b857bedd881da832748b8c"><div class="ttname"><a href="classAirport.html#a679b54ba55b857bedd881da832748b8c">Airport::getSubway</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getSubway()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:12</div></div>
+<div class="ttc" id="aclassLandTransport_html_aa5d21ac39d960c8df02f7e4c5ff9100f"><div class="ttname"><a href="classLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f">LandTransport::next</a></div><div class="ttdeci">Hour next()</div><div class="ttdef"><b>Definition:</b> Airport.h:63</div></div>
+<div class="ttc" id="aclassAirport_html_aeb45f23948ba85581afedf2c959db957"><div class="ttname"><a href="classAirport.html#aeb45f23948ba85581afedf2c959db957">Airport::getNext</a></div><div class="ttdeci">LandTransport getNext()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:76</div></div>
+<div class="ttc" id="aclassDate_html_a7188665f3fc3ed656fb36078f0f8e1ca"><div class="ttname"><a href="classDate.html#a7188665f3fc3ed656fb36078f0f8e1ca">Date::getHour</a></div><div class="ttdeci">int getHour()</div><div class="ttdef"><b>Definition:</b> Date.h:142</div></div>
+<div class="ttc" id="aclassAirport_html_a9b467f963bfb806a40a031ba78840750"><div class="ttname"><a href="classAirport.html#a9b467f963bfb806a40a031ba78840750">Airport::getByDistance</a></div><div class="ttdeci">vector&lt; LandTransport &gt; getByDistance()</div><div class="ttdef"><b>Definition:</b> Airport.cpp:51</div></div>
+<div class="ttc" id="aclassDate_html"><div class="ttname"><a href="classDate.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:94</div></div>
+<div class="ttc" id="aclassLandTransport_html_a593fa2fd17de6645a25e79b280dd68bf"><div class="ttname"><a href="classLandTransport.html#a593fa2fd17de6645a25e79b280dd68bf">LandTransport::getTransType</a></div><div class="ttdeci">TransType getTransType() const</div><div class="ttdef"><b>Definition:</b> Airport.h:52</div></div>
+<div class="ttc" id="aclassHour_html_a463f969bd1fed2df155ef170c1aa60f6"><div class="ttname"><a href="classHour.html#a463f969bd1fed2df155ef170c1aa60f6">Hour::setHour</a></div><div class="ttdeci">void setHour(int houR)</div><div class="ttdef"><b>Definition:</b> Date.h:38</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

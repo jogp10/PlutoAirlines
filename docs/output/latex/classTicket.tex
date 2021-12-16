@@ -3,37 +3,28 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classTicket_a24f0cb5428808b9023bb718a8f2ee5f1}{Ticket}} ()=default
+\mbox{\hyperlink{classTicket_a3f5b6ae20588fc29dc307f1585de1ee1}{Ticket}} (\mbox{\hyperlink{classFlight}{Flight}} flight, int group=1, \mbox{\hyperlink{classLuggage}{Luggage}} luggage=\mbox{\hyperlink{classLuggage}{Luggage}}(0))
 \item 
-\mbox{\Hypertarget{classTicket_af174b493ead39429524aa4e9ee8066b7}\label{classTicket_af174b493ead39429524aa4e9ee8066b7}} 
-{\bfseries Ticket} (\mbox{\hyperlink{classFlight}{Flight}} flight, \mbox{\hyperlink{classLuggage}{Luggage}} luggage=\mbox{\hyperlink{classLuggage}{Luggage}}(0), int group=1)
+void \mbox{\hyperlink{classTicket_a95bc7ab54700d4d0a43ca7b0ec86b9fd}{set\+Flight}} (const \mbox{\hyperlink{classFlight}{Flight}} \&flight)
 \item 
-\mbox{\Hypertarget{classTicket_a53fc01ec56b545648efbc943eb1e56bf}\label{classTicket_a53fc01ec56b545648efbc943eb1e56bf}} 
-void {\bfseries set\+Flight} (\mbox{\hyperlink{classFlight}{Flight}} flight)
+void \mbox{\hyperlink{classTicket_a054156096ab3348bdbadb7a0c48beaee}{set\+Luggage}} (const \mbox{\hyperlink{classLuggage}{Luggage}} \&luggage)
 \item 
-\mbox{\Hypertarget{classTicket_a5aa4d9cf9a29ce151f35237540cd148e}\label{classTicket_a5aa4d9cf9a29ce151f35237540cd148e}} 
-void {\bfseries set\+Luggage} (\mbox{\hyperlink{classLuggage}{Luggage}} luggage)
+void \mbox{\hyperlink{classTicket_a77aba531ce7ab2a80452f4dfd3e5ab39}{set\+Group}} (int group)
 \item 
-\mbox{\Hypertarget{classTicket_a77aba531ce7ab2a80452f4dfd3e5ab39}\label{classTicket_a77aba531ce7ab2a80452f4dfd3e5ab39}} 
-void {\bfseries set\+Group} (int group)
+\mbox{\hyperlink{classFlight}{Flight}} \mbox{\hyperlink{classTicket_a09d2438f436d9ad1448c765aa7113d5d}{get\+Flight}} () const
 \item 
-\mbox{\Hypertarget{classTicket_ac9eaf0ce476c3c3aaa4bf82cdfafa5c4}\label{classTicket_ac9eaf0ce476c3c3aaa4bf82cdfafa5c4}} 
-\mbox{\hyperlink{classFlight}{Flight}} {\bfseries get\+Flight} ()
+\mbox{\hyperlink{classLuggage}{Luggage}} \mbox{\hyperlink{classTicket_a58b14f9b3a7d99b6396960fbd65c5c9f}{get\+Luggage}} () const
 \item 
-\mbox{\Hypertarget{classTicket_ac9092c44cf7dd087e30e604dbcad7ec0}\label{classTicket_ac9092c44cf7dd087e30e604dbcad7ec0}} 
-const \mbox{\hyperlink{classLuggage}{Luggage}} {\bfseries get\+Luggage} ()
-\item 
-\mbox{\Hypertarget{classTicket_a2df7c7e406dfc06d5d6f9cb70b2ee69c}\label{classTicket_a2df7c7e406dfc06d5d6f9cb70b2ee69c}} 
-const int {\bfseries get\+Group} ()
+int \mbox{\hyperlink{classTicket_a8117f20c874474796fc3f88d9d4ad21b}{get\+Group}} () const
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classTicket_a24f0cb5428808b9023bb718a8f2ee5f1}\label{classTicket_a24f0cb5428808b9023bb718a8f2ee5f1}} 
+\mbox{\Hypertarget{classTicket_a3f5b6ae20588fc29dc307f1585de1ee1}\label{classTicket_a3f5b6ae20588fc29dc307f1585de1ee1}} 
 \index{Ticket@{Ticket}!Ticket@{Ticket}}
 \index{Ticket@{Ticket}!Ticket@{Ticket}}
 \doxysubsubsection{\texorpdfstring{Ticket()}{Ticket()}}
-{\footnotesize\ttfamily Ticket\+::\+Ticket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+{\footnotesize\ttfamily Ticket\+::\+Ticket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlight}{Flight}}}]{flight,  }\item[{int}]{group = {\ttfamily 1},  }\item[{\mbox{\hyperlink{classLuggage}{Luggage}}}]{luggage = {\ttfamily \mbox{\hyperlink{classLuggage}{Luggage}}(0)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
 Tickets 
 \begin{DoxyParams}{Parameters}
@@ -42,6 +33,69 @@ Tickets
 {\em luggage} & \\
 \hline
 {\em group} & Each \mbox{\hyperlink{classTicket}{Ticket}} must be related to a \mbox{\hyperlink{classFlight}{Flight}}, whether it can take \mbox{\hyperlink{classLuggage}{Luggage}} and if the \mbox{\hyperlink{classTicket}{Ticket}} belongs to a \mbox{\hyperlink{classPassenger}{Passenger}} that is travelling with a group or not. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTicket_a09d2438f436d9ad1448c765aa7113d5d}\label{classTicket_a09d2438f436d9ad1448c765aa7113d5d}} 
+\index{Ticket@{Ticket}!getFlight@{getFlight}}
+\index{getFlight@{getFlight}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{getFlight()}{getFlight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlight}{Flight}} Ticket\+::get\+Flight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get \mbox{\hyperlink{classTicket}{Ticket}}\textquotesingle{}s flight \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTicket_a8117f20c874474796fc3f88d9d4ad21b}\label{classTicket_a8117f20c874474796fc3f88d9d4ad21b}} 
+\index{Ticket@{Ticket}!getGroup@{getGroup}}
+\index{getGroup@{getGroup}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{getGroup()}{getGroup()}}
+{\footnotesize\ttfamily int Ticket\+::get\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get \mbox{\hyperlink{classTicket}{Ticket}}\textquotesingle{}s number of seats it represent \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTicket_a58b14f9b3a7d99b6396960fbd65c5c9f}\label{classTicket_a58b14f9b3a7d99b6396960fbd65c5c9f}} 
+\index{Ticket@{Ticket}!getLuggage@{getLuggage}}
+\index{getLuggage@{getLuggage}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{getLuggage()}{getLuggage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLuggage}{Luggage}} Ticket\+::get\+Luggage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+get \mbox{\hyperlink{classTicket}{Ticket}}\textquotesingle{}s luggage \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTicket_a95bc7ab54700d4d0a43ca7b0ec86b9fd}\label{classTicket_a95bc7ab54700d4d0a43ca7b0ec86b9fd}} 
+\index{Ticket@{Ticket}!setFlight@{setFlight}}
+\index{setFlight@{setFlight}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{setFlight()}{setFlight()}}
+{\footnotesize\ttfamily void Ticket\+::set\+Flight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlight}{Flight}} \&}]{flight }\end{DoxyParamCaption})}
+
+Set \mbox{\hyperlink{classTicket}{Ticket}}\textquotesingle{}s flight 
+\begin{DoxyParams}{Parameters}
+{\em flight} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTicket_a77aba531ce7ab2a80452f4dfd3e5ab39}\label{classTicket_a77aba531ce7ab2a80452f4dfd3e5ab39}} 
+\index{Ticket@{Ticket}!setGroup@{setGroup}}
+\index{setGroup@{setGroup}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{setGroup()}{setGroup()}}
+{\footnotesize\ttfamily void Ticket\+::set\+Group (\begin{DoxyParamCaption}\item[{int}]{group }\end{DoxyParamCaption})}
+
+Set \mbox{\hyperlink{classTicket}{Ticket}}\textquotesingle{}s group 
+\begin{DoxyParams}{Parameters}
+{\em group} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTicket_a054156096ab3348bdbadb7a0c48beaee}\label{classTicket_a054156096ab3348bdbadb7a0c48beaee}} 
+\index{Ticket@{Ticket}!setLuggage@{setLuggage}}
+\index{setLuggage@{setLuggage}!Ticket@{Ticket}}
+\doxysubsubsection{\texorpdfstring{setLuggage()}{setLuggage()}}
+{\footnotesize\ttfamily void Ticket\+::set\+Luggage (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLuggage}{Luggage}} \&}]{luggage }\end{DoxyParamCaption})}
+
+Set \mbox{\hyperlink{classTicket}{Ticket}}\textquotesingle{}s luggage 
+\begin{DoxyParams}{Parameters}
+{\em luggage} & \\
 \hline
 \end{DoxyParams}
 

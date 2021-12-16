@@ -86,28 +86,32 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classLuggage.html">Luggage</a> luggage;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1">Ticket</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1">Ticket</a>(<a class="code" href="classFlight.html">Flight</a> flight, <a class="code" href="classLuggage.html">Luggage</a> luggage = <a class="code" href="classLuggage.html">Luggage</a>(0), <span class="keywordtype">int</span> group = 1);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classTicket.html">Ticket</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classTicket.html">Ticket</a>(<a class="code" href="classFlight.html">Flight</a> flight, <span class="keywordtype">int</span> group = 1, <a class="code" href="classLuggage.html">Luggage</a> luggage = <a class="code" href="classLuggage.html">Luggage</a>(0));</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">//Setters</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> setFlight(<a class="code" href="classFlight.html">Flight</a> flight);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> setLuggage(<a class="code" href="classLuggage.html">Luggage</a> luggage);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> setGroup(<span class="keywordtype">int</span> group);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">//Getters</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classFlight.html">Flight</a> getFlight();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classLuggage.html">Luggage</a> <span class="keyword">const</span> getLuggage();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">int</span> <span class="keyword">const</span> getGroup();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_TICKET_H</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a95bc7ab54700d4d0a43ca7b0ec86b9fd">setFlight</a>(<span class="keyword">const</span> <a class="code" href="classFlight.html">Flight</a>&amp; flight);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a054156096ab3348bdbadb7a0c48beaee">setLuggage</a>(<span class="keyword">const</span> <a class="code" href="classLuggage.html">Luggage</a>&amp; luggage);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTicket.html#a77aba531ce7ab2a80452f4dfd3e5ab39">setGroup</a>(<span class="keywordtype">int</span> group);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//Getters</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment"></span>    <a class="code" href="classFlight.html">Flight</a> <a class="code" href="classTicket.html#a09d2438f436d9ad1448c765aa7113d5d">getFlight</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classLuggage.html">Luggage</a> <a class="code" href="classTicket.html#a58b14f9b3a7d99b6396960fbd65c5c9f">getLuggage</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classTicket.html#a8117f20c874474796fc3f88d9d4ad21b">getGroup</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_TICKET_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassTicket_html"><div class="ttname"><a href="classTicket.html">Ticket</a></div><div class="ttdef"><b>Definition:</b> Ticket.h:12</div></div>
+<div class="ttc" id="aclassTicket_html_a58b14f9b3a7d99b6396960fbd65c5c9f"><div class="ttname"><a href="classTicket.html#a58b14f9b3a7d99b6396960fbd65c5c9f">Ticket::getLuggage</a></div><div class="ttdeci">Luggage getLuggage() const</div><div class="ttdef"><b>Definition:</b> Ticket.cpp:24</div></div>
+<div class="ttc" id="aclassTicket_html_a054156096ab3348bdbadb7a0c48beaee"><div class="ttname"><a href="classTicket.html#a054156096ab3348bdbadb7a0c48beaee">Ticket::setLuggage</a></div><div class="ttdeci">void setLuggage(const Luggage &amp;luggage)</div><div class="ttdef"><b>Definition:</b> Ticket.cpp:14</div></div>
+<div class="ttc" id="aclassTicket_html_a8117f20c874474796fc3f88d9d4ad21b"><div class="ttname"><a href="classTicket.html#a8117f20c874474796fc3f88d9d4ad21b">Ticket::getGroup</a></div><div class="ttdeci">int getGroup() const</div><div class="ttdef"><b>Definition:</b> Ticket.cpp:26</div></div>
+<div class="ttc" id="aclassTicket_html_a95bc7ab54700d4d0a43ca7b0ec86b9fd"><div class="ttname"><a href="classTicket.html#a95bc7ab54700d4d0a43ca7b0ec86b9fd">Ticket::setFlight</a></div><div class="ttdeci">void setFlight(const Flight &amp;flight)</div><div class="ttdef"><b>Definition:</b> Ticket.cpp:10</div></div>
 <div class="ttc" id="aclassLuggage_html"><div class="ttname"><a href="classLuggage.html">Luggage</a></div><div class="ttdef"><b>Definition:</b> Luggage.h:9</div></div>
-<div class="ttc" id="aclassFlight_html"><div class="ttname"><a href="classFlight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.h:17</div></div>
-<div class="ttc" id="aclassTicket_html_a24f0cb5428808b9023bb718a8f2ee5f1"><div class="ttname"><a href="classTicket.html#a24f0cb5428808b9023bb718a8f2ee5f1">Ticket::Ticket</a></div><div class="ttdeci">Ticket()=default</div></div>
+<div class="ttc" id="aclassTicket_html_a09d2438f436d9ad1448c765aa7113d5d"><div class="ttname"><a href="classTicket.html#a09d2438f436d9ad1448c765aa7113d5d">Ticket::getFlight</a></div><div class="ttdeci">Flight getFlight() const</div><div class="ttdef"><b>Definition:</b> Ticket.cpp:22</div></div>
+<div class="ttc" id="aclassTicket_html_a77aba531ce7ab2a80452f4dfd3e5ab39"><div class="ttname"><a href="classTicket.html#a77aba531ce7ab2a80452f4dfd3e5ab39">Ticket::setGroup</a></div><div class="ttdeci">void setGroup(int group)</div><div class="ttdef"><b>Definition:</b> Ticket.cpp:18</div></div>
+<div class="ttc" id="aclassFlight_html"><div class="ttname"><a href="classFlight.html">Flight</a></div><div class="ttdef"><b>Definition:</b> Flight.h:18</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

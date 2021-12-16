@@ -77,26 +77,42 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define PLUTOAIRLINES_AIRLINE_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;Airplane.h&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classAirline.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAirline.html">Airline</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    vector&lt;Airplane&gt; airplanes;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classAirline.html">Airline</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">void</span> setAirplanes(vector&lt;Airplane&gt; airplanes);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    vector&lt;Airplane&gt; getAirplanes();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_AIRLINE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Airport.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classAirline.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classAirline.html">Airline</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    vector&lt;Airplane&gt; airplanes;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    vector&lt;Airport&gt; airports;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="classAirline.html">Airline</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classAirline.html#ad0845f956e052dccc6e5d6be83227358">   25</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAirline.html#ad0845f956e052dccc6e5d6be83227358">setAirplanes</a>(vector&lt;Airplane&gt; airplaneS) {this-&gt;airplanes=airplaneS;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classAirline.html#a100dd0acf1bcc79403f980efc2f1d3cb">   31</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAirline.html#a100dd0acf1bcc79403f980efc2f1d3cb">setAirports</a>(vector&lt;Airport&gt; airportS) {this-&gt;airports=airportS;};</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> addAirplane(<span class="keyword">const</span> <a class="code" href="classAirplane.html">Airplane</a>&amp; airplane);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> addAirport(<span class="keyword">const</span> <a class="code" href="classAirport.html">Airport</a>&amp; airport);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classAirline.html#a0aed31b32abe5c44c9ec4e6dea18feb8">   50</a></span>&#160;    vector&lt;Airplane&gt; <a class="code" href="classAirline.html#a0aed31b32abe5c44c9ec4e6dea18feb8">getAirplanes</a>() {<span class="keywordflow">return</span> airplanes;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classAirline.html#a9ae578987bdddabc462d4c895292151d">   56</a></span>&#160;    vector&lt;Airport&gt; <a class="code" href="classAirline.html#a9ae578987bdddabc462d4c895292151d">getAirports</a>() {<span class="keywordflow">return</span> airports;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_AIRLINE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassAirline_html"><div class="ttname"><a href="classAirline.html">Airline</a></div><div class="ttdef"><b>Definition:</b> Airline.h:13</div></div>
+<div class="ttc" id="aclassAirline_html"><div class="ttname"><a href="classAirline.html">Airline</a></div><div class="ttdef"><b>Definition:</b> Airline.h:14</div></div>
+<div class="ttc" id="aclassAirline_html_a9ae578987bdddabc462d4c895292151d"><div class="ttname"><a href="classAirline.html#a9ae578987bdddabc462d4c895292151d">Airline::getAirports</a></div><div class="ttdeci">vector&lt; Airport &gt; getAirports()</div><div class="ttdef"><b>Definition:</b> Airline.h:56</div></div>
+<div class="ttc" id="aclassAirline_html_a0aed31b32abe5c44c9ec4e6dea18feb8"><div class="ttname"><a href="classAirline.html#a0aed31b32abe5c44c9ec4e6dea18feb8">Airline::getAirplanes</a></div><div class="ttdeci">vector&lt; Airplane &gt; getAirplanes()</div><div class="ttdef"><b>Definition:</b> Airline.h:50</div></div>
+<div class="ttc" id="aclassAirplane_html"><div class="ttname"><a href="classAirplane.html">Airplane</a></div><div class="ttdef"><b>Definition:</b> Airplane.h:18</div></div>
+<div class="ttc" id="aclassAirport_html"><div class="ttname"><a href="classAirport.html">Airport</a></div><div class="ttdef"><b>Definition:</b> Airport.h:94</div></div>
+<div class="ttc" id="aclassAirline_html_ad0845f956e052dccc6e5d6be83227358"><div class="ttname"><a href="classAirline.html#ad0845f956e052dccc6e5d6be83227358">Airline::setAirplanes</a></div><div class="ttdeci">void setAirplanes(vector&lt; Airplane &gt; airplaneS)</div><div class="ttdef"><b>Definition:</b> Airline.h:25</div></div>
+<div class="ttc" id="aclassAirline_html_a100dd0acf1bcc79403f980efc2f1d3cb"><div class="ttname"><a href="classAirline.html#a100dd0acf1bcc79403f980efc2f1d3cb">Airline::setAirports</a></div><div class="ttdeci">void setAirports(vector&lt; Airport &gt; airportS)</div><div class="ttdef"><b>Definition:</b> Airline.h:31</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
