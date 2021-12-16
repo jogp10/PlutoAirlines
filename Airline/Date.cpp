@@ -102,8 +102,17 @@ string Date::convert(const string& date){
 }
 
 string Date::getDate() {
-    return to_string(year) + "-" + to_string(month) + "-" + to_string(day)
-           + " " + to_string(hour) + ":" + to_string(minute);
+    string months = to_string(this->month),
+            days = to_string(this->day),
+            hours = to_string(this->hour),
+            minutes = to_string(this->minute);
+    if(months.size()==1) months = '0' + months;
+    if(days.size()==1) days = '0' + days;
+    if(hours.size()==1) hours = '0' + hours;
+    if(minutes.size()==1) minutes = '0' + minutes;
+
+    return to_string(year) + "-" + months + "-" + days
+           + " " + hours + ":" + minutes;
 }
 
 string Date::getNow() {

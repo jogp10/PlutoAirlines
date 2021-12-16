@@ -4,6 +4,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include "../Airline/Airplane.h"
+#include "../Airline/Date.h"
 #include <list>
 
 using testing::Eq;
@@ -43,20 +44,20 @@ TEST(airplane_1, a_setAirplane){
     auto itr = flightsTest.begin();
     EXPECT_EQ(00365, itr->getFLightNum());
     itr++;
-    EXPECT_EQ("2022-12-03 14:50:00", itr->getDepartureDate());
+    EXPECT_EQ(Date("2022-12-03 14:50:00"), itr->getDepartureDate());
 
     EXPECT_EQ(295, flightsTest.front().getAvailableSeat());
 
     Service s1;
     s1.type = 1;
-    s1.date = "2021-01-01 12:00:00";
+    s1.date = Date("2021-01-01 12:00:00");
     s1.name = "José Alberto";
 
     a1.addService(s1);
 
     Service s2;
     s2.type = 0;
-    s2.date = "2023-01-01 12:00:00";
+    s2.date = Date("2023-01-01 12:00:00");
     s2.name = s1.name;
 
     a1.addService(s2);

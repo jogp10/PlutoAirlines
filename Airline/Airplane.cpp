@@ -94,7 +94,9 @@ void Airplane::updateServices() {
 
 void Airplane::updateFlights() {
     for(auto itr = flights.begin(); itr != flights.end(); ++itr){
-        if(!(itr->getDepartureDate()<Date::getNow())) continue;
+        string d1 = itr->getDepartureDate().getDate();
+        string d2 = Date::getNow();
+        if(!(itr->getDepartureDate().getDate()<Date::getNow())) continue;
         last20flights.push(flights.front());
         if(last20flights.size()>20)last20flights.pop();
         flights.erase(itr--);

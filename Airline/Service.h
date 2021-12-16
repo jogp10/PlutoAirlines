@@ -6,11 +6,15 @@
 #define PLUTOAIRLINES_SERVICE_H
 
 #include <string>
+#include "Date.h"
 
 struct Service
 {
     int type; // 0 for maintenance, 1 for clean
-    string date, name; // date of the service, name of the employee
+    string name;
+    Date date;
+    // date of the service, name of the employee
+
 };
 
 #endif //PLUTOAIRLINES_SERVICE_H

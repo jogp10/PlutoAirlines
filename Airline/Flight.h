@@ -6,6 +6,7 @@
 #define PLUTOAIRLINES_FLIGHT_H
 
 #include "Luggage.h"
+#include "Date.h"
 
 #include <iostream>
 #include <vector>
@@ -14,8 +15,10 @@ using namespace std;
 
 
 class Flight {
-    int flightNum, flightDuration;
-    string departureDate, departureLocal, arrivalLocal;
+    int flightNum;
+    Hour flightDuration;
+    Date departureDate;
+    string departureLocal, arrivalLocal;
     int availableSeat;
     vector<Luggage> luggage;
 
@@ -80,7 +83,7 @@ public:
      *  Get Flight's departure date
      * @return
      */
-    string getDepartureDate();
+    Date getDepartureDate();
     /**
      *  Get Flight's departure local
      * @return
@@ -95,7 +98,7 @@ public:
      *  Get Flight's travel duration
      * @return
      */
-    int getFlightDuration() const;
+    Hour getFlightDuration() const;
     /**
      *  Get Flight's available seat (remaining seat)
      * @return
