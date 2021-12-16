@@ -13,11 +13,12 @@ add_executable(PlutoAirlines main.cpp
         Airline/Date.cpp Airline/Date.h
         Airline/Service.h
         Airline/bst.h
+        Airline/LuggageTransport.h
 
         Tests/AirlineTest.cpp
         Tests/AirplaneTest.cpp
         Tests/LuggageTest.cpp
-        Tests/AirportTest.cpp)
+        Tests/AirportTest.cpp Airline/LuggageTransport.cpp)
 
 
 # Doxygen Build
