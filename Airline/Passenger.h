@@ -9,7 +9,6 @@
 #include "Ticket.h"
 
 class Passenger {
-    int group;
     Ticket ticket;
 
     /**
@@ -20,11 +19,12 @@ class Passenger {
      * group or is travelling alone;
      * If he is travelling alone, the value of group should be zero, otherwise it must be group number
      */
-    Passenger(Ticket ticket, int luggage = 0, int group = 1);
-
-    bool canBuyTicket(Ticket ticket);
-
-    void buyTicket(Ticket ticket);
+public:
+    Passenger() = default;
+    explicit Passenger(Ticket ticket);
+    bool buyTicket(Ticket& ticket);
+private:
+    bool canBuyTicket(const Ticket& ticket) const;
 };
 
 

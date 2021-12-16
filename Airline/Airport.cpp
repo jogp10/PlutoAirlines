@@ -4,6 +4,11 @@
 
 #include "Airport.h"
 
+LandTransport::LandTransport(TransType transType1, double distance1, Hour freq1, Hour start_hour, Hour end_hour):transType(transType1), distance(distance1) {
+    this->setSchedule(freq1, start_hour, end_hour);
+}
+
+
 vector<LandTransport> Airport::getSubway() {
     BSTItrIn<LandTransport> bstItrIn(this->bst) ;
     vector<LandTransport> subway;
@@ -11,7 +16,7 @@ vector<LandTransport> Airport::getSubway() {
     while(!bstItrIn.isAtEnd()){
         LandTransport landTransport = bstItrIn.retrieve();
         bstItrIn.advance();
-        if(landTransport.transType == SUBWAY) subway.insert(subway.end(), landTransport);
+        if(landTransport.getTransType() == SUBWAY) subway.insert(subway.end(), landTransport);
     }
 
     return subway;
@@ -24,7 +29,7 @@ vector<LandTransport> Airport::getTrain() {
     while(!bstItrIn.isAtEnd()){
         LandTransport landTransport = bstItrIn.retrieve();
         bstItrIn.advance();
-        if(landTransport.transType == TRAIN) train.insert(train.end(), landTransport);
+        if(landTransport.getTransType() == TRAIN) train.insert(train.end(), landTransport);
     }
 
     return train;
@@ -37,7 +42,7 @@ vector<LandTransport> Airport::getBus() {
     while(!bstItrIn.isAtEnd()){
         LandTransport landTransport = bstItrIn.retrieve();
         bstItrIn.advance();
-        if(landTransport.transType == BUS) bus.insert(bus.end(), landTransport);
+        if(landTransport.getTransType() == BUS) bus.insert(bus.end(), landTransport);
     }
 
     return bus;
@@ -79,4 +84,3 @@ LandTransport Airport::getNext() {
     }
     return min;
 }
-

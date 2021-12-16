@@ -7,19 +7,21 @@
 #include "bst.h"
 #include "Date.h"
 
-enum TransType {TRAIN, SUBWAY, BUS};
+enum TransType {NONE, TRAIN, SUBWAY, BUS};
 
-struct LandTransport{
+class LandTransport{
     TransType transType;
-    double distance = 0;
+    double distance;
+    Hour freq;
     vector<Hour> schedule = vector<Hour>();
 
+public:
     /**
      * Check LandTransport this < LandTransport a
      * @param a
      * @return true if this < a
      */
-    inline bool operator<(const LandTransport& a) const{
+    bool operator<(const LandTransport& a) const{
         return this->distance<a.distance;
     }
 
@@ -28,12 +30,31 @@ struct LandTransport{
      * @param LandTransport a
      * @return true if equals
      */
-    inline bool operator==(const LandTransport &a) const {
+    bool operator==(const LandTransport &a) const {
         if(this->distance==a.distance && this->schedule==a.schedule && this->transType==a.transType){
             return true;
         }
         return false;
     }
+    /**
+     *
+     * @param transType1
+     * @param distance1
+     * @param freq1
+     * @param start_hour
+     * @param end_hour
+     */
+    LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"));
+    /**
+     *
+     * @return
+     */
+    TransType getTransType() const {return transType;};
+    /**
+     *
+     * @return
+     */
+    double getDistance() const {return distance;};
 
     /**
      * Get next passage of transport
@@ -81,7 +102,7 @@ public:
      * @param name of airport
      * @param code of airport
      */
-    Airport(string name1, string code1): name(name1), code(code1), bst(BST<LandTransport>(LandTransport{})){};
+    Airport(string name1, string code1): name(name1), code(code1), bst(LandTransport(NONE)){};
 
     /**
      * Get all subways

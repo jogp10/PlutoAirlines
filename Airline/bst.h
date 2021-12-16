@@ -506,7 +506,7 @@ bool BST<Comparable>::isEqual(BinaryNode<Comparable>* n1, BinaryNode<Comparable>
 
 // ..............................
 // a) Desequilibrio de um no
-// 
+//
 template <class Comparable>
 int BST<Comparable>::balance(const Comparable& x) const {
   return 0;

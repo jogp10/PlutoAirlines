@@ -2,7 +2,6 @@
 #include <gmock/gmock.h>
 #include "../Airline/Airline.h"
 #include <string>
-#include "performance.h"
 
 using testing::Eq;
 

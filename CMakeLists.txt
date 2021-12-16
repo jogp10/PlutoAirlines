@@ -18,7 +18,10 @@ add_executable(PlutoAirlines main.cpp
         Tests/AirlineTest.cpp
         Tests/AirplaneTest.cpp
         Tests/LuggageTest.cpp
-        Tests/AirportTest.cpp Airline/LuggageTransport.cpp)
+        Tests/AirportTest.cpp
+        Tests/TicketTest.cpp
+        Tests/PassengerTest.cpp)
+
 
 
 # Doxygen Build

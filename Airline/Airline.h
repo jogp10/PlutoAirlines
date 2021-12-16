@@ -25,13 +25,13 @@ public:
      * Set Airline's airplanes
      * @param airplanes
      */
-    void setAirplanes(vector<Airplane> airplanes) {this->airplanes=airplanes;};
+    void setAirplanes(vector<Airplane> airplaneS) {this->airplanes=airplaneS;};
 
     /**
      * Set Airline's airport
      * @param airports
      */
-    void setAirports(vector<Airport> airports) {this->airports=airports;};
+    void setAirports(vector<Airport> airportS) {this->airports=airportS;};
 
     /**
      * Add airplane

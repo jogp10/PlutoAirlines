@@ -25,17 +25,11 @@ TEST(airplane_1, a_setAirplane){
 
     Flight f1(00365, "2022-12-03 14:53:00", "Miami", "Porto", 480);
     Flight f2(00366, "2022-12-03 14:50:00", "Lisbon", "Porto", 450);
-    Flight f3;
-    f3.setArrivalLocal("Lisbon");
-    f3.setDepartureDate("2021-12-07 16:30:00");
-    f3.setDepartureLocal("New York");
-    f3.setFlightDuration(1280);
 
 
     list<Flight> flights;
     flights.insert(flights.end(), f1);
     flights.insert(flights.end(), f2);
-    flights.insert(flights.end(), f3);
 
     a1.setFlights(flights);
     list<Flight> flightsTest = a1.getFlights();
@@ -64,8 +58,8 @@ TEST(airplane_1, a_setAirplane){
     list<Service> servicesDoneTest(a1.getPastServices());
     queue<Service> servicesTest(a1.getServices());
 
-    EXPECT_EQ(servicesTest.front().type, MAINTENANCE);
+    EXPECT_EQ(servicesTest.front().type, CLEAN);
     EXPECT_EQ(servicesDoneTest.front().name, "José Alberto");
-    EXPECT_EQ(servicesDoneTest.front().type, CLEAN);
+    EXPECT_EQ(servicesDoneTest.front().type, MAINTENANCE);
 
 }
