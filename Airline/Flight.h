@@ -21,6 +21,7 @@ class Flight {
     string departureLocal, arrivalLocal;
     int availableSeat;
     vector<Luggage> luggage;
+    int numTotalBags=0;
 
 public:
 
@@ -109,6 +110,11 @@ public:
      * @return
      */
     vector<Luggage> getLuggage() const;
+    /**
+     * Get Flight's total number of bags;
+     * @return
+     */
+    int getnumTotalBags() const;
 
 };
 

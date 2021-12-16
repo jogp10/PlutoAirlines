@@ -7,7 +7,7 @@
 
 
 class Luggage {
-    int numBags=0;
+    int numBags{};
 public:
 
     Luggage() = default;
