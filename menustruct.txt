@@ -1,0 +1,34 @@
+Passenger
+
+	buyTicket
+	checkTicket
+		get flightNum / flightduration / departuredate / departurelocal / arrivallocal
+		
+	Flights
+		get flightNum / flightduration / departuredate / departurelocal / arrivallocal	//same as in under checkTicket
+	Airport
+		get Subways / Trains / Bus / byDistance / next / max / min
+			get distance / freq / type
+	
+
+Worker (eveything a passenger can do except buyticket)
+	Airline
+		addairports
+		addairplanes
+	Airport
+		addTransport
+		gettransports
+			get distance / freq / type // same as in under Airport
+	Airplanes
+		addFlight
+		setFlights
+		getflights
+			get flightNum ... // same as in under checkTicket
+		getlast20flights
+			get flightNum ... // same as in under checkTicket
+		addservices
+		getservices
+			get type / name / date
+		getpastservices
+			get type / name / date (same as above)
+		
