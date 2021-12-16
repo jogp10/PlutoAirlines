@@ -46,7 +46,7 @@ public:
      * Set Flight's Departure Date
      * @param departureDate
      */
-    void setDepartureDate(string departureDate);
+    void setDepartureDate(const string& departureDate);
     /**
      * Set Flight's Departure Local
      * @param departureLocal

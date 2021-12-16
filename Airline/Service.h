@@ -8,9 +8,10 @@
 #include <string>
 #include "Date.h"
 
+enum ServType {MAINTENANCE, CLEAN};
 struct Service
 {
-    int type; // 0 for maintenance, 1 for clean
+    ServType type; // 0 for maintenance, 1 for clean
     string name;
     Date date;
     // date of the service, name of the employee

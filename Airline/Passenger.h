@@ -10,7 +10,6 @@
 
 class Passenger {
     int group;
-    Luggage luggage;
     Ticket ticket;
 
     /**
