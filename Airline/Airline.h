@@ -67,8 +67,7 @@ public:
      */
     void updateFlights(Airplane &a);
 
-    
-
+    vector<Flight> filterFromX(string code);
 
 };
 
