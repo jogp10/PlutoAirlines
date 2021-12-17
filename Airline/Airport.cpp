@@ -4,7 +4,7 @@
 
 #include "Airport.h"
 
-vector<LandTransport> Airport::getSubway() {
+vector<LandTransport> Airport::getSubway() const{
     BSTItrIn<LandTransport> bstItrIn(this->bst) ;
     vector<LandTransport> subway;
 
@@ -17,7 +17,7 @@ vector<LandTransport> Airport::getSubway() {
     return subway;
 }
 
-vector<LandTransport> Airport::getTrain() {
+vector<LandTransport> Airport::getTrain() const{
     BSTItrIn<LandTransport> bstItrIn(this->bst) ;
     vector<LandTransport> train;
 
@@ -30,7 +30,7 @@ vector<LandTransport> Airport::getTrain() {
     return train;
 }
 
-vector<LandTransport> Airport::getBus() {
+vector<LandTransport> Airport::getBus() const{
     BSTItrIn<LandTransport> bstItrIn(this->bst) ;
     vector<LandTransport> bus;
 
@@ -43,7 +43,7 @@ vector<LandTransport> Airport::getBus() {
     return bus;
 }
 
-vector<LandTransport> Airport::getByDistance() {
+vector<LandTransport> Airport::getByDistance() const{
     BSTItrIn<LandTransport> bstItrIn(this->bst) ;
     vector<LandTransport> bydistance;
 
@@ -56,19 +56,15 @@ vector<LandTransport> Airport::getByDistance() {
     return bydistance;
 }
 
-void Airport::insert(const LandTransport& landTransport) {
-    bst.insert(landTransport);
-}
-
-LandTransport Airport::getMinDistance() {
+LandTransport Airport::getMinDistance() const{
     return bst.findMin();
 }
 
-LandTransport Airport::getMaxDistance() {
+LandTransport Airport::getMaxDistance() const{
     return bst.findMax();
 }
 
-LandTransport Airport::getNext() {
+LandTransport Airport::getNext() const{
     BSTItrLevel<LandTransport> bstItrLevel(bst);
 
     LandTransport min = bstItrLevel.retrieve();
@@ -78,4 +74,8 @@ LandTransport Airport::getNext() {
         if(landTransport.next()<min.next()) min = landTransport;
     }
     return min;
+}
+
+void Airport::insert(const LandTransport& landTransport) {
+    bst.insert(landTransport);
 }

@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 
 using namespace std;
 
@@ -20,13 +21,12 @@ class Flight {
     Hour flightDuration;
     Date departureDate;
     string departureLocal, arrivalLocal;
-    int availableSeat;
-    vector<Luggage> luggage;
+    int availableSeat{};
+    list<Luggage> luggage{};
     int numTotalBags=0;
 
 public:
 
-    Flight() = default;
     /**
      *
      * @param flightNum
@@ -35,7 +35,7 @@ public:
      * @param arrivalLocal
      * @param flightDuration
      */
-    Flight(int flightNum, string departureDate, string departureLocal, string arrivalLocal, int flightDuration);
+    Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration);
 
     //Setters
     /**
@@ -52,12 +52,12 @@ public:
      * Set Flight's Departure Local
      * @param departureLocal
      */
-    void setDepartureLocal(string departureLocal);
+    void setDepartureLocal(const string& departureLocal);
     /**
      * Set Flight's Arrival Local
      * @param arrivalLocal
      */
-    void setArrivalLocal(string arrivalLocal);
+    void setArrivalLocal(const string& arrivalLocal);
     /**
      * Set Flight's Duration Time
      * @param flightDuration
@@ -110,7 +110,7 @@ public:
      *  Get Flight's luggage from passengers
      * @return
      */
-    vector<Luggage> getLuggage() const;
+    list<Luggage> getLuggage() const;
     /**
      * Get Flight's total number of bags;
      * @return

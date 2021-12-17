@@ -13,7 +13,7 @@ using testing::Eq;
 TEST(test_1, TicketTest) {
     Ticket t1;
 
-    Airplane a1;
+    Airplane a1("Albeto", "A360", 320);
 
     Flight f6(1234, "2022-03-03 12:45", "Porto", "Lisbon", 35);
     a1.addFlight(f6);

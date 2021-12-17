@@ -4,11 +4,7 @@
 
 #include "Passenger.h"
 
-Passenger::Passenger(Ticket ticket) {
-    buyTicket(ticket);
-}
-
-bool Passenger::canBuyTicket(const Ticket& tickeT) const {
+bool Passenger::canBuyTicket(const Ticket& tickeT) {
     if(tickeT.getFlight().getAvailableSeat() >= tickeT.getGroup()) {
         return true;
     }

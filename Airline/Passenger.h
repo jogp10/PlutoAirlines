@@ -9,15 +9,15 @@
 #include "Ticket.h"
 
 class Passenger {
+    string name;
     Ticket ticket;
 
 public:
-    Passenger() = default;
     /**
      *
      * @param ticket
      */
-    explicit Passenger(Ticket ticket);
+    explicit Passenger(const string& name): name(name){};
     /**
      * Buy the ticket if posible
      * @param ticket
@@ -30,7 +30,7 @@ private:
      * @param ticket
      * @return
      */
-    bool canBuyTicket(const Ticket& ticket) const;
+    static bool canBuyTicket(const Ticket& ticket) ;
 };
 
 

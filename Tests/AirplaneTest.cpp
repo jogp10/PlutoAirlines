@@ -12,12 +12,7 @@ using testing::Eq;
 
 TEST(airplane_1, a_setAirplane){
     cout<<endl<<"Testing 'setAirplane'"<<endl;
-    Airplane a1;
-    EXPECT_EQ("", a1.getPlate());
-
-    a1.setCapacity(295);
-    a1.setType("A310");
-    a1.setPlate("José");
+    Airplane a1("José", "A310", 295);
 
     EXPECT_EQ("José", a1.getPlate());
     EXPECT_EQ("A310", a1.getType());

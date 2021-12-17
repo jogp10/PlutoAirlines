@@ -26,17 +26,15 @@ class Airplane {
 private:
     void updateServices();
     void updateFlights();
-    void sortFLights(vector<Flight> &f, int left, int right);
+    void sortFLights(vector<Flight> &f, unsigned left, unsigned right);
 
 public:
-    Airplane() = default;
-
     /**
      *
      * @param plate
      * @param capacity
      */
-    explicit Airplane(string plate, string type, int capacity);
+    explicit Airplane(const string& plate, const string& type, int capacity);
 
 
     /**

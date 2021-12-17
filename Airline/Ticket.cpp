@@ -4,7 +4,7 @@
 
 #include "Ticket.h"
 
-Ticket::Ticket(Flight flight, int group, Luggage luggage): flight(flight), luggage(luggage), group(group){
+Ticket::Ticket(const Flight& flight, int group, Luggage luggage): flight(flight), luggage(luggage), group(group){
 }
 
 void Ticket::setFlight(const Flight& flighT) {

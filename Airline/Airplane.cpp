@@ -7,10 +7,7 @@
 
 using namespace std;
 
-Airplane::Airplane(string plate, string type, int capacity) {
-    this->plate = plate;
-    this->type = type;
-    this->capacity = capacity;
+Airplane::Airplane(const string& plate, const string& type, int capacity): plate(plate), type(type), capacity(capacity) {
 }
 
 void Airplane::setPlate(const string &platE) {
@@ -95,7 +92,7 @@ void Airplane::updateFlights() {
     while(itr!=flights.end()){
         string d1 = itr->getDepartureDate().getDate(); // start of the flight
         string d11 = itr->getFlightDuration().getHourMin(); // flight duration
-        d1 = d1 + d11; // arrival
+        d1.append(d11); // arrival
         string d2 = Date::getNow();
         if(d1<d2) {
             last20flights.push(flights.front());
@@ -108,7 +105,7 @@ void Airplane::updateFlights() {
 }
 
 
-const Flight &median(vector<Flight> &f, int left, int right){
+const Flight &median(vector<Flight> &f, unsigned left, unsigned right){
     int center = (left+right) /2;
     if(f[center] < f[left])
         swap(f[left], f[center]);
@@ -121,7 +118,7 @@ const Flight &median(vector<Flight> &f, int left, int right){
     return f[right-1];
 }
 
-void insertionSort(vector<Flight> &f, int left, int right){
+void insertionSort(vector<Flight> &f, unsigned left, unsigned right){
     for(unsigned p=left+1; p<right; p++){
         Flight tmp = f[p];
         unsigned j;
@@ -132,7 +129,7 @@ void insertionSort(vector<Flight> &f, int left, int right){
 }
 
 //Quick Sort
-void Airplane::sortFLights(vector<Flight> &f, int left, int right) {
+void Airplane::sortFLights(vector<Flight> &f, unsigned left, unsigned right) {
     if(right-left<=10)
         insertionSort(f, left, right);
     else {

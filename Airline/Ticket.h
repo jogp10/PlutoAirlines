@@ -10,9 +10,9 @@
 #include "Luggage.h"
 
 class Ticket {
-    int group;
-    Flight flight;
-    Luggage luggage;
+    int group=1;
+    Flight flight=Flight(00000, "1995-12-30 23:59", "", "", 1);
+    Luggage luggage{};
 
 public:
     Ticket() = default;
@@ -24,7 +24,7 @@ public:
      * Each Ticket must be related to a Flight, whether it can take Luggage and if the Ticket belongs to a
      * Passenger that is travelling with a group or not.
      */
-    explicit Ticket(Flight flight, int group = 1, Luggage luggage = Luggage(0));
+    explicit Ticket(const Flight& flight, int group = 1, Luggage luggage = Luggage(0));
 
     //Setters
     /**

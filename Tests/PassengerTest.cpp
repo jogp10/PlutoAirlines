@@ -15,7 +15,7 @@ using namespace std;
 TEST(passenger_1, a_setPassenger){
     cout<<endl<<"Testing 'Passenger'"<<endl;
 
-    Passenger p1;
+    Passenger p1("António");
     Airplane a1("Quim", "A1", 100);
     Flight f1(12345, "2022-23-12 14:23","Porto", "Lisbon", 145);
     a1.addFlight(f1);

@@ -16,7 +16,6 @@ TEST(airline_1, a_setAirplanes){
     Airplane a2("Josefina", "B1234", 1200);
     Airplane a3("Alberto", "A3234", 200);
     Airplane a4("Paulo", "C1234", 150);
-    Airplane a5{};
 
     vector<Airplane> airplanes;
 
@@ -43,9 +42,7 @@ TEST(airline_1, a_setAirplanes){
 
     Airline Pluto2;
 
-    a5.setPlate("Quim Roscas");
-    a5.setType("D1232");
-    a5.setCapacity(250);
+    Airplane a5("Quim Roscas", "D1232", 250);
 
     airplanes.clear();
     EXPECT_EQ(0, airplanes.size());

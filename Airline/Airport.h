@@ -37,7 +37,7 @@ public:
      * @param start_hour
      * @param end_hour
      */
-    LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"));
+    explicit LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"));
     /**
      *  Get Transport type
      * @return
@@ -76,49 +76,49 @@ public:
      * @param name of airport
      * @param code of airport
      */
-    Airport(string name1, string code1): name(name1), code(code1), bst(LandTransport(NONE)){};
+    Airport(const string& name1, const string& code1): name(name1), code(code1), bst(LandTransport(NONE)){};
 
     /**
      * Get all subways
      * @return
      */
-    vector<LandTransport> getSubway();
+    vector<LandTransport> getSubway() const;
 
     /**
      * Get all trains
      * @return
      */
-    vector<LandTransport> getTrain();
+    vector<LandTransport> getTrain() const;
 
     /**
      * Get all bus
      * @return
      */
-    vector<LandTransport> getBus();
+    vector<LandTransport> getBus() const;
 
     /**
      * Get all transports ordered by distance
      * @return
      */
-    vector<LandTransport> getByDistance();
+    vector<LandTransport> getByDistance() const;
 
     /**
      * Get closests transport
      * @return
      */
-    LandTransport getMinDistance();
+    LandTransport getMinDistance() const;
 
     /**
      * Get furthest transport
      * @return
      */
-    LandTransport getMaxDistance();
+    LandTransport getMaxDistance() const;
 
     /**
      * Get next transport
      * @return
      */
-    LandTransport getNext();
+    LandTransport getNext() const;
 
     /**
      * Insert new Transport

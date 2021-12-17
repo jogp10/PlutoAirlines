@@ -5,7 +5,7 @@
 #include "Flight.h"
 #include "Date.h"
 
-Flight::Flight(int flightNum, string departureDate, string departureLocal, string arrivalLocal, int flightDuration): flightDuration(flightDuration){
+Flight::Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration): flightDuration(flightDuration){
     this->flightNum = flightNum;
     Date departuredate(departureDate);
     this->departureDate = departuredate;
@@ -22,11 +22,11 @@ void Flight::setDepartureDate(const string& departuredatE) {
     this->departureDate = departuredate;
 }
 
-void Flight::setDepartureLocal(string departurelocal) {
+void Flight::setDepartureLocal(const string& departurelocal) {
     this->departureLocal = departurelocal;
 }
 
-void Flight::setArrivalLocal(string arrivallocal) {
+void Flight::setArrivalLocal(const string& arrivallocal) {
     this->arrivalLocal = arrivallocal;
 }
 
@@ -66,11 +66,11 @@ int Flight::getAvailableSeat() const {
 
 void Flight::minusAvailableSeats(int ticketsBought, Luggage luggagE) {
     this->availableSeat -= ticketsBought;
-    this->luggage.push_back(luggagE);
+    this->luggage.insert(luggage.end(), 1, luggagE);
     numTotalBags += luggagE.getnumBags();
 }
 
-vector<Luggage> Flight::getLuggage() const {
+list<Luggage> Flight::getLuggage() const {
     return luggage;
 }
 
