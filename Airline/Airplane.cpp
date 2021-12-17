@@ -25,40 +25,23 @@ void Airplane::setCapacity(const int &capacitY) {
     this->capacity = capacitY;
 }
 
-void Airplane::setFlights(list<Flight>& flightS) {
-    for(auto& flight: flightS)
-    {
-        flight.setAvailableSeats(capacity);
-        this->flights.insert(flights.end(), 1, flight);
+void Airplane::setFlights(vector<Flight>& flightS) {
+    flights.clear();
+    for(auto &i: flightS){
+        i.setAvailableSeats(capacity);
     }
+    this->flights=flightS;
+    this->sortFLights(flights, 0, flights.size());
 }
 
 void Airplane::addFlight(Flight &flight) {
     flight.setAvailableSeats(capacity);
-    flights.insert(flights.end(), 1, flight);
+    flights.push_back(flight);
+    this->sortFLights(flights, 0, flights.size());
 }
 
 void Airplane::addService(const Service& service) {
     services.push(service);
-}
-
-list<Flight> Airplane::getFlights(){
-    updateFlights();
-    return flights;
-}
-
-queue<Flight> Airplane::getLastFlights(){
-    updateFlights();
-    return last20flights;
-}
-
-Flight Airplane::getNextFlight() {
-    updateFlights();
-    Flight min = *flights.begin();
-    for(auto & flight : flights){
-        if(flight.getDepartureDate()<min.getDepartureDate()) min = flight;
-    }
-    return min;
 }
 
 
@@ -73,6 +56,20 @@ string Airplane::getType() {
 
 int Airplane::getCapacity() const {
     return capacity;
+}
+
+vector<Flight> Airplane::getFlights(){
+    updateFlights();
+    return flights;
+}
+
+Flight Airplane::getNextFlight() {
+    return flights[0];
+}
+
+queue<Flight> Airplane::getLastFlights(){
+    updateFlights();
+    return last20flights;
 }
 
 queue<Service> Airplane::getServices() {
@@ -94,12 +91,63 @@ void Airplane::updateServices() {
 }
 
 void Airplane::updateFlights() {
-    for(auto itr = flights.begin(); itr != flights.end(); ++itr){
-        string d1 = itr->getDepartureDate().getDate();
+    auto itr = flights.begin();
+    while(itr!=flights.end()){
+        string d1 = itr->getDepartureDate().getDate(); // start of the flight
+        string d11 = itr->getFlightDuration().getHourMin(); // flight duration
+        d1 = d1 + d11; // arrival
         string d2 = Date::getNow();
-        if(!(itr->getDepartureDate().getDate()<Date::getNow())) continue;
-        last20flights.push(flights.front());
-        if(last20flights.size()>20)last20flights.pop();
-        flights.erase(itr--);
+        if(d1<d2) {
+            last20flights.push(flights.front());
+            if (last20flights.size() > 20)last20flights.pop();
+            flights.erase(itr--);
+        }
+        else break;
+        ++itr;
+    }
+}
+
+
+const Flight &median(vector<Flight> &f, int left, int right){
+    int center = (left+right) /2;
+    if(f[center] < f[left])
+        swap(f[left], f[center]);
+    if(f[right] < f[left])
+        swap(f[left], f[right]);
+    if(f[right] < f[center])
+        swap(f[center], f[right]);
+
+    swap(f[center], f[right-1]);
+    return f[right-1];
+}
+
+void insertionSort(vector<Flight> &f, int left, int right){
+    for(unsigned p=left+1; p<right; p++){
+        Flight tmp = f[p];
+        unsigned j;
+        for( j=p; j>0 && tmp<f[j-1]; j--)
+            f[j] = f[j-1];
+        f[j] = tmp;
+    }
+}
+
+//Quick Sort
+void Airplane::sortFLights(vector<Flight> &f, int left, int right) {
+    if(right-left<=10)
+        insertionSort(f, left, right);
+    else {
+        Flight x = median(f, left, right);
+        int i = left;
+        int j = right - 1;
+        for (;;) {
+            while (f[++i] < x);
+            while (x < f[--j]);
+            if (i < j)
+                swap(f[i], f[j]);
+            else break;
+        }
+        swap(f[i], f[right - 1]);
+        sortFLights(f, left, i - 1);
+        sortFLights(f, i + 1, right);
     }
 }

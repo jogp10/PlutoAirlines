@@ -31,11 +31,11 @@ Hour LandTransport::next() {
 }
 
 void LandTransport::setSchedule(Hour frequency, Hour start_hour, Hour end_hour) {
+    this->freq=frequency;
     schedule.clear();
     Hour a = start_hour;
     while(a<end_hour){
         schedule.insert(schedule.end(), a);
-        //Date freq(frequency);
-        a = a+frequency;
+        a = a+freq;
     }
 }

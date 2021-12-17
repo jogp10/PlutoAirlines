@@ -85,17 +85,17 @@ public:
      *  Get Flight's departure date
      * @return
      */
-    Date getDepartureDate();
+    Date getDepartureDate() const;
     /**
      *  Get Flight's departure local
      * @return
      */
-    string getDepartureLocal();
+    string getDepartureLocal() const;
     /**
      *  Get Flight's arrival local
      * @return
      */
-    string getArrivalLocal();
+    string getArrivalLocal() const;
     /**
      *  Get Flight's travel duration
      * @return
@@ -116,6 +116,12 @@ public:
      * @return
      */
     int getnumTotalBags() const;
+    /**
+     * Compare two flights
+     * @param a
+     * @return
+     */
+    bool operator<(const Flight &a) const;
 
 };
 

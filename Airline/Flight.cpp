@@ -3,6 +3,7 @@
 //
 
 #include "Flight.h"
+#include "Date.h"
 
 Flight::Flight(int flightNum, string departureDate, string departureLocal, string arrivalLocal, int flightDuration): flightDuration(flightDuration){
     this->flightNum = flightNum;
@@ -43,15 +44,15 @@ int Flight::getFLightNum() const {
     return flightNum;
 }
 
-Date Flight::getDepartureDate() {
+Date Flight::getDepartureDate() const{
     return departureDate;
 }
 
-string Flight::getDepartureLocal() {
+string Flight::getDepartureLocal() const{
     return departureLocal;
 }
 
-string Flight::getArrivalLocal() {
+string Flight::getArrivalLocal() const{
     return arrivalLocal;
 }
 
@@ -75,6 +76,10 @@ vector<Luggage> Flight::getLuggage() const {
 
 int Flight::getnumTotalBags() const{
     return numTotalBags;
+}
+
+bool Flight::operator<(const Flight &a) const {
+    return this->getDepartureDate()<a.getDepartureDate();
 }
 
 

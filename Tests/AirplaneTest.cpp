@@ -27,21 +27,21 @@ TEST(airplane_1, a_setAirplane){
     Flight f2(00366, "2022-12-03 14:50:00", "Lisbon", "Porto", 450);
 
 
-    list<Flight> flights;
+    vector<Flight> flights;
     flights.insert(flights.end(), f1);
     flights.insert(flights.end(), f2);
 
     a1.setFlights(flights);
-    list<Flight> flightsTest = a1.getFlights();
+    vector<Flight> flightsTest = a1.getFlights();
 
     EXPECT_EQ(flightsTest.size(), 2);
     auto itr = flightsTest.begin();
-    EXPECT_EQ(00365, itr->getFLightNum());
+    EXPECT_EQ(00366, itr->getFLightNum());
     itr++;
-    EXPECT_EQ(Date("2022-12-03 14:50:00"), itr->getDepartureDate());
+    EXPECT_EQ(Date("2022-12-03 14:53:00"), itr->getDepartureDate());
 
     EXPECT_EQ(295, flightsTest.front().getAvailableSeat());
-
+    EXPECT_EQ(a1.getNextFlight().getFLightNum(), 00366);
     Service s1;
     s1.type = MAINTENANCE;
     s1.date = Date("2021-01-01 12:00:00");

@@ -18,14 +18,15 @@ using namespace std;
 class Airplane {
     string plate, type;
     int capacity{};
-    queue<Flight> last20flights;
-    list<Flight> flights;
-    list<Service> servicesDone;
+    queue<Flight> last20flights{};
+    vector<Flight> flights;
+    list<Service> servicesDone{};
     queue<Service> services;
 
 private:
     void updateServices();
     void updateFlights();
+    void sortFLights(vector<Flight> &f, int left, int right);
 
 public:
     Airplane() = default;
@@ -62,7 +63,7 @@ public:
      * Set Airplane's Travel plan
      * @param flights
      */
-    void setFlights(list<Flight>& flightS);
+    void setFlights(vector<Flight>& flightS);
 
 
     /**
@@ -104,7 +105,7 @@ public:
      * Get Airplane's Flight plan
      * @return list of flights
      */
-    list<Flight> getFlights();
+    vector<Flight> getFlights();
 
     /**
      * Get Airplane's Last Flights
@@ -131,6 +132,7 @@ public:
      * @return
      */
     list<Service> getPastServices();
+
 };
 
 
