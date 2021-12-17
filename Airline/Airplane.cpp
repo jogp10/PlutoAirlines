@@ -41,12 +41,11 @@ void Airplane::addService(const Service& service) {
     services.push(service);
 }
 
-
-string Airplane::getPlate() {
+string Airplane::getPlate() const{
     return plate;
 }
 
-string Airplane::getType() {
+string Airplane::getType() const{
     return type;
 }
 
@@ -61,6 +60,7 @@ vector<Flight> Airplane::getFlights(){
 }
 
 Flight Airplane::getNextFlight() {
+    updateFlights();
     return flights[0];
 }
 

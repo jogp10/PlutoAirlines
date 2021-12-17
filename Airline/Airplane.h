@@ -23,6 +23,7 @@ class Airplane {
     list<Service> servicesDone{};
     queue<Service> services;
 
+
 private:
     void updateServices();
     void updateFlights();
@@ -35,7 +36,6 @@ public:
      * @param capacity
      */
     explicit Airplane(const string& plate, const string& type, int capacity);
-
 
     /**
      * Set Airplane's plate
@@ -82,14 +82,14 @@ public:
      * Get Airplane's plate
      * @return
      */
-    string getPlate();
+    string getPlate() const;
 
 
     /**
      * Get Airplane's type
      * @return
      */
-    string getType();
+    string getType() const;
 
 
     /**

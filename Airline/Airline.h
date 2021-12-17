@@ -14,15 +14,16 @@ using namespace std;
 class Airline {
     vector<Airplane> airplanes;
     vector<Airport> airports;
+    vector<pair<Airplane, Flight>> flights;
 
 public:
-    Airline();
+    Airline() = default;
 
     /**
      * Set Airline's airplanes
      * @param airplanes
      */
-    void setAirplanes(vector<Airplane> airplaneS) {this->airplanes=airplaneS;};
+    void setAirplanes(vector<Airplane> airplaneS);
 
     /**
      * Set Airline's airport
@@ -34,7 +35,7 @@ public:
      * Add airplane
      * @param airplane
      */
-    void addAirplane(const Airplane& airplane);
+    void addAirplane(Airplane& airplane);
 
     /**
      * Add airport
@@ -54,6 +55,19 @@ public:
      * @return
      */
     vector<Airport> getAirports() {return airports;};
+
+    /**
+     * Update Airline next planned flights
+     */
+    void updateFlights();
+
+    /**
+     * Update Airline next planned flights
+     * @param Airplane
+     */
+    void updateFlights(Airplane &a);
+
+
 };
 
 
