@@ -5,6 +5,7 @@
 #include <iostream>
 #include <thread>
 #include "App.h"
+#include "Airline/Airplane.h"
 
 using namespace std;
 
@@ -47,7 +48,8 @@ int Passenger() {
     /** Passenger Menu Interface */
     cout << endl;
     cout << "1) Buy Ticket" << endl;
-
+    cout << "2) Flights" << endl;
+    cout << "3) Airport" << endl;
     cout << "0) Go Back" << endl;
 
 
@@ -59,18 +61,111 @@ int Passenger() {
         if (cin.eof()) { return 0; }
         if (cin.fail()) { cin.ignore(10000, '\n'); }
         if (passenger_choice == 0) { return 0; }
-        else if (passenger_choice == 1 || passenger_choice == 2 ) { return passenger_choice; }
+        else if (passenger_choice == 1 || passenger_choice == 2 || passenger_choice == 3) { return passenger_choice; }
 
         else {
             cin.clear();
             cin.ignore(10000, '\n');
         }
-        cerr << "Input a valid operation! (0 or 1 to proceed)" << endl;
+        cerr << "Input a valid operation! (0, 1, 2 or 3 to proceed)" << endl;
     }
 }
 
-void BuyTicket() {}
+int BuyTicket() {
+    int ticket_choice;
 
+    /** BuyTicket Menu Interface */
+    cout << endl << "Get: " << endl;
+    cout << "1) Flight Number" << endl;
+    cout << "2) Flight Duration" << endl;
+    cout << "3) Departure Date" << endl;
+    cout << "4) Departure Local" << endl;
+    cout << "5) Arrival Local" << endl;
+    cout << "0) Go Back" << endl;
+
+    /** BuyTicket Menu execution (asking for ticket_choice) */
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> ticket_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        if (ticket_choice == 0) { return 0; }
+        else if (ticket_choice == 1 || ticket_choice == 2 || ticket_choice == 3 ||
+                 ticket_choice == 4 || ticket_choice == 5) { return ticket_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (0, 1, 2, 3, 4 or 5 to proceed)" << endl;
+    }
+}
+
+int Flights() {
+    int flights_choice;
+
+    /** Flights Menu Interface */
+    cout << endl << "Get: " << endl;
+    cout << "1) Flight Number" << endl;
+    cout << "2) Flight Duration" << endl;
+    cout << "3) Departure Date" << endl;
+    cout << "4) Departure Local" << endl;
+    cout << "5) Arrival Local" << endl;
+    cout << "0) Go Back" << endl;
+
+    /** Flights Menu execution (asking for flights_choice) */
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> flights_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        if (flights_choice == 0) { return 0; }
+        else if (flights_choice == 1 || flights_choice == 2 || flights_choice == 3 ||
+                 flights_choice == 4 || flights_choice == 5) { return flights_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (0, 1, 2, 3, 4 or 5 to proceed)" << endl;
+    }
+}
+
+int AirportPassenger() {
+    int airport_passenger_choice;
+
+    /** AirportPassenger Menu Interface */
+    cout << endl << "Get:    " << endl;
+    cout << "1) Subways" << endl;
+    cout << "2) Trains" << endl;
+    cout << "3) Bus" << endl;
+    cout << "4) By Distance" << endl;
+    cout << "5) Next" << endl;
+    cout << "6) Max" << endl;
+    cout << "7) Min" << endl;
+    cout << "0) Go Back" << endl;
+
+    /** AirportPassenger Menu execution (asking for airport_passenger_choice) */
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> airport_passenger_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        if (airport_passenger_choice == 0) { return 0; }
+        else if (airport_passenger_choice == 1 || airport_passenger_choice == 2 || airport_passenger_choice == 3 ||
+                 airport_passenger_choice == 4 || airport_passenger_choice == 5 || airport_passenger_choice == 6 ||
+                 airport_passenger_choice == 7) { return airport_passenger_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (0, 1, 2, 3, 4, 5, 6 or 7 to proceed)" << endl;
+    }
+}
 
 //--------------------------
 int Worker() {
@@ -78,8 +173,9 @@ int Worker() {
 
     /** Worker Menu Interface */
     cout << endl;
-    cout << "1) Add Plane" << endl;
-    cout << "2) Manage Flight" << endl;
+    cout << "1) Airline" << endl;
+    cout << "2) Airport" << endl;
+    cout << "3) Airplanes" << endl;
     cout << "0) Go Back" << endl;
 
 
@@ -91,16 +187,18 @@ int Worker() {
         if (cin.eof()) { return 0; }
         if (cin.fail()) { cin.ignore(10000, '\n'); }
         if (worker_choice == 0) { return 0; }
-        else if (worker_choice == 1 || worker_choice == 2 ) { return worker_choice; }
+        else if (worker_choice == 1 || worker_choice == 2 || worker_choice == 3) { return worker_choice; }
 
         else {
             cin.clear();
             cin.ignore(10000, '\n');
         }
-        cerr << "Input a valid operation! (0, 1 or 2 to proceed)" << endl;
+        cerr << "Input a valid operation! (0, 1, 2 or 3 to proceed)" << endl;
     }
 }
 
-void AddPlane() {}
+void Airline() {}
 
-void ManageFlight() {}
+void Airport() {}
+
+void Airplanes() {}

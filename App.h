@@ -12,14 +12,31 @@ int menu();
 /** All methods related to Passenger */
 int Passenger();
 
-void BuyTicket();
+
+int BuyTicket();
+/**/
+
+/**/
+
+int Flights();
+/**/
+
+/**/
+
+int AirportPassenger();
+/**/
+
+/**/
+
 
 // --------------------------
 /** All methods related to Worker */
 int Worker();
 
-void AddPlane();
+void Airline();
 
-void ManageFlight();
+void Airport();
+
+void Airplanes();
 
 #endif //MAIN_CPP_APP_H
