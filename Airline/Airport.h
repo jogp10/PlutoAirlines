@@ -21,21 +21,14 @@ public:
      * @param a
      * @return true if this < a
      */
-    bool operator<(const LandTransport& a) const{
-        return this->distance<a.distance;
-    }
+    bool operator<(const LandTransport& a) const{ return this->distance<a.distance; }
 
     /**
      * Check if LandTransport this == LandTransport a
      * @param LandTransport a
      * @return true if equals
      */
-    bool operator==(const LandTransport &a) const {
-        if(this->distance==a.distance && this->schedule==a.schedule && this->transType==a.transType){
-            return true;
-        }
-        return false;
-    }
+    bool operator==(const LandTransport &a) const;
     /**
      *
      * @param transType
@@ -60,19 +53,7 @@ public:
      * Get next passage of transport
      * @return Date
      */
-    Hour next(){
-        Date nowd(Date::getNow());
-        Hour now{};
-        now.setHour(nowd.getHour()); now.setMinute(nowd.getMinute());
-        Hour min("23:59");
-        for(auto i:schedule){
-            if(now<i && i<min){
-                min = i;
-            }
-        }
-        if(min.getHour()==23 && min.getMinute()==59) return Hour{};
-        return min;
-    }
+    Hour next();
 
     /**
      * Set transport schedule
@@ -80,16 +61,9 @@ public:
      * @param start_hour
      * @param end_hour
      */
-    void setSchedule(Hour frequency, Hour start_hour, Hour end_hour){
-        schedule.clear();
-        Hour a = start_hour;
-        while(a<end_hour){
-            schedule.insert(schedule.end(), a);
-            //Date freq(frequency);
-            a = a+frequency;
-        }
-    }
+    void setSchedule(Hour frequency, Hour start_hour, Hour end_hour);
 };
+
 
 class Airport {
 private:

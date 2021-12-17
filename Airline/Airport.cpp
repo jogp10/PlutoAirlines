@@ -4,11 +4,6 @@
 
 #include "Airport.h"
 
-LandTransport::LandTransport(TransType transType1, double distance1, Hour freq1, Hour start_hour, Hour end_hour):transType(transType1), distance(distance1) {
-    this->setSchedule(freq1, start_hour, end_hour);
-}
-
-
 vector<LandTransport> Airport::getSubway() {
     BSTItrIn<LandTransport> bstItrIn(this->bst) ;
     vector<LandTransport> subway;

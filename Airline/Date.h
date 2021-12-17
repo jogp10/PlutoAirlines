@@ -65,6 +65,12 @@ public:
      */
     int getMinute() const {return minute;};
 
+    /**
+     * Get hour and minute of date
+     * @return
+     */
+    string getHourMin() const {return to_string(hour) + ":" + to_string(minute);};
+
 
     /**
      * Add two hours
