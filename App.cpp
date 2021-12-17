@@ -5,7 +5,6 @@
 #include <iostream>
 #include <thread>
 #include "App.h"
-#include "Airline/Airplane.h"
 
 using namespace std;
 
@@ -249,7 +248,6 @@ int Airport() {
         }
         cerr << "Input a valid operation! (0, 1 or 2 to proceed)" << endl;
     }
-
 }
 
 int Airplanes() {
@@ -284,6 +282,4 @@ int Airplanes() {
         }
         cerr << "Input a valid operation! (0, 1, 2, 3, 4, 5, 6 or 7 to proceed)" << endl;
     }
-
-
 }

@@ -160,6 +160,7 @@ int main(int argc, char* argv[]) {
 
                         break;
                     }
+
                     /** Airport */
                     case 2: {
                         int airport_choice = Airport();
@@ -182,6 +183,7 @@ int main(int argc, char* argv[]) {
                         }
                         break;
                     }
+
                     /** Airplanes */
                     case 3: {
                         int airplanes_choice = Airplanes();
@@ -236,6 +238,7 @@ int main(int argc, char* argv[]) {
                         break;
                     }
                 }
+
                 break;
 
             /** Option default to close the app */
