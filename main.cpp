@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
 
     int menu_choice, passenger_choice, worker_choice;
 
-    int buy_ticket_choice, flights_choice, airport_passenger_choice;
+    int buy_ticket_choice, flights_choice;
 
     while (true) {
         /** Initiating Menu */
@@ -93,9 +93,9 @@ int main(int argc, char* argv[]) {
 
                     /** Airport which is a Menu for getting subways, trains and stuff */
                     case 3:
-                        int airport_choice = AirportPassenger();
+                        int airport_passenger_choice = AirportPassenger();
 
-                        switch (airport_choice) {
+                        switch (airport_passenger_choice) {
                             /** Subways */
                             case 1:
                                 break;
@@ -138,95 +138,114 @@ int main(int argc, char* argv[]) {
 
                 switch (worker_choice) {
                     /** Airline */
-                    case 1:
-                        int airline_choice;
+                    case 1: {
+                        int airline_choice = Airline();
 
                         switch (airline_choice) {
                             /** Add airports */
-                            case 1:
+                            case 1: {
                                 break;
+                            }
 
                             /** Add airplanes */
-                            case 2:
+                            case 2: {
                                 break;
+                            }
 
                             /** Go to Main Menu */
-                            case 0:
+                            case 0: {
                                 break;
+                            }
                         }
 
                         break;
+                    }
 
                     /** Airport */
-                    case 2:
-                        int airport_choice;
+                    case 2: {
+                        int airport_choice = Airport();
 
                         switch (airport_choice) {
                             /** Add Transport */
-                            case 1:
+                            case 1: {
                                 break;
+                            }
 
                             /** Get Transport */
-                            case 2:
+                            case 2: {
                                 break;
+                            }
 
                             /** Go to Main Menu */
-                            case 0:
+                            case 0: {
                                 break;
+                            }
                         }
-
                         break;
+                    }
 
                     /** Airplanes */
-                    case 3:
-                        int airplanes_choice;
+                    case 3: {
+                        int airplanes_choice = Airplanes();
 
                         switch (airplanes_choice) {
                             /** Add flights */
-                            case 1:
+                            case 1: {
                                 break;
+                            }
 
                             /** Set flights */
-                            case 2:
+                            case 2: {
                                 break;
+                            }
 
                             /** Get fights */
-                            case 3:
+                            case 3: {
                                 break;
+                            }
 
                             /** Get Last 20 flights */
-                            case 4:
+                            case 4: {
                                 break;
+                            }
 
                             /** Add services */
-                            case 5:
+                            case 5: {
                                 break;
+                            }
 
                             /** Get services */
-                            case 6:
+                            case 6: {
                                 break;
+                            }
 
                             /** Get past services */
-                            case 7:
+                            case 7: {
                                 break;
+                            }
 
                             /** Go to Main Menu */
-                            case 0:
+                            case 0: {
                                 break;
+                            }
                         }
 
                         break;
+                    }
 
                     /** Go back to Main Menu */
-                    case 0:
+                    case 0: {
                         break;
+                    }
                 }
+
                 break;
 
             /** Option default to close the app */
-            default:
+            default: {
                 this_thread::sleep_for(chrono::seconds(2));
                 return 0;
+            }
         }
     }
 }
