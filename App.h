@@ -33,10 +33,10 @@ int AirportPassenger();
 /** All methods related to Worker */
 int Worker();
 
-void Airline();
+int Airline();
 
-void Airport();
+int Airport();
 
-void Airplanes();
+int Airplanes();
 
 #endif //MAIN_CPP_APP_H
