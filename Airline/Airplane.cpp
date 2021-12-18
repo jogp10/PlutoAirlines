@@ -26,6 +26,7 @@ void Airplane::setFlights(vector<Flight>& flightS) {
     flights.clear();
     for(auto &i: flightS){
         i.setAvailableSeats(capacity);
+        i.setAirplanePlate(plate);
     }
     this->flights=flightS;
     this->sortFLights(flights, 0, flights.size());

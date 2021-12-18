@@ -17,6 +17,7 @@ using namespace std;
 
 
 class Flight {
+    string airplane_plate;
     int flightNum=0000;
     Hour flightDuration=Hour(1);
     Date departureDate=Date("1999-12-30 23:59");
@@ -38,6 +39,11 @@ public:
     Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration);
 
     //Setters
+    /**
+     * Set the flight to the corresponding airplane
+     * @param plate
+     */
+    void setAirplanePlate(string plate){airplane_plate=plate;};
     /**
      * Set Flight's number
      * @param flightNum
@@ -76,6 +82,10 @@ public:
 
 
     //Getters
+    /**Get Flight's Airplane's plate
+     * @return
+     */
+    string getAirplanePlate() const {return airplane_plate;};
     /**
      *  Get Flight's num
      * @return
