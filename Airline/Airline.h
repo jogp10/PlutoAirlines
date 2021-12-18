@@ -14,7 +14,7 @@ using namespace std;
 class Airline {
     vector<Airplane> airplanes;
     vector<Airport> airports;
-    vector<pair<Airplane, Flight>> flights;
+    vector<Flight> flights;
 
 public:
     Airline() = default;

@@ -18,14 +18,14 @@ void Airline::addAirplane(Airplane& airplane) {
 void Airline::addAirport(const Airport& airport) {
     airports.push_back(airport);
 }
-/*
+
 // Merge Sort
-bool operator<= (const pair<Airplane, Flight>& lhs, const pair<Airplane, Flight>& rhs){
-    if(lhs.second.getDepartureLocal()==rhs.second.getDepartureLocal()) return lhs.second.getDepartureDate()<rhs.second.getDepartureDate();
-    return lhs.second.getDepartureLocal()<=rhs.second.getDepartureLocal();
+bool operator<= (const Flight& lhs, const Flight& rhs){
+    if(lhs.getDepartureLocal()==rhs.getDepartureLocal()) return lhs.getDepartureDate()<rhs.getDepartureDate();
+    return lhs.getDepartureLocal()<=rhs.getDepartureLocal();
 }
 
-void merge(vector <pair<Airplane, Flight>> &v, vector<pair<Airplane, Flight>> &tmpArr,
+void merge(vector<Flight> &v, vector<Flight> &tmpArr,
            int leftPos, int rightPos, int rightEnd) {
     int leftEnd = rightPos - 1, tmpPos = leftPos;
     int numElements = rightEnd - leftPos + 1;
@@ -42,7 +42,7 @@ void merge(vector <pair<Airplane, Flight>> &v, vector<pair<Airplane, Flight>> &t
         v[rightEnd] = tmpArr[rightEnd];
 }
 
-void mergeSort(vector <pair<Airplane, Flight>> &v, vector<pair<Airplane, Flight>> &tmpArr, int left, int right){
+void mergeSort(vector<Flight> &v, vector<Flight> &tmpArr, int left, int right){
     if (left < right){
         int center = (left + right) / 2;
         mergeSort(v, tmpArr, left, center);
@@ -51,8 +51,8 @@ void mergeSort(vector <pair<Airplane, Flight>> &v, vector<pair<Airplane, Flight>
     }
 }
 
-void mergeSort(vector <pair<Airplane, Flight>> & v) {
-    vector<pair<Airplane, Flight>> tmpArr(v.size());
+void mergeSort(vector<Flight>& v) {
+    vector<Flight> tmpArr(v.size());
     mergeSort(v, tmpArr, 0, v.size()-1);
 }
 
@@ -60,32 +60,31 @@ void Airline::updateFlights() {
     flights.clear();
     for(auto &i: this->getAirplanes()){
         for(auto &j: i.getFlights()){
-            flights.emplace_back(i, j);
+            flights.emplace_back(j);
         }
     }
     mergeSort(flights);
 }
 
 void Airline::updateFlights(Airplane &a) {
-    for(auto &i: a.getFlights()) flights.emplace_back(a, i);
+    for(auto &i: a.getFlights()) flights.emplace_back(i);
     mergeSort(flights);
 }
-/*
+
 //Binary Search
-bool operator< (const pair<Airplane, Flight>& lhs, const pair<Airplane, Flight>& rhs){
-    if(lhs.second.getDepartureLocal()==rhs.second.getDepartureLocal()) return lhs.second.getDepartureDate()<rhs.second.getDepartureDate();
-    return lhs.second.getDepartureLocal()<rhs.second.getDepartureLocal();
+bool operator>= (const Flight& lhs, const Flight& rhs){
+    return lhs.getDepartureLocal()>=rhs.getDepartureLocal();
 }
 
-int BinarySearch(const vector<pair<Airplane, Flight>> &v, pair<Airplane, Flight> el)
+int BinarySearch(const vector<Flight> &v, Flight el)
 {
     int left = 0, right = v.size() - 1;
     while (left <= right)
     {
         int middle = (left + right) / 2;
-        if (v[middle] < el)
+        if (el >= v[middle])
             left = middle + 1;
-        else if (el < v[middle])
+        else if (v[middle] >= el)
             right = middle - 1;
         else
             return middle; // found
@@ -95,18 +94,17 @@ int BinarySearch(const vector<pair<Airplane, Flight>> &v, pair<Airplane, Flight>
 
 vector<Flight> Airline::filterFromX(string code) {
     vector<Flight> result;
-    vector<pair<Airplane, Flight>> tmp = flights;
-    Airplane a1("", "", 1);
+    vector<Flight> tmp = flights;
     Flight f1(0, "", code, "", 1);
     while(true){
-        int ind = BinarySearch(tmp, make_pair(a1, f1));
+        int ind = BinarySearch(tmp,  f1);
         if(ind == -1) break;
-        result.push_back(tmp[ind].second);
+        result.push_back(tmp[ind]);
         tmp.erase(tmp.begin()+ind);
     }
     return result;
 }
- */
+
 
 
 

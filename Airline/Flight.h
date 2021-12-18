@@ -17,16 +17,16 @@ using namespace std;
 
 
 class Flight {
-    int flightNum;
-    Hour flightDuration;
-    Date departureDate;
+    int flightNum=0000;
+    Hour flightDuration=Hour(1);
+    Date departureDate=Date("1999-12-30 23:59");
     string departureLocal, arrivalLocal;
     int availableSeat{};
     list<Luggage> luggage{};
     int numTotalBags=0;
 
 public:
-
+    Flight() = default;
     /**
      *
      * @param flightNum
