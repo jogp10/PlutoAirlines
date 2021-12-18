@@ -104,7 +104,3 @@ vector<Flight> Airline::filterFromX(string code) {
     }
     return result;
 }
-
-
-
-
