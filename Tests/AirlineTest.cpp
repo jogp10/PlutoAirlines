@@ -111,14 +111,13 @@ TEST(airline_2, b_ariline){
     EXPECT_EQ(pluto.filterFromX("PRT").size(), 2);
     pluto.removeAirport(a1);
 
-    EXPECT_EQ(pluto.getFlights().size(), 3);
-    pluto.removeFlight(f7);
     EXPECT_EQ(pluto.getFlights().size(), 2);
+    pluto.removeFlight(f7);
+    EXPECT_EQ(pluto.getFlights().size(), 1);
     EXPECT_EQ(aa2.getFlights().size(), 0);
 
     pluto.removeAirplane(aa1);
     EXPECT_EQ(aa1.getFlights().size(), 0);
-    EXPECT_EQ(pluto.getFlights().size(), 1);
-
+    EXPECT_EQ(pluto.getFlights().size(), 0);
 
 }

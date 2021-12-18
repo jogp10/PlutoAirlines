@@ -32,11 +32,11 @@ void Airline::addFlight(Flight &flight) {
 
 // Merge Sort
 bool operator<= (const Flight& lhs, const Flight& rhs){
-    return lhs.getDepartureLocal()<=rhs.getDepartureLocal();
+    if(lhs.getDepartureLocal()==rhs.getDepartureLocal()) return lhs.getArrivalLocal()<=rhs.getArrivalLocal();
+    return lhs.getDepartureLocal()<rhs.getDepartureLocal();
 }
 
-void merge(vector<Flight> &v, vector<Flight> &tmpArr,
-           int leftPos, int rightPos, int rightEnd) {
+void merge(vector<Flight> &v, vector<Flight> &tmpArr, int leftPos, int rightPos, int rightEnd) {
     int leftEnd = rightPos - 1, tmpPos = leftPos;
     int numElements = rightEnd - leftPos + 1;
     while ( leftPos <= leftEnd && rightPos <= rightEnd )
@@ -130,21 +130,23 @@ bool Airline::removeAirplane(const Airplane &a) {
 }
 
 bool Airline::removeFlight(const Flight &f) {
-    updateFlights();
-    int ind = BinarySearch(flights, f);
-    if(ind==-1) return false;
+    int ind=0;
+    for(ind; ind<flights.size(); ind++){
+        if(flights[ind].getFLightNum()==f.getFLightNum()) break;
+    }
     string plate = flights.at(ind).getAirplanePlate();
-    flights.erase(flights.begin()+ind);
     for(auto &a: airplanes){
         if(plate==a.getPlate()) a.removeFlight(flights.at(ind));
     }
+    flights.erase(flights.begin()+ind);
     return true;
 }
 
 bool Airline::removeAirport(const Airport &p) {
-    for(auto f=flights.begin(); f!=flights.end(); ++f){
-        if(f->getDepartureLocal()==p.getCode() || f->getArrivalLocal()==p.getCode()){
-            removeFlight(*f);
+    for(int i=0; i<flights.size(); i++){
+        if(flights[i].getDepartureLocal()==p.getCode() || flights[i].getArrivalLocal()==p.getCode()){
+            removeFlight(flights[i]);
+            --i;
         }
     }
     for(auto itr=airports.begin(); itr!=airports.end(); ++itr){
