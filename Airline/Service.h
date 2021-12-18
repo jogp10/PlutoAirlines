@@ -15,6 +15,7 @@ struct Service
     string name;
     Date date;
     // date of the service, name of the employee
+    string airplane_plate;
 
 };
 

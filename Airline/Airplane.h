@@ -58,7 +58,7 @@ public:
 
 
     /**
-     * Set Airplane's Travel plan
+     * Set Airplane's TraveFlightl plan
      * @param flights
      */
     void setFlights(vector<Flight>& flightS);
@@ -75,7 +75,7 @@ public:
      * Schedule a new service for the Airplane
      * @param service
      */
-    void addService(const Service& service);
+    void addService(Service& service);
 
 
     /**

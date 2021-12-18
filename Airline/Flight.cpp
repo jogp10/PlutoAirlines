@@ -5,12 +5,13 @@
 #include "Flight.h"
 #include "Date.h"
 
-Flight::Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration): flightDuration(flightDuration){
+Flight::Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration, const string& airplane_platE): flightDuration(flightDuration){
     this->flightNum = flightNum;
     Date departuredate(departureDate);
     this->departureDate = departuredate;
     this->departureLocal = departureLocal;
     this->arrivalLocal = arrivalLocal;
+    this->airplane_plate=airplane_platE;
 }
 
 void Flight::setFLightNum(int flightnum) {

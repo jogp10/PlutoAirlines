@@ -38,7 +38,8 @@ void Airplane::addFlight(Flight &flight) {
     this->sortFLights(flights, 0, flights.size());
 }
 
-void Airplane::addService(const Service& service) {
+void Airplane::addService(Service& service) {
+    service.airplane_plate=plate;
     services.push(service);
 }
 
