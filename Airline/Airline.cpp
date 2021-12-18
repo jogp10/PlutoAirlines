@@ -103,7 +103,7 @@ int BinarySearch(const vector<Flight> &v, Flight el)
     return -1; // not found
 }
 
-vector<Flight> Airline::filterFromX(string code) {
+vector<Flight> Airline::filterFromX(const string& code) {
     vector<Flight> result;
     vector<Flight> tmp = flights;
     Flight f1(0, "2999-12-30 23:59", code, "", 1, "");
@@ -115,6 +115,35 @@ vector<Flight> Airline::filterFromX(string code) {
     }
     return result;
 }
+
+vector<Flight> Airline::filterToX(const string& code) {
+    vector<Flight> result;
+    for(auto &f: flights){
+        if(f.getArrivalLocal()==code) result.push_back(f);
+    }
+    return result;
+}
+
+vector<Flight> Airline::filterbyDateX(const string& date) {
+    vector<Flight> result;
+    for(auto &f: flights){
+        Date date1 = f.getDepartureDate();
+        string d = date1.getDate();
+        d.erase(d.begin()+10, d.end());
+        if(f.getArrivalLocal()==date) result.push_back(f);
+    }
+    return result;
+}
+
+vector<Flight> Airline::filterDuration(const int min) {
+    vector<Flight> result;
+    for(auto &f: flights){
+        if(f.getFlightDuration()<Hour(min)) result.push_back(f);
+    }
+    return result;
+}
+
+
 
 bool Airline::removeAirplane(const Airplane &a) {
     for(auto itr=airplanes.begin(); itr!=airplanes.end(); ++itr){

@@ -79,7 +79,29 @@ public:
      * @param code
      * @return
      */
-    vector<Flight> filterFromX(string code);
+    vector<Flight> filterFromX(const string& code);
+
+    /**
+     * Filter flights to X
+     * @param code
+     * @return
+     */
+    vector<Flight> filterToX(const string& code);
+
+    /**
+     * Filter flights from date X
+     * @param date
+     * @return
+     */
+    vector<Flight> filterbyDateX(const string& date);
+
+    /**
+     * Filter flights from max duration
+     * @param min
+     * @return
+     */
+    vector<Flight> filterDuration(const int min);
+
 
     /**
      * Remove Airplane
