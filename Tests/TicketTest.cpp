@@ -15,7 +15,7 @@ TEST(test_1, TicketTest) {
 
     Airplane a1("Albeto", "A360", 320);
 
-    Flight f6(1234, "2022-03-03 12:45", "Porto", "Lisbon", 35);
+    Flight f6(1234, "2022-03-03 12:45", "Porto", "Lisbon", 35, "Alberto");
     a1.addFlight(f6);
     Ticket t2(f6, 3);
     t2.getGroup();

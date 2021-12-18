@@ -95,7 +95,7 @@ int BinarySearch(const vector<Flight> &v, Flight el)
 vector<Flight> Airline::filterFromX(string code) {
     vector<Flight> result;
     vector<Flight> tmp = flights;
-    Flight f1(0, "", code, "", 1);
+    Flight f1(0, "", code, "", 1, "");
     while(true){
         int ind = BinarySearch(tmp,  f1);
         if(ind == -1) break;

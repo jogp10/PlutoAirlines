@@ -11,7 +11,7 @@
 
 class Ticket {
     int group=1;
-    Flight flight=Flight(00000, "1995-12-30 23:59", "", "", 1);
+    Flight flight=Flight(00000, "1995-12-30 23:59", "", "", 1, "");
     Luggage luggage{};
 
 public:

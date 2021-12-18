@@ -18,8 +18,8 @@ TEST(airplane_1, a_setAirplane){
     EXPECT_EQ("A310", a1.getType());
     EXPECT_NE(300, a1.getCapacity());
 
-    Flight f1(00365, "2022-12-03 14:53:00", "Miami", "Porto", 480);
-    Flight f2(00366, "2022-12-03 14:50:00", "Lisbon", "Porto", 450);
+    Flight f1(00365, "2022-12-03 14:53:00", "Miami", "Porto", 480, "José");
+    Flight f2(00366, "2022-12-03 14:50:00", "Lisbon", "Porto", 450, "José");
 
 
     vector<Flight> flights;

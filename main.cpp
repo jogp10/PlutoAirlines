@@ -10,7 +10,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
     testing::InitGoogleTest(&argc, argv);
-    //return RUN_ALL_TESTS();
+    return RUN_ALL_TESTS();
 
 
     int menu_choice, passenger_choice, worker_choice;
