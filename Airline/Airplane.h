@@ -5,6 +5,7 @@
 #ifndef PLUTOAIRLINES_AIRPLANE_H
 #define PLUTOAIRLINES_AIRPLANE_H
 
+
 #include "Flight.h"
 #include "Service.h"
 #include "Date.h"
@@ -130,6 +131,13 @@ public:
      * @return
      */
     list<Service> getPastServices();
+
+    /**
+     * Remove flight
+     * @param f
+     * @return
+     */
+    bool removeFlight(const Flight& f);
 
 };
 

@@ -79,6 +79,12 @@ public:
     Airport(const string& name1, const string& code1): name(name1), code(code1), bst(LandTransport(NONE)){};
 
     /**
+     * Get Airport's code
+     * @return
+     */
+    string getCode() const {return code;};
+
+    /**
      * Get all subways
      * @return
      */

@@ -23,7 +23,7 @@ public:
      * Set Airline's airplanes
      * @param airplanes
      */
-    void setAirplanes(vector<Airplane> airplaneS);
+    void setAirplanes(const vector<Airplane> &airplaneS);
 
     /**
      * Set Airline's airport
@@ -43,6 +43,7 @@ public:
      */
     void addAirport(const Airport& airport);
 
+    void addFlight(Flight& flight);
 
     /**
      * Get Airline's airplanes
@@ -55,6 +56,12 @@ public:
      * @return
      */
     vector<Airport> getAirports() {return airports;};
+
+    /**
+     * Get Airline's flights
+     * @return
+     */
+    vector<Flight> getFlights() {updateFlights(); return flights;};
 
     /**
      * Update Airline next planned flights
@@ -73,6 +80,27 @@ public:
      * @return
      */
     vector<Flight> filterFromX(string code);
+
+    /**
+     * Remove Airplane
+     * @param a
+     * @return
+     */
+    bool removeAirplane(const Airplane& a);
+
+    /**
+     * Remove flight
+     * @param f
+     * @return
+     */
+    bool removeFlight(const Flight& f);
+
+    /**
+     * Remove Airport
+     * @param p
+     * @return
+     */
+    bool removeAirport(const Airport& p);
 
 };
 

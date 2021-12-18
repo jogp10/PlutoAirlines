@@ -37,7 +37,7 @@ public:
     * @param flightDuration
     * @param airplane_plate
     */
-    Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration, const string& airplane_plate="");
+    Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration, const string& airplane_plate);
 
     //Setters
     /**
