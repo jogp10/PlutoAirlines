@@ -17,11 +17,18 @@
 using namespace std;
 
 class LuggageTransport{
-    vector<stack<stack<Luggage>> Cart;
+
+    stack<stack<Luggage>> Cart;
 
 public:
-    void placeInCart();
 
+    LuggageTransport() = default;
+
+    /**
+     * Transport of a Flight's Luggage to the Airplane with a Cart
+     * @param totalBags
+     */
+    void placeInCart(vector<Luggage>&totalBags);
 };
 
 #endif //MAIN_CPP_LUGGAGETRANSPORT_H
