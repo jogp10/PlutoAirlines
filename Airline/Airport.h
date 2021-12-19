@@ -51,6 +51,11 @@ public:
      * @return
      */
     double getDistance() const {return distance;};
+    /**
+     * Get Transport's Airport
+     * @return
+     */
+    string getAirportCode() const {return airportcode;};
 
     /**
      * Get next passage of transport

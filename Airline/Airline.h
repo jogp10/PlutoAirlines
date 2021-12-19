@@ -50,6 +50,18 @@ public:
     void addFlight(Flight &flight);
 
     /**
+     * Add service
+     * @param service
+     */
+    void addService(Service &service);
+
+    /**
+     * Add landTransport
+     * @param landTransport
+     */
+    void addLandTransport(LandTransport &landTransport);
+
+    /**
      * Get Airline's airplanes
      * @return
      */

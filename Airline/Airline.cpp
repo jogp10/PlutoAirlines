@@ -35,6 +35,23 @@ void Airline::addFlight(Flight &flight) {
     flights.push_back(flight);
 }
 
+void Airline::addService(Service &service) {
+    for(auto& i:airplanes){
+        if(i.getPlate()==service.airplane_plate){
+            i.addService(service);
+        }
+    }
+}
+
+void Airline::addLandTransport(LandTransport &landTransport) {
+    string code = landTransport.getAirportCode();
+    for(auto& i: airports){
+        if(i.getCode()==code){
+            i.insert(landTransport);
+        }
+    }
+}
+
 
 // Merge Sort
 bool operator<= (const Flight& lhs, const Flight& rhs){
@@ -255,8 +272,8 @@ vector<Flight> Airline::loadFlights() {
 }
 
 vector<LandTransport> Airline::loadLandTransport() {
-    /** Filling Flights vector */
-    string transType, distance, freq, startHour, endHour;
+    /** Filling LandTransport vector */
+    string transType, distance, freq, startHour, endHour, airportCode;
     vector<LandTransport> result;
 
     ifstream file_landtransport;
@@ -267,15 +284,42 @@ vector<LandTransport> Airline::loadLandTransport() {
         getline(file_landtransport, freq);
         getline(file_landtransport, startHour);
         getline(file_landtransport, endHour);
+        getline(file_landtransport, airportCode);
         auto itr = table.find(transType);
         TransType transType1 = itr->second;
 
         class LandTransport landTransport(transType1, stoi(distance), Hour(freq), Hour(startHour),
-                            Hour(endHour));
+                            Hour(endHour),airportCode);
 
         result.push_back(landTransport);
+        this->addLandTransport(landTransport);
     }
 
     file_landtransport.close();
+    return result;
+}
+
+vector<Service> Airline::loadServices() {
+    /** Filling Services vector */
+    string type, name, date, airplanePlate;
+    vector<Service> result;
+
+    ifstream file_service;
+    file_service.open("Populate/LandTransport.txt");
+
+    while (getline(file_service, type)) {
+        getline(file_service, name);
+        getline(file_service, date);
+        getline(file_service, airplanePlate);
+        auto itr = servtable.find(type);
+        ServType servType = itr->second;
+
+        class Service service{servType, name, Date(date), airplanePlate};
+
+        result.push_back(service);
+        this->addService(service);
+    }
+
+    file_service.close();
     return result;
 }
