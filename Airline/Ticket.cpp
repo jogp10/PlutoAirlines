@@ -4,11 +4,11 @@
 
 #include "Ticket.h"
 
-Ticket::Ticket(const Flight& flight, int group, Luggage luggage): flight(flight), luggage(luggage), group(group){
+Ticket::Ticket(const int flightNum, int group, Luggage luggage): flightNum(flightNum), luggage(luggage), group(group){
 }
 
 void Ticket::setFlight(const Flight& flighT) {
-    this->flight = flighT;
+    this->flightNum = flighT.getFLightNum();
 }
 
 void Ticket::setLuggage(const Luggage& luggagE) {
@@ -19,7 +19,7 @@ void Ticket::setGroup(int grouP) {
     this->group = grouP;
 }
 
-Flight Ticket::getFlight() const { return this->flight; }
+int Ticket::getFlightNum() const { return this->flightNum; }
 
 Luggage Ticket::getLuggage() const{ return this->luggage; }
 

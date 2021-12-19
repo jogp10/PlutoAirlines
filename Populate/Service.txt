@@ -1,2 +1,6 @@
-Service s1{MAINTENANCE, "José Alberto", Date("2021-01-01 12:00:00")};
-Service s2{CLEAN, "José Alberto", Date("2023-01-01 12:00:00")};
+MAINTENANCE
+José Alberto
+2021-01-01 12:00
+CLEAN
+José Alberto
+2023-01-01 12:00

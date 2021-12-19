@@ -253,3 +253,7 @@ vector<Flight> Airline::loadFlights() {
     file_flight.close();
     return result;
 }
+
+vector<LandTransport> Airline::loadLandTransport() {
+    return vector<LandTransport>();
+}

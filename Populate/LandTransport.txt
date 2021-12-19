@@ -1,2 +1,13 @@
-LandTransport l1(TRAIN, 10, Hour(25));
-LandTransport l2(SUBWAY, 25, Hour("01:00"), Hour("00:30"), Hour("23:00"));
+TRAIN
+10
+25
+00:30
+08:00
+21:00
+PRT
+SUBWAY
+25
+01:00
+00:30
+23:00
+LSB
