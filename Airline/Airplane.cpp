@@ -7,21 +7,6 @@
 
 using namespace std;
 
-Airplane::Airplane(const string& plate, const string& type, int capacity): plate(plate), type(type), capacity(capacity) {
-}
-
-void Airplane::setPlate(const string &platE) {
-    this->plate = platE;
-}
-
-void Airplane::setType(const string &typE) {
-    this->type = typE;
-}
-
-void Airplane::setCapacity(const int &capacitY) {
-    this->capacity = capacitY;
-}
-
 
 void Airplane::addFlight(Flight &flight) {
     flight.setAvailableSeats(capacity);
@@ -30,49 +15,13 @@ void Airplane::addFlight(Flight &flight) {
     this->sortFLights(flights, 0, flights.size());
 }
 
+
 void Airplane::addService(Service& service) {
     service.airplane_plate=plate;
     services.push(service);
     updateServices();
 }
 
-string Airplane::getPlate() const{
-    return plate;
-}
-
-string Airplane::getType() const{
-    return type;
-}
-
-
-int Airplane::getCapacity() const {
-    return capacity;
-}
-
-vector<Flight> Airplane::getFlights(){
-    updateFlights();
-    return flights;
-}
-
-Flight Airplane::getNextFlight() {
-    updateFlights();
-    return flights[0];
-}
-
-queue<Flight> Airplane::getLastFlights(){
-    updateFlights();
-    return last20flights;
-}
-
-queue<Service> Airplane::getServices() {
-    updateServices();
-    return services;
-}
-
-list<Service> Airplane::getPastServices() {
-    updateServices();
-    return servicesDone;
-}
 
 void Airplane::updateServices() {
     while(services.front().date.getDate() < Date::getNow() && !(services.empty()))
@@ -81,6 +30,7 @@ void Airplane::updateServices() {
         services.pop();
     }
 }
+
 
 void Airplane::updateFlights() {
     auto itr = flights.begin();
@@ -101,7 +51,7 @@ void Airplane::updateFlights() {
 
 
 const Flight &median(vector<Flight> &f, unsigned left, unsigned right){
-    int center = (left+right) /2;
+    int center = (int) (left+right) /2;
     if(f[center] < f[left])
         swap(f[left], f[center]);
     if(f[right] < f[left])
@@ -113,6 +63,7 @@ const Flight &median(vector<Flight> &f, unsigned left, unsigned right){
     return f[right-1];
 }
 
+
 void insertionSort(vector<Flight> &f, unsigned left, unsigned right){
     for(unsigned p=left+1; p<right; p++){
         Flight tmp = f[p];
@@ -123,14 +74,15 @@ void insertionSort(vector<Flight> &f, unsigned left, unsigned right){
     }
 }
 
+
 //Quick Sort
 void Airplane::sortFLights(vector<Flight> &f, unsigned left, unsigned right) {
     if(right-left<=10)
         insertionSort(f, left, right);
     else {
         Flight x = median(f, left, right);
-        int i = left;
-        int j = right - 1;
+        int i = (int) left;
+        int j = (int) right - 1;
         for (;;) {
             while (f[++i] < x);
             while (x < f[--j]);
@@ -143,6 +95,7 @@ void Airplane::sortFLights(vector<Flight> &f, unsigned left, unsigned right) {
         sortFLights(f, i + 1, right);
     }
 }
+
 
 bool Airplane::removeFlight(const Flight &f) {
     for(auto itr=flights.begin();itr!=flights.end(); ++itr){

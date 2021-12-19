@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['haveluggage_153',['haveLuggage',['../classLuggage.html#a31f8c6200d2f555d142688bd5e04e109',1,'Luggage']]],
-  ['hour_154',['Hour',['../classHour.html#aea5de9fb3eea94c6fcc42976825bc417',1,'Hour::Hour(string date)'],['../classHour.html#aee9a75c66d8b9f63aa48b1146c93185d',1,'Hour::Hour(int minutes)']]]
+  ['filterbydatex_152',['filterbyDateX',['../classAirline.html#ae9bbc8bb74fc83baa3aee7b6995c11a0',1,'Airline']]],
+  ['filterduration_153',['filterDuration',['../classAirline.html#acebd35f0cb339995064060d7442e70f2',1,'Airline']]],
+  ['filterfromx_154',['filterFromX',['../classAirline.html#ae0c08b73be2eebfe3de4f2b6aad08646',1,'Airline']]],
+  ['filtertox_155',['filterToX',['../classAirline.html#ae5fdb37b4ec78765ca2cdaa2bf7c014c',1,'Airline']]],
+  ['flight_156',['Flight',['../classFlight.html#a328e288121160d9dca2333790dca9220',1,'Flight']]]
 ];

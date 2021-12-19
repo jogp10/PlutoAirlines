@@ -20,10 +20,12 @@ Hour::Hour(string date) {
     minute = stoi(minutes);
 }
 
+
 Hour::Hour(int minutes) {
     hour = minutes/60;
     minute = minutes%60;
 }
+
 
 void Hour::setHourMin(string houR) {
     string hours, minutes;
@@ -38,17 +40,20 @@ void Hour::setHourMin(string houR) {
     hour=stoi(hours); minute=stoi(minutes);
 }
 
+
 void Hour::setHour(const string& houR) {
     string hours;
     for(auto i:houR) hours+=i;
     this->hour = stoi(hours);
 }
 
+
 void Hour::setMinute(const string& minutE) {
     string minutes;
     for(auto i:minutE) minutes+=i;
     this->minute = stoi(minutes);
 }
+
 
 Hour Hour::operator+(const Hour& a){
     this->minute+=a.getMinute();
@@ -61,6 +66,7 @@ Hour Hour::operator+(const Hour& a){
     return *this;
 }
 
+
 bool Hour::operator<(const Hour &a) const {
     if(this->hour==a.hour){
         return minute<a.minute;
@@ -68,14 +74,11 @@ bool Hour::operator<(const Hour &a) const {
     return hour<a.hour;
 }
 
+
 bool Hour::operator==(const Hour &a) const {
     return(hour==a.hour && minute==a.minute);
 }
 
-
-Date::Date(const string& date) : Hour(){
-    convert(date);
-}
 
 string Date::convert(const string& date){
     string years, months, days, hours, minutes;
@@ -101,6 +104,7 @@ string Date::convert(const string& date){
     return date;
 }
 
+
 string Date::getDate() {
     string months = to_string(this->month),
             days = to_string(this->day),
@@ -114,6 +118,7 @@ string Date::getDate() {
     return to_string(year) + "-" + months + "-" + days
            + " " + hours + ":" + minutes;
 }
+
 
 string Date::getNow() {
     time_t t = time(nullptr);
@@ -133,12 +138,14 @@ string Date::getNow() {
     return date;
 }
 
+
 bool Date::operator==(const Date &a) const{
     if(this->year==a.year && this->month==a.month &&
        this->day==a.day && this->hour==a.hour
        && this->minute==a.minute) return true;
     return false;
 }
+
 
 bool Date::operator<(const Date &a) const {
     if(this->year==a.year){
@@ -155,6 +162,7 @@ bool Date::operator<(const Date &a) const {
     }
     return this->year<a.year;
 }
+
 
 Date Date::operator+(const Date &a) {
     int befHour = hour;
@@ -174,17 +182,5 @@ Date Date::operator+(const Date &a) {
     }
 
     this->year+=a.year;
-    return *this;
-}
-
-Date Date::operator+(const Hour &a) {
-    this->minute+=a.getMinute();
-    if(minute>59){
-        minute-=59;
-        ++hour;
-    }
-    this->hour+=a.getHour();
-    if(hour>23) hour-=23;
-    this->day++;
     return *this;
 }

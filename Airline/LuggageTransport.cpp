@@ -2,16 +2,15 @@
 // Created by obulamu! on 16/12/2021.
 //
 
-#include <iostream>
 #include "LuggageTransport.h"
-using namespace std;
+
 
 void LuggageTransport::placeInCart(vector<Luggage> &totalBags) {
     stack<Luggage> first_stack;
     stack<Luggage> second_stack;
     stack<Luggage> third_stack;
 
-    int total = totalBags.size();
+    int total = (int) totalBags.size();
     //carts (c) = 3
     int stacksSize = (total / 3) + 1;
 

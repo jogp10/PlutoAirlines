@@ -15,10 +15,24 @@ static unordered_map<string, ServType> const servtable = {{"CLEAN", ServType::CL
 
 struct Service
 {
-    ServType type; // 0 for maintenance, 1 for clean
+    /**
+     * Type of Service
+     */
+    ServType type;// 0 for maintenance, 1 for clean
+
+    /**
+     * Name of worker
+     */
     string name;
+
+    /**
+     * Date of the Service
+     */
     Date date;
-    // date of the service, name of the employee
+
+    /**
+     * Airplane's plate where Service is being performed
+     */
     string airplane_plate;
 
 };

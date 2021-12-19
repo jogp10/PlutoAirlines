@@ -96,6 +96,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a44859e9acda4578bc3cfcad5d2f25585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a999278972c30bb258e0824ff3e45d65f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHour.html#a999278972c30bb258e0824ff3e45d65f">getMinute</a> () const</td></tr>
 <tr class="separator:a999278972c30bb258e0824ff3e45d65f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6e8a1ad236013d9e16c025f7498099"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHour.html#a3e6e8a1ad236013d9e16c025f7498099">getHourMin</a> () const</td></tr>
+<tr class="separator:a3e6e8a1ad236013d9e16c025f7498099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1418a9430391044a39f5fb3d0760f475"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHour.html">Hour</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHour.html#a1418a9430391044a39f5fb3d0760f475">operator+</a> (const <a class="el" href="classHour.html">Hour</a> &amp;a)</td></tr>
 <tr class="separator:a1418a9430391044a39f5fb3d0760f475"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcbcb1229cf4c6dbc7b3e1ce6ffe17f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHour.html#adcbcb1229cf4c6dbc7b3e1ce6ffe17f8">operator&lt;</a> (const <a class="el" href="classHour.html">Hour</a> &amp;a) const</td></tr>
@@ -138,7 +140,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">date</td><td></td></tr>
+    <tr><td class="paramname">date</td><td>string "HH:MM" </td></tr>
   </table>
   </dd>
 </dl>
@@ -168,7 +170,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
+<p>MMM converted into "HH:MM" </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">minutes</td><td></td></tr>
   </table>
@@ -204,6 +206,32 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 
 </div>
 </div>
+<a id="a3e6e8a1ad236013d9e16c025f7498099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e6e8a1ad236013d9e16c025f7498099">&#9670;&nbsp;</a></span>getHourMin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Hour::getHourMin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get hour and minute of date </p><dl class="section return"><dt>Returns</dt><dd>"HH:MM" </dd></dl>
+
+</div>
+</div>
 <a id="a999278972c30bb258e0824ff3e45d65f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a999278972c30bb258e0824ff3e45d65f">&#9670;&nbsp;</a></span>getMinute()</h2>
 
@@ -226,7 +254,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Get minute of date </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Get minute of date </p><dl class="section return"><dt>Returns</dt><dd>minute </dd></dl>
 
 </div>
 </div>
@@ -247,11 +275,11 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 </div><div class="memdoc">
 <p>Add two hours </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">a</td><td>this + a <a class="el" href="classHour.html">Hour</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>result of operation </dd></dl>
 
 </div>
 </div>
@@ -270,13 +298,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Check if &lt; than another <a class="el" href="classHour.html">Hour</a> object </p><dl class="params"><dt>Parameters</dt><dd>
+<p>this is before <a class="el" href="classHour.html">Hour</a> a </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">a</td><td><a class="el" href="classHour.html">Hour</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>result of operation </dd></dl>
 
 </div>
 </div>
@@ -295,13 +323,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Check if this equals another <a class="el" href="classHour.html">Hour</a> object </p><dl class="params"><dt>Parameters</dt><dd>
+<p>this equals <a class="el" href="classHour.html">Hour</a> a </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Comparable</td><td><a class="el" href="classHour.html">Hour</a> </td></tr>
+    <tr><td class="paramname">a</td><td><a class="el" href="classHour.html">Hour</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if equal </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>result of operation </dd></dl>
 
 </div>
 </div>
@@ -322,7 +350,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 </div><div class="memdoc">
 <p>set <a class="el" href="classHour.html">Hour</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hour</td><td></td></tr>
+    <tr><td class="paramname">hour</td><td>string "HH" </td></tr>
   </table>
   </dd>
 </dl>
@@ -354,7 +382,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 </div><div class="memdoc">
 <p>set <a class="el" href="classHour.html">Hour</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">houR</td><td></td></tr>
+    <tr><td class="paramname">houR</td><td>HH </td></tr>
   </table>
   </dd>
 </dl>
@@ -378,7 +406,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 </div><div class="memdoc">
 <p>Set <a class="el" href="classHour.html">Hour</a> &amp; Minute </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">houR</td><td></td></tr>
+    <tr><td class="paramname">houR</td><td>string "HH:MM" </td></tr>
   </table>
   </dd>
 </dl>
@@ -402,7 +430,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 </div><div class="memdoc">
 <p>set Minute </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minute</td><td></td></tr>
+    <tr><td class="paramname">minute</td><td>string "MM" </td></tr>
   </table>
   </dd>
 </dl>
@@ -434,7 +462,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>minute</b></td></tr>
 </div><div class="memdoc">
 <p>set Minute </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">minutE</td><td></td></tr>
+    <tr><td class="paramname">minutE</td><td>MM </td></tr>
   </table>
   </dd>
 </dl>

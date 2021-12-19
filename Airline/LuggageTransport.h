@@ -17,7 +17,6 @@
 using namespace std;
 
 class LuggageTransport{
-
     stack<stack<Luggage>> Cart;
 
 public:
@@ -25,7 +24,7 @@ public:
     LuggageTransport() = default;
 
     /**
-     * Transport of a Flight's Luggage to the Airplane with a Cart
+     * Transport of a Airport's Luggage to the Airplane with a Cart
      * @param totalBags
      */
     void placeInCart(vector<Luggage>&totalBags);

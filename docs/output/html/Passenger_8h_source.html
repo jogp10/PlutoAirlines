@@ -80,22 +80,25 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Ticket.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classPassenger.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPassenger.html">Passenger</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classTicket.html">Ticket</a> ticket;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classPassenger.html">Passenger</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classPassenger.html">Passenger</a>(<a class="code" href="classTicket.html">Ticket</a> ticket);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">buyTicket</a>(<a class="code" href="classTicket.html">Ticket</a>&amp; ticket);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> canBuyTicket(<span class="keyword">const</span> <a class="code" href="classTicket.html">Ticket</a>&amp; ticket) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">string</span> name;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classTicket.html">Ticket</a> ticket{0};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">   20</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name): name(name){};</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">buyTicket</a>(<a class="code" href="classTicket.html">Ticket</a>&amp; ticket);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3">canBuyTicket</a>(<span class="keyword">const</span> <a class="code" href="classTicket.html">Ticket</a>&amp; ticket) ;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_PASSENGER_H</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_PASSENGER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassTicket_html"><div class="ttname"><a href="classTicket.html">Ticket</a></div><div class="ttdef"><b>Definition:</b> Ticket.h:12</div></div>
-<div class="ttc" id="aclassPassenger_html_a6a1225ed68e7f81b17bd5b47eb6ba87b"><div class="ttname"><a href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">Passenger::buyTicket</a></div><div class="ttdeci">bool buyTicket(Ticket &amp;ticket)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:18</div></div>
+<div class="ttc" id="aclassPassenger_html_a0db62c4f33cc7b5f284d8d8f165e663e"><div class="ttname"><a href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger::Passenger</a></div><div class="ttdeci">Passenger(const string &amp;name)</div><div class="ttdef"><b>Definition:</b> Passenger.h:20</div></div>
+<div class="ttc" id="aclassPassenger_html_a6a1225ed68e7f81b17bd5b47eb6ba87b"><div class="ttname"><a href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">Passenger::buyTicket</a></div><div class="ttdeci">bool buyTicket(Ticket &amp;ticket)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:12</div></div>
 <div class="ttc" id="aclassPassenger_html"><div class="ttname"><a href="classPassenger.html">Passenger</a></div><div class="ttdef"><b>Definition:</b> Passenger.h:11</div></div>
+<div class="ttc" id="aclassPassenger_html_a740df1292c5fbc6b471092fadd8fe1a3"><div class="ttname"><a href="classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3">Passenger::canBuyTicket</a></div><div class="ttdeci">static bool canBuyTicket(const Ticket &amp;ticket)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:7</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

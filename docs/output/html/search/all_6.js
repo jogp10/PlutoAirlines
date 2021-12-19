@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['insert_56',['insert',['../classAirport.html#ab5fd8315348fef2bee893f95b7dcac2b',1,'Airport']]],
-  ['iteratorbst_57',['iteratorBST',['../classiteratorBST.html',1,'']]]
+  ['haveluggage_72',['haveLuggage',['../classLuggage.html#a88ce32ab1e0221bacb403002758ddd14',1,'Luggage']]],
+  ['hour_73',['Hour',['../classHour.html',1,'Hour'],['../classHour.html#aea5de9fb3eea94c6fcc42976825bc417',1,'Hour::Hour(string date)'],['../classHour.html#aee9a75c66d8b9f63aa48b1146c93185d',1,'Hour::Hour(int minutes)']]]
 ];

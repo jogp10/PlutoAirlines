@@ -5,10 +5,10 @@
 #include "Airport.h"
 
 LandTransport::LandTransport(TransType transType1, double distance1, Hour freq1, Hour start_hour, Hour end_hour, string airportCode):
-            transType(transType1), distance(distance1), freq(freq1), start(start_hour), end(end_hour) {
+            transType(transType1), distance(distance1), freq(freq1), start(start_hour), end(end_hour), airportcode(airportCode) {
     this->setSchedule(freq, start, end);
-    this->airportcode=airportCode;
 }
+
 
 bool LandTransport::operator==(const LandTransport &a) const {
     if(this->distance==a.distance && this->schedule==a.schedule && this->transType==a.transType){
@@ -31,6 +31,7 @@ Hour LandTransport::next() {
     if(min.getHour()==23 && min.getMinute()==59) return Hour{};
     return min;
 }
+
 
 void LandTransport::setSchedule(Hour frequency, Hour start_hour, Hour end_hour) {
     schedule.clear();

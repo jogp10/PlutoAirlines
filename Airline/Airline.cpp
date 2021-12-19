@@ -16,6 +16,7 @@ void Airline::addAirplane(Airplane& airplane, bool write) {
     }
 }
 
+
 void Airline::addAirport(const Airport& airport, bool write) {
     airports.push_back(airport);
     if(write) {
@@ -44,6 +45,7 @@ void Airline::addFlight(Flight &flight, bool write) {
     }
 }
 
+
 void Airline::addService(Service &service, bool write) {
     for(auto& i:airplanes){
         if(i.getPlate()==service.airplane_plate){
@@ -56,6 +58,7 @@ void Airline::addService(Service &service, bool write) {
         Airline::write("Populate/Service.txt", content);
     }
 }
+
 
 void Airline::addLandTransport(LandTransport &landTransport, bool write) {
     string code = landTransport.getAirportCode();
@@ -72,6 +75,7 @@ void Airline::addLandTransport(LandTransport &landTransport, bool write) {
         Airline::write("Populate/LandTransport.txt", content);
     }
 }
+
 
 void Airline::addTicket(Ticket &t, Passenger p, bool write) {
     p.buyTicket(t);
@@ -95,6 +99,7 @@ bool operator<= (const Flight& lhs, const Flight& rhs){
     return lhs.getDepartureLocal()<rhs.getDepartureLocal();
 }
 
+
 void merge(vector<Flight> &v, vector<Flight> &tmpArr, int leftPos, int rightPos, int rightEnd) {
     int leftEnd = rightPos - 1, tmpPos = leftPos;
     int numElements = rightEnd - leftPos + 1;
@@ -111,6 +116,7 @@ void merge(vector<Flight> &v, vector<Flight> &tmpArr, int leftPos, int rightPos,
         v[rightEnd] = tmpArr[rightEnd];
 }
 
+
 void mergeSort(vector<Flight> &v, vector<Flight> &tmpArr, int left, int right){
     if (left < right){
         int center = (left + right) / 2;
@@ -120,10 +126,12 @@ void mergeSort(vector<Flight> &v, vector<Flight> &tmpArr, int left, int right){
     }
 }
 
+
 void mergeSort(vector<Flight>& v) {
     vector<Flight> tmpArr(v.size());
     mergeSort(v, tmpArr, 0, (int)v.size()-1);
 }
+
 
 void Airline::updateFlights() {
     flights.clear();
@@ -134,6 +142,7 @@ void Airline::updateFlights() {
     }
     mergeSort(flights);
 }
+
 
 //Binary Search
 bool operator> (const Flight& lhs, const Flight& rhs){
@@ -157,6 +166,7 @@ int BinarySearch(const vector<Flight> &v, const Flight& el)
     return -1; // not found
 }
 
+
 vector<Flight> Airline::filterFromX(const string& code) {
     vector<Flight> result;
     vector<Flight> tmp = flights;
@@ -170,6 +180,7 @@ vector<Flight> Airline::filterFromX(const string& code) {
     return result;
 }
 
+
 vector<Flight> Airline::filterToX(const string& code) {
     vector<Flight> result;
     for(auto &f: flights){
@@ -177,6 +188,7 @@ vector<Flight> Airline::filterToX(const string& code) {
     }
     return result;
 }
+
 
 vector<Flight> Airline::filterbyDateX(const string& date) {
     vector<Flight> result;
@@ -189,6 +201,7 @@ vector<Flight> Airline::filterbyDateX(const string& date) {
     return result;
 }
 
+
 vector<Flight> Airline::filterDuration(const int min) {
     vector<Flight> result;
     for(auto &f: flights){
@@ -196,7 +209,6 @@ vector<Flight> Airline::filterDuration(const int min) {
     }
     return result;
 }
-
 
 
 bool Airline::removeAirplane(const Airplane &a) {
@@ -218,6 +230,7 @@ bool Airline::removeAirplane(const Airplane &a) {
     return false;
 }
 
+
 bool Airline::removeFlight(const Flight &f) {
     vector<string> del;
     del.push_back(to_string(f.getFLightNum()));
@@ -236,6 +249,7 @@ bool Airline::removeFlight(const Flight &f) {
     flights.erase(flights.begin()+ind);
     return true;
 }
+
 
 bool Airline::removeAirport(const Airport &p) {
     vector<string> del;
@@ -261,6 +275,7 @@ bool Airline::removeAirport(const Airport &p) {
     return false;
 }
 
+
 vector<Airplane> Airline::loadPlanes() {
     string namePlane, typePlane, platePlane, objPlane, name ;
     vector<Airplane> result;
@@ -281,6 +296,7 @@ vector<Airplane> Airline::loadPlanes() {
     return result;
 }
 
+
 vector<Airport> Airline::loadAirports() {
     /** Filling Airports vector */
     string nameAirport, codeAirport;
@@ -300,6 +316,7 @@ vector<Airport> Airline::loadAirports() {
     file_airport.close();
     return result;
 }
+
 
 vector<Flight> Airline::loadFlights() {
     /** Filling Flights vector */
@@ -326,6 +343,7 @@ vector<Flight> Airline::loadFlights() {
     file_flight.close();
     return result;
 }
+
 
 vector<LandTransport> Airline::loadLandTransport() {
     /** Filling LandTransport vector */
@@ -355,6 +373,7 @@ vector<LandTransport> Airline::loadLandTransport() {
     return result;
 }
 
+
 vector<Service> Airline::loadServices() {
     /** Filling Services vector */
     string type, name, date, airplanePlate;
@@ -381,6 +400,7 @@ vector<Service> Airline::loadServices() {
     return result;
 }
 
+
 vector<Ticket> Airline::loadTickets() {
     /** Filling Tickets vector */
     string flightnum, group, luggage;
@@ -403,6 +423,7 @@ vector<Ticket> Airline::loadTickets() {
     return result;
 }
 
+
 void Airline::write(const string& file, const string& content) {
     ofstream file_generic(file, ios::app);
 
@@ -420,6 +441,7 @@ void Airline::write(const string& file, const string& content) {
     for(const auto& i:strings) file_generic << i << endl;
     file_generic.close();
 }
+
 
 void Airline::del(const char* file1, const vector<string>& del) {
     ifstream file(file1);

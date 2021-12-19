@@ -3,51 +3,219 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{classAirline_ad0845f956e052dccc6e5d6be83227358}{set\+Airplanes}} (vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ airplaneS)
+void \mbox{\hyperlink{classAirline_a55c31d2616e71f044ab0a1b9ce02cbde}{add\+Airplane}} (\mbox{\hyperlink{classAirplane}{Airplane}} \&airplane, bool \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}}=true)
 \item 
-void \mbox{\hyperlink{classAirline_a100dd0acf1bcc79403f980efc2f1d3cb}{set\+Airports}} (vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ airportS)
+void \mbox{\hyperlink{classAirline_a084f8432e5f2ee668d5041f0cbe0c01f}{add\+Airport}} (const \mbox{\hyperlink{classAirport}{Airport}} \&airport, bool \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}}=true)
 \item 
-void \mbox{\hyperlink{classAirline_aa0faede3a4fbcb22d065e22e2fc1f043}{add\+Airplane}} (const \mbox{\hyperlink{classAirplane}{Airplane}} \&airplane)
+void \mbox{\hyperlink{classAirline_a58fb093757e5575684b04bca5b86536b}{add\+Flight}} (\mbox{\hyperlink{classFlight}{Flight}} \&flight, bool \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}}=true)
 \item 
-void \mbox{\hyperlink{classAirline_a77fcb6fe064ab325e654de79e475495c}{add\+Airport}} (const \mbox{\hyperlink{classAirport}{Airport}} \&airport)
+void \mbox{\hyperlink{classAirline_a6943253952140e363ef869976b2c5296}{add\+Service}} (\mbox{\hyperlink{structService}{Service}} \&service, bool \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}}=true)
+\item 
+void \mbox{\hyperlink{classAirline_a0c98ecf3b5f4264c8068ee055bd8f1de}{add\+Ticket}} (\mbox{\hyperlink{classTicket}{Ticket}} \&t, \mbox{\hyperlink{classPassenger}{Passenger}} p=\mbox{\hyperlink{classPassenger}{Passenger}}(\char`\"{}\char`\"{}), bool \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}}=true)
+\item 
+void \mbox{\hyperlink{classAirline_a29c791ac5312397e1235aac652012aaa}{add\+Land\+Transport}} (\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&land\+Transport, bool \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}}=true)
 \item 
 vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ \mbox{\hyperlink{classAirline_a0aed31b32abe5c44c9ec4e6dea18feb8}{get\+Airplanes}} ()
 \item 
 vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{classAirline_a9ae578987bdddabc462d4c895292151d}{get\+Airports}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirline_a0c9b5612b38bc3eff6c454ea516721bb}{get\+Flights}} ()
+\item 
+void \mbox{\hyperlink{classAirline_a4c4ccef9e6926c9079fd09a6c7e48f04}{update\+Flights}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirline_ae0c08b73be2eebfe3de4f2b6aad08646}{filter\+FromX}} (const string \&code)
+\item 
+vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirline_ae5fdb37b4ec78765ca2cdaa2bf7c014c}{filter\+ToX}} (const string \&code)
+\item 
+vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirline_ae9bbc8bb74fc83baa3aee7b6995c11a0}{filterby\+DateX}} (const string \&date)
+\item 
+vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirline_acebd35f0cb339995064060d7442e70f2}{filter\+Duration}} (int max)
+\item 
+bool \mbox{\hyperlink{classAirline_aebb984bb500b48a2bd6a4466b2b04393}{remove\+Airplane}} (const \mbox{\hyperlink{classAirplane}{Airplane}} \&a)
+\item 
+bool \mbox{\hyperlink{classAirline_ae6df3615a12e8e6525101290d6f677ce}{remove\+Flight}} (const \mbox{\hyperlink{classFlight}{Flight}} \&f)
+\item 
+bool \mbox{\hyperlink{classAirline_a9f340031c24e188715a8bfc8209d308a}{remove\+Airport}} (const \mbox{\hyperlink{classAirport}{Airport}} \&p)
+\item 
+vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirline_a4b80342cfe38fd879f2e8c2a61a69c12}{load\+Flights}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ \mbox{\hyperlink{classAirline_ad88485a953c9662e301fd10a104dc252}{load\+Planes}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{classAirline_a72926e3a284e2efef3c6108a696e7dd3}{load\+Airports}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirline_aa46846163243dccd22a5af8869bac6f5}{load\+Land\+Transport}} ()
+\item 
+vector$<$ \mbox{\hyperlink{structService}{Service}} $>$ \mbox{\hyperlink{classAirline_a9a6dc9503a758e19b0154993df820fd1}{load\+Services}} ()
+\item 
+vector$<$ \mbox{\hyperlink{classTicket}{Ticket}} $>$ \mbox{\hyperlink{classAirline_a7c8f8d5b50975eaf33e3797861bf6b44}{load\+Tickets}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}} (const string \&file, const string \&content)
+\item 
+static void \mbox{\hyperlink{classAirline_a038c7bd47df7cd3ff6584b5bb2e11598}{del}} (const char $\ast$file, const vector$<$ string $>$ \&del)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classAirline_aa0faede3a4fbcb22d065e22e2fc1f043}\label{classAirline_aa0faede3a4fbcb22d065e22e2fc1f043}} 
+\mbox{\Hypertarget{classAirline_a55c31d2616e71f044ab0a1b9ce02cbde}\label{classAirline_a55c31d2616e71f044ab0a1b9ce02cbde}} 
 \index{Airline@{Airline}!addAirplane@{addAirplane}}
 \index{addAirplane@{addAirplane}!Airline@{Airline}}
 \doxysubsubsection{\texorpdfstring{addAirplane()}{addAirplane()}}
-{\footnotesize\ttfamily void Airline\+::add\+Airplane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAirplane}{Airplane}} \&}]{airplane }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Airline\+::add\+Airplane (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAirplane}{Airplane}} \&}]{airplane,  }\item[{bool}]{write = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Add airplane 
+Add \mbox{\hyperlink{classAirplane}{Airplane}} to \mbox{\hyperlink{classAirline}{Airline}} 
 \begin{DoxyParams}{Parameters}
 {\em airplane} & \\
 \hline
+{\em write} & false to not write in file \\
+\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classAirline_a77fcb6fe064ab325e654de79e475495c}\label{classAirline_a77fcb6fe064ab325e654de79e475495c}} 
+\mbox{\Hypertarget{classAirline_a084f8432e5f2ee668d5041f0cbe0c01f}\label{classAirline_a084f8432e5f2ee668d5041f0cbe0c01f}} 
 \index{Airline@{Airline}!addAirport@{addAirport}}
 \index{addAirport@{addAirport}!Airline@{Airline}}
 \doxysubsubsection{\texorpdfstring{addAirport()}{addAirport()}}
-{\footnotesize\ttfamily void Airline\+::add\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAirport}{Airport}} \&}]{airport }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Airline\+::add\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAirport}{Airport}} \&}]{airport,  }\item[{bool}]{write = {\ttfamily true} }\end{DoxyParamCaption})}
 
-Add airport 
+Add \mbox{\hyperlink{classAirport}{Airport}} to \mbox{\hyperlink{classAirline}{Airline}} 
 \begin{DoxyParams}{Parameters}
 {\em airport} & \\
 \hline
+{\em write} & false to not write in file \\
+\hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a58fb093757e5575684b04bca5b86536b}\label{classAirline_a58fb093757e5575684b04bca5b86536b}} 
+\index{Airline@{Airline}!addFlight@{addFlight}}
+\index{addFlight@{addFlight}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{addFlight()}{addFlight()}}
+{\footnotesize\ttfamily void Airline\+::add\+Flight (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlight}{Flight}} \&}]{flight,  }\item[{bool}]{write = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Add \mbox{\hyperlink{classFlight}{Flight}} to \mbox{\hyperlink{classAirline}{Airline}} and respective \mbox{\hyperlink{classAirplane}{Airplane}} 
+\begin{DoxyParams}{Parameters}
+{\em flight} & \\
+\hline
+{\em write} & false to not write in file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a29c791ac5312397e1235aac652012aaa}\label{classAirline_a29c791ac5312397e1235aac652012aaa}} 
+\index{Airline@{Airline}!addLandTransport@{addLandTransport}}
+\index{addLandTransport@{addLandTransport}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{addLandTransport()}{addLandTransport()}}
+{\footnotesize\ttfamily void Airline\+::add\+Land\+Transport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&}]{land\+Transport,  }\item[{bool}]{write = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Add \mbox{\hyperlink{classLandTransport}{Land\+Transport}} to respective \mbox{\hyperlink{classAirport}{Airport}} 
+\begin{DoxyParams}{Parameters}
+{\em land\+Transport} & \\
+\hline
+{\em write} & false to not write in file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a6943253952140e363ef869976b2c5296}\label{classAirline_a6943253952140e363ef869976b2c5296}} 
+\index{Airline@{Airline}!addService@{addService}}
+\index{addService@{addService}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{addService()}{addService()}}
+{\footnotesize\ttfamily void Airline\+::add\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structService}{Service}} \&}]{service,  }\item[{bool}]{write = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Add \mbox{\hyperlink{structService}{Service}} to respective \mbox{\hyperlink{classAirplane}{Airplane}} 
+\begin{DoxyParams}{Parameters}
+{\em service} & \\
+\hline
+{\em write} & false to not write in file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a0c98ecf3b5f4264c8068ee055bd8f1de}\label{classAirline_a0c98ecf3b5f4264c8068ee055bd8f1de}} 
+\index{Airline@{Airline}!addTicket@{addTicket}}
+\index{addTicket@{addTicket}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{addTicket()}{addTicket()}}
+{\footnotesize\ttfamily void Airline\+::add\+Ticket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTicket}{Ticket}} \&}]{t,  }\item[{\mbox{\hyperlink{classPassenger}{Passenger}}}]{p = {\ttfamily \mbox{\hyperlink{classPassenger}{Passenger}}(\char`\"{}\char`\"{})},  }\item[{bool}]{write = {\ttfamily true} }\end{DoxyParamCaption})}
+
+Add \mbox{\hyperlink{classTicket}{Ticket}} to respective \mbox{\hyperlink{classFlight}{Flight}} 
+\begin{DoxyParams}{Parameters}
+{\em t} & \mbox{\hyperlink{classTicket}{Ticket}} \\
+\hline
+{\em p} & \mbox{\hyperlink{classPassenger}{Passenger}} \\
+\hline
+{\em write} & false to not write in file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_a038c7bd47df7cd3ff6584b5bb2e11598}\label{classAirline_a038c7bd47df7cd3ff6584b5bb2e11598}} 
+\index{Airline@{Airline}!del@{del}}
+\index{del@{del}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{del()}{del()}}
+{\footnotesize\ttfamily void Airline\+::del (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file,  }\item[{const vector$<$ string $>$ \&}]{del }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Delete from file of database 
+\begin{DoxyParams}{Parameters}
+{\em file} & file to delete from \\
+\hline
+{\em del} & vector$<$string$>$ containing the key of the elem to eliminate and number of lines that goes with the elem \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAirline_ae9bbc8bb74fc83baa3aee7b6995c11a0}\label{classAirline_ae9bbc8bb74fc83baa3aee7b6995c11a0}} 
+\index{Airline@{Airline}!filterbyDateX@{filterbyDateX}}
+\index{filterbyDateX@{filterbyDateX}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{filterbyDateX()}{filterbyDateX()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ Airline\+::filterby\+DateX (\begin{DoxyParamCaption}\item[{const string \&}]{date }\end{DoxyParamCaption})}
+
+Filter the Flights by departure date 
+\begin{DoxyParams}{Parameters}
+{\em date} & date of flight\textquotesingle{}s departure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector containing Flights with departure date date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_acebd35f0cb339995064060d7442e70f2}\label{classAirline_acebd35f0cb339995064060d7442e70f2}} 
+\index{Airline@{Airline}!filterDuration@{filterDuration}}
+\index{filterDuration@{filterDuration}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{filterDuration()}{filterDuration()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ Airline\+::filter\+Duration (\begin{DoxyParamCaption}\item[{int}]{max }\end{DoxyParamCaption})}
+
+Filter the Flights by travel duration 
+\begin{DoxyParams}{Parameters}
+{\em max} & max travel duration time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector containing Flights with time travel smalled than max 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_ae0c08b73be2eebfe3de4f2b6aad08646}\label{classAirline_ae0c08b73be2eebfe3de4f2b6aad08646}} 
+\index{Airline@{Airline}!filterFromX@{filterFromX}}
+\index{filterFromX@{filterFromX}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{filterFromX()}{filterFromX()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ Airline\+::filter\+FromX (\begin{DoxyParamCaption}\item[{const string \&}]{code }\end{DoxyParamCaption})}
+
+Filter the Flights by departure local 
+\begin{DoxyParams}{Parameters}
+{\em code} & code of airport of departure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector containing Flights with departure local code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_ae5fdb37b4ec78765ca2cdaa2bf7c014c}\label{classAirline_ae5fdb37b4ec78765ca2cdaa2bf7c014c}} 
+\index{Airline@{Airline}!filterToX@{filterToX}}
+\index{filterToX@{filterToX}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{filterToX()}{filterToX()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ Airline\+::filter\+ToX (\begin{DoxyParamCaption}\item[{const string \&}]{code }\end{DoxyParamCaption})}
+
+Filter the Flights by arrival local 
+\begin{DoxyParams}{Parameters}
+{\em code} & code of airport of arrival \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector containing Flights with arrival local code 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classAirline_a0aed31b32abe5c44c9ec4e6dea18feb8}\label{classAirline_a0aed31b32abe5c44c9ec4e6dea18feb8}} 
 \index{Airline@{Airline}!getAirplanes@{getAirplanes}}
 \index{getAirplanes@{getAirplanes}!Airline@{Airline}}
 \doxysubsubsection{\texorpdfstring{getAirplanes()}{getAirplanes()}}
 {\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classAirplane}{Airplane}}$>$ Airline\+::get\+Airplanes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airplanes \begin{DoxyReturn}{Returns}
-
+Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s Airplanes \begin{DoxyReturn}{Returns}
+vector containing Airplanes 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classAirline_a9ae578987bdddabc462d4c895292151d}\label{classAirline_a9ae578987bdddabc462d4c895292151d}} 
 \index{Airline@{Airline}!getAirports@{getAirports}}
@@ -55,29 +223,131 @@ Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airplanes \begin
 \doxysubsubsection{\texorpdfstring{getAirports()}{getAirports()}}
 {\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classAirport}{Airport}}$>$ Airline\+::get\+Airports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airport \begin{DoxyReturn}{Returns}
-
+Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s Airports \begin{DoxyReturn}{Returns}
+vector containing Airports 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirline_ad0845f956e052dccc6e5d6be83227358}\label{classAirline_ad0845f956e052dccc6e5d6be83227358}} 
-\index{Airline@{Airline}!setAirplanes@{setAirplanes}}
-\index{setAirplanes@{setAirplanes}!Airline@{Airline}}
-\doxysubsubsection{\texorpdfstring{setAirplanes()}{setAirplanes()}}
-{\footnotesize\ttfamily void Airline\+::set\+Airplanes (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$}]{airplaneS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classAirline_a0c9b5612b38bc3eff6c454ea516721bb}\label{classAirline_a0c9b5612b38bc3eff6c454ea516721bb}} 
+\index{Airline@{Airline}!getFlights@{getFlights}}
+\index{getFlights@{getFlights}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{getFlights()}{getFlights()}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classFlight}{Flight}}$>$ Airline\+::get\+Flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Set \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airplanes 
+Get \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s Flights \begin{DoxyReturn}{Returns}
+vector containing F\+Lights 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_a72926e3a284e2efef3c6108a696e7dd3}\label{classAirline_a72926e3a284e2efef3c6108a696e7dd3}} 
+\index{Airline@{Airline}!loadAirports@{loadAirports}}
+\index{loadAirports@{loadAirports}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{loadAirports()}{loadAirports()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ Airline\+::load\+Airports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Load Airports from file \begin{DoxyReturn}{Returns}
+the airports in database 
+\end{DoxyReturn}
+Filling Airports vector\mbox{\Hypertarget{classAirline_a4b80342cfe38fd879f2e8c2a61a69c12}\label{classAirline_a4b80342cfe38fd879f2e8c2a61a69c12}} 
+\index{Airline@{Airline}!loadFlights@{loadFlights}}
+\index{loadFlights@{loadFlights}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{loadFlights()}{loadFlights()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ Airline\+::load\+Flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Load Flights from file \begin{DoxyReturn}{Returns}
+the flights in database 
+\end{DoxyReturn}
+Filling Flights vector\mbox{\Hypertarget{classAirline_aa46846163243dccd22a5af8869bac6f5}\label{classAirline_aa46846163243dccd22a5af8869bac6f5}} 
+\index{Airline@{Airline}!loadLandTransport@{loadLandTransport}}
+\index{loadLandTransport@{loadLandTransport}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{loadLandTransport()}{loadLandTransport()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airline\+::load\+Land\+Transport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Load Land\+Transports from file \begin{DoxyReturn}{Returns}
+the landtransports in database 
+\end{DoxyReturn}
+Filling \mbox{\hyperlink{classLandTransport}{Land\+Transport}} vector\mbox{\Hypertarget{classAirline_ad88485a953c9662e301fd10a104dc252}\label{classAirline_ad88485a953c9662e301fd10a104dc252}} 
+\index{Airline@{Airline}!loadPlanes@{loadPlanes}}
+\index{loadPlanes@{loadPlanes}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{loadPlanes()}{loadPlanes()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ Airline\+::load\+Planes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Load Planes from file \begin{DoxyReturn}{Returns}
+the Planes in database 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_a9a6dc9503a758e19b0154993df820fd1}\label{classAirline_a9a6dc9503a758e19b0154993df820fd1}} 
+\index{Airline@{Airline}!loadServices@{loadServices}}
+\index{loadServices@{loadServices}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{loadServices()}{loadServices()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{structService}{Service}} $>$ Airline\+::load\+Services (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Load Services from file \begin{DoxyReturn}{Returns}
+the Services in database 
+\end{DoxyReturn}
+Filling Services vector\mbox{\Hypertarget{classAirline_a7c8f8d5b50975eaf33e3797861bf6b44}\label{classAirline_a7c8f8d5b50975eaf33e3797861bf6b44}} 
+\index{Airline@{Airline}!loadTickets@{loadTickets}}
+\index{loadTickets@{loadTickets}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{loadTickets()}{loadTickets()}}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classTicket}{Ticket}} $>$ Airline\+::load\+Tickets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Load Tickets from file \begin{DoxyReturn}{Returns}
+the tickets in database 
+\end{DoxyReturn}
+Filling Tickets vector\mbox{\Hypertarget{classAirline_aebb984bb500b48a2bd6a4466b2b04393}\label{classAirline_aebb984bb500b48a2bd6a4466b2b04393}} 
+\index{Airline@{Airline}!removeAirplane@{removeAirplane}}
+\index{removeAirplane@{removeAirplane}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{removeAirplane()}{removeAirplane()}}
+{\footnotesize\ttfamily bool Airline\+::remove\+Airplane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAirplane}{Airplane}} \&}]{a }\end{DoxyParamCaption})}
+
+Remove \mbox{\hyperlink{classAirplane}{Airplane}} from \mbox{\hyperlink{classAirline}{Airline}} and his Fligts and Services 
 \begin{DoxyParams}{Parameters}
-{\em airplanes} & \\
+{\em a} & airplane \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classAirline_a100dd0acf1bcc79403f980efc2f1d3cb}\label{classAirline_a100dd0acf1bcc79403f980efc2f1d3cb}} 
-\index{Airline@{Airline}!setAirports@{setAirports}}
-\index{setAirports@{setAirports}!Airline@{Airline}}
-\doxysubsubsection{\texorpdfstring{setAirports()}{setAirports()}}
-{\footnotesize\ttfamily void Airline\+::set\+Airports (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$}]{airportS }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\begin{DoxyReturn}{Returns}
+if it existed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_a9f340031c24e188715a8bfc8209d308a}\label{classAirline_a9f340031c24e188715a8bfc8209d308a}} 
+\index{Airline@{Airline}!removeAirport@{removeAirport}}
+\index{removeAirport@{removeAirport}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{removeAirport()}{removeAirport()}}
+{\footnotesize\ttfamily bool Airline\+::remove\+Airport (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAirport}{Airport}} \&}]{p }\end{DoxyParamCaption})}
 
-Set \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s airport 
+Remove \mbox{\hyperlink{classAirport}{Airport}} from \mbox{\hyperlink{classAirline}{Airline}} and his Land\+Transports and Flights 
 \begin{DoxyParams}{Parameters}
-{\em airports} & \\
+{\em a} & airport \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if it existed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_ae6df3615a12e8e6525101290d6f677ce}\label{classAirline_ae6df3615a12e8e6525101290d6f677ce}} 
+\index{Airline@{Airline}!removeFlight@{removeFlight}}
+\index{removeFlight@{removeFlight}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{removeFlight()}{removeFlight()}}
+{\footnotesize\ttfamily bool Airline\+::remove\+Flight (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlight}{Flight}} \&}]{f }\end{DoxyParamCaption})}
+
+Remove \mbox{\hyperlink{classFlight}{Flight}} from \mbox{\hyperlink{classAirline}{Airline}} and his Tickets 
+\begin{DoxyParams}{Parameters}
+{\em f} & flight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if it existed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirline_a4c4ccef9e6926c9079fd09a6c7e48f04}\label{classAirline_a4c4ccef9e6926c9079fd09a6c7e48f04}} 
+\index{Airline@{Airline}!updateFlights@{updateFlights}}
+\index{updateFlights@{updateFlights}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{updateFlights()}{updateFlights()}}
+{\footnotesize\ttfamily void Airline\+::update\+Flights (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update \mbox{\hyperlink{classAirline}{Airline}}\textquotesingle{}s Flights (with Merge Sort) Schedule flights are now in vector flights and sorted by departure local \mbox{\Hypertarget{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}\label{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}} 
+\index{Airline@{Airline}!write@{write}}
+\index{write@{write}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Airline\+::write (\begin{DoxyParamCaption}\item[{const string \&}]{file,  }\item[{const string \&}]{content }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Write in file of database 
+\begin{DoxyParams}{Parameters}
+{\em file} & file to write in \\
+\hline
+{\em content} & content to write in file \\
 \hline
 \end{DoxyParams}
 

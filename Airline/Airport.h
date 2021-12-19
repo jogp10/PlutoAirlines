@@ -9,7 +9,7 @@
 #include <unordered_map>
 
 enum TransType {NONE, TRAIN, SUBWAY, BUS};
-static unordered_map<string, TransType> const table = {{"NONE", TransType::NONE}, {"SUBWAY", TransType::SUBWAY},
+unordered_map<string, TransType> const table = {{"NONE", TransType::NONE}, {"SUBWAY", TransType::SUBWAY},
                                                        {"BUS", TransType::SUBWAY}, {"TRAIN", TransType::TRAIN}};
 
 class LandTransport{
@@ -21,70 +21,73 @@ class LandTransport{
 
 public:
     /**
-     * Check LandTransport this < LandTransport a
-     * @param a
+     * LandTransport this < LandTransport a
+     * @param a LandTransport to compare with
      * @return true if this < a
      */
     bool operator<(const LandTransport& a) const{ return this->distance<a.distance; }
 
     /**
-     * Check if LandTransport this == LandTransport a
-     * @param LandTransport a
+     * LandTransport this == LandTransport a
+     * @param LandTransport LandTransport to compare with
      * @return true if equals
      */
     bool operator==(const LandTransport &a) const;
+
     /**
      *
-     * @param transType
-     * @param distance
-     * @param freq
-     * @param start_hour
-     * @param end_hour
+     * @param transType type of LandTransport
+     * @param distance distance from the Airport to LandTransport
+     * @param freq  frequency of the LandTransport
+     * @param start_hour First LandTransport of the day
+     * @param end_hour Time that the LandTransport doesn't work anymore for that day
+     * @param airportCode
      */
-    explicit LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"), string airportCode="");
+    explicit LandTransport(TransType transType, double distance=0, Hour freq=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"), string airportCode="");
+
     /**
-     *  Get Transport type
-     * @return
+     *  Get LandTransport's type
+     * @return type of LandTransport
      */
     TransType getTransType() const {return transType;};
     /**
-     * Get Transport distance to the airport
-     * @return
+     * Get LandTransport's distance to the airport
+     * @return distance
      */
     double getDistance() const {return distance;};
     /**
-     * Get Transport's Airport
-     * @return
+     * Get LandTransport's Airport
+     * @return Airport code
      */
     string getAirportCode() const {return airportcode;};
 
     /**
-     *
-     * @return
+     * Get LandTransport's frequency
+     * @return frequency
      */
     Hour getFreq() const {return freq;};
     /**
-     *
+     * Get LandTransport's starting hour
      * @return
      */
     Hour getStart() const {return start;};
     /**
-     *
+     * Get LandTransport's last hour
      * @return
      */
     Hour getEnd() const {return end;};
 
     /**
-     * Get next passage of transport
-     * @return Date
+     * Get next passage of LandTransport
+     * @return Hour of the next LandTransport
      */
     Hour next();
 
     /**
-     * Set transport schedule
+     * Set LandTransport schedule
      * @param frequency of the passages
-     * @param start_hour
-     * @param end_hour
+     * @param start_hour starting hour
+     * @param end_hour ending hour
      */
     void setSchedule(Hour frequency, Hour start_hour, Hour end_hour);
 };
@@ -98,67 +101,68 @@ private:
 public:
     /**
      *
-     * @param name of airport
-     * @param code of airport
+     * @param name name of Airport
+     * @param code code of Airport
      */
-    Airport(const string& name1, const string& code1): name(name1), code(code1), bst(LandTransport(NONE)){};
+    Airport(const string& name, const string& code): name(name), code(code), bst(LandTransport(NONE)){};
 
     /**
-     *
-     * @return
+     * Get Airport's name
+     * @return name
      */
     string getAirportName() const {return name;};
+
     /**
      * Get Airport's code
-     * @return
+     * @return code
      */
     string getCode() const {return code;};
 
     /**
-     * Get all subways
-     * @return
+     * Get Airport's LandTransport those that are subways
+     * @return subways
      */
     vector<LandTransport> getSubway() const;
 
     /**
-     * Get all trains
-     * @return
+     * Get Airport's LandTransport those that are trains
+     * @return trains
      */
     vector<LandTransport> getTrain() const;
 
     /**
-     * Get all bus
-     * @return
+     * Get Airport's LandTransport those that are bus
+     * @return bus
      */
     vector<LandTransport> getBus() const;
 
     /**
-     * Get all transports ordered by distance
-     * @return
+     * Get Airport's LandTransport ordered by distance
+     * @return LandTransports ordered by distance
      */
     vector<LandTransport> getByDistance() const;
 
     /**
      * Get closests transport
-     * @return
+     * @return  Closest LandTransport
      */
-    LandTransport getMinDistance() const;
+    LandTransport getMinDistance() const {return bst.findMin();};
 
     /**
      * Get furthest transport
-     * @return
+     * @return Fursthest LandTransport
      */
-    LandTransport getMaxDistance() const;
+    LandTransport getMaxDistance() const {return bst.findMax();};
 
     /**
      * Get next transport
-     * @return
+     * @return Next LandTransport to pass by
      */
     LandTransport getNext() const;
 
     /**
-     * Insert new Transport
-     * @param landTransport
+     * Insert new LandTransport in City
+     * @param landTransport LandTransport
      */
     void insert(const LandTransport& landTransport);
 };

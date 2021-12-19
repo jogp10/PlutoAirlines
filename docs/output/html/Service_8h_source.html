@@ -80,19 +80,30 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Date.h&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">enum</span> ServType {MAINTENANCE, CLEAN};</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="structService.html">   12</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structService.html">Service</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    ServType type; <span class="comment">// 0 for maintenance, 1 for clean</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">string</span> name;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="classDate.html">Date</a> date;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">// date of the service, name of the employee</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_SERVICE_H</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">static</span> unordered_map&lt;string, ServType&gt; <span class="keyword">const</span> servtable = {{<span class="stringliteral">&quot;CLEAN&quot;</span>, ServType::CLEAN},</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                                                       {<span class="stringliteral">&quot;MAINTENANCE&quot;</span>, ServType::MAINTENANCE}};</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structService.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structService.html">Service</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structService.html#a0bf6f0b35dae7315c9e96192bd96bac9">   21</a></span>&#160;    ServType <a class="code" href="structService.html#a0bf6f0b35dae7315c9e96192bd96bac9">type</a>;<span class="comment">// 0 for maintenance, 1 for clean</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structService.html#a9ec57bf3e796cb518cdb8b45d738521e">   26</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="structService.html#a9ec57bf3e796cb518cdb8b45d738521e">name</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structService.html#a00e1fb44faf15d76b7633b888780baeb">   31</a></span>&#160;    <a class="code" href="classDate.html">Date</a> <a class="code" href="structService.html#a00e1fb44faf15d76b7633b888780baeb">date</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structService.html#a543d820ec58f4c14eef0a36be8fabe6f">   36</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="structService.html#a543d820ec58f4c14eef0a36be8fabe6f">airplane_plate</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_SERVICE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructService_html"><div class="ttname"><a href="structService.html">Service</a></div><div class="ttdef"><b>Definition:</b> Service.h:12</div></div>
-<div class="ttc" id="aclassDate_html"><div class="ttname"><a href="classDate.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:94</div></div>
+<div class="ttc" id="astructService_html_a0bf6f0b35dae7315c9e96192bd96bac9"><div class="ttname"><a href="structService.html#a0bf6f0b35dae7315c9e96192bd96bac9">Service::type</a></div><div class="ttdeci">ServType type</div><div class="ttdef"><b>Definition:</b> Service.h:21</div></div>
+<div class="ttc" id="astructService_html_a9ec57bf3e796cb518cdb8b45d738521e"><div class="ttname"><a href="structService.html#a9ec57bf3e796cb518cdb8b45d738521e">Service::name</a></div><div class="ttdeci">string name</div><div class="ttdef"><b>Definition:</b> Service.h:26</div></div>
+<div class="ttc" id="astructService_html"><div class="ttname"><a href="structService.html">Service</a></div><div class="ttdef"><b>Definition:</b> Service.h:16</div></div>
+<div class="ttc" id="astructService_html_a00e1fb44faf15d76b7633b888780baeb"><div class="ttname"><a href="structService.html#a00e1fb44faf15d76b7633b888780baeb">Service::date</a></div><div class="ttdeci">Date date</div><div class="ttdef"><b>Definition:</b> Service.h:31</div></div>
+<div class="ttc" id="aclassDate_html"><div class="ttname"><a href="classDate.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:103</div></div>
+<div class="ttc" id="astructService_html_a543d820ec58f4c14eef0a36be8fabe6f"><div class="ttname"><a href="structService.html#a543d820ec58f4c14eef0a36be8fabe6f">Service::airplane_plate</a></div><div class="ttdeci">string airplane_plate</div><div class="ttdef"><b>Definition:</b> Service.h:36</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

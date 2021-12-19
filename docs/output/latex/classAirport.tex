@@ -3,105 +3,127 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAirport_aaab58643598c54505617a0f24a420784}{Airport}} (string name1, string code1)
+\mbox{\hyperlink{classAirport_a13d44a50638969ec1d6a0bc14a26881e}{Airport}} (const string \&name, const string \&code)
 \item 
-vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_a679b54ba55b857bedd881da832748b8c}{get\+Subway}} ()
+string \mbox{\hyperlink{classAirport_a00b5effe5c9fc3deb2f233906585c75a}{get\+Airport\+Name}} () const
 \item 
-vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_a6fc1f4384f0f391dcd0ebd8541f3fd34}{get\+Train}} ()
+string \mbox{\hyperlink{classAirport_ad1369e1d47c87e205f1718b853a66d54}{get\+Code}} () const
 \item 
-vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_a8dce24059df742f8820736444add9f79}{get\+Bus}} ()
+vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_ae81b30749efebcbb7a094acf43cf9750}{get\+Subway}} () const
 \item 
-vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_a9b467f963bfb806a40a031ba78840750}{get\+By\+Distance}} ()
+vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_afbb20023eecd0e963b81544123d29332}{get\+Train}} () const
 \item 
-\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \mbox{\hyperlink{classAirport_ae8d370bdd8ed3972c9c98761723acbb4}{get\+Min\+Distance}} ()
+vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_a444082ada4272d4ddd69b4749770e295}{get\+Bus}} () const
 \item 
-\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \mbox{\hyperlink{classAirport_a66159c13ecfcaf4d0d42616721689ff9}{get\+Max\+Distance}} ()
+vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_a82b6805cf4097917d00230a5264c268a}{get\+By\+Distance}} () const
 \item 
-\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \mbox{\hyperlink{classAirport_aeb45f23948ba85581afedf2c959db957}{get\+Next}} ()
+\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \mbox{\hyperlink{classAirport_ae5217ac7bdbdafc43c833b57abff9994}{get\+Min\+Distance}} () const
+\item 
+\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \mbox{\hyperlink{classAirport_a83e0081fb9159ce42cf934b21b3afff9}{get\+Max\+Distance}} () const
+\item 
+\mbox{\hyperlink{classLandTransport}{Land\+Transport}} \mbox{\hyperlink{classAirport_a70e821040b9f5c4c6a3263f4388fd585}{get\+Next}} () const
 \item 
 void \mbox{\hyperlink{classAirport_ab5fd8315348fef2bee893f95b7dcac2b}{insert}} (const \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&land\+Transport)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classAirport_aaab58643598c54505617a0f24a420784}\label{classAirport_aaab58643598c54505617a0f24a420784}} 
+\mbox{\Hypertarget{classAirport_a13d44a50638969ec1d6a0bc14a26881e}\label{classAirport_a13d44a50638969ec1d6a0bc14a26881e}} 
 \index{Airport@{Airport}!Airport@{Airport}}
 \index{Airport@{Airport}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{Airport()}{Airport()}}
-{\footnotesize\ttfamily Airport\+::\+Airport (\begin{DoxyParamCaption}\item[{string}]{name1,  }\item[{string}]{code1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Airport\+::\+Airport (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 \begin{DoxyParams}{Parameters}
-{\em name} & of airport \\
+{\em name} & name of \mbox{\hyperlink{classAirport}{Airport}} \\
 \hline
-{\em code} & of airport \\
+{\em code} & code of \mbox{\hyperlink{classAirport}{Airport}} \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classAirport_a8dce24059df742f8820736444add9f79}\label{classAirport_a8dce24059df742f8820736444add9f79}} 
+\mbox{\Hypertarget{classAirport_a00b5effe5c9fc3deb2f233906585c75a}\label{classAirport_a00b5effe5c9fc3deb2f233906585c75a}} 
+\index{Airport@{Airport}!getAirportName@{getAirportName}}
+\index{getAirportName@{getAirportName}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getAirportName()}{getAirportName()}}
+{\footnotesize\ttfamily string Airport\+::get\+Airport\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get \mbox{\hyperlink{classAirport}{Airport}}\textquotesingle{}s name \begin{DoxyReturn}{Returns}
+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirport_a444082ada4272d4ddd69b4749770e295}\label{classAirport_a444082ada4272d4ddd69b4749770e295}} 
 \index{Airport@{Airport}!getBus@{getBus}}
 \index{getBus@{getBus}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{getBus()}{getBus()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+Bus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+Bus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Get all bus \begin{DoxyReturn}{Returns}
-
+Get \mbox{\hyperlink{classAirport}{Airport}}\textquotesingle{}s \mbox{\hyperlink{classLandTransport}{Land\+Transport}} those that are bus \begin{DoxyReturn}{Returns}
+bus 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirport_a9b467f963bfb806a40a031ba78840750}\label{classAirport_a9b467f963bfb806a40a031ba78840750}} 
+\mbox{\Hypertarget{classAirport_a82b6805cf4097917d00230a5264c268a}\label{classAirport_a82b6805cf4097917d00230a5264c268a}} 
 \index{Airport@{Airport}!getByDistance@{getByDistance}}
 \index{getByDistance@{getByDistance}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{getByDistance()}{getByDistance()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+By\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+By\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Get all transports ordered by distance \begin{DoxyReturn}{Returns}
-
+Get \mbox{\hyperlink{classAirport}{Airport}}\textquotesingle{}s \mbox{\hyperlink{classLandTransport}{Land\+Transport}} ordered by distance \begin{DoxyReturn}{Returns}
+Land\+Transports ordered by distance 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirport_a66159c13ecfcaf4d0d42616721689ff9}\label{classAirport_a66159c13ecfcaf4d0d42616721689ff9}} 
+\mbox{\Hypertarget{classAirport_ad1369e1d47c87e205f1718b853a66d54}\label{classAirport_ad1369e1d47c87e205f1718b853a66d54}} 
+\index{Airport@{Airport}!getCode@{getCode}}
+\index{getCode@{getCode}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{getCode()}{getCode()}}
+{\footnotesize\ttfamily string Airport\+::get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get \mbox{\hyperlink{classAirport}{Airport}}\textquotesingle{}s code \begin{DoxyReturn}{Returns}
+code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAirport_a83e0081fb9159ce42cf934b21b3afff9}\label{classAirport_a83e0081fb9159ce42cf934b21b3afff9}} 
 \index{Airport@{Airport}!getMaxDistance@{getMaxDistance}}
 \index{getMaxDistance@{getMaxDistance}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{getMaxDistance()}{getMaxDistance()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classLandTransport}{Land\+Transport}} Airport\+::get\+Max\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLandTransport}{Land\+Transport}} Airport\+::get\+Max\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get furthest transport \begin{DoxyReturn}{Returns}
-
+Fursthest \mbox{\hyperlink{classLandTransport}{Land\+Transport}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirport_ae8d370bdd8ed3972c9c98761723acbb4}\label{classAirport_ae8d370bdd8ed3972c9c98761723acbb4}} 
+\mbox{\Hypertarget{classAirport_ae5217ac7bdbdafc43c833b57abff9994}\label{classAirport_ae5217ac7bdbdafc43c833b57abff9994}} 
 \index{Airport@{Airport}!getMinDistance@{getMinDistance}}
 \index{getMinDistance@{getMinDistance}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{getMinDistance()}{getMinDistance()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classLandTransport}{Land\+Transport}} Airport\+::get\+Min\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLandTransport}{Land\+Transport}} Airport\+::get\+Min\+Distance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get closests transport \begin{DoxyReturn}{Returns}
-
+Closest \mbox{\hyperlink{classLandTransport}{Land\+Transport}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirport_aeb45f23948ba85581afedf2c959db957}\label{classAirport_aeb45f23948ba85581afedf2c959db957}} 
+\mbox{\Hypertarget{classAirport_a70e821040b9f5c4c6a3263f4388fd585}\label{classAirport_a70e821040b9f5c4c6a3263f4388fd585}} 
 \index{Airport@{Airport}!getNext@{getNext}}
 \index{getNext@{getNext}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classLandTransport}{Land\+Transport}} Airport\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLandTransport}{Land\+Transport}} Airport\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 Get next transport \begin{DoxyReturn}{Returns}
-
+Next \mbox{\hyperlink{classLandTransport}{Land\+Transport}} to pass by 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirport_a679b54ba55b857bedd881da832748b8c}\label{classAirport_a679b54ba55b857bedd881da832748b8c}} 
+\mbox{\Hypertarget{classAirport_ae81b30749efebcbb7a094acf43cf9750}\label{classAirport_ae81b30749efebcbb7a094acf43cf9750}} 
 \index{Airport@{Airport}!getSubway@{getSubway}}
 \index{getSubway@{getSubway}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{getSubway()}{getSubway()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+Subway (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+Subway (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Get all subways \begin{DoxyReturn}{Returns}
-
+Get \mbox{\hyperlink{classAirport}{Airport}}\textquotesingle{}s \mbox{\hyperlink{classLandTransport}{Land\+Transport}} those that are subways \begin{DoxyReturn}{Returns}
+subways 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classAirport_a6fc1f4384f0f391dcd0ebd8541f3fd34}\label{classAirport_a6fc1f4384f0f391dcd0ebd8541f3fd34}} 
+\mbox{\Hypertarget{classAirport_afbb20023eecd0e963b81544123d29332}\label{classAirport_afbb20023eecd0e963b81544123d29332}} 
 \index{Airport@{Airport}!getTrain@{getTrain}}
 \index{getTrain@{getTrain}!Airport@{Airport}}
 \doxysubsubsection{\texorpdfstring{getTrain()}{getTrain()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ Airport\+::get\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
-Get all trains \begin{DoxyReturn}{Returns}
-
+Get \mbox{\hyperlink{classAirport}{Airport}}\textquotesingle{}s \mbox{\hyperlink{classLandTransport}{Land\+Transport}} those that are trains \begin{DoxyReturn}{Returns}
+trains 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classAirport_ab5fd8315348fef2bee893f95b7dcac2b}\label{classAirport_ab5fd8315348fef2bee893f95b7dcac2b}} 
 \index{Airport@{Airport}!insert@{insert}}
@@ -109,9 +131,9 @@ Get all trains \begin{DoxyReturn}{Returns}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
 {\footnotesize\ttfamily void Airport\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&}]{land\+Transport }\end{DoxyParamCaption})}
 
-Insert new Transport 
+Insert new \mbox{\hyperlink{classLandTransport}{Land\+Transport}} in City 
 \begin{DoxyParams}{Parameters}
-{\em land\+Transport} & \\
+{\em land\+Transport} & \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \\
 \hline
 \end{DoxyParams}
 

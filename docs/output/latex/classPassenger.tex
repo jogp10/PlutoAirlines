@@ -3,22 +3,27 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classPassenger_aad40efad4be6b66639c952baf3c2f18f}{Passenger}} (\mbox{\hyperlink{classTicket}{Ticket}} ticket)
+\mbox{\hyperlink{classPassenger_a0db62c4f33cc7b5f284d8d8f165e663e}{Passenger}} (const string \&name)
 \item 
 bool \mbox{\hyperlink{classPassenger_a6a1225ed68e7f81b17bd5b47eb6ba87b}{buy\+Ticket}} (\mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classPassenger_a740df1292c5fbc6b471092fadd8fe1a3}{can\+Buy\+Ticket}} (const \mbox{\hyperlink{classTicket}{Ticket}} \&ticket)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classPassenger_aad40efad4be6b66639c952baf3c2f18f}\label{classPassenger_aad40efad4be6b66639c952baf3c2f18f}} 
+\mbox{\Hypertarget{classPassenger_a0db62c4f33cc7b5f284d8d8f165e663e}\label{classPassenger_a0db62c4f33cc7b5f284d8d8f165e663e}} 
 \index{Passenger@{Passenger}!Passenger@{Passenger}}
 \index{Passenger@{Passenger}!Passenger@{Passenger}}
 \doxysubsubsection{\texorpdfstring{Passenger()}{Passenger()}}
-{\footnotesize\ttfamily Passenger\+::\+Passenger (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTicket}{Ticket}}}]{ticket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Passenger\+::\+Passenger (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 
 \begin{DoxyParams}{Parameters}
-{\em ticket} & \\
+{\em name} & Name of passenger \\
 \hline
 \end{DoxyParams}
 
@@ -30,13 +35,27 @@ bool \mbox{\hyperlink{classPassenger_a6a1225ed68e7f81b17bd5b47eb6ba87b}{buy\+Tic
 \doxysubsubsection{\texorpdfstring{buyTicket()}{buyTicket()}}
 {\footnotesize\ttfamily bool Passenger\+::buy\+Ticket (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})}
 
-Buy the ticket if posible 
+buy \mbox{\hyperlink{classPassenger}{Passenger}} a \mbox{\hyperlink{classTicket}{Ticket}} 
 \begin{DoxyParams}{Parameters}
 {\em ticket} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
+if purchase was a success 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPassenger_a740df1292c5fbc6b471092fadd8fe1a3}\label{classPassenger_a740df1292c5fbc6b471092fadd8fe1a3}} 
+\index{Passenger@{Passenger}!canBuyTicket@{canBuyTicket}}
+\index{canBuyTicket@{canBuyTicket}!Passenger@{Passenger}}
+\doxysubsubsection{\texorpdfstring{canBuyTicket()}{canBuyTicket()}}
+{\footnotesize\ttfamily bool Passenger\+::can\+Buy\+Ticket (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTicket}{Ticket}} \&}]{ticket }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
+Check if there is available seats at airplane 
+\begin{DoxyParams}{Parameters}
+{\em ticket} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is available seats 
 \end{DoxyReturn}
 
 

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flight_116',['Flight',['../classFlight.html#a724086e6ac319bfa680167a23ebdef6a',1,'Flight']]]
+  ['canbuyticket_149',['canBuyTicket',['../classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3',1,'Passenger']]]
 ];
