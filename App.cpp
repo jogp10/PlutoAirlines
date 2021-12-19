@@ -74,12 +74,13 @@ int BuyTicket(class Airline airline) {
     int flights_print, count = 1;
     vector<Flight> flights = airline.getFlights();
 
-    for (auto i: flights) {
+    for (const auto& i: flights) {
         cout << count << ") " << i.getFLightNum() << ", " ;
         cout << i.getDepartureDate().getDate() << ", " ;
         cout << i.getDepartureLocal() << ", " << i.getArrivalLocal() << ", " ;
         cout << i.getFlightDuration().getHour() << ":" << i.getFlightDuration().getHourMin() << ", ";
         cout << i.getAirplanePlate() << endl ;
+        count++;
     }
     cout << "0) Go Back" << endl;
 
