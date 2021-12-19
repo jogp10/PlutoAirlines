@@ -18,15 +18,13 @@ int main(int argc, char* argv[]) {
 
     class Airline Pluto;
     class Passenger p1("");
-    Airline::write("Populate/Airport.txt", "Algarve ALG");
+
     Pluto.loadAirports();
     Pluto.loadLandTransport();
     Pluto.loadPlanes();
     Pluto.loadServices();
     Pluto.loadFlights();
     Pluto.loadTickets();
-    class Airport a1("Algarve", "ALG");
-    Pluto.removeAirport(a1);
 
     int menu_choice, passenger_choice, worker_choice;
 
@@ -159,12 +157,12 @@ int main(int argc, char* argv[]) {
                         int airline_choice = Airline();
 
                         switch (airline_choice) {
-                            /** Add airports */
+                            /** Add airport */
                             case 1: {
                                 break;
                             }
 
-                            /** Add airplanes */
+                            /** Add airplane */
                             case 2: {
                                 break;
                             }
@@ -211,33 +209,28 @@ int main(int argc, char* argv[]) {
                                 break;
                             }
 
-                            /** Set flights */
+                            /** Get fights */
                             case 2: {
                                 break;
                             }
 
-                            /** Get fights */
+                            /** Get Last 20 flights */
                             case 3: {
                                 break;
                             }
 
-                            /** Get Last 20 flights */
+                            /** Add service */
                             case 4: {
                                 break;
                             }
 
-                            /** Add services */
+                            /** Get services */
                             case 5: {
                                 break;
                             }
 
-                            /** Get services */
-                            case 6: {
-                                break;
-                            }
-
                             /** Get past services */
-                            case 7: {
+                            case 6: {
                                 break;
                             }
 
@@ -249,6 +242,7 @@ int main(int argc, char* argv[]) {
 
                         break;
                     }
+
 
                     /** Go back to Main Menu */
                     case 0: {

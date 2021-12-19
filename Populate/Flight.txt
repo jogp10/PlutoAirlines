@@ -94,12 +94,6 @@ PRT
 LND
 100
 Quim Roscas
-17
-2022-06-05 23:50
-FKT
-JFK
-580
-Josefina
 18
 2022-05-01 20:50
 PRT
