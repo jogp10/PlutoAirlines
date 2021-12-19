@@ -75,6 +75,7 @@ list<Service> Airplane::getPastServices() {
 }
 
 void Airplane::updateServices() {
+    if(flights.empty()) return;
     while(services.front().date < this->getNextFlight().getDepartureDate() && !(services.empty()))
     {
         servicesDone.push_back(services.front());
