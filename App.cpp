@@ -83,6 +83,7 @@ int BuyTicket(class Airline &airline) {
     Flight chosen_flight = airline.getFlights()[flight_choice--];
 
     Ticket ticket(chosen_flight.getFLightNum(), group_size, luggage);
+    ticket.setFlight(chosen_flight);
     bool possible = Passenger::canBuyTicket(ticket);
 
     if (possible) {
@@ -99,7 +100,6 @@ int GroupSize() {
     int group_size;
 
     cout << endl << "What is your goup size?" << endl;
-    cout << "Choose 0 (zero) if you want to cancel operation." << endl;
 
     /** groupSize execution (asking for group_size) */
     while (true) {
@@ -108,8 +108,7 @@ int GroupSize() {
 
         if (cin.eof()) { return 0; }
         if (cin.fail()) { cin.ignore(10000, '\n'); }
-        if (group_size == 0) { return 0; }
-        else if (group_size > 0) { return group_size; }
+        if (group_size > 0) { return group_size; }
 
         else {
             cin.clear();
@@ -123,7 +122,6 @@ int LuggageSize() {
     int luggage_size;
 
     cout << endl << "How many luggage do you want to take with you?" << endl;
-    cout << "Choose 0 (zero) if you want to cancel operation." << endl;
 
     /** LuggageSize execution (asking for group_size) */
     while (true) {
