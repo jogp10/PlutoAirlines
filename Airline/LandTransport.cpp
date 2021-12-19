@@ -37,6 +37,7 @@ void LandTransport::setSchedule(Hour frequency, Hour start_hour, Hour end_hour) 
     Hour a = start_hour;
     while(a<end_hour){
         schedule.insert(schedule.end(), a);
-        a = a+frequency;
+        if(a.getHour()<a.getHour()+frequency.getHour()) break;
+        a= a + frequency;
     }
 }
