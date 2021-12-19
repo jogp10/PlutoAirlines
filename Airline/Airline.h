@@ -134,6 +134,13 @@ public:
     bool removeAirport(const Airport& p);
 
     /**
+     * Remove Services
+     * @param a
+     * @return
+     */
+    bool removeServices(const Airplane& a);
+
+    /**
      *
      * @return
      */
@@ -169,7 +176,19 @@ public:
      */
     vector<Ticket> loadTickets();
 
+    /**
+     *
+     * @param file
+     * @param content
+     */
     static void write(const string& file, const string& content);
+
+    /**
+     *
+     * @param file
+     * @param del
+     */
+    static void del(const char* file, const vector<string>& del);
 };
 
 

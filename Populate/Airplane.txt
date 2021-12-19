@@ -1,18 +1,48 @@
 Dora
-A1234
+A320
 120
 Josefina
-B1234
-1200
+A320
+120
 Alberto
-A3234
+Boeing 737
 200
 Paulo
-C1234
+Boeing 737
 150
 Quim Roscas
-D1232
+Boeing 737
 250
 José
 A310
 295
+José Araujo
+Boeing 747
+300
+Alfonso
+Boeing 777
+100
+Mandado
+Boeing 767
+300
+Pittford
+A321
+300
+Roz
+A330
+20
+Leake
+A340
+320
+Murrow
+A350
+70
+Bushill
+A380
+90
+Lamming
+A220
+110
+Babbe
+A380
+435

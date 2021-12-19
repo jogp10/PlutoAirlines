@@ -18,13 +18,15 @@ int main(int argc, char* argv[]) {
 
     class Airline Pluto;
     class Passenger p1("");
-
+    Airline::write("Populate/Airport.txt", "Algarve ALG");
     Pluto.loadAirports();
     Pluto.loadLandTransport();
     Pluto.loadPlanes();
     Pluto.loadServices();
     Pluto.loadFlights();
     Pluto.loadTickets();
+    class Airport a1("Algarve", "ALG");
+    Pluto.removeAirport(a1);
 
     int menu_choice, passenger_choice, worker_choice;
 
