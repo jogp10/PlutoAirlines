@@ -83,7 +83,7 @@ int BuyTicket(class Airline airline) {
     Flight chosen_flight = airline.getFlights()[flight_choice--];
 
     Ticket ticket(chosen_flight.getFLightNum(), group_size, luggage);
-    
+
     airline.addTicket(ticket);
 }
 

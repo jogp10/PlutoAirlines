@@ -1,2 +1,6 @@
 Porto
-PT01
+PRT
+Lisboa
+LSB
+Miami
+MMI
