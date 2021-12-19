@@ -22,162 +22,162 @@ public:
     Airline() = default;
 
     /**
-     * Add airplane
+     * Add Airplane to Airline
      * @param airplane
+     * @param write false to not write in file
      */
     void addAirplane(Airplane& airplane, bool write=true);
 
     /**
-     * Add airport
+     * Add Airport to Airline
      * @param airport
+     * @param write false to not write in file
      */
     void addAirport(const Airport& airport, bool write=true);
 
-    /**
-     * Add flight
-     * @param flight
-     */
+   /**
+    * Add Flight to Airline and respective Airplane
+    * @param flight
+    * @param write false to not write in file
+    */
     void addFlight(Flight &flight, bool write=true);
 
     /**
-     * Add service
+     * Add Service to respective Airplane
      * @param service
+     * @param write false to not write in file
      */
     void addService(Service &service, bool write=true);
 
     /**
-     *
-     * @param t
-     * @param p
+     * Add Ticket to respective Flight
+     * @param t Ticket
+     * @param p Passenger
+     * @param write false to not write in file
      */
     void addTicket(Ticket &t, Passenger p=Passenger(""), bool write=true);
 
     /**
-     * Add landTransport
+     * Add LandTransport to respective Airport
      * @param landTransport
+     * @param write false to not write in file
      */
     void addLandTransport(LandTransport &landTransport, bool write=true);
 
     /**
-     * Get Airline's airplanes
-     * @return
+     * Get Airline's Airplanes
+     * @return vector containing Airplanes
      */
     vector<Airplane> getAirplanes() {return airplanes;};
 
     /**
-     * Get Airline's airport
-     * @return
+     * Get Airline's Airports
+     * @return vector containing Airports
      */
     vector<Airport> getAirports() {return airports;};
 
-
-     /** Get Airline's flights
-     * @return
-     */
+     /**
+      * Get Airline's Flights
+      * @return vector containing FLights
+      */
     vector<Flight> getFlights() {updateFlights(); return flights;};
 
 
     /**
-     * Update Airline next planned flights
+     * Update Airline's Flights (with Merge Sort)
+     * Schedule flights are now in vector flights and sorted by departure local
      */
     void updateFlights();
 
 
     /**
-     * Filter flights from X
-     * @param code
-     * @return
+     * Filter the Flights by departure local
+     * @param code code of airport of departure
+     * @return vector containing Flights with departure local code
      */
     vector<Flight> filterFromX(const string& code);
 
     /**
-     * Filter flights to X
-     * @param code
-     * @return
+     * Filter the Flights by arrival local
+     * @param code code of airport of arrival
+     * @return vector containing Flights with arrival local code
      */
     vector<Flight> filterToX(const string& code);
 
     /**
-     * Filter flights from date X
-     * @param date
-     * @return
+     * Filter the Flights by departure date
+     * @param date date of flight's departure
+     * @return vector containing Flights with departure date date
      */
     vector<Flight> filterbyDateX(const string& date);
 
     /**
-     * Filter flights from max duration
-     * @param min
-     * @return
+     * Filter the Flights by travel duration
+     * @param max max travel duration time
+     * @return vector containing Flights with time travel smalled than max
      */
-    vector<Flight> filterDuration(const int min);
+    vector<Flight> filterDuration(const int max);
 
 
     /**
-     * Remove Airplane
-     * @param a
-     * @return
+     * Remove Airplane from Airline and his Fligts and Services
+     * @param a airplane
+     * @return if it existed
      */
     bool removeAirplane(const Airplane& a);
 
     /**
-     * Remove flight
-     * @param f
-     * @return
+     * Remove Flight from Airline and his Tickets
+     * @param f flight
+     * @return if it existed
      */
     bool removeFlight(const Flight& f);
 
     /**
-     * Remove Airport
-     * @param p
-     * @return
+     * Remove Airport from Airline and his LandTransports and Flights
+     * @param a airport
+     * @return if it existed
      */
     bool removeAirport(const Airport& p);
 
     /**
-     * Remove Services
-     * @param a
-     * @return
-     */
-    bool removeServices(const Airplane& a);
-
-    /**
-     *
-     * @return
+     * Load Flights from file
+     * @return the flights in database
      */
     vector<Flight> loadFlights();
 
     /**
-     *
-     * @return
+     * Load Planes from file
+     * @return the Planes in database
      */
     vector<Airplane> loadPlanes();
 
     /**
-     *
-     * @return
+     * Load Airports from file
+     * @return the airports in database
      */
     vector<Airport> loadAirports();
 
     /**
-     *
-     * @return
+     * Load LandTransports from file
+     * @return the landtransports in database
      */
     vector<LandTransport> loadLandTransport();
 
     /**
-     *
-     * @return
+     * Load Services from file
+     * @return the Services in database
      */
     vector<Service> loadServices();
 
     /**
-     *
-     * @return
+     * Load Tickets from file
+     * @return the tickets in database
      */
     vector<Ticket> loadTickets();
 
     /**
-     *
+     *  Write 
      * @param file
      * @param content
      */
