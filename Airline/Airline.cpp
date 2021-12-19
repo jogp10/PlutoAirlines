@@ -19,6 +19,10 @@ void Airline::addAirport(const Airport& airport) {
     airports.push_back(airport);
 }
 
+void Airline::addFlight(Flight flight) {
+    flights.push_back(flight);
+}
+
 // Merge Sort
 bool operator<= (const Flight& lhs, const Flight& rhs){
     if(lhs.getDepartureLocal()==rhs.getDepartureLocal()) return lhs.getDepartureDate()<rhs.getDepartureDate();

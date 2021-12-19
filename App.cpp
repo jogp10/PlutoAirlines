@@ -4,7 +4,9 @@
 
 #include <iostream>
 #include <thread>
+#include <ctime>
 #include "App.h"
+
 
 using namespace std;
 
@@ -70,7 +72,38 @@ int Passenger() {
     }
 }
 
-int BuyTicket() {
+int BuyTicket(class Airline airline) {
+    int flights_print;
+    vector<Flight> flights = airline.getFlights();
+
+    for (auto i: flights) {
+        cout << i.getFLightNum() << ", " ;
+        cout << strftime(i.getDepartureDate()) << ", " ;
+        cout << i.getDepartureLocal() << ", " << i.getArrivalLocal() << ", " ;
+        cout << to_string(int(i.getFlightDuration())) << ", ";
+        cout << i.getAirplanePlate() << endl ;
+    }
+
+    /** Flights execution (asking for ticket_choice) */
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> flights_print;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        if (flights_print == 0) { return 0; }
+        else if (flights_print > flights.size()) { return flights_print; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (0 to " << flights.size() << " to proceed)" << endl;
+    }
+
+
+
+
     int ticket_choice;
 
     /** BuyTicket Menu Interface */
@@ -273,8 +306,8 @@ int Airplanes() {
         if (cin.fail()) { cin.ignore(10000, '\n'); }
         if (airplanes_choice == 0) { return 0; }
         else if (airplanes_choice == 1 || airplanes_choice == 2 || airplanes_choice == 3 ||
-                airplanes_choice == 4 || airplanes_choice == 5 || airplanes_choice == 6 ||
-                airplanes_choice == 7) { return airplanes_choice; }
+                 airplanes_choice == 4 || airplanes_choice == 5 || airplanes_choice == 6 ||
+                 airplanes_choice == 7) { return airplanes_choice; }
 
         else {
             cin.clear();

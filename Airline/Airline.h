@@ -29,7 +29,7 @@ public:
      * Set Airline's airport
      * @param airports
      */
-    void setAirports(vector<Airport> airportS) {this->airports=airportS;};
+    void setAirports(vector<Airport> airportS) { this->airports=airportS; };
 
     /**
      * Add airplane
@@ -43,6 +43,12 @@ public:
      */
     void addAirport(const Airport& airport);
 
+    /**
+     * Add flight
+     * @param flight
+     */
+    void addFlight(Flight flight);
+
 
     /**
      * Get Airline's airplanes
@@ -55,6 +61,12 @@ public:
      * @return
      */
     vector<Airport> getAirports() {return airports;};
+
+    /**
+     * Get Flight's flights
+     * @return
+     */
+    vector<Flight> getFlights() { return flights; };
 
     /**
      * Update Airline next planned flights

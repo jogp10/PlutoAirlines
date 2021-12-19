@@ -4,6 +4,9 @@
 
 #ifndef MAIN_CPP_APP_H
 #define MAIN_CPP_APP_H
+
+#include "Airline/Airline.h"
+
 // --------------------------
 /** Main Menu */
 int menu();
@@ -13,14 +16,14 @@ int menu();
 int Passenger();
 
 
-int BuyTicket();
+int BuyTicket(Airline airline);
 /**/
 
 /**/
 
 int Flights();
 /**/
-
+//int flightNum();
 /**/
 
 int AirportPassenger();
@@ -34,9 +37,18 @@ int AirportPassenger();
 int Worker();
 
 int Airline();
+/**/
+
+/**/
 
 int Airport();
+/**/
+
+/**/
 
 int Airplanes();
+/**/
+
+/**/
 
 #endif //MAIN_CPP_APP_H
