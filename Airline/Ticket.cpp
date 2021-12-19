@@ -9,6 +9,7 @@ Ticket::Ticket(const int flightNum, int group, Luggage luggage): flightNum(fligh
 
 void Ticket::setFlight(const Flight& flighT) {
     this->flightNum = flighT.getFLightNum();
+    this->flight=flighT;
 }
 
 void Ticket::setLuggage(const Luggage& luggagE) {
@@ -20,6 +21,8 @@ void Ticket::setGroup(int grouP) {
 }
 
 int Ticket::getFlightNum() const { return this->flightNum; }
+
+Flight Ticket::getFlight() const {return this->flight; }
 
 Luggage Ticket::getLuggage() const{ return this->luggage; }
 

@@ -13,6 +13,7 @@ class Ticket {
     int group=1;
     int flightNum;
     Luggage luggage{};
+    Flight flight{};
 
 public:
     Ticket() = default;
@@ -45,10 +46,16 @@ public:
 
     //Getters
     /**
-     * get Ticket's flight
+     * get Ticket's flight num
      * @return
      */
     int getFlightNum() const;
+
+    /**
+     * Get Ticket's flight
+     * @return
+     */
+    Flight getFlight() const;
     /**
      * get Ticket's luggage
      * @return

@@ -17,12 +17,12 @@ TEST(test_1, TicketTest) {
 
     Flight f6(1234, "2022-03-03 12:45", "Porto", "Lisbon", 35, "Alberto");
     a1.addFlight(f6);
-    Ticket t2(f6, 3);
+    Ticket t2(f6.getFLightNum(), 3);
     t2.getGroup();
     EXPECT_EQ(t2.getLuggage().getnumBags(), 0);
-    EXPECT_EQ(t2.getFlight().getFLightNum(), 1234);
+    EXPECT_EQ(t2.getFlightNum(), 1234);
     EXPECT_FALSE(t2.getLuggage().haveLuggage());
 
     t1.setFlight(f6);
-    EXPECT_EQ(t1.getFlight().getAvailableSeat(), f6.getAvailableSeat());
+    //EXPECT_EQ(t1.getFlightNum().getAvailableSeat(), f6.getAvailableSeat());
 }

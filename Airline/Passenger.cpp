@@ -5,6 +5,7 @@
 #include "Passenger.h"
 
 bool Passenger::canBuyTicket(const Ticket& tickeT) {
+    int flightNum = tickeT.getFlightNum();
     if(tickeT.getFlight().getAvailableSeat() >= tickeT.getGroup()) {
         return true;
     }
