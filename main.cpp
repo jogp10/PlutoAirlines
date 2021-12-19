@@ -1,8 +1,9 @@
 #include "Airline/Airline.h"
+#include "Airline/Flight.h"
+#include "Airline/Airplane.h"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "App.h"
-#include "Airline/Airline.h"
 #include <iostream>
 #include <thread>
 #include <fstream>
@@ -65,8 +66,8 @@ int main(int argc, char* argv[]) {
         getline(file_flight, flightDuration);
         getline(file_flight, airplanePlate);
 
-        class Flight flight(stoi(flightNum), Date(departureDate), departureLocal, arrivalLocal,
-                Hour(flightDuration), airplanePlate);
+        class Flight flight(stoi(flightNum), departureDate, departureLocal, arrivalLocal,
+                stoi(flightDuration), airplanePlate);
 
         Pluto.addFlight(flight);
     }

@@ -4,9 +4,7 @@
 
 #include <iostream>
 #include <thread>
-#include <ctime>
 #include "App.h"
-
 
 using namespace std;
 
@@ -73,16 +71,17 @@ int Passenger() {
 }
 
 int BuyTicket(class Airline airline) {
-    int flights_print;
+    int flights_print, count = 1;
     vector<Flight> flights = airline.getFlights();
 
     for (auto i: flights) {
-        cout << i.getFLightNum() << ", " ;
-        cout << strftime(i.getDepartureDate()) << ", " ;
+        cout << count << ") " << i.getFLightNum() << ", " ;
+        cout << i.getDepartureDate().getDate() << ", " ;
         cout << i.getDepartureLocal() << ", " << i.getArrivalLocal() << ", " ;
-        cout << to_string(int(i.getFlightDuration())) << ", ";
+        cout << i.getFlightDuration().getHour() << ":" << i.getFlightDuration().getHourMin() << ", ";
         cout << i.getAirplanePlate() << endl ;
     }
+    cout << "0) Go Back" << endl;
 
     /** Flights execution (asking for ticket_choice) */
     while (true) {

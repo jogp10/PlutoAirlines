@@ -150,3 +150,13 @@ void Airplane::sortFLights(vector<Flight> &f, unsigned left, unsigned right) {
         sortFLights(f, i + 1, right);
     }
 }
+
+bool Airplane::removeFlight(const Flight &f) {
+    for(auto itr=flights.begin();itr!=flights.end(); ++itr){
+        if(itr->getFLightNum()==f.getFLightNum()) {
+            flights.erase(itr);
+            break;
+        }
+    }
+    return false;
+}

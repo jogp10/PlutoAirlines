@@ -23,7 +23,7 @@ public:
      * Set Airline's airplanes
      * @param airplanes
      */
-    void setAirplanes(vector<Airplane> airplaneS);
+    void setAirplanes(const vector<Airplane> &airplaneS);
 
     /**
      * Set Airline's airport
@@ -43,11 +43,12 @@ public:
      */
     void addAirport(const Airport& airport);
 
+
     /**
      * Add flight
      * @param flight
      */
-    void addFlight(Flight flight);
+    void addFlight(Flight& flight);
 
 
     /**
@@ -62,11 +63,12 @@ public:
      */
     vector<Airport> getAirports() {return airports;};
 
-    /**
-     * Get Flight's flights
+
+     /** Get Airline's flights
      * @return
      */
-    vector<Flight> getFlights() { return flights; };
+    vector<Flight> getFlights() {updateFlights(); return flights;};
+
 
     /**
      * Update Airline next planned flights
@@ -84,7 +86,50 @@ public:
      * @param code
      * @return
      */
-    vector<Flight> filterFromX(string code);
+    vector<Flight> filterFromX(const string& code);
+
+    /**
+     * Filter flights to X
+     * @param code
+     * @return
+     */
+    vector<Flight> filterToX(const string& code);
+
+    /**
+     * Filter flights from date X
+     * @param date
+     * @return
+     */
+    vector<Flight> filterbyDateX(const string& date);
+
+    /**
+     * Filter flights from max duration
+     * @param min
+     * @return
+     */
+    vector<Flight> filterDuration(const int min);
+
+
+    /**
+     * Remove Airplane
+     * @param a
+     * @return
+     */
+    bool removeAirplane(const Airplane& a);
+
+    /**
+     * Remove flight
+     * @param f
+     * @return
+     */
+    bool removeFlight(const Flight& f);
+
+    /**
+     * Remove Airport
+     * @param p
+     * @return
+     */
+    bool removeAirport(const Airport& p);
 
 };
 

@@ -63,3 +63,61 @@ TEST(airline_1, a_setAirplanes){
     }
 
 }
+
+TEST(airline_2, b_ariline){
+    Airline pluto;
+
+    Airport a1("Porto", "PRT");
+    Airport a2("Lisboa", "LSB");
+    Airport a3("Miami", "MMI");
+
+    Airplane aa1("Alfonso", "B360", 290);
+    Airplane aa2("Jose", "B120", 350);
+    Airplane aa3("Tito", "B360", 290);
+
+    pluto.addAirport(a1);
+    pluto.addAirport(a2);
+    pluto.addAirport(a3);
+
+    pluto.addAirplane(aa1);
+    pluto.addAirplane(aa2);
+    pluto.addAirplane(aa3);
+
+    Flight f1(036, "2021-12-19 14:35", "PRT", "LSB", 50, "Alfonso");
+    Flight f2(037, "2022-12-19 14:35", "PRT", "MMI", 50, "Jose");
+    Flight f3(040, "2021-12-20 14:35", "LSB", "PRT", 50, "Tito");
+    Flight f4(041, "2021-12-19 14:55", "LSB", "MMI", 50, "Alfonso");
+    Flight f5(042, "2021-12-19 19:35", "MMI", "PRT", 500, "Alfonso");
+    Flight f6(043, "2021-11-20 14:35", "MMI", "LSB", 480, "Tito");
+    Flight f7(044, "2023-11-15 12:35", "MMI", "LSB", 520, "Jose");
+
+    Airplane *aaa1 = &pluto.getAirplanes().at(0);
+    Airplane *aaa2= &pluto.getAirplanes().at(1);
+    Airplane *aaa3= &pluto.getAirplanes().at(2);
+    pluto.addFlight(f1);
+    pluto.addFlight(f4);
+    pluto.addFlight(f5);
+    pluto.addFlight(f2);
+    pluto.addFlight(f7);
+    pluto.addFlight(f3);
+    pluto.addFlight(f6);
+
+    vector<Airport> airports = pluto.getAirports();
+    vector<Airplane> airplanes = pluto.getAirplanes();
+    vector<Flight> flights = pluto.getFlights();
+
+    EXPECT_EQ(flights.size(), 6);
+
+    EXPECT_EQ(pluto.filterFromX("PRT").size(), 2);
+    pluto.removeAirport(a1);
+
+    EXPECT_EQ(pluto.getFlights().size(), 2);
+    pluto.removeFlight(f7);
+    EXPECT_EQ(pluto.getFlights().size(), 1);
+    EXPECT_EQ(aa2.getFlights().size(), 0);
+
+    pluto.removeAirplane(aa1);
+    EXPECT_EQ(aa1.getFlights().size(), 0);
+    EXPECT_EQ(pluto.getFlights().size(), 0);
+
+}
