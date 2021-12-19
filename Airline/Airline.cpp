@@ -255,5 +255,27 @@ vector<Flight> Airline::loadFlights() {
 }
 
 vector<LandTransport> Airline::loadLandTransport() {
-    return vector<LandTransport>();
+    /** Filling Flights vector */
+    string transType, distance, freq, startHour, endHour;
+    vector<LandTransport> result;
+
+    ifstream file_landtransport;
+    file_landtransport.open("Populate/LandTransport.txt");
+
+    while (getline(file_landtransport, transType)) {
+        getline(file_landtransport, distance);
+        getline(file_landtransport, freq);
+        getline(file_landtransport, startHour);
+        getline(file_landtransport, endHour);
+        auto itr = table.find(transType);
+        TransType transType1 = itr->second;
+
+        class LandTransport landTransport(transType1, stoi(distance), Hour(freq), Hour(startHour),
+                            Hour(endHour));
+
+        result.push_back(landTransport);
+    }
+
+    file_landtransport.close();
+    return result;
 }

@@ -4,8 +4,9 @@
 
 #include "Airport.h"
 
-LandTransport::LandTransport(TransType transType1, double distance1, Hour freq1, Hour start_hour, Hour end_hour):transType(transType1), distance(distance1) {
+LandTransport::LandTransport(TransType transType1, double distance1, Hour freq1, Hour start_hour, Hour end_hour, string airportCode):transType(transType1), distance(distance1) {
     this->setSchedule(freq1, start_hour, end_hour);
+    this->airportcode=airportCode;
 }
 
 bool LandTransport::operator==(const LandTransport &a) const {
@@ -31,11 +32,10 @@ Hour LandTransport::next() {
 }
 
 void LandTransport::setSchedule(Hour frequency, Hour start_hour, Hour end_hour) {
-    this->freq=frequency;
     schedule.clear();
     Hour a = start_hour;
     while(a<end_hour){
         schedule.insert(schedule.end(), a);
-        a = a+freq;
+        a = a+frequency;
     }
 }

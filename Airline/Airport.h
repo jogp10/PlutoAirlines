@@ -6,14 +6,17 @@
 #define MAIN_CPP_AIRPORT_H
 #include "bst.h"
 #include "Date.h"
+#include <unordered_map>
 
 enum TransType {NONE, TRAIN, SUBWAY, BUS};
+static unordered_map<string, TransType> const table = {{"NONE", TransType::NONE}, {"SUBWAY", TransType::SUBWAY},
+                                                       {"BUS", TransType::SUBWAY}, {"TRAIN", TransType::TRAIN}};
 
 class LandTransport{
     TransType transType;
     double distance;
-    Hour freq;
     vector<Hour> schedule = vector<Hour>();
+    string airportcode;
 
 public:
     /**
@@ -37,7 +40,7 @@ public:
      * @param start_hour
      * @param end_hour
      */
-    explicit LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"));
+    explicit LandTransport(TransType transType1, double distance1=0, Hour freq1=Hour("24:00"), Hour start_hour=Hour("08:00"), Hour end_hour=Hour("23:00"), string airportCode="");
     /**
      *  Get Transport type
      * @return
