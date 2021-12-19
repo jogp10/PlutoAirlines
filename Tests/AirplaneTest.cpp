@@ -22,11 +22,8 @@ TEST(airplane_1, a_setAirplane){
     Flight f2(00366, "2022-12-03 14:50:00", "Lisbon", "Porto", 450, "José");
 
 
-    vector<Flight> flights;
-    flights.insert(flights.end(), f1);
-    flights.insert(flights.end(), f2);
-
-    a1.setFlights(flights);
+    a1.addFlight(f1);
+    a1.addFlight(f2);
     vector<Flight> flightsTest = a1.getFlights();
 
     EXPECT_EQ(flightsTest.size(), 2);

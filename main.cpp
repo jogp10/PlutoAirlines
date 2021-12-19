@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
     Pluto.loadPlanes();
     Pluto.loadServices();
     Pluto.loadFlights();
+    Pluto.loadTickets();
 
     int menu_choice, passenger_choice, worker_choice;
 

@@ -5,18 +5,18 @@
 #include "Airline.h"
 
 
-void Airline::addAirplane(Airplane& airplane) {
+void Airline::addAirplane(Airplane& airplane, bool write) {
     for(auto &f: airplane.getFlights()) flights.push_back(f);
     updateFlights();
     airplanes.push_back(airplane);
 }
 
-void Airline::addAirport(const Airport& airport) {
+void Airline::addAirport(const Airport& airport, bool write) {
     airports.push_back(airport);
 }
 
 
-void Airline::addFlight(Flight &flight) {
+void Airline::addFlight(Flight &flight, bool write) {
     for(auto& i: airplanes){
         if(i.getPlate()==flight.getAirplanePlate()){
             flight.setAvailableSeats(i.getCapacity());
@@ -26,7 +26,7 @@ void Airline::addFlight(Flight &flight) {
     flights.push_back(flight);
 }
 
-void Airline::addService(Service &service) {
+void Airline::addService(Service &service, bool write) {
     for(auto& i:airplanes){
         if(i.getPlate()==service.airplane_plate){
             i.addService(service);
@@ -34,7 +34,7 @@ void Airline::addService(Service &service) {
     }
 }
 
-void Airline::addLandTransport(LandTransport &landTransport) {
+void Airline::addLandTransport(LandTransport &landTransport, bool write) {
     string code = landTransport.getAirportCode();
     for(auto& i: airports){
         if(i.getCode()==code){
@@ -43,8 +43,15 @@ void Airline::addLandTransport(LandTransport &landTransport) {
     }
 }
 
-void Airline::addTicket(Ticket &t, Passenger p) {
-
+void Airline::addTicket(Ticket &t, Passenger p, bool write) {
+    p.buyTicket(t);
+    int flightNum = t.getFlightNum();
+    for(auto &i:flights){
+        if(i.getFLightNum()==flightNum){
+            t.setFlight(i);
+            i.minusAvailableSeats(t.getGroup());
+        }
+    }
 }
 
 
@@ -214,7 +221,7 @@ vector<Airplane> Airline::loadPlanes() {
         class Airplane plane(namePlane, typePlane, stoi(platePlane));
 
         result.push_back(plane);
-        this->addAirplane(plane);
+        this->addAirplane(plane, false);
     }
     file_airplanes.close();
     return result;
@@ -234,7 +241,7 @@ vector<Airport> Airline::loadAirports() {
         class Airport airport(nameAirport, codeAirport);
 
         result.push_back(airport);
-        this->addAirport(airport);
+        this->addAirport(airport, false);
     }
     file_airport.close();
     return result;
@@ -259,7 +266,7 @@ vector<Flight> Airline::loadFlights() {
                             stoi(flightDuration), airplanePlate);
 
         result.push_back(flight);
-        this->addFlight(flight);
+        this->addFlight(flight, false);
     }
 
     file_flight.close();
@@ -287,7 +294,7 @@ vector<LandTransport> Airline::loadLandTransport() {
                             Hour(endHour),airportCode);
 
         result.push_back(landTransport);
-        this->addLandTransport(landTransport);
+        this->addLandTransport(landTransport, false);
     }
 
     file_landtransport.close();
@@ -312,7 +319,7 @@ vector<Service> Airline::loadServices() {
         class Service service{servType, name, Date(date), airplanePlate};
 
         result.push_back(service);
-        this->addService(service);
+        this->addService(service, false);
     }
 
     file_service.close();
@@ -334,9 +341,26 @@ vector<Ticket> Airline::loadTickets() {
         class Ticket ticket(stoi(flightnum), stoi(group), Luggage(stoi(luggage)));
 
         result.push_back(ticket);
-        this->addTicket(ticket);
+        this->addTicket(ticket, Passenger(""), false);
     }
 
     file_ticket.close();
     return result;
+}
+
+void Airline::write(string file, string content) {
+    ofstream file_generic(file, ios::app);
+
+    if(file_generic.fail()) return;
+    vector<string> strings;
+    string word="";
+    for(auto i: content){
+        if(i==' ') {
+            strings.push_back(word);
+            word="";
+        }
+        else word+=i;
+    }
+    for(auto i:strings) file_generic << endl << i;
+    file_generic.close();
 }

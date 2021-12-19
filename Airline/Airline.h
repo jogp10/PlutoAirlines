@@ -25,38 +25,38 @@ public:
      * Add airplane
      * @param airplane
      */
-    void addAirplane(Airplane& airplane);
+    void addAirplane(Airplane& airplane, bool write=true);
 
     /**
      * Add airport
      * @param airport
      */
-    void addAirport(const Airport& airport);
+    void addAirport(const Airport& airport, bool write=true);
 
     /**
      * Add flight
      * @param flight
      */
-    void addFlight(Flight &flight);
+    void addFlight(Flight &flight, bool write=true);
 
     /**
      * Add service
      * @param service
      */
-    void addService(Service &service);
+    void addService(Service &service, bool write=true);
 
     /**
      *
      * @param t
      * @param p
      */
-    void addTicket(Ticket &t, Passenger p=Passenger(""));
+    void addTicket(Ticket &t, Passenger p=Passenger(""), bool write=true);
 
     /**
      * Add landTransport
      * @param landTransport
      */
-    void addLandTransport(LandTransport &landTransport);
+    void addLandTransport(LandTransport &landTransport, bool write=true);
 
     /**
      * Get Airline's airplanes
@@ -168,6 +168,8 @@ public:
      * @return
      */
     vector<Ticket> loadTickets();
+
+    void write(string file, string content);
 };
 
 

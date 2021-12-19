@@ -86,17 +86,14 @@ TEST(airline_2, b_ariline){
     pluto.addAirplane(aa2);
     pluto.addAirplane(aa3);
 
-    Flight f1(036, "2021-12-19 14:35", "PRT", "LSB", 50, "Alfonso");
-    Flight f2(037, "2022-12-19 14:35", "PRT", "MMI", 50, "Jose");
-    Flight f3(040, "2021-12-20 14:35", "LSB", "PRT", 50, "Tito");
-    Flight f4(041, "2021-12-19 14:55", "LSB", "MMI", 50, "Alfonso");
-    Flight f5(042, "2021-12-19 19:35", "MMI", "PRT", 500, "Alfonso");
-    Flight f6(043, "2021-11-20 14:35", "MMI", "LSB", 480, "Tito");
-    Flight f7(044, "2023-11-15 12:35", "MMI", "LSB", 520, "Jose");
+    Flight f1(36, "2021-12-30 14:35", "PRT", "LSB", 50, "Alfonso");
+    Flight f2(37, "2022-12-30 14:35", "PRT", "MMI", 50, "Jose");
+    Flight f3(40, "2021-12-20 14:35", "LSB", "PRT", 50, "Tito");
+    Flight f4(41, "2021-12-30 14:55", "LSB", "MMI", 50, "Alfonso");
+    Flight f5(42, "2021-12-30 19:35", "MMI", "PRT", 500, "Alfonso");
+    Flight f6(43, "2021-11-20 14:35", "MMI", "LSB", 480, "Tito");
+    Flight f7(44, "2023-11-15 12:35", "MMI", "LSB", 520, "Jose");
 
-    Airplane *aaa1 = &pluto.getAirplanes().at(0);
-    Airplane *aaa2= &pluto.getAirplanes().at(1);
-    Airplane *aaa3= &pluto.getAirplanes().at(2);
     pluto.addFlight(f1);
     pluto.addFlight(f4);
     pluto.addFlight(f5);

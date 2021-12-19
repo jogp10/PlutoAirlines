@@ -18,7 +18,7 @@ using namespace std;
 
 class Flight {
     string airplane_plate;
-    int flightNum=0000;
+    int flightNum=0;
     Hour flightDuration=Hour(1);
     Date departureDate = Date("1999-12-30 23:59");
     string departureLocal, arrivalLocal;
