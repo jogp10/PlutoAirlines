@@ -70,7 +70,7 @@ int Passenger() {
     }
 }
 
-int BuyTicket(class Airline airline) {
+int BuyTicket(class Airline &airline) {
     /** Getting group size */
     int group_size = GroupSize();
 
@@ -83,8 +83,16 @@ int BuyTicket(class Airline airline) {
     Flight chosen_flight = airline.getFlights()[flight_choice--];
 
     Ticket ticket(chosen_flight.getFLightNum(), group_size, luggage);
+    bool possible = Passenger::canBuyTicket(ticket);
 
-    airline.addTicket(ticket);
+    if (possible) {
+        airline.addTicket(ticket);
+        cout << "Successful purchase!" << endl;
+    }
+    else {
+        cout << "Flight is full! Couldn't complete purchase." << endl;
+    }
+    return 0;
 }
 
 int GroupSize() {

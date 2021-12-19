@@ -16,7 +16,7 @@ int menu();
 int Passenger();
 
 
-int BuyTicket(Airline airline);
+int BuyTicket(class Airline &airline);
 /**/
 int GroupSize();
 
