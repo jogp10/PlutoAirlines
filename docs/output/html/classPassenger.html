@@ -64,23 +64,39 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classPassenger-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Passenger Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Passenger_8h_source.html">Passenger.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Passenger:</div>
+<div class="dyncontent">
+<div class="center"><img src="classPassenger__coll__graph.png" border="0" usemap="#Passenger_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0db62c4f33cc7b5f284d8d8f165e663e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger</a> (const string &amp;name)</td></tr>
+<tr class="memitem:a0db62c4f33cc7b5f284d8d8f165e663e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger</a> (const string &amp;<a class="el" href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">name</a>)</td></tr>
 <tr class="separator:a0db62c4f33cc7b5f284d8d8f165e663e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1225ed68e7f81b17bd5b47eb6ba87b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">buyTicket</a> (<a class="el" href="classTicket.html">Ticket</a> &amp;ticket)</td></tr>
+<tr class="memitem:a6a1225ed68e7f81b17bd5b47eb6ba87b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">buyTicket</a> (<a class="el" href="classTicket.html">Ticket</a> &amp;<a class="el" href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">ticket</a>)</td></tr>
 <tr class="separator:a6a1225ed68e7f81b17bd5b47eb6ba87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a740df1292c5fbc6b471092fadd8fe1a3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3">canBuyTicket</a> (const <a class="el" href="classTicket.html">Ticket</a> &amp;ticket)</td></tr>
+<tr class="memitem:a740df1292c5fbc6b471092fadd8fe1a3"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3">canBuyTicket</a> (const <a class="el" href="classTicket.html">Ticket</a> &amp;<a class="el" href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">ticket</a>)</td></tr>
 <tr class="separator:a740df1292c5fbc6b471092fadd8fe1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a6a55bc38c5b85b131a101f6cb380b656"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">name</a></td></tr>
+<tr class="separator:a6a55bc38c5b85b131a101f6cb380b656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b751528f2d4dbaa527cbdc8ec882d6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTicket.html">Ticket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">ticket</a> {0}</td></tr>
+<tr class="separator:a6b751528f2d4dbaa527cbdc8ec882d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0db62c4f33cc7b5f284d8d8f165e663e"></a>
@@ -174,9 +190,54 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6a55bc38c5b85b131a101f6cb380b656"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a55bc38c5b85b131a101f6cb380b656">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Passenger::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6b751528f2d4dbaa527cbdc8ec882d6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b751528f2d4dbaa527cbdc8ec882d6b">&#9670;&nbsp;</a></span>ticket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classTicket.html">Ticket</a> Passenger::ticket {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Airline/<a class="el" href="Passenger_8h_source.html">Passenger.h</a></li>
-<li>Airline/Passenger.cpp</li>
+<li>Airline/<a class="el" href="Passenger_8cpp.html">Passenger.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

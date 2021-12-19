@@ -4,8 +4,10 @@
 
 #ifndef MAIN_CPP_AIRPORT_H
 #define MAIN_CPP_AIRPORT_H
+
 #include "bst.h"
 #include "Date.h"
+
 #include <unordered_map>
 
 enum TransType {NONE, TRAIN, SUBWAY, BUS};

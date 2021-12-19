@@ -1,22 +1,75 @@
 \hypertarget{classBSTItrPre}{}\doxysection{B\+S\+T\+Itr\+Pre$<$ Comparable $>$ Class Template Reference}
 \label{classBSTItrPre}\index{BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}}
+
+
+{\ttfamily \#include $<$bst.\+h$>$}
+
+
+
+Collaboration diagram for B\+S\+T\+Itr\+Pre$<$ Comparable $>$\+:
+% FIG 0
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classBSTItrPre_a11b1cd4e783f153b9c1b64ce2ec8077e}\label{classBSTItrPre_a11b1cd4e783f153b9c1b64ce2ec8077e}} 
-{\bfseries B\+S\+T\+Itr\+Pre} (const \mbox{\hyperlink{classBST}{B\+ST}}$<$ Comparable $>$ \&bt)
+\mbox{\hyperlink{classBSTItrPre_a11b1cd4e783f153b9c1b64ce2ec8077e}{B\+S\+T\+Itr\+Pre}} (const \mbox{\hyperlink{classBST}{B\+ST}}$<$ Comparable $>$ \&bt)
 \item 
-\mbox{\Hypertarget{classBSTItrPre_a7a743d66a842018fd833fb2b0737254d}\label{classBSTItrPre_a7a743d66a842018fd833fb2b0737254d}} 
-void {\bfseries advance} ()
+void \mbox{\hyperlink{classBSTItrPre_a7a743d66a842018fd833fb2b0737254d}{advance}} ()
 \item 
-\mbox{\Hypertarget{classBSTItrPre_a24a0e4b798faa0fcff2a96da07501103}\label{classBSTItrPre_a24a0e4b798faa0fcff2a96da07501103}} 
-const Comparable \& {\bfseries retrieve} () const
+const Comparable \& \mbox{\hyperlink{classBSTItrPre_a24a0e4b798faa0fcff2a96da07501103}{retrieve}} () const
 \item 
-\mbox{\Hypertarget{classBSTItrPre_ad6ec43efea5e00194ae87aacbcbb1ebd}\label{classBSTItrPre_ad6ec43efea5e00194ae87aacbcbb1ebd}} 
-bool {\bfseries is\+At\+End} () const
+bool \mbox{\hyperlink{classBSTItrPre_ad6ec43efea5e00194ae87aacbcbb1ebd}{is\+At\+End}} () const
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+stack$<$ \mbox{\hyperlink{classBinaryNode}{Binary\+Node}}$<$ Comparable $>$ $\ast$ $>$ \mbox{\hyperlink{classBSTItrPre_a73e938d809acba06490472e7fc1bd6d3}{itr\+Stack}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBSTItrPre_a11b1cd4e783f153b9c1b64ce2ec8077e}\label{classBSTItrPre_a11b1cd4e783f153b9c1b64ce2ec8077e}} 
+\index{BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}!BSTItrPre@{BSTItrPre}}
+\index{BSTItrPre@{BSTItrPre}!BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}}
+\doxysubsubsection{\texorpdfstring{BSTItrPre()}{BSTItrPre()}}
+{\footnotesize\ttfamily template$<$class Comparable $>$ \\
+\mbox{\hyperlink{classBSTItrPre}{B\+S\+T\+Itr\+Pre}}$<$ Comparable $>$\+::\mbox{\hyperlink{classBSTItrPre}{B\+S\+T\+Itr\+Pre}} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBST}{B\+ST}}$<$ Comparable $>$ \&}]{bt }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBSTItrPre_a7a743d66a842018fd833fb2b0737254d}\label{classBSTItrPre_a7a743d66a842018fd833fb2b0737254d}} 
+\index{BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}!advance@{advance}}
+\index{advance@{advance}!BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}}
+\doxysubsubsection{\texorpdfstring{advance()}{advance()}}
+{\footnotesize\ttfamily template$<$class Comparable $>$ \\
+void \mbox{\hyperlink{classBSTItrPre}{B\+S\+T\+Itr\+Pre}}$<$ Comparable $>$\+::advance}
+
+\mbox{\Hypertarget{classBSTItrPre_ad6ec43efea5e00194ae87aacbcbb1ebd}\label{classBSTItrPre_ad6ec43efea5e00194ae87aacbcbb1ebd}} 
+\index{BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}!isAtEnd@{isAtEnd}}
+\index{isAtEnd@{isAtEnd}!BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}}
+\doxysubsubsection{\texorpdfstring{isAtEnd()}{isAtEnd()}}
+{\footnotesize\ttfamily template$<$class Comparable $>$ \\
+bool \mbox{\hyperlink{classBSTItrPre}{B\+S\+T\+Itr\+Pre}}$<$ Comparable $>$\+::is\+At\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classBSTItrPre_a24a0e4b798faa0fcff2a96da07501103}\label{classBSTItrPre_a24a0e4b798faa0fcff2a96da07501103}} 
+\index{BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}!retrieve@{retrieve}}
+\index{retrieve@{retrieve}!BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}}
+\doxysubsubsection{\texorpdfstring{retrieve()}{retrieve()}}
+{\footnotesize\ttfamily template$<$class Comparable $>$ \\
+const Comparable\& \mbox{\hyperlink{classBSTItrPre}{B\+S\+T\+Itr\+Pre}}$<$ Comparable $>$\+::retrieve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBSTItrPre_a73e938d809acba06490472e7fc1bd6d3}\label{classBSTItrPre_a73e938d809acba06490472e7fc1bd6d3}} 
+\index{BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}!itrStack@{itrStack}}
+\index{itrStack@{itrStack}!BSTItrPre$<$ Comparable $>$@{BSTItrPre$<$ Comparable $>$}}
+\doxysubsubsection{\texorpdfstring{itrStack}{itrStack}}
+{\footnotesize\ttfamily template$<$class Comparable $>$ \\
+stack$<$\mbox{\hyperlink{classBinaryNode}{Binary\+Node}}$<$Comparable$>$ $\ast$$>$ \mbox{\hyperlink{classBSTItrPre}{B\+S\+T\+Itr\+Pre}}$<$ Comparable $>$\+::itr\+Stack\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Airline/bst.\+h\end{DoxyCompactItemize}
+Airline/\mbox{\hyperlink{bst_8h}{bst.\+h}}\end{DoxyCompactItemize}

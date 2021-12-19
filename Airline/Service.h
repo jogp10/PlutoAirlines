@@ -8,10 +8,10 @@
 #include <string>
 #include "Date.h"
 
+
 enum ServType {MAINTENANCE, CLEAN};
 static unordered_map<string, ServType> const servtable = {{"CLEAN", ServType::CLEAN},
                                                        {"MAINTENANCE", ServType::MAINTENANCE}};
-
 
 struct Service
 {

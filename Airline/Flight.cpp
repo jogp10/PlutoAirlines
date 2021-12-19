@@ -3,7 +3,6 @@
 //
 
 #include "Flight.h"
-#include "Date.h"
 
 Flight::Flight(int flightNum, const string& departureDate, const string& departureLocal, const string& arrivalLocal, int flightDuration, const string& airplane_platE): flightDuration(flightDuration){
     this->flightNum = flightNum;

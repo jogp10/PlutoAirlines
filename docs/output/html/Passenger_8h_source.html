@@ -69,7 +69,7 @@ $(function() {
 <div class="title">Passenger.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<a href="Passenger_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by zebar on 27/11/2021.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
@@ -77,28 +77,32 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define PLUTOAIRLINES_PASSENGER_H</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;Ticket.h&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Ticket_8h.html">Ticket.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classPassenger.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPassenger.html">Passenger</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">string</span> name;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classTicket.html">Ticket</a> ticket{0};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">   20</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name): name(name){};</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">buyTicket</a>(<a class="code" href="classTicket.html">Ticket</a>&amp; ticket);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3">canBuyTicket</a>(<span class="keyword">const</span> <a class="code" href="classTicket.html">Ticket</a>&amp; ticket) ;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classPassenger.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPassenger.html">Passenger</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">   13</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">name</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">   14</a></span>&#160;    <a class="code" href="classTicket.html">Ticket</a> <a class="code" href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">ticket</a>{0};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">   21</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code" href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">name</a>): <a class="code" href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">name</a>(<a class="code" href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">name</a>){};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">buyTicket</a>(<a class="code" href="classTicket.html">Ticket</a>&amp; <a class="code" href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">ticket</a>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3">canBuyTicket</a>(<span class="keyword">const</span> <a class="code" href="classTicket.html">Ticket</a>&amp; <a class="code" href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">ticket</a>) ;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_PASSENGER_H</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif //PLUTOAIRLINES_PASSENGER_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassTicket_html"><div class="ttname"><a href="classTicket.html">Ticket</a></div><div class="ttdef"><b>Definition:</b> Ticket.h:12</div></div>
-<div class="ttc" id="aclassPassenger_html_a0db62c4f33cc7b5f284d8d8f165e663e"><div class="ttname"><a href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger::Passenger</a></div><div class="ttdeci">Passenger(const string &amp;name)</div><div class="ttdef"><b>Definition:</b> Passenger.h:20</div></div>
+<div class="ttc" id="aclassPassenger_html_a6b751528f2d4dbaa527cbdc8ec882d6b"><div class="ttname"><a href="classPassenger.html#a6b751528f2d4dbaa527cbdc8ec882d6b">Passenger::ticket</a></div><div class="ttdeci">Ticket ticket</div><div class="ttdef"><b>Definition:</b> Passenger.h:14</div></div>
+<div class="ttc" id="aclassPassenger_html_a6a55bc38c5b85b131a101f6cb380b656"><div class="ttname"><a href="classPassenger.html#a6a55bc38c5b85b131a101f6cb380b656">Passenger::name</a></div><div class="ttdeci">string name</div><div class="ttdef"><b>Definition:</b> Passenger.h:13</div></div>
+<div class="ttc" id="aclassTicket_html"><div class="ttname"><a href="classTicket.html">Ticket</a></div><div class="ttdef"><b>Definition:</b> Ticket.h:13</div></div>
+<div class="ttc" id="aclassPassenger_html_a0db62c4f33cc7b5f284d8d8f165e663e"><div class="ttname"><a href="classPassenger.html#a0db62c4f33cc7b5f284d8d8f165e663e">Passenger::Passenger</a></div><div class="ttdeci">Passenger(const string &amp;name)</div><div class="ttdef"><b>Definition:</b> Passenger.h:21</div></div>
 <div class="ttc" id="aclassPassenger_html_a6a1225ed68e7f81b17bd5b47eb6ba87b"><div class="ttname"><a href="classPassenger.html#a6a1225ed68e7f81b17bd5b47eb6ba87b">Passenger::buyTicket</a></div><div class="ttdeci">bool buyTicket(Ticket &amp;ticket)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:12</div></div>
-<div class="ttc" id="aclassPassenger_html"><div class="ttname"><a href="classPassenger.html">Passenger</a></div><div class="ttdef"><b>Definition:</b> Passenger.h:11</div></div>
+<div class="ttc" id="aclassPassenger_html"><div class="ttname"><a href="classPassenger.html">Passenger</a></div><div class="ttdef"><b>Definition:</b> Passenger.h:12</div></div>
 <div class="ttc" id="aclassPassenger_html_a740df1292c5fbc6b471092fadd8fe1a3"><div class="ttname"><a href="classPassenger.html#a740df1292c5fbc6b471092fadd8fe1a3">Passenger::canBuyTicket</a></div><div class="ttdeci">static bool canBuyTicket(const Ticket &amp;ticket)</div><div class="ttdef"><b>Definition:</b> Passenger.cpp:7</div></div>
+<div class="ttc" id="aTicket_8h_html"><div class="ttname"><a href="Ticket_8h.html">Ticket.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

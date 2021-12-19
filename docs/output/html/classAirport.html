@@ -63,15 +63,24 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classAirport-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Airport Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Airport_8h_source.html">Airport.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Airport:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAirport__coll__graph.png" border="0" usemap="#Airport_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a13d44a50638969ec1d6a0bc14a26881e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a13d44a50638969ec1d6a0bc14a26881e">Airport</a> (const string &amp;name, const string &amp;code)</td></tr>
+<tr class="memitem:a13d44a50638969ec1d6a0bc14a26881e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a13d44a50638969ec1d6a0bc14a26881e">Airport</a> (const string &amp;<a class="el" href="classAirport.html#a07dd02d08890fae5fef97f3ec69b155d">name</a>, const string &amp;<a class="el" href="classAirport.html#a91fb01fe9815c99f63502396da5dcdc5">code</a>)</td></tr>
 <tr class="separator:a13d44a50638969ec1d6a0bc14a26881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00b5effe5c9fc3deb2f233906585c75a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a00b5effe5c9fc3deb2f233906585c75a">getAirportName</a> () const</td></tr>
 <tr class="separator:a00b5effe5c9fc3deb2f233906585c75a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,6 +102,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a70e821040b9f5c4c6a3263f4388fd585"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5fd8315348fef2bee893f95b7dcac2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#ab5fd8315348fef2bee893f95b7dcac2b">insert</a> (const <a class="el" href="classLandTransport.html">LandTransport</a> &amp;landTransport)</td></tr>
 <tr class="separator:ab5fd8315348fef2bee893f95b7dcac2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a07dd02d08890fae5fef97f3ec69b155d"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a07dd02d08890fae5fef97f3ec69b155d">name</a></td></tr>
+<tr class="separator:a07dd02d08890fae5fef97f3ec69b155d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91fb01fe9815c99f63502396da5dcdc5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a91fb01fe9815c99f63502396da5dcdc5">code</a></td></tr>
+<tr class="separator:a91fb01fe9815c99f63502396da5dcdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cb9ce54975e8cbded70b7c91bd75aab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBST.html">BST</a>&lt; <a class="el" href="classLandTransport.html">LandTransport</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirport.html#a2cb9ce54975e8cbded70b7c91bd75aab">bst</a></td></tr>
+<tr class="separator:a2cb9ce54975e8cbded70b7c91bd75aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a13d44a50638969ec1d6a0bc14a26881e"></a>
@@ -357,9 +375,76 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2cb9ce54975e8cbded70b7c91bd75aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cb9ce54975e8cbded70b7c91bd75aab">&#9670;&nbsp;</a></span>bst</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBST.html">BST</a>&lt;<a class="el" href="classLandTransport.html">LandTransport</a>&gt; Airport::bst</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91fb01fe9815c99f63502396da5dcdc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91fb01fe9815c99f63502396da5dcdc5">&#9670;&nbsp;</a></span>code</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Airport::code</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a07dd02d08890fae5fef97f3ec69b155d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07dd02d08890fae5fef97f3ec69b155d">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Airport::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Airline/<a class="el" href="Airport_8h_source.html">Airport.h</a></li>
-<li>Airline/Airport.cpp</li>
+<li>Airline/<a class="el" href="Airport_8cpp.html">Airport.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

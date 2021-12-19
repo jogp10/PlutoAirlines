@@ -1,7 +1,17 @@
 \hypertarget{classAirline}{}\doxysection{Airline Class Reference}
 \label{classAirline}\index{Airline@{Airline}}
+
+
+{\ttfamily \#include $<$Airline.\+h$>$}
+
+
+
+Collaboration diagram for Airline\+:
+% FIG 0
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAirline_a74c2655b6bc4aca962dbb76942c29e18}{Airline}} ()=default
 \item 
 void \mbox{\hyperlink{classAirline_a55c31d2616e71f044ab0a1b9ce02cbde}{add\+Airplane}} (\mbox{\hyperlink{classAirplane}{Airplane}} \&airplane, bool \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{write}}=true)
 \item 
@@ -56,6 +66,24 @@ static void \mbox{\hyperlink{classAirline_a2c2c3b9bffab36e34f9b2bea31578da6}{wri
 \item 
 static void \mbox{\hyperlink{classAirline_a038c7bd47df7cd3ff6584b5bb2e11598}{del}} (const char $\ast$file, const vector$<$ string $>$ \&del)
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{classAirplane}{Airplane}} $>$ \mbox{\hyperlink{classAirline_a839cc130229143fcb8b0992ad2ae5403}{airplanes}}
+\item 
+vector$<$ \mbox{\hyperlink{classAirport}{Airport}} $>$ \mbox{\hyperlink{classAirline_ae293a97339a76073340d0cf24045dc24}{airports}}
+\item 
+vector$<$ \mbox{\hyperlink{classFlight}{Flight}} $>$ \mbox{\hyperlink{classAirline_a42ac7ff12e0951b1cf6a3a42b0eeef22}{flights}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAirline_a74c2655b6bc4aca962dbb76942c29e18}\label{classAirline_a74c2655b6bc4aca962dbb76942c29e18}} 
+\index{Airline@{Airline}!Airline@{Airline}}
+\index{Airline@{Airline}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{Airline()}{Airline()}}
+{\footnotesize\ttfamily Airline\+::\+Airline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -178,7 +206,7 @@ Filter the Flights by travel duration
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-vector containing Flights with time travel smalled than max 
+vector containing Flights with time travel smaller than max 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classAirline_ae0c08b73be2eebfe3de4f2b6aad08646}\label{classAirline_ae0c08b73be2eebfe3de4f2b6aad08646}} 
 \index{Airline@{Airline}!filterFromX@{filterFromX}}
@@ -352,7 +380,28 @@ Write in file of database
 \end{DoxyParams}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAirline_a839cc130229143fcb8b0992ad2ae5403}\label{classAirline_a839cc130229143fcb8b0992ad2ae5403}} 
+\index{Airline@{Airline}!airplanes@{airplanes}}
+\index{airplanes@{airplanes}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{airplanes}{airplanes}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classAirplane}{Airplane}}$>$ Airline\+::airplanes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAirline_ae293a97339a76073340d0cf24045dc24}\label{classAirline_ae293a97339a76073340d0cf24045dc24}} 
+\index{Airline@{Airline}!airports@{airports}}
+\index{airports@{airports}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{airports}{airports}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classAirport}{Airport}}$>$ Airline\+::airports\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAirline_a42ac7ff12e0951b1cf6a3a42b0eeef22}\label{classAirline_a42ac7ff12e0951b1cf6a3a42b0eeef22}} 
+\index{Airline@{Airline}!flights@{flights}}
+\index{flights@{flights}!Airline@{Airline}}
+\doxysubsubsection{\texorpdfstring{flights}{flights}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{classFlight}{Flight}}$>$ Airline\+::flights\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Airline/Airline.\+h\item 
-Airline/Airline.\+cpp\end{DoxyCompactItemize}
+Airline/\mbox{\hyperlink{Airline_8h}{Airline.\+h}}\item 
+Airline/\mbox{\hyperlink{Airline_8cpp}{Airline.\+cpp}}\end{DoxyCompactItemize}
