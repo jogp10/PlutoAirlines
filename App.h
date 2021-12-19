@@ -21,6 +21,8 @@ int BuyTicket(Airline airline);
 
 /**/
 
+int ShowFlights(class Airline airline);
+
 int Flights();
 /**/
 //int flightNum();

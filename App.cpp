@@ -71,15 +71,24 @@ int Passenger() {
 }
 
 int BuyTicket(class Airline airline) {
+    int flight_choice = ShowFlights(airline);
+    Flight chosen_flight = airline.getFlights()[flight_choice--];
+    
+    //Ticket(...);
+    //addTicket;
+}
+
+int ShowFlights(class Airline airline) {
     int flights_print, count = 1;
     vector<Flight> flights = airline.getFlights();
 
+    cout << endl;
     for (const auto& i: flights) {
         cout << count << ") " << i.getFLightNum() << ", " ;
         cout << i.getDepartureDate().getDate() << ", " ;
         cout << i.getDepartureLocal() << ", " << i.getArrivalLocal() << ", " ;
-        cout << i.getFlightDuration().getHour() << ":" << i.getFlightDuration().getHourMin() << ", ";
-        cout << i.getAirplanePlate() << endl ;
+        cout << i.getFlightDuration().getHourMin() << ", ";
+        cout << i.getAirplanePlate() << endl;
         count++;
     }
     cout << "0) Go Back" << endl;
@@ -92,7 +101,7 @@ int BuyTicket(class Airline airline) {
         if (cin.eof()) { return 0; }
         if (cin.fail()) { cin.ignore(10000, '\n'); }
         if (flights_print == 0) { return 0; }
-        else if (flights_print > flights.size()) { return flights_print; }
+        else if (flights_print <= flights.size()) { return flights_print; }
 
         else {
             cin.clear();
@@ -100,39 +109,8 @@ int BuyTicket(class Airline airline) {
         }
         cerr << "Input a valid operation! (0 to " << flights.size() << " to proceed)" << endl;
     }
-
-
-
-
-    int ticket_choice;
-
-    /** BuyTicket Menu Interface */
-    cout << endl << "Get: " << endl;
-    cout << "1) Flight Number" << endl;
-    cout << "2) Flight Duration" << endl;
-    cout << "3) Departure Date" << endl;
-    cout << "4) Departure Local" << endl;
-    cout << "5) Arrival Local" << endl;
-    cout << "0) Go Back" << endl;
-
-    /** BuyTicket Menu execution (asking for ticket_choice) */
-    while (true) {
-        this_thread::sleep_for(chrono::milliseconds(250));
-        cout << "Option: "; cin >> ticket_choice;
-
-        if (cin.eof()) { return 0; }
-        if (cin.fail()) { cin.ignore(10000, '\n'); }
-        if (ticket_choice == 0) { return 0; }
-        else if (ticket_choice == 1 || ticket_choice == 2 || ticket_choice == 3 ||
-                 ticket_choice == 4 || ticket_choice == 5) { return ticket_choice; }
-
-        else {
-            cin.clear();
-            cin.ignore(10000, '\n');
-        }
-        cerr << "Input a valid operation! (0, 1, 2, 3, 4 or 5 to proceed)" << endl;
-    }
 }
+
 
 int Flights() {
     int flights_choice;

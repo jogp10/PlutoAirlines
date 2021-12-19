@@ -4,6 +4,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "App.h"
+#include "Airline/Passenger.h"
 #include <iostream>
 #include <fstream>
 #include <thread>
@@ -17,6 +18,8 @@ int main(int argc, char* argv[]) {
 
 
     class Airline Pluto;
+    class Passenger p1("");
+
     Pluto.loadPlanes();
     Pluto.loadAirports();
     Pluto.loadFlights();
