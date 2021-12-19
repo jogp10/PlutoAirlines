@@ -19,6 +19,7 @@ void Airline::addAirport(const Airport& airport) {
     airports.push_back(airport);
 }
 
+
 void Airline::addFlight(Flight &flight) {
     for(auto& i: airplanes){
         if(i.getPlate()==flight.getAirplanePlate()){

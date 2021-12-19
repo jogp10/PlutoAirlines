@@ -11,7 +11,7 @@ Flight::Flight(int flightNum, const string& departureDate, const string& departu
     this->departureDate = departuredate;
     this->departureLocal = departureLocal;
     this->arrivalLocal = arrivalLocal;
-    this->airplane_plate=airplane_platE;
+    this->airplane_plate = airplane_platE;
 }
 
 void Flight::setFLightNum(int flightnum) {

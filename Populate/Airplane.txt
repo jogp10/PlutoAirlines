@@ -1,1 +1,18 @@
-Dora A1234 120
+Dora
+A1234
+120
+Josefina
+B1234
+1200
+Alberto
+A3234
+200
+Paulo
+C1234
+150
+Quim Roscas
+D1232
+250
+José
+A310
+295
