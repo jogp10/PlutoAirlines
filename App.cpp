@@ -82,14 +82,15 @@ int BuyTicket(class Airline airline) {
     int flight_choice = ShowFlights(airline);
     Flight chosen_flight = airline.getFlights()[flight_choice--];
 
-    //Ticket(chosen_flight.getFLightNum(), );
-    //addTicket;
+    Ticket ticket(chosen_flight.getFLightNum(), group_size, luggage);
+    
+    airline.addTicket(ticket);
 }
 
 int GroupSize() {
     int group_size;
 
-    cout << "What is your goup size?" << endl;
+    cout << endl << "What is your goup size?" << endl;
     cout << "Choose 0 (zero) if you want to cancel operation." << endl;
 
     /** groupSize execution (asking for group_size) */
@@ -113,7 +114,7 @@ int GroupSize() {
 int LuggageSize() {
     int luggage_size;
 
-    cout << "How many luggage do you want to take with you?" << endl;
+    cout << endl << "How many luggage do you want to take with you?" << endl;
     cout << "Choose 0 (zero) if you want to cancel operation." << endl;
 
     /** LuggageSize execution (asking for group_size) */
