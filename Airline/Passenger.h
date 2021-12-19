@@ -24,7 +24,7 @@ public:
      * @return
      */
     bool buyTicket(Ticket& ticket);
-private:
+
     /**
      * Check if there is available seats at airplane
      * @param ticket
