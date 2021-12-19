@@ -196,7 +196,7 @@ vector<Flight> Airline::filterbyDateX(const string& date) {
         Date date1 = f.getDepartureDate();
         string d = date1.getDate();
         d.erase(d.begin()+10, d.end());
-        if(f.getArrivalLocal()==date) result.push_back(f);
+        if(d==date) result.push_back(f);
     }
     return result;
 }
