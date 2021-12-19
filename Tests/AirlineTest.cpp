@@ -23,7 +23,9 @@ TEST(airline_1, a_setAirplanes){
     airplanes.push_back(a2);
     airplanes.push_back(a3);
 
-    Pluto.setAirplanes(airplanes);
+    Pluto.addAirplane(a1);
+    Pluto.addAirplane(a2);
+    Pluto.addAirplane(a3);
 
     EXPECT_EQ(3, Pluto.getAirplanes().size());
 
@@ -49,7 +51,8 @@ TEST(airline_1, a_setAirplanes){
 
     airplanes.push_back(a4);
     airplanes.push_back(a5);
-    Pluto2.setAirplanes(airplanes);
+    Pluto2.addAirplane(a4);
+    Pluto2.addAirplane(a5);
 
     EXPECT_EQ(2, Pluto2.getAirplanes().size());
 

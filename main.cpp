@@ -6,13 +6,12 @@
 #include "App.h"
 #include "Airline/Passenger.h"
 #include <iostream>
-#include <fstream>
 #include <thread>
 
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    
+
     testing::InitGoogleTest(&argc, argv);
     //return RUN_ALL_TESTS();
 
@@ -20,8 +19,10 @@ int main(int argc, char* argv[]) {
     class Airline Pluto;
     class Passenger p1("");
 
-    Pluto.loadPlanes();
     Pluto.loadAirports();
+    Pluto.loadLandTransport();
+    Pluto.loadPlanes();
+    Pluto.loadServices();
     Pluto.loadFlights();
 
     int menu_choice, passenger_choice, worker_choice;

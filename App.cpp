@@ -73,7 +73,7 @@ int Passenger() {
 int BuyTicket(class Airline airline) {
     int flight_choice = ShowFlights(airline);
     Flight chosen_flight = airline.getFlights()[flight_choice--];
-    
+
     //Ticket(...);
     //addTicket;
 }

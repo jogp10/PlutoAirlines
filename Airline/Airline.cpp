@@ -4,15 +4,6 @@
 
 #include "Airline.h"
 
-void Airline::setAirplanes(const vector<Airplane>& airplaneS) {
-    this->airplanes=airplaneS;
-    for(auto &i: airplanes)
-        for(auto &j: i.getFlights()){
-            flights.push_back(j);
-        }
-    updateFlights();
-}
-
 
 void Airline::addAirplane(Airplane& airplane) {
     for(auto &f: airplane.getFlights()) flights.push_back(f);
@@ -33,6 +24,27 @@ void Airline::addFlight(Flight &flight) {
         }
     }
     flights.push_back(flight);
+}
+
+void Airline::addService(Service &service) {
+    for(auto& i:airplanes){
+        if(i.getPlate()==service.airplane_plate){
+            i.addService(service);
+        }
+    }
+}
+
+void Airline::addLandTransport(LandTransport &landTransport) {
+    string code = landTransport.getAirportCode();
+    for(auto& i: airports){
+        if(i.getCode()==code){
+            i.insert(landTransport);
+        }
+    }
+}
+
+void Airline::addTicket(Ticket &t, Passenger p) {
+
 }
 
 
@@ -202,8 +214,8 @@ vector<Airplane> Airline::loadPlanes() {
         class Airplane plane(namePlane, typePlane, stoi(platePlane));
 
         result.push_back(plane);
+        this->addAirplane(plane);
     }
-    this->setAirplanes(result);
     file_airplanes.close();
     return result;
 }
@@ -222,8 +234,8 @@ vector<Airport> Airline::loadAirports() {
         class Airport airport(nameAirport, codeAirport);
 
         result.push_back(airport);
+        this->addAirport(airport);
     }
-    this->setAirports(result);
     file_airport.close();
     return result;
 }
@@ -255,8 +267,8 @@ vector<Flight> Airline::loadFlights() {
 }
 
 vector<LandTransport> Airline::loadLandTransport() {
-    /** Filling Flights vector */
-    string transType, distance, freq, startHour, endHour;
+    /** Filling LandTransport vector */
+    string transType, distance, freq, startHour, endHour, airportCode;
     vector<LandTransport> result;
 
     ifstream file_landtransport;
@@ -267,15 +279,64 @@ vector<LandTransport> Airline::loadLandTransport() {
         getline(file_landtransport, freq);
         getline(file_landtransport, startHour);
         getline(file_landtransport, endHour);
+        getline(file_landtransport, airportCode);
         auto itr = table.find(transType);
         TransType transType1 = itr->second;
 
         class LandTransport landTransport(transType1, stoi(distance), Hour(freq), Hour(startHour),
-                            Hour(endHour));
+                            Hour(endHour),airportCode);
 
         result.push_back(landTransport);
+        this->addLandTransport(landTransport);
     }
 
     file_landtransport.close();
+    return result;
+}
+
+vector<Service> Airline::loadServices() {
+    /** Filling Services vector */
+    string type, name, date, airplanePlate;
+    vector<Service> result;
+
+    ifstream file_service;
+    file_service.open("Populate/LandTransport.txt");
+
+    while (getline(file_service, type)) {
+        getline(file_service, name);
+        getline(file_service, date);
+        getline(file_service, airplanePlate);
+        auto itr = servtable.find(type);
+        ServType servType = itr->second;
+
+        class Service service{servType, name, Date(date), airplanePlate};
+
+        result.push_back(service);
+        this->addService(service);
+    }
+
+    file_service.close();
+    return result;
+}
+
+vector<Ticket> Airline::loadTickets() {
+    /** Filling Tickets vector */
+    string flightnum, group, luggage;
+    vector<Ticket> result;
+
+    ifstream file_ticket;
+    file_ticket.open("Populate/Ticket.txt");
+
+    while (getline(file_ticket, flightnum)) {
+        getline(file_ticket, group);
+        getline(file_ticket, luggage);
+
+        class Ticket ticket(stoi(flightnum), stoi(group), Luggage(stoi(luggage)));
+
+        result.push_back(ticket);
+        this->addTicket(ticket);
+    }
+
+    file_ticket.close();
     return result;
 }
