@@ -1,0 +1,20 @@
+digraph "Airplane"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Airplane\n||+ Airplane()\l+ setPlate()\l+ setType()\l+ setCapacity()\l+ addFlight()\l+ addService()\l+ getPlate()\l+ getType()\l+ getCapacity()\l+ getFlights()\l+ getLastFlights()\l+ getNextFlight()\l+ getServices()\l+ getPastServices()\l+ removeFlight()\l- updateServices()\l- updateFlights()\l- sortFLights()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -type\n-plate" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{string\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -flights" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{vector\< Flight \>\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -last20flights" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{queue\< Flight \>\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -capacity" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{int\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node6 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -servicesDone" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{list\< Service \>\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+  Node7 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -services" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node7 [label="{queue\< Service \>\n||}",height=0.2,width=0.4,color="grey75",tooltip=" "];
+}

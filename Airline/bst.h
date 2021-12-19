@@ -8,6 +8,7 @@
 #include <iostream>
 #include <stack>
 #include <queue>
+
 using namespace std;
 
 template <class Comparable> class BSTItrIn;
@@ -73,11 +74,6 @@ public:
     // Metodos completos adicionados para a aula 07
     void insert(const vector<Comparable>& v);
     bool operator== (const BST& t) const;
-
-    // Metodos a criar na aula 07
-    int balance(const Comparable& x) const;
-    bool isAVL() const;
-    void rightRotate(const Comparable& x);
 };
 
 // Note that all "matching" is based on the < method.
@@ -474,9 +470,6 @@ bool iteratorBST<Comparable>::operator!= (const iteratorBST<Comparable>& it2) co
     return itrStack != it2.itrStack;
 }
 
-//--------------------------------------------------------
-// Metodos adicionados para a aula 07
-//--------------------------------------------------------
 
 // Inserir todos os elementos de um vector
 template <class Comparable>
@@ -498,33 +491,6 @@ bool BST<Comparable>::isEqual(BinaryNode<Comparable>* n1, BinaryNode<Comparable>
     return (n1->element == n2->element) &&
            isEqual(n1->left, n2->left) &&
            isEqual(n1->right, n2->right);
-}
-
-// ----------------------------------------------------------
-// Exercicio 4: Brincando com arvores
-// ----------------------------------------------------------
-
-// ..............................
-// a) Desequilibrio de um no
-//
-template <class Comparable>
-int BST<Comparable>::balance(const Comparable& x) const {
-  return 0;
-}
-
-// ..............................
-// b) E uma arvore AVL?
-//
-template <class Comparable>
-bool BST<Comparable>::isAVL() const {
-  return false;
-}
-
-// ..............................
-// c) Rotação a direita
-//
-template <class Comparable>
-void BST<Comparable>::rightRotate(const Comparable& x) {
 }
 
 #endif

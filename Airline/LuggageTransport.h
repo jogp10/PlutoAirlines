@@ -5,8 +5,6 @@
 #ifndef MAIN_CPP_LUGGAGETRANSPORT_H
 #define MAIN_CPP_LUGGAGETRANSPORT_H
 
-
-
 #include <iostream>
 #include <list>
 #include <queue>

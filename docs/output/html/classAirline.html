@@ -64,14 +64,25 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classAirline-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Airline Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Airline_8h_source.html">Airline.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Airline:</div>
+<div class="dyncontent">
+<div class="center"><img src="classAirline__coll__graph.png" border="0" usemap="#Airline_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a74c2655b6bc4aca962dbb76942c29e18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirline.html#a74c2655b6bc4aca962dbb76942c29e18">Airline</a> ()=default</td></tr>
+<tr class="separator:a74c2655b6bc4aca962dbb76942c29e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55c31d2616e71f044ab0a1b9ce02cbde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirline.html#a55c31d2616e71f044ab0a1b9ce02cbde">addAirplane</a> (<a class="el" href="classAirplane.html">Airplane</a> &amp;airplane, bool <a class="el" href="classAirline.html#a2c2c3b9bffab36e34f9b2bea31578da6">write</a>=true)</td></tr>
 <tr class="separator:a55c31d2616e71f044ab0a1b9ce02cbde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a084f8432e5f2ee668d5041f0cbe0c01f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirline.html#a084f8432e5f2ee668d5041f0cbe0c01f">addAirport</a> (const <a class="el" href="classAirport.html">Airport</a> &amp;airport, bool <a class="el" href="classAirline.html#a2c2c3b9bffab36e34f9b2bea31578da6">write</a>=true)</td></tr>
@@ -125,7 +136,42 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a2c2c3b9bffab36e34f9b2bea31578da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a038c7bd47df7cd3ff6584b5bb2e11598"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirline.html#a038c7bd47df7cd3ff6584b5bb2e11598">del</a> (const char *file, const vector&lt; string &gt; &amp;del)</td></tr>
 <tr class="separator:a038c7bd47df7cd3ff6584b5bb2e11598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a839cc130229143fcb8b0992ad2ae5403"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classAirplane.html">Airplane</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirline.html#a839cc130229143fcb8b0992ad2ae5403">airplanes</a></td></tr>
+<tr class="separator:a839cc130229143fcb8b0992ad2ae5403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae293a97339a76073340d0cf24045dc24"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classAirport.html">Airport</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirline.html#ae293a97339a76073340d0cf24045dc24">airports</a></td></tr>
+<tr class="separator:ae293a97339a76073340d0cf24045dc24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42ac7ff12e0951b1cf6a3a42b0eeef22"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classFlight.html">Flight</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAirline.html#a42ac7ff12e0951b1cf6a3a42b0eeef22">flights</a></td></tr>
+<tr class="separator:a42ac7ff12e0951b1cf6a3a42b0eeef22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a74c2655b6bc4aca962dbb76942c29e18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c2655b6bc4aca962dbb76942c29e18">&#9670;&nbsp;</a></span>Airline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Airline::Airline </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a55c31d2616e71f044ab0a1b9ce02cbde"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55c31d2616e71f044ab0a1b9ce02cbde">&#9670;&nbsp;</a></span>addAirplane()</h2>
@@ -433,7 +479,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>vector containing Flights with time travel smalled than max </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>vector containing Flights with time travel smaller than max </dd></dl>
 
 </div>
 </div>
@@ -814,9 +860,76 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a839cc130229143fcb8b0992ad2ae5403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839cc130229143fcb8b0992ad2ae5403">&#9670;&nbsp;</a></span>airplanes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classAirplane.html">Airplane</a>&gt; Airline::airplanes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae293a97339a76073340d0cf24045dc24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae293a97339a76073340d0cf24045dc24">&#9670;&nbsp;</a></span>airports</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classAirport.html">Airport</a>&gt; Airline::airports</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42ac7ff12e0951b1cf6a3a42b0eeef22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42ac7ff12e0951b1cf6a3a42b0eeef22">&#9670;&nbsp;</a></span>flights</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classFlight.html">Flight</a>&gt; Airline::flights</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Airline/<a class="el" href="Airline_8h_source.html">Airline.h</a></li>
-<li>Airline/Airline.cpp</li>
+<li>Airline/<a class="el" href="Airline_8cpp.html">Airline.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

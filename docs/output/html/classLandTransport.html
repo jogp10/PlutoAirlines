@@ -63,11 +63,20 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classLandTransport-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">LandTransport Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="Airport_8h_source.html">Airport.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for LandTransport:</div>
+<div class="dyncontent">
+<div class="center"><img src="classLandTransport__coll__graph.png" border="0" usemap="#LandTransport_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -75,9 +84,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a80b89791d47db964f965de24600e6de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7be127da978624952956d31e674e9be"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#ab7be127da978624952956d31e674e9be">operator==</a> (const <a class="el" href="classLandTransport.html">LandTransport</a> &amp;a) const</td></tr>
 <tr class="separator:ab7be127da978624952956d31e674e9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fdcf6b5530c97a018895b444e22a1ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a1fdcf6b5530c97a018895b444e22a1ea">LandTransport</a> (TransType transType, double distance=0, <a class="el" href="classHour.html">Hour</a> freq=<a class="el" href="classHour.html">Hour</a>(&quot;24:00&quot;), <a class="el" href="classHour.html">Hour</a> start_hour=<a class="el" href="classHour.html">Hour</a>(&quot;08:00&quot;), <a class="el" href="classHour.html">Hour</a> end_hour=<a class="el" href="classHour.html">Hour</a>(&quot;23:00&quot;), string airportCode=&quot;&quot;)</td></tr>
+<tr class="memitem:a1fdcf6b5530c97a018895b444e22a1ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a1fdcf6b5530c97a018895b444e22a1ea">LandTransport</a> (<a class="el" href="Airport_8h.html#acee593b112f4fc85f850631b9c6aaae9">TransType</a> <a class="el" href="classLandTransport.html#af1f2ed3ee8e07c8ddd63e35533a73134">transType</a>, double <a class="el" href="classLandTransport.html#a27e0c64c4ed443a29eafd1a544edc31c">distance</a>=0, <a class="el" href="classHour.html">Hour</a> <a class="el" href="classLandTransport.html#a13127da800ff17983849cd356561eaa1">freq</a>=<a class="el" href="classHour.html">Hour</a>(&quot;24:00&quot;), <a class="el" href="classHour.html">Hour</a> start_hour=<a class="el" href="classHour.html">Hour</a>(&quot;08:00&quot;), <a class="el" href="classHour.html">Hour</a> end_hour=<a class="el" href="classHour.html">Hour</a>(&quot;23:00&quot;), string airportCode=&quot;&quot;)</td></tr>
 <tr class="separator:a1fdcf6b5530c97a018895b444e22a1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a593fa2fd17de6645a25e79b280dd68bf"><td class="memItemLeft" align="right" valign="top">TransType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a593fa2fd17de6645a25e79b280dd68bf">getTransType</a> () const</td></tr>
+<tr class="memitem:a593fa2fd17de6645a25e79b280dd68bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Airport_8h.html#acee593b112f4fc85f850631b9c6aaae9">TransType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a593fa2fd17de6645a25e79b280dd68bf">getTransType</a> () const</td></tr>
 <tr class="separator:a593fa2fd17de6645a25e79b280dd68bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3b02f7c6e5ccfad2a374ae792f993d3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#ac3b02f7c6e5ccfad2a374ae792f993d3">getDistance</a> () const</td></tr>
 <tr class="separator:ac3b02f7c6e5ccfad2a374ae792f993d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -93,6 +102,23 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa5d21ac39d960c8df02f7e4c5ff9100f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8beedb16ba09ecd58a794f45303b5871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a8beedb16ba09ecd58a794f45303b5871">setSchedule</a> (<a class="el" href="classHour.html">Hour</a> frequency, <a class="el" href="classHour.html">Hour</a> start_hour, <a class="el" href="classHour.html">Hour</a> end_hour)</td></tr>
 <tr class="separator:a8beedb16ba09ecd58a794f45303b5871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a13127da800ff17983849cd356561eaa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHour.html">Hour</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a13127da800ff17983849cd356561eaa1">freq</a></td></tr>
+<tr class="separator:a13127da800ff17983849cd356561eaa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff6785a616c8daf3998449c394a95fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHour.html">Hour</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a3ff6785a616c8daf3998449c394a95fa">start</a></td></tr>
+<tr class="separator:a3ff6785a616c8daf3998449c394a95fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce8a68075a7543360a6ea7766740ccb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classHour.html">Hour</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a3ce8a68075a7543360a6ea7766740ccb">end</a></td></tr>
+<tr class="separator:a3ce8a68075a7543360a6ea7766740ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f2ed3ee8e07c8ddd63e35533a73134"><td class="memItemLeft" align="right" valign="top"><a class="el" href="Airport_8h.html#acee593b112f4fc85f850631b9c6aaae9">TransType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#af1f2ed3ee8e07c8ddd63e35533a73134">transType</a></td></tr>
+<tr class="separator:af1f2ed3ee8e07c8ddd63e35533a73134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e0c64c4ed443a29eafd1a544edc31c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a27e0c64c4ed443a29eafd1a544edc31c">distance</a></td></tr>
+<tr class="separator:a27e0c64c4ed443a29eafd1a544edc31c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da22662c605938bc68958b9f85c9ecd"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classHour.html">Hour</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a5da22662c605938bc68958b9f85c9ecd">schedule</a> = vector&lt;<a class="el" href="classHour.html">Hour</a>&gt;()</td></tr>
+<tr class="separator:a5da22662c605938bc68958b9f85c9ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e8ee98fd6a35a3579298b6ac6957dd1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLandTransport.html#a1e8ee98fd6a35a3579298b6ac6957dd1">airportcode</a></td></tr>
+<tr class="separator:a1e8ee98fd6a35a3579298b6ac6957dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1fdcf6b5530c97a018895b444e22a1ea"></a>
@@ -107,7 +133,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">LandTransport::LandTransport </td>
           <td>(</td>
-          <td class="paramtype">TransType&#160;</td>
+          <td class="paramtype"><a class="el" href="Airport_8h.html#acee593b112f4fc85f850631b9c6aaae9">TransType</a>&#160;</td>
           <td class="paramname"><em>transType</em>, </td>
         </tr>
         <tr>
@@ -307,7 +333,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TransType LandTransport::getTransType </td>
+          <td class="memname"><a class="el" href="Airport_8h.html#acee593b112f4fc85f850631b9c6aaae9">TransType</a> LandTransport::getTransType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -441,9 +467,164 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1e8ee98fd6a35a3579298b6ac6957dd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e8ee98fd6a35a3579298b6ac6957dd1">&#9670;&nbsp;</a></span>airportcode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string LandTransport::airportcode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a27e0c64c4ed443a29eafd1a544edc31c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e0c64c4ed443a29eafd1a544edc31c">&#9670;&nbsp;</a></span>distance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double LandTransport::distance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ce8a68075a7543360a6ea7766740ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce8a68075a7543360a6ea7766740ccb">&#9670;&nbsp;</a></span>end</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHour.html">Hour</a> LandTransport::end</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13127da800ff17983849cd356561eaa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13127da800ff17983849cd356561eaa1">&#9670;&nbsp;</a></span>freq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHour.html">Hour</a> LandTransport::freq</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5da22662c605938bc68958b9f85c9ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5da22662c605938bc68958b9f85c9ecd">&#9670;&nbsp;</a></span>schedule</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt;<a class="el" href="classHour.html">Hour</a>&gt; LandTransport::schedule = vector&lt;<a class="el" href="classHour.html">Hour</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ff6785a616c8daf3998449c394a95fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff6785a616c8daf3998449c394a95fa">&#9670;&nbsp;</a></span>start</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classHour.html">Hour</a> LandTransport::start</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af1f2ed3ee8e07c8ddd63e35533a73134"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f2ed3ee8e07c8ddd63e35533a73134">&#9670;&nbsp;</a></span>transType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="Airport_8h.html#acee593b112f4fc85f850631b9c6aaae9">TransType</a> LandTransport::transType</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Airline/<a class="el" href="Airport_8h_source.html">Airport.h</a></li>
-<li>Airline/LandTransport.cpp</li>
+<li>Airline/<a class="el" href="LandTransport_8cpp.html">LandTransport.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

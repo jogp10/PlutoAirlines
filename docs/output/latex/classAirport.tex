@@ -1,9 +1,17 @@
 \hypertarget{classAirport}{}\doxysection{Airport Class Reference}
 \label{classAirport}\index{Airport@{Airport}}
+
+
+{\ttfamily \#include $<$Airport.\+h$>$}
+
+
+
+Collaboration diagram for Airport\+:
+% FIG 0
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classAirport_a13d44a50638969ec1d6a0bc14a26881e}{Airport}} (const string \&name, const string \&code)
+\mbox{\hyperlink{classAirport_a13d44a50638969ec1d6a0bc14a26881e}{Airport}} (const string \&\mbox{\hyperlink{classAirport_a07dd02d08890fae5fef97f3ec69b155d}{name}}, const string \&\mbox{\hyperlink{classAirport_a91fb01fe9815c99f63502396da5dcdc5}{code}})
 \item 
 string \mbox{\hyperlink{classAirport_a00b5effe5c9fc3deb2f233906585c75a}{get\+Airport\+Name}} () const
 \item 
@@ -24,6 +32,15 @@ vector$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hype
 \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \mbox{\hyperlink{classAirport_a70e821040b9f5c4c6a3263f4388fd585}{get\+Next}} () const
 \item 
 void \mbox{\hyperlink{classAirport_ab5fd8315348fef2bee893f95b7dcac2b}{insert}} (const \mbox{\hyperlink{classLandTransport}{Land\+Transport}} \&land\+Transport)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classAirport_a07dd02d08890fae5fef97f3ec69b155d}{name}}
+\item 
+string \mbox{\hyperlink{classAirport_a91fb01fe9815c99f63502396da5dcdc5}{code}}
+\item 
+\mbox{\hyperlink{classBST}{B\+ST}}$<$ \mbox{\hyperlink{classLandTransport}{Land\+Transport}} $>$ \mbox{\hyperlink{classAirport_a2cb9ce54975e8cbded70b7c91bd75aab}{bst}}
 \end{DoxyCompactItemize}
 
 
@@ -138,7 +155,28 @@ Insert new \mbox{\hyperlink{classLandTransport}{Land\+Transport}} in City
 \end{DoxyParams}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classAirport_a2cb9ce54975e8cbded70b7c91bd75aab}\label{classAirport_a2cb9ce54975e8cbded70b7c91bd75aab}} 
+\index{Airport@{Airport}!bst@{bst}}
+\index{bst@{bst}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{bst}{bst}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBST}{B\+ST}}$<$\mbox{\hyperlink{classLandTransport}{Land\+Transport}}$>$ Airport\+::bst\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAirport_a91fb01fe9815c99f63502396da5dcdc5}\label{classAirport_a91fb01fe9815c99f63502396da5dcdc5}} 
+\index{Airport@{Airport}!code@{code}}
+\index{code@{code}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{code}{code}}
+{\footnotesize\ttfamily string Airport\+::code\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAirport_a07dd02d08890fae5fef97f3ec69b155d}\label{classAirport_a07dd02d08890fae5fef97f3ec69b155d}} 
+\index{Airport@{Airport}!name@{name}}
+\index{name@{name}!Airport@{Airport}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Airport\+::name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Airline/Airport.\+h\item 
-Airline/Airport.\+cpp\end{DoxyCompactItemize}
+Airline/\mbox{\hyperlink{Airport_8h}{Airport.\+h}}\item 
+Airline/\mbox{\hyperlink{Airport_8cpp}{Airport.\+cpp}}\end{DoxyCompactItemize}

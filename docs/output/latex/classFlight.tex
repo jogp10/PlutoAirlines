@@ -1,25 +1,35 @@
 \hypertarget{classFlight}{}\doxysection{Flight Class Reference}
 \label{classFlight}\index{Flight@{Flight}}
+
+
+{\ttfamily \#include $<$Flight.\+h$>$}
+
+
+
+Collaboration diagram for Flight\+:
+% FIG 0
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classFlight_a328e288121160d9dca2333790dca9220}{Flight}} (int flight\+Num, const string \&departure\+Date, const string \&departure\+Local, const string \&arrival\+Local, int flight\+Duration, const string \&airplane\+\_\+plate)
+\mbox{\hyperlink{classFlight_a8b0b63ac53e78bf5384d6b7e766f6c10}{Flight}} ()=default
+\item 
+\mbox{\hyperlink{classFlight_a328e288121160d9dca2333790dca9220}{Flight}} (int \mbox{\hyperlink{classFlight_a7c4b3d136edc6fb3f5e8aacb0f53c445}{flight\+Num}}, const string \&\mbox{\hyperlink{classFlight_ac52adb7b7417526dca0fcd1a98034ce2}{departure\+Date}}, const string \&\mbox{\hyperlink{classFlight_ab5579bfa67934dc6cc77bf9d090dce43}{departure\+Local}}, const string \&\mbox{\hyperlink{classFlight_a5790e54c5779940f4bf94b4bc923db1d}{arrival\+Local}}, int \mbox{\hyperlink{classFlight_a5834aed96bf5a29136a05eb5c28e6d81}{flight\+Duration}}, const string \&\mbox{\hyperlink{classFlight_a4c170f796fa84c2830419a419d17935a}{airplane\+\_\+plate}})
 \item 
 void \mbox{\hyperlink{classFlight_a327052ddd43591c4ac8421f0f0277789}{set\+Airplane\+Plate}} (string plate)
 \item 
-void \mbox{\hyperlink{classFlight_a8100f09504fdfdd4ed257991d7a15b03}{set\+F\+Light\+Num}} (int flight\+Num)
+void \mbox{\hyperlink{classFlight_a8100f09504fdfdd4ed257991d7a15b03}{set\+F\+Light\+Num}} (int \mbox{\hyperlink{classFlight_a7c4b3d136edc6fb3f5e8aacb0f53c445}{flight\+Num}})
 \item 
-void \mbox{\hyperlink{classFlight_a4be9ea633977825d1c91bc074ce95f88}{set\+Departure\+Date}} (const string \&departure\+Date)
+void \mbox{\hyperlink{classFlight_a4be9ea633977825d1c91bc074ce95f88}{set\+Departure\+Date}} (const string \&\mbox{\hyperlink{classFlight_ac52adb7b7417526dca0fcd1a98034ce2}{departure\+Date}})
 \item 
-void \mbox{\hyperlink{classFlight_af21c4e8e6dbb5f8d99b8f38350bacb05}{set\+Departure\+Local}} (const string \&departure\+Local)
+void \mbox{\hyperlink{classFlight_af21c4e8e6dbb5f8d99b8f38350bacb05}{set\+Departure\+Local}} (const string \&\mbox{\hyperlink{classFlight_ab5579bfa67934dc6cc77bf9d090dce43}{departure\+Local}})
 \item 
-void \mbox{\hyperlink{classFlight_a9f70138f9b4b66f7f058168291925146}{set\+Arrival\+Local}} (const string \&arrival\+Local)
+void \mbox{\hyperlink{classFlight_a9f70138f9b4b66f7f058168291925146}{set\+Arrival\+Local}} (const string \&\mbox{\hyperlink{classFlight_a5790e54c5779940f4bf94b4bc923db1d}{arrival\+Local}})
 \item 
-void \mbox{\hyperlink{classFlight_a6f3c02502212b1048ffeb4aa78b88916}{set\+Flight\+Duration}} (int flight\+Duration)
+void \mbox{\hyperlink{classFlight_a6f3c02502212b1048ffeb4aa78b88916}{set\+Flight\+Duration}} (int \mbox{\hyperlink{classFlight_a5834aed96bf5a29136a05eb5c28e6d81}{flight\+Duration}})
 \item 
 void \mbox{\hyperlink{classFlight_ad48929a483b74d03cf12a7d16c321783}{set\+Available\+Seats}} (int capacity)
 \item 
-void \mbox{\hyperlink{classFlight_a7cab06d7036ca974eccda23f63f57f77}{minus\+Available\+Seats}} (int tickets\+Bought, \mbox{\hyperlink{classLuggage}{Luggage}} luggage=\mbox{\hyperlink{classLuggage}{Luggage}}(0))
+void \mbox{\hyperlink{classFlight_a7cab06d7036ca974eccda23f63f57f77}{minus\+Available\+Seats}} (int tickets\+Bought, \mbox{\hyperlink{classLuggage}{Luggage}} \mbox{\hyperlink{classFlight_aed535d7b857f581399b29f0fee2761f7}{luggage}}=\mbox{\hyperlink{classLuggage}{Luggage}}(0))
 \item 
 string \mbox{\hyperlink{classFlight_ab4da7d82d5f7a32828db42f0b927d0e2}{get\+Airplane\+Plate}} () const
 \item 
@@ -41,13 +51,40 @@ int \mbox{\hyperlink{classFlight_ad4be218d20b38cf2f09bd0e93fdd12c8}{getnum\+Tota
 \item 
 bool \mbox{\hyperlink{classFlight_a40b7a8b9dc0a7702c2a43037b385d9f2}{operator$<$}} (const \mbox{\hyperlink{classFlight}{Flight}} \&a) const
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{classFlight_a4c170f796fa84c2830419a419d17935a}{airplane\+\_\+plate}}
+\item 
+int \mbox{\hyperlink{classFlight_a7c4b3d136edc6fb3f5e8aacb0f53c445}{flight\+Num}} =0
+\item 
+\mbox{\hyperlink{classHour}{Hour}} \mbox{\hyperlink{classFlight_a5834aed96bf5a29136a05eb5c28e6d81}{flight\+Duration}} =\mbox{\hyperlink{classHour}{Hour}}(1)
+\item 
+\mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classFlight_ac52adb7b7417526dca0fcd1a98034ce2}{departure\+Date}} = \mbox{\hyperlink{classDate}{Date}}(\char`\"{}1999-\/12-\/30 23\+:59\char`\"{})
+\item 
+string \mbox{\hyperlink{classFlight_ab5579bfa67934dc6cc77bf9d090dce43}{departure\+Local}}
+\item 
+string \mbox{\hyperlink{classFlight_a5790e54c5779940f4bf94b4bc923db1d}{arrival\+Local}}
+\item 
+int \mbox{\hyperlink{classFlight_a9d622438cf117dbc5707252c7f5acdff}{available\+Seat}} \{\}
+\item 
+list$<$ \mbox{\hyperlink{classLuggage}{Luggage}} $>$ \mbox{\hyperlink{classFlight_aed535d7b857f581399b29f0fee2761f7}{luggage}} \{\}
+\item 
+int \mbox{\hyperlink{classFlight_a98e2fa4eb3593a2fa960800a0c34b9b0}{num\+Total\+Bags}} =0
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFlight_a8b0b63ac53e78bf5384d6b7e766f6c10}\label{classFlight_a8b0b63ac53e78bf5384d6b7e766f6c10}} 
+\index{Flight@{Flight}!Flight@{Flight}}
+\index{Flight@{Flight}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{Flight()}{Flight()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Flight\+::\+Flight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
 \mbox{\Hypertarget{classFlight_a328e288121160d9dca2333790dca9220}\label{classFlight_a328e288121160d9dca2333790dca9220}} 
 \index{Flight@{Flight}!Flight@{Flight}}
 \index{Flight@{Flight}!Flight@{Flight}}
-\doxysubsubsection{\texorpdfstring{Flight()}{Flight()}}
+\doxysubsubsection{\texorpdfstring{Flight()}{Flight()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Flight\+::\+Flight (\begin{DoxyParamCaption}\item[{int}]{flight\+Num,  }\item[{const string \&}]{departure\+Date,  }\item[{const string \&}]{departure\+Local,  }\item[{const string \&}]{arrival\+Local,  }\item[{int}]{flight\+Duration,  }\item[{const string \&}]{airplane\+\_\+plate }\end{DoxyParamCaption})}
 
 
@@ -253,7 +290,64 @@ Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s number
 \end{DoxyParams}
 
 
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classFlight_a4c170f796fa84c2830419a419d17935a}\label{classFlight_a4c170f796fa84c2830419a419d17935a}} 
+\index{Flight@{Flight}!airplane\_plate@{airplane\_plate}}
+\index{airplane\_plate@{airplane\_plate}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{airplane\_plate}{airplane\_plate}}
+{\footnotesize\ttfamily string Flight\+::airplane\+\_\+plate\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_a5790e54c5779940f4bf94b4bc923db1d}\label{classFlight_a5790e54c5779940f4bf94b4bc923db1d}} 
+\index{Flight@{Flight}!arrivalLocal@{arrivalLocal}}
+\index{arrivalLocal@{arrivalLocal}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{arrivalLocal}{arrivalLocal}}
+{\footnotesize\ttfamily string Flight\+::arrival\+Local\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_a9d622438cf117dbc5707252c7f5acdff}\label{classFlight_a9d622438cf117dbc5707252c7f5acdff}} 
+\index{Flight@{Flight}!availableSeat@{availableSeat}}
+\index{availableSeat@{availableSeat}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{availableSeat}{availableSeat}}
+{\footnotesize\ttfamily int Flight\+::available\+Seat \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_ac52adb7b7417526dca0fcd1a98034ce2}\label{classFlight_ac52adb7b7417526dca0fcd1a98034ce2}} 
+\index{Flight@{Flight}!departureDate@{departureDate}}
+\index{departureDate@{departureDate}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{departureDate}{departureDate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Flight\+::departure\+Date = \mbox{\hyperlink{classDate}{Date}}(\char`\"{}1999-\/12-\/30 23\+:59\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_ab5579bfa67934dc6cc77bf9d090dce43}\label{classFlight_ab5579bfa67934dc6cc77bf9d090dce43}} 
+\index{Flight@{Flight}!departureLocal@{departureLocal}}
+\index{departureLocal@{departureLocal}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{departureLocal}{departureLocal}}
+{\footnotesize\ttfamily string Flight\+::departure\+Local\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_a5834aed96bf5a29136a05eb5c28e6d81}\label{classFlight_a5834aed96bf5a29136a05eb5c28e6d81}} 
+\index{Flight@{Flight}!flightDuration@{flightDuration}}
+\index{flightDuration@{flightDuration}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{flightDuration}{flightDuration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHour}{Hour}} Flight\+::flight\+Duration =\mbox{\hyperlink{classHour}{Hour}}(1)\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_a7c4b3d136edc6fb3f5e8aacb0f53c445}\label{classFlight_a7c4b3d136edc6fb3f5e8aacb0f53c445}} 
+\index{Flight@{Flight}!flightNum@{flightNum}}
+\index{flightNum@{flightNum}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{flightNum}{flightNum}}
+{\footnotesize\ttfamily int Flight\+::flight\+Num =0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_aed535d7b857f581399b29f0fee2761f7}\label{classFlight_aed535d7b857f581399b29f0fee2761f7}} 
+\index{Flight@{Flight}!luggage@{luggage}}
+\index{luggage@{luggage}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{luggage}{luggage}}
+{\footnotesize\ttfamily list$<$\mbox{\hyperlink{classLuggage}{Luggage}}$>$ Flight\+::luggage \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classFlight_a98e2fa4eb3593a2fa960800a0c34b9b0}\label{classFlight_a98e2fa4eb3593a2fa960800a0c34b9b0}} 
+\index{Flight@{Flight}!numTotalBags@{numTotalBags}}
+\index{numTotalBags@{numTotalBags}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{numTotalBags}{numTotalBags}}
+{\footnotesize\ttfamily int Flight\+::num\+Total\+Bags =0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Airline/Flight.\+h\item 
-Airline/Flight.\+cpp\end{DoxyCompactItemize}
+Airline/\mbox{\hyperlink{Flight_8h}{Flight.\+h}}\item 
+Airline/\mbox{\hyperlink{Flight_8cpp}{Flight.\+cpp}}\end{DoxyCompactItemize}

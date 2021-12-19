@@ -9,6 +9,7 @@
 #include "Flight.h"
 #include "Luggage.h"
 
+
 class Ticket {
     int group=1;
     Luggage luggage{};
