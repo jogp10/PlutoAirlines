@@ -4,15 +4,6 @@
 
 #include "Airline.h"
 
-void Airline::setAirplanes(const vector<Airplane>& airplaneS) {
-    this->airplanes=airplaneS;
-    for(auto &i: airplanes)
-        for(auto &j: i.getFlights()){
-            flights.push_back(j);
-        }
-    updateFlights();
-}
-
 
 void Airline::addAirplane(Airplane& airplane) {
     for(auto &f: airplane.getFlights()) flights.push_back(f);
@@ -50,6 +41,10 @@ void Airline::addLandTransport(LandTransport &landTransport) {
             i.insert(landTransport);
         }
     }
+}
+
+void Airline::addTicket(Ticket &t, Passenger p) {
+
 }
 
 
@@ -219,8 +214,8 @@ vector<Airplane> Airline::loadPlanes() {
         class Airplane plane(namePlane, typePlane, stoi(platePlane));
 
         result.push_back(plane);
+        this->addAirplane(plane);
     }
-    this->setAirplanes(result);
     file_airplanes.close();
     return result;
 }
@@ -239,8 +234,8 @@ vector<Airport> Airline::loadAirports() {
         class Airport airport(nameAirport, codeAirport);
 
         result.push_back(airport);
+        this->addAirport(airport);
     }
-    this->setAirports(result);
     file_airport.close();
     return result;
 }
@@ -321,5 +316,27 @@ vector<Service> Airline::loadServices() {
     }
 
     file_service.close();
+    return result;
+}
+
+vector<Ticket> Airline::loadTickets() {
+    /** Filling Tickets vector */
+    string flightnum, group, luggage;
+    vector<Ticket> result;
+
+    ifstream file_ticket;
+    file_ticket.open("Populate/Ticket.txt");
+
+    while (getline(file_ticket, flightnum)) {
+        getline(file_ticket, group);
+        getline(file_ticket, luggage);
+
+        class Ticket ticket(stoi(flightnum), stoi(group), Luggage(stoi(luggage)));
+
+        result.push_back(ticket);
+        this->addTicket(ticket);
+    }
+
+    file_ticket.close();
     return result;
 }

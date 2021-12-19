@@ -7,6 +7,8 @@
 
 #include "Airplane.h"
 #include "Airport.h"
+#include "Ticket.h"
+#include "Passenger.h"
 #include <iostream>
 
 using namespace std;
@@ -18,18 +20,6 @@ class Airline {
 
 public:
     Airline() = default;
-
-    /**
-     * Set Airline's airplanes
-     * @param airplanes
-     */
-    void setAirplanes(const vector<Airplane> &airplaneS);
-
-    /**
-     * Set Airline's airport
-     * @param airports
-     */
-    void setAirports(vector<Airport> airportS) { this->airports=airportS; };
 
     /**
      * Add airplane
@@ -54,6 +44,13 @@ public:
      * @param service
      */
     void addService(Service &service);
+
+    /**
+     *
+     * @param t
+     * @param p
+     */
+    void addTicket(Ticket &t, Passenger p=Passenger(""));
 
     /**
      * Add landTransport
@@ -136,7 +133,6 @@ public:
      */
     bool removeAirport(const Airport& p);
 
-
     /**
      *
      * @return
@@ -166,6 +162,12 @@ public:
      * @return
      */
     vector<Service> loadServices();
+
+    /**
+     *
+     * @return
+     */
+    vector<Ticket> loadTickets();
 };
 
 

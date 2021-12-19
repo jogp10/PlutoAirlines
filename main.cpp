@@ -5,7 +5,6 @@
 #include "gmock/gmock.h"
 #include "App.h"
 #include <iostream>
-#include <fstream>
 #include <thread>
 
 using namespace std;
@@ -17,11 +16,11 @@ int main(int argc, char* argv[]) {
 
 
     class Airline Pluto;
-    Pluto.loadPlanes();
     Pluto.loadAirports();
-    Pluto.loadFlights();
     Pluto.loadLandTransport();
+    Pluto.loadPlanes();
     Pluto.loadServices();
+    Pluto.loadFlights();
 
     int menu_choice, passenger_choice, worker_choice;
 
