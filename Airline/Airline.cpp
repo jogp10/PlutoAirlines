@@ -172,14 +172,14 @@ bool Airline::removeFlight(const Flight &f) {
 }
 
 bool Airline::removeAirport(const Airport &p) {
-    for(int i=0; i<flights.size(); i++){
-        if(flights[i].getDepartureLocal()==p.getCode() || flights[i].getArrivalLocal()==p.getCode()){
+    for (int i = 0; i < flights.size(); i++) {
+        if (flights[i].getDepartureLocal() == p.getCode() || flights[i].getArrivalLocal() == p.getCode()) {
             removeFlight(flights[i]);
             --i;
         }
     }
-    for(auto itr=airports.begin(); itr!=airports.end(); ++itr){
-        if(itr->getCode()==p.getCode()){
+    for (auto itr = airports.begin(); itr != airports.end(); ++itr) {
+        if (itr->getCode() == p.getCode()) {
             airports.erase(itr);
             return true;
         }

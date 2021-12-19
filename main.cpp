@@ -1,8 +1,10 @@
 #include "Airline/Airline.h"
+#include "Airline/Airplane.h"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "App.h"
 #include <iostream>
+#include <fstream>
 #include <thread>
 
 using namespace std;

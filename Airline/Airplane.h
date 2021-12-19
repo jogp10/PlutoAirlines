@@ -10,6 +10,7 @@
 #include "Service.h"
 #include "Date.h"
 #include <iostream>
+#include <fstream>
 #include <list>
 #include <queue>
 
@@ -37,6 +38,8 @@ public:
      * @param capacity
      */
     explicit Airplane(const string& plate, const string& type, int capacity);
+
+    explicit Airplane(ifstream file);
 
     /**
      * Set Airplane's plate

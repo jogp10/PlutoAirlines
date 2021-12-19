@@ -1,6 +1,1 @@
-Airplane a1("Dora", "A1234", 120);
-Airplane a2("Josefina", "B1234", 1200);
-Airplane a3("Alberto", "A3234", 200);
-Airplane a4("Paulo", "C1234", 150);
-Airplane a5("Quim Roscas", "D1232", 250);
-Airplane a6("José", "A310", 295);
+Dora A1234 120
