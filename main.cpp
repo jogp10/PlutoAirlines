@@ -13,7 +13,7 @@ using namespace std;
 int main(int argc, char* argv[]) {
 
     testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    //return RUN_ALL_TESTS();
 
 
     class Airline Pluto;
@@ -34,6 +34,8 @@ int main(int argc, char* argv[]) {
 
     string depLocal, arrLocal, depDate;
     int maxTime;
+
+    int airport_subway_choice;
 
     vector<Flight> flights_filtered;
 
@@ -115,7 +117,14 @@ int main(int argc, char* argv[]) {
                         switch (airport_passenger_choice) {
                             /** Subways */
                             case 1:
+                                airport_subway_choice = AirportSubway(Pluto);
 
+                                cout << endl;
+                                cout << "The subways are: " << endl;
+                                for (auto i: Pluto.getAirports()[airport_subway_choice -1].getSubway() ) {
+                                    cout << "- " << to_string(i.getTransType()) << ", " << i.getDistance() << ", " ;
+                                    cout << i.next().getHourMin() << endl;
+                                }
 
                                 break;
 

@@ -282,6 +282,37 @@ int AirportPassenger() {
     }
 }
 
+
+int AirportSubway(class Airline airline) {
+    int count = 1, airport_subway_choice;
+
+    cout << endl;
+    for (const auto i: airline.getAirports()) {
+        cout << count << ") " << i.getAirportName() << endl;
+        count++;
+    }
+
+    cout << endl;
+    cout << "What City?" << endl;
+
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> airport_subway_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        else if (airport_subway_choice <= count && airport_subway_choice > 0) { return airport_subway_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (1 to " << airline.getAirports().size() << " to proceed)" << endl;
+    }
+
+
+}
+
 //--------------------------
 int Worker() {
     int worker_choice;

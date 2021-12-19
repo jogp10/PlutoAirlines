@@ -33,7 +33,7 @@ int FlightsShow(class Airline airline);
 
 int AirportPassenger();
 /**/
-
+int AirportSubway(class Airline airline);
 /**/
 
 
