@@ -227,7 +227,21 @@ bool Airline::removeFlight(const Flight &f) {
 }
 
 bool Airline::removeAirport(const Airport &p) {
-    fstream file("Populate/Airport.txt");
+    ifstream file("Populate/Airport.txt");
+    ofstream o("Populate/temp.txt");
+    string deleteline = p.getAirportName(), deleteline2 = p.getCode();
+    string line;
+
+
+    while(getline(file, line)){
+        line.replace(line.find(deleteline), deleteline.length(), "");
+        line.replace(line.find(deleteline2), deleteline2.length(), "");
+        o << line << endl;
+    }
+    o.close();
+    file.close();
+    remove("Populate/Airport.txt");
+    rename("Populate/temp.txt", "Populate/Airport.txt");
 
 
     for (int i = 0; i < flights.size(); i++) {
