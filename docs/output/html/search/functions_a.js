@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['passenger_163',['Passenger',['../classPassenger.html#aad40efad4be6b66639c952baf3c2f18f',1,'Passenger']]]
+  ['next_214',['next',['../classLandTransport.html#aa5d21ac39d960c8df02f7e4c5ff9100f',1,'LandTransport']]]
 ];

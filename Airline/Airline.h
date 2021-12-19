@@ -116,7 +116,7 @@ public:
      * @param max max travel duration time
      * @return vector containing Flights with time travel smaller than max
      */
-    vector<Flight> filterDuration(const int max);
+    vector<Flight> filterDuration(int max);
 
 
     /**
@@ -177,16 +177,16 @@ public:
     vector<Ticket> loadTickets();
 
     /**
-     *  Write 
-     * @param file
-     * @param content
+     *  Write in file of database
+     * @param file file to write in
+     * @param content content to write in file
      */
     static void write(const string& file, const string& content);
 
     /**
-     *
-     * @param file
-     * @param del
+     * Delete from file of database
+     * @param file file to delete from
+     * @param del vector<string> containing the key of the elem to eliminate and number of lines that goes with the elem
      */
     static void del(const char* file, const vector<string>& del);
 };

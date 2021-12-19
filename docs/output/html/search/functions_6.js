@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['landtransport_156',['LandTransport',['../classLandTransport.html#ad5b85149327f40f293b30a0560f6d095',1,'LandTransport']]],
-  ['luggage_157',['Luggage',['../classLuggage.html#a1635d12a770246bc545708a883f71e86',1,'Luggage']]]
+  ['haveluggage_202',['haveLuggage',['../classLuggage.html#a88ce32ab1e0221bacb403002758ddd14',1,'Luggage']]],
+  ['hour_203',['Hour',['../classHour.html#aea5de9fb3eea94c6fcc42976825bc417',1,'Hour::Hour(string date)'],['../classHour.html#aee9a75c66d8b9f63aa48b1146c93185d',1,'Hour::Hour(int minutes)']]]
 ];

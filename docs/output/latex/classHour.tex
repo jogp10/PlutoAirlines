@@ -25,6 +25,8 @@ int \mbox{\hyperlink{classHour_a44859e9acda4578bc3cfcad5d2f25585}{get\+Hour}} ()
 \item 
 int \mbox{\hyperlink{classHour_a999278972c30bb258e0824ff3e45d65f}{get\+Minute}} () const
 \item 
+string \mbox{\hyperlink{classHour_a3e6e8a1ad236013d9e16c025f7498099}{get\+Hour\+Min}} () const
+\item 
 \mbox{\hyperlink{classHour}{Hour}} \mbox{\hyperlink{classHour_a1418a9430391044a39f5fb3d0760f475}{operator+}} (const \mbox{\hyperlink{classHour}{Hour}} \&a)
 \item 
 bool \mbox{\hyperlink{classHour_adcbcb1229cf4c6dbc7b3e1ce6ffe17f8}{operator$<$}} (const \mbox{\hyperlink{classHour}{Hour}} \&a) const
@@ -51,7 +53,7 @@ int {\bfseries minute}
 
 
 \begin{DoxyParams}{Parameters}
-{\em date} & \\
+{\em date} & string \char`\"{}\+H\+H\+:\+M\+M\char`\"{} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classHour_aee9a75c66d8b9f63aa48b1146c93185d}\label{classHour_aee9a75c66d8b9f63aa48b1146c93185d}} 
@@ -60,7 +62,7 @@ int {\bfseries minute}
 \doxysubsubsection{\texorpdfstring{Hour()}{Hour()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Hour\+::\+Hour (\begin{DoxyParamCaption}\item[{int}]{minutes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-
+M\+MM converted into \char`\"{}\+H\+H\+:\+M\+M\char`\"{} 
 \begin{DoxyParams}{Parameters}
 {\em minutes} & \\
 \hline
@@ -77,6 +79,15 @@ int {\bfseries minute}
 Get hour of date \begin{DoxyReturn}{Returns}
 hour 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classHour_a3e6e8a1ad236013d9e16c025f7498099}\label{classHour_a3e6e8a1ad236013d9e16c025f7498099}} 
+\index{Hour@{Hour}!getHourMin@{getHourMin}}
+\index{getHourMin@{getHourMin}!Hour@{Hour}}
+\doxysubsubsection{\texorpdfstring{getHourMin()}{getHourMin()}}
+{\footnotesize\ttfamily string Hour\+::get\+Hour\+Min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get hour and minute of date \begin{DoxyReturn}{Returns}
+\char`\"{}\+H\+H\+:\+M\+M\char`\"{} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classHour_a999278972c30bb258e0824ff3e45d65f}\label{classHour_a999278972c30bb258e0824ff3e45d65f}} 
 \index{Hour@{Hour}!getMinute@{getMinute}}
 \index{getMinute@{getMinute}!Hour@{Hour}}
@@ -84,7 +95,7 @@ hour
 {\footnotesize\ttfamily int Hour\+::get\+Minute (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get minute of date \begin{DoxyReturn}{Returns}
-
+minute 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classHour_a1418a9430391044a39f5fb3d0760f475}\label{classHour_a1418a9430391044a39f5fb3d0760f475}} 
 \index{Hour@{Hour}!operator+@{operator+}}
@@ -94,11 +105,11 @@ Get minute of date \begin{DoxyReturn}{Returns}
 
 Add two hours 
 \begin{DoxyParams}{Parameters}
-{\em a} & \\
+{\em a} & this + a \mbox{\hyperlink{classHour}{Hour}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+result of operation 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classHour_adcbcb1229cf4c6dbc7b3e1ce6ffe17f8}\label{classHour_adcbcb1229cf4c6dbc7b3e1ce6ffe17f8}} 
 \index{Hour@{Hour}!operator$<$@{operator$<$}}
@@ -106,13 +117,13 @@ Add two hours
 \doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
 {\footnotesize\ttfamily bool Hour\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHour}{Hour}} \&}]{a }\end{DoxyParamCaption}) const}
 
-Check if $<$ than another \mbox{\hyperlink{classHour}{Hour}} object 
+this is before \mbox{\hyperlink{classHour}{Hour}} a 
 \begin{DoxyParams}{Parameters}
-{\em a} & \\
+{\em a} & \mbox{\hyperlink{classHour}{Hour}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+result of operation 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classHour_a515dd14a3fef4d2160c971ae8dfe0bf3}\label{classHour_a515dd14a3fef4d2160c971ae8dfe0bf3}} 
 \index{Hour@{Hour}!operator==@{operator==}}
@@ -120,13 +131,13 @@ Check if $<$ than another \mbox{\hyperlink{classHour}{Hour}} object
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
 {\footnotesize\ttfamily bool Hour\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHour}{Hour}} \&}]{a }\end{DoxyParamCaption}) const}
 
-Check if this equals another \mbox{\hyperlink{classHour}{Hour}} object 
+this equals \mbox{\hyperlink{classHour}{Hour}} a 
 \begin{DoxyParams}{Parameters}
-{\em Comparable} & \mbox{\hyperlink{classHour}{Hour}} \\
+{\em a} & \mbox{\hyperlink{classHour}{Hour}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true if equal 
+result of operation 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classHour_ab3d0240b258414ab52d9f6e10ba0b3a3}\label{classHour_ab3d0240b258414ab52d9f6e10ba0b3a3}} 
 \index{Hour@{Hour}!setHour@{setHour}}
@@ -136,7 +147,7 @@ true if equal
 
 set \mbox{\hyperlink{classHour}{Hour}} 
 \begin{DoxyParams}{Parameters}
-{\em hour} & \\
+{\em hour} & string \char`\"{}\+H\+H\char`\"{} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classHour_a463f969bd1fed2df155ef170c1aa60f6}\label{classHour_a463f969bd1fed2df155ef170c1aa60f6}} 
@@ -147,7 +158,7 @@ set \mbox{\hyperlink{classHour}{Hour}}
 
 set \mbox{\hyperlink{classHour}{Hour}} 
 \begin{DoxyParams}{Parameters}
-{\em houR} & \\
+{\em houR} & HH \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classHour_a61278f86ba1e96e9e2abd5a43f9403f3}\label{classHour_a61278f86ba1e96e9e2abd5a43f9403f3}} 
@@ -158,7 +169,7 @@ set \mbox{\hyperlink{classHour}{Hour}}
 
 Set \mbox{\hyperlink{classHour}{Hour}} \& Minute 
 \begin{DoxyParams}{Parameters}
-{\em houR} & \\
+{\em houR} & string \char`\"{}\+H\+H\+:\+M\+M\char`\"{} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classHour_ad5e3d3e4c765a1a12cb9d10b2bd7a107}\label{classHour_ad5e3d3e4c765a1a12cb9d10b2bd7a107}} 
@@ -169,7 +180,7 @@ Set \mbox{\hyperlink{classHour}{Hour}} \& Minute
 
 set Minute 
 \begin{DoxyParams}{Parameters}
-{\em minute} & \\
+{\em minute} & string \char`\"{}\+M\+M\char`\"{} \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classHour_a1a1beec6ab0fde13189d0879f47cbd9f}\label{classHour_a1a1beec6ab0fde13189d0879f47cbd9f}} 
@@ -180,7 +191,7 @@ set Minute
 
 set Minute 
 \begin{DoxyParams}{Parameters}
-{\em minutE} & \\
+{\em minutE} & MM \\
 \hline
 \end{DoxyParams}
 

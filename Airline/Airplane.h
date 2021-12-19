@@ -28,11 +28,11 @@ class Airplane {
 
 private:
     /**
-     * Update Services based on real present time
+     * Update Services based on present time
      */
     void updateServices();
     /**
-     * Update Flights based on real present time
+     * Update Flights based on present time
      */
     void updateFlights();
     /**
@@ -43,37 +43,35 @@ private:
 public:
     /**
      *
-     * @param plate
-     * @param capacity
+     * @param plate plate of Airplane
+     * @param type type of Airplane
+     * @param capacity capacity of Airplane
      */
-    explicit Airplane(const string& plate, const string& type, int capacity);
+    explicit Airplane(const string& plate, const string& type, int capacity): plate(plate), type(type), capacity(capacity){};
 
     /**
      * Set Airplane's plate
      * @param plate
      */
-    void setPlate(const string& platE);
-
+    void setPlate(const string& plate) {this->plate=plate;};
 
     /**
      *  Set Airplane's type
-     * @param typE
+     * @param type
      */
-    void setType(const string& typE);
+    void setType(const string& type) {this->type=type;};
 
     /**
      * Set Airplane's capacity
      * @param capacity
      */
-    void setCapacity(const int& capacitY);
-
+    void setCapacity(const int& capacity) {this->capacity=capacity;};
 
     /**
      * Add new Flight to Travel plan
      * @param flight
      */
     void addFlight(Flight &flight);
-
 
     /**
      * Schedule a new service for the Airplane
@@ -84,61 +82,56 @@ public:
 
     /**
      * Get Airplane's plate
-     * @return
+     * @return plate
      */
-    string getPlate() const;
-
+    string getPlate() const {return plate;};
 
     /**
      * Get Airplane's type
-     * @return
+     * @return type
      */
-    string getType() const;
-
+    string getType() const {return type;};
 
     /**
      * Get Airplane's Capacity
-     * @return
+     * @return capacity
      */
-    int getCapacity() const;
-
+    int getCapacity() const {return capacity;};
 
     /**
      * Get Airplane's Flight plan
-     * @return list of flights
+     * @return vector of next Flights
      */
-    vector<Flight> getFlights();
+    vector<Flight> getFlights() {updateFlights(); return flights;};
 
     /**
      * Get Airplane's Last Flights
-     * @return
+     * @return of last 20 Flights
      */
-    queue<Flight> getLastFlights();
+    queue<Flight> getLastFlights() {updateFlights(); return last20flights;};
 
     /**
-     * Get Airplane's Next Flight
-     * @return
+     * Get Airplane's next Flight
+     * @return next Flight
      */
-    Flight getNextFlight();
-
+    Flight getNextFlight() {updateFlights(); return flights[0];};
 
     /**
-     * Get schedule services for the Airplane
-     * @return
+     * Get Airplane's next Services
+     * @return queue of schedule services
      */
-    queue<Service> getServices();
-
+    queue<Service> getServices() {updateServices(); return services;};
 
     /**
-     * Get Past services done on the Airplane
-     * @return
+     * Get past services done on the Airplane
+     * @return list of services
      */
-    list<Service> getPastServices();
+    list<Service> getPastServices() {updateServices(); return servicesDone;};
 
     /**
-     * Remove flight
-     * @param f
-     * @return
+     * Remove Flight from Travel Plan
+     * @param f Flight
+     * @return if it existed
      */
     bool removeFlight(const Flight& f);
 

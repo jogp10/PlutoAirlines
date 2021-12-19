@@ -11,7 +11,7 @@
 using testing::Eq;
 
 TEST(test_1, TicketTest) {
-    Ticket t1;
+    Ticket t1(0);
 
     Airplane a1("Albeto", "A360", 320);
 
@@ -24,5 +24,5 @@ TEST(test_1, TicketTest) {
     EXPECT_FALSE(t2.getLuggage().haveLuggage());
 
     t1.setFlight(f6);
-    //EXPECT_EQ(t1.getFlightNum().getAvailableSeat(), f6.getAvailableSeat());
+    EXPECT_EQ(t1.getFlight().getAvailableSeat(), f6.getAvailableSeat());
 }

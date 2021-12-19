@@ -10,25 +10,26 @@
 
 class Passenger {
     string name;
-    Ticket ticket;
+    Ticket ticket{0};
 
 public:
     /**
      *
-     * @param ticket
+     * @param name Name of passenger
      */
     explicit Passenger(const string& name): name(name){};
+
     /**
-     * Buy the ticket if posible
+     * buy Passenger a Ticket
      * @param ticket
-     * @return
+     * @return if purchase was a success
      */
     bool buyTicket(Ticket& ticket);
 
     /**
      * Check if there is available seats at airplane
      * @param ticket
-     * @return
+     * @return true if there is available seats
      */
     static bool canBuyTicket(const Ticket& ticket) ;
 };

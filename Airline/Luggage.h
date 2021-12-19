@@ -14,20 +14,29 @@ public:
     Luggage() = default;
 
     /**
-     * numBags = number of Luggage bags
-     * @param x
+     *
+     * @param numBags number of Bags
      */
-    explicit Luggage(int numBags);
+    explicit Luggage(int numBags) {this->numBags=numBags;};
 
     /**
-     * Function to determine the number of bags!
-     * @param luggage
-     * @return
+     * Set Luggage's number of bags
+     * @param numBags
      */
-    bool haveLuggage();
+    void setnumBags(int numBags) {this->numBags=numBags;};
 
-    void setnumBags(int numBags);
-    int getnumBags();
+    /**
+     * Get Luggage's number of bags
+     * @return number of bags
+     */
+    int getnumBags() const {return numBags;};
+
+    /**
+     * Does it have bags
+     * @param luggage
+     * @return if Luggage has bags
+     */
+    bool haveLuggage() const {return numBags!=0;};
 };
 
 

@@ -14,42 +14,46 @@ protected:
     int hour, minute;
 public:
     Hour() = default;
+
     /**
      *
-     * @param date
+     * @param date string "HH:MM"
      */
     explicit Hour(string date);
+
     /**
-     *
+     * MMM converted into "HH:MM"
      * @param minutes
      */
     explicit Hour(int minutes);
 
     /**
      * Set Hour & Minute
-     * @param houR
+     * @param houR string "HH:MM"
      */
     void setHourMin(string houR);
 
     /**
      * set Hour
-     * @param houR
+     * @param houR HH
      */
     void setHour(int houR) { this->hour = houR;};
+
     /**
      * set Hour
-     * @param hour
+     * @param hour string "HH"
      */
     void setHour(const string& hour);
 
     /**
      * set Minute
-     * @param minutE
+     * @param minutE MM
      */
     void setMinute(int minutE) { this->minute = minutE;};
+
     /**
      * set Minute
-     * @param minute
+     * @param minute string "MM"
      */
     void setMinute(const string& minute);
 
@@ -61,38 +65,37 @@ public:
 
     /**
      * Get minute of date
-     * @return
+     * @return minute
      */
     int getMinute() const {return minute;};
 
     /**
      * Get hour and minute of date
-     * @return
+     * @return "HH:MM"
      */
     string getHourMin() const {return to_string(hour) + ":" + to_string(minute);};
 
 
     /**
      * Add two hours
-     * @param a
-     * @return
+     * @param a this + a Hour
+     * @return result of operation
      */
     Hour operator+(const Hour& a);
 
     /**
-     * Check if < than another Hour object
-     * @param a
-     * @return
+     * this is before Hour a
+     * @param a Hour
+     * @return result of operation
      */
     bool operator<(const Hour &a) const;
 
     /**
-     * Check if this equals another Hour object
-     * @param Comparable Hour
-     * @return true if equal
+     * this equals Hour a
+     * @param a Hour
+     * @return result of operation
      */
     bool operator==(const Hour &a) const;
-
 };
 
 
@@ -103,13 +106,22 @@ private:
 
     /**
      * Convert from string to fullfill all parameters of date
-     * @param Date
-     * @return same string as input
+     * @param Date Date
+     * @return String of input
      */
     string convert(const string& Date);
+
 public:
-    Date() = default;
-    explicit Date(const string& date);
+    /**
+     * default
+     */
+    Date(): Hour(){};
+
+    /**
+     *
+     * @param date string "YYYY-MM-DD HH:MM"
+     */
+    explicit Date(const string& date): Hour(){ convert(date);};
 
     /**
      * Get Date in string "YYYY-MM-DD HH:MM"
@@ -143,43 +155,36 @@ public:
 
     /**
      * Get hour of date
-     * @return
+     * @return  hour
      */
     int getHour() {return hour;};
 
     /**
      * Get minute of date
-     * @return
+     * @return  minute
      */
     int getMinute() {return minute;};
 
     /**
-     * Check if this equals another Date object
-     * @param Comparable Date
-     * @return true if equal
+     * this equals Date a
+     * @param a Date
+     * @return result of operation
      */
     bool operator==(const Date &a) const;
 
     /**
-     * Check if < than another Date object
-     * @param a
-     * @return
+     * this is before Date a
+     * @param a Date
+     * @return result of operation
      */
     bool operator<(const Date &a) const;
 
     /**
      * Add two dates
-     * @param a
-     * @return
+     * @param a Date
+     * @return result of operation
      */
     Date operator+(const Date &a);
-
-    /**
-     * Add a date with an hour
-     * @param a
-     * @return
-     */
-    Date operator+(const Hour &a);
 };
 
 

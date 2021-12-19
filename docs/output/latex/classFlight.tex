@@ -3,15 +3,17 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classFlight_a724086e6ac319bfa680167a23ebdef6a}{Flight}} (int flight\+Num, string departure\+Date, string departure\+Local, string arrival\+Local, int flight\+Duration)
+\mbox{\hyperlink{classFlight_a328e288121160d9dca2333790dca9220}{Flight}} (int flight\+Num, const string \&departure\+Date, const string \&departure\+Local, const string \&arrival\+Local, int flight\+Duration, const string \&airplane\+\_\+plate)
+\item 
+void \mbox{\hyperlink{classFlight_a327052ddd43591c4ac8421f0f0277789}{set\+Airplane\+Plate}} (string plate)
 \item 
 void \mbox{\hyperlink{classFlight_a8100f09504fdfdd4ed257991d7a15b03}{set\+F\+Light\+Num}} (int flight\+Num)
 \item 
 void \mbox{\hyperlink{classFlight_a4be9ea633977825d1c91bc074ce95f88}{set\+Departure\+Date}} (const string \&departure\+Date)
 \item 
-void \mbox{\hyperlink{classFlight_aeea7d3339f8bc7ceca62cd84df429829}{set\+Departure\+Local}} (string departure\+Local)
+void \mbox{\hyperlink{classFlight_af21c4e8e6dbb5f8d99b8f38350bacb05}{set\+Departure\+Local}} (const string \&departure\+Local)
 \item 
-void \mbox{\hyperlink{classFlight_ae1bff74b8a3a1a31dfdab860cfb99bb0}{set\+Arrival\+Local}} (string arrival\+Local)
+void \mbox{\hyperlink{classFlight_a9f70138f9b4b66f7f058168291925146}{set\+Arrival\+Local}} (const string \&arrival\+Local)
 \item 
 void \mbox{\hyperlink{classFlight_a6f3c02502212b1048ffeb4aa78b88916}{set\+Flight\+Duration}} (int flight\+Duration)
 \item 
@@ -19,52 +21,67 @@ void \mbox{\hyperlink{classFlight_ad48929a483b74d03cf12a7d16c321783}{set\+Availa
 \item 
 void \mbox{\hyperlink{classFlight_a7cab06d7036ca974eccda23f63f57f77}{minus\+Available\+Seats}} (int tickets\+Bought, \mbox{\hyperlink{classLuggage}{Luggage}} luggage=\mbox{\hyperlink{classLuggage}{Luggage}}(0))
 \item 
+string \mbox{\hyperlink{classFlight_ab4da7d82d5f7a32828db42f0b927d0e2}{get\+Airplane\+Plate}} () const
+\item 
 int \mbox{\hyperlink{classFlight_a02d3e18e8c437d29fccdd616ddd410d1}{get\+F\+Light\+Num}} () const
 \item 
-\mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classFlight_a9b919b1ce7df3c231aa2d296c355aa74}{get\+Departure\+Date}} ()
+\mbox{\hyperlink{classDate}{Date}} \mbox{\hyperlink{classFlight_a9e7f539121bbe8021bb09e53dc7c8474}{get\+Departure\+Date}} () const
 \item 
-string \mbox{\hyperlink{classFlight_af2a354f321a41ffc8799a3985902551e}{get\+Departure\+Local}} ()
+string \mbox{\hyperlink{classFlight_a590d3f996108db06c6a08d041637ea4b}{get\+Departure\+Local}} () const
 \item 
-string \mbox{\hyperlink{classFlight_a5952846e07ec6331e2e2e456103a86bf}{get\+Arrival\+Local}} ()
+string \mbox{\hyperlink{classFlight_a7c4bc021daa4a7bce4526de36644badb}{get\+Arrival\+Local}} () const
 \item 
 \mbox{\hyperlink{classHour}{Hour}} \mbox{\hyperlink{classFlight_ab866b21b2c4d7263aa4cffc98b153dc8}{get\+Flight\+Duration}} () const
 \item 
 int \mbox{\hyperlink{classFlight_a077e763e07bbf2e9810aa04b1c875ed0}{get\+Available\+Seat}} () const
 \item 
-vector$<$ \mbox{\hyperlink{classLuggage}{Luggage}} $>$ \mbox{\hyperlink{classFlight_a4e9dd06e3abfcd00f0e0e34380fe88a9}{get\+Luggage}} () const
+list$<$ \mbox{\hyperlink{classLuggage}{Luggage}} $>$ \mbox{\hyperlink{classFlight_a9adf0fddd4796f9f728e08b872f4756d}{get\+Luggage}} () const
 \item 
 int \mbox{\hyperlink{classFlight_ad4be218d20b38cf2f09bd0e93fdd12c8}{getnum\+Total\+Bags}} () const
+\item 
+bool \mbox{\hyperlink{classFlight_a40b7a8b9dc0a7702c2a43037b385d9f2}{operator$<$}} (const \mbox{\hyperlink{classFlight}{Flight}} \&a) const
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classFlight_a724086e6ac319bfa680167a23ebdef6a}\label{classFlight_a724086e6ac319bfa680167a23ebdef6a}} 
+\mbox{\Hypertarget{classFlight_a328e288121160d9dca2333790dca9220}\label{classFlight_a328e288121160d9dca2333790dca9220}} 
 \index{Flight@{Flight}!Flight@{Flight}}
 \index{Flight@{Flight}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{Flight()}{Flight()}}
-{\footnotesize\ttfamily Flight\+::\+Flight (\begin{DoxyParamCaption}\item[{int}]{flight\+Num,  }\item[{string}]{departure\+Date,  }\item[{string}]{departure\+Local,  }\item[{string}]{arrival\+Local,  }\item[{int}]{flight\+Duration }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Flight\+::\+Flight (\begin{DoxyParamCaption}\item[{int}]{flight\+Num,  }\item[{const string \&}]{departure\+Date,  }\item[{const string \&}]{departure\+Local,  }\item[{const string \&}]{arrival\+Local,  }\item[{int}]{flight\+Duration,  }\item[{const string \&}]{airplane\+\_\+plate }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
-{\em flight\+Num} & \\
+{\em flight\+Num} & \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s num \\
 \hline
-{\em departure\+Date} & \\
+{\em departure\+Date} & departure \mbox{\hyperlink{classDate}{Date}} \\
 \hline
-{\em departure\+Local} & \\
+{\em departure\+Local} & departure local \\
 \hline
-{\em arrival\+Local} & \\
+{\em arrival\+Local} & arrival local \\
 \hline
-{\em flight\+Duration} & \\
+{\em flight\+Duration} & \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s duration \\
+\hline
+{\em airplane\+\_\+plate} & \mbox{\hyperlink{classAirplane}{Airplane}} plate \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classFlight_a5952846e07ec6331e2e2e456103a86bf}\label{classFlight_a5952846e07ec6331e2e2e456103a86bf}} 
+\mbox{\Hypertarget{classFlight_ab4da7d82d5f7a32828db42f0b927d0e2}\label{classFlight_ab4da7d82d5f7a32828db42f0b927d0e2}} 
+\index{Flight@{Flight}!getAirplanePlate@{getAirplanePlate}}
+\index{getAirplanePlate@{getAirplanePlate}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{getAirplanePlate()}{getAirplanePlate()}}
+{\footnotesize\ttfamily string Flight\+::get\+Airplane\+Plate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s \mbox{\hyperlink{classAirplane}{Airplane}}\textquotesingle{}s plate \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlight_a7c4bc021daa4a7bce4526de36644badb}\label{classFlight_a7c4bc021daa4a7bce4526de36644badb}} 
 \index{Flight@{Flight}!getArrivalLocal@{getArrivalLocal}}
 \index{getArrivalLocal@{getArrivalLocal}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getArrivalLocal()}{getArrivalLocal()}}
-{\footnotesize\ttfamily string Flight\+::get\+Arrival\+Local (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily string Flight\+::get\+Arrival\+Local (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s arrival local \begin{DoxyReturn}{Returns}
 
@@ -73,25 +90,25 @@ Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s arrival local \beg
 \index{Flight@{Flight}!getAvailableSeat@{getAvailableSeat}}
 \index{getAvailableSeat@{getAvailableSeat}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getAvailableSeat()}{getAvailableSeat()}}
-{\footnotesize\ttfamily int Flight\+::get\+Available\+Seat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily int Flight\+::get\+Available\+Seat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s available seat (remaining seat) \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classFlight_a9b919b1ce7df3c231aa2d296c355aa74}\label{classFlight_a9b919b1ce7df3c231aa2d296c355aa74}} 
+\mbox{\Hypertarget{classFlight_a9e7f539121bbe8021bb09e53dc7c8474}\label{classFlight_a9e7f539121bbe8021bb09e53dc7c8474}} 
 \index{Flight@{Flight}!getDepartureDate@{getDepartureDate}}
 \index{getDepartureDate@{getDepartureDate}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getDepartureDate()}{getDepartureDate()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Flight\+::get\+Departure\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDate}{Date}} Flight\+::get\+Departure\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s departure date \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classFlight_af2a354f321a41ffc8799a3985902551e}\label{classFlight_af2a354f321a41ffc8799a3985902551e}} 
+\mbox{\Hypertarget{classFlight_a590d3f996108db06c6a08d041637ea4b}\label{classFlight_a590d3f996108db06c6a08d041637ea4b}} 
 \index{Flight@{Flight}!getDepartureLocal@{getDepartureLocal}}
 \index{getDepartureLocal@{getDepartureLocal}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getDepartureLocal()}{getDepartureLocal()}}
-{\footnotesize\ttfamily string Flight\+::get\+Departure\+Local (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily string Flight\+::get\+Departure\+Local (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s departure local \begin{DoxyReturn}{Returns}
 
@@ -100,7 +117,7 @@ Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s departure local \b
 \index{Flight@{Flight}!getFlightDuration@{getFlightDuration}}
 \index{getFlightDuration@{getFlightDuration}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getFlightDuration()}{getFlightDuration()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classHour}{Hour}} Flight\+::get\+Flight\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHour}{Hour}} Flight\+::get\+Flight\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s travel duration \begin{DoxyReturn}{Returns}
 
@@ -109,16 +126,16 @@ Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s travel duration \b
 \index{Flight@{Flight}!getFLightNum@{getFLightNum}}
 \index{getFLightNum@{getFLightNum}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getFLightNum()}{getFLightNum()}}
-{\footnotesize\ttfamily int Flight\+::get\+F\+Light\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily int Flight\+::get\+F\+Light\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s num \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classFlight_a4e9dd06e3abfcd00f0e0e34380fe88a9}\label{classFlight_a4e9dd06e3abfcd00f0e0e34380fe88a9}} 
+\mbox{\Hypertarget{classFlight_a9adf0fddd4796f9f728e08b872f4756d}\label{classFlight_a9adf0fddd4796f9f728e08b872f4756d}} 
 \index{Flight@{Flight}!getLuggage@{getLuggage}}
 \index{getLuggage@{getLuggage}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getLuggage()}{getLuggage()}}
-{\footnotesize\ttfamily vector$<$ \mbox{\hyperlink{classLuggage}{Luggage}} $>$ Flight\+::get\+Luggage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily list$<$\mbox{\hyperlink{classLuggage}{Luggage}}$>$ Flight\+::get\+Luggage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s luggage from passengers \begin{DoxyReturn}{Returns}
 
@@ -127,7 +144,7 @@ Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s luggage from passe
 \index{Flight@{Flight}!getnumTotalBags@{getnumTotalBags}}
 \index{getnumTotalBags@{getnumTotalBags}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{getnumTotalBags()}{getnumTotalBags()}}
-{\footnotesize\ttfamily int Flight\+::getnum\+Total\+Bags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily int Flight\+::getnum\+Total\+Bags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Get \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s total number of bags; \begin{DoxyReturn}{Returns}
 
@@ -143,13 +160,38 @@ After the buy of x tickets, will be (Available\+Seats -\/ x) Seats Available
 {\em minus} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classFlight_ae1bff74b8a3a1a31dfdab860cfb99bb0}\label{classFlight_ae1bff74b8a3a1a31dfdab860cfb99bb0}} 
+\mbox{\Hypertarget{classFlight_a40b7a8b9dc0a7702c2a43037b385d9f2}\label{classFlight_a40b7a8b9dc0a7702c2a43037b385d9f2}} 
+\index{Flight@{Flight}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Flight\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlight}{Flight}} \&}]{a }\end{DoxyParamCaption}) const}
+
+Compare two flights 
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlight_a327052ddd43591c4ac8421f0f0277789}\label{classFlight_a327052ddd43591c4ac8421f0f0277789}} 
+\index{Flight@{Flight}!setAirplanePlate@{setAirplanePlate}}
+\index{setAirplanePlate@{setAirplanePlate}!Flight@{Flight}}
+\doxysubsubsection{\texorpdfstring{setAirplanePlate()}{setAirplanePlate()}}
+{\footnotesize\ttfamily void Flight\+::set\+Airplane\+Plate (\begin{DoxyParamCaption}\item[{string}]{plate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s plate 
+\begin{DoxyParams}{Parameters}
+{\em plate} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlight_a9f70138f9b4b66f7f058168291925146}\label{classFlight_a9f70138f9b4b66f7f058168291925146}} 
 \index{Flight@{Flight}!setArrivalLocal@{setArrivalLocal}}
 \index{setArrivalLocal@{setArrivalLocal}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{setArrivalLocal()}{setArrivalLocal()}}
-{\footnotesize\ttfamily void Flight\+::set\+Arrival\+Local (\begin{DoxyParamCaption}\item[{string}]{arrival\+Local }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Flight\+::set\+Arrival\+Local (\begin{DoxyParamCaption}\item[{const string \&}]{arrival\+Local }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Arrival Local 
+Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s arrival local 
 \begin{DoxyParams}{Parameters}
 {\em arrival\+Local} & \\
 \hline
@@ -158,7 +200,7 @@ Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Arrival Local
 \index{Flight@{Flight}!setAvailableSeats@{setAvailableSeats}}
 \index{setAvailableSeats@{setAvailableSeats}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{setAvailableSeats()}{setAvailableSeats()}}
-{\footnotesize\ttfamily void Flight\+::set\+Available\+Seats (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Flight\+::set\+Available\+Seats (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Set flight\textquotesingle{}s max capacity 
 \begin{DoxyParams}{Parameters}
@@ -169,20 +211,20 @@ Set flight\textquotesingle{}s max capacity
 \index{Flight@{Flight}!setDepartureDate@{setDepartureDate}}
 \index{setDepartureDate@{setDepartureDate}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{setDepartureDate()}{setDepartureDate()}}
-{\footnotesize\ttfamily void Flight\+::set\+Departure\+Date (\begin{DoxyParamCaption}\item[{const string \&}]{departure\+Date }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Flight\+::set\+Departure\+Date (\begin{DoxyParamCaption}\item[{const string \&}]{departure\+Date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Departure \mbox{\hyperlink{classDate}{Date}} 
+Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s departure \mbox{\hyperlink{classDate}{Date}} 
 \begin{DoxyParams}{Parameters}
 {\em departure\+Date} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classFlight_aeea7d3339f8bc7ceca62cd84df429829}\label{classFlight_aeea7d3339f8bc7ceca62cd84df429829}} 
+\mbox{\Hypertarget{classFlight_af21c4e8e6dbb5f8d99b8f38350bacb05}\label{classFlight_af21c4e8e6dbb5f8d99b8f38350bacb05}} 
 \index{Flight@{Flight}!setDepartureLocal@{setDepartureLocal}}
 \index{setDepartureLocal@{setDepartureLocal}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{setDepartureLocal()}{setDepartureLocal()}}
-{\footnotesize\ttfamily void Flight\+::set\+Departure\+Local (\begin{DoxyParamCaption}\item[{string}]{departure\+Local }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Flight\+::set\+Departure\+Local (\begin{DoxyParamCaption}\item[{const string \&}]{departure\+Local }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Departure Local 
+Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s departure local 
 \begin{DoxyParams}{Parameters}
 {\em departure\+Local} & \\
 \hline
@@ -191,7 +233,7 @@ Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Departure Local
 \index{Flight@{Flight}!setFlightDuration@{setFlightDuration}}
 \index{setFlightDuration@{setFlightDuration}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{setFlightDuration()}{setFlightDuration()}}
-{\footnotesize\ttfamily void Flight\+::set\+Flight\+Duration (\begin{DoxyParamCaption}\item[{int}]{flight\+Duration }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Flight\+::set\+Flight\+Duration (\begin{DoxyParamCaption}\item[{int}]{flight\+Duration }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Duration Time 
 \begin{DoxyParams}{Parameters}
@@ -202,7 +244,7 @@ Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s Duration Time
 \index{Flight@{Flight}!setFLightNum@{setFLightNum}}
 \index{setFLightNum@{setFLightNum}!Flight@{Flight}}
 \doxysubsubsection{\texorpdfstring{setFLightNum()}{setFLightNum()}}
-{\footnotesize\ttfamily void Flight\+::set\+F\+Light\+Num (\begin{DoxyParamCaption}\item[{int}]{flight\+Num }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Flight\+::set\+F\+Light\+Num (\begin{DoxyParamCaption}\item[{int}]{flight\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Set \mbox{\hyperlink{classFlight}{Flight}}\textquotesingle{}s number 
 \begin{DoxyParams}{Parameters}

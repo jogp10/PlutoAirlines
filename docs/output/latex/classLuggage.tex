@@ -5,13 +5,11 @@
 \item 
 \mbox{\hyperlink{classLuggage_a1635d12a770246bc545708a883f71e86}{Luggage}} (int num\+Bags)
 \item 
-bool \mbox{\hyperlink{classLuggage_a31f8c6200d2f555d142688bd5e04e109}{have\+Luggage}} ()
+void \mbox{\hyperlink{classLuggage_ae2e5ee0e2d6f1204a8c2ffce8de15f85}{setnum\+Bags}} (int num\+Bags)
 \item 
-\mbox{\Hypertarget{classLuggage_ae2e5ee0e2d6f1204a8c2ffce8de15f85}\label{classLuggage_ae2e5ee0e2d6f1204a8c2ffce8de15f85}} 
-void {\bfseries setnum\+Bags} (int num\+Bags)
+int \mbox{\hyperlink{classLuggage_aa2715709432083a5b2eb277960137564}{getnum\+Bags}} () const
 \item 
-\mbox{\Hypertarget{classLuggage_ab07e6a2a131b26fb30e23dae8d70e290}\label{classLuggage_ab07e6a2a131b26fb30e23dae8d70e290}} 
-int {\bfseries getnum\+Bags} ()
+bool \mbox{\hyperlink{classLuggage_a88ce32ab1e0221bacb403002758ddd14}{have\+Luggage}} () const
 \end{DoxyCompactItemize}
 
 
@@ -20,33 +18,52 @@ int {\bfseries getnum\+Bags} ()
 \index{Luggage@{Luggage}!Luggage@{Luggage}}
 \index{Luggage@{Luggage}!Luggage@{Luggage}}
 \doxysubsubsection{\texorpdfstring{Luggage()}{Luggage()}}
-{\footnotesize\ttfamily Luggage\+::\+Luggage (\begin{DoxyParamCaption}\item[{int}]{num\+Bags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+{\footnotesize\ttfamily Luggage\+::\+Luggage (\begin{DoxyParamCaption}\item[{int}]{num\+Bags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
-obulamu! -\/ num\+Bags = number of \mbox{\hyperlink{classLuggage}{Luggage}} bags 
+
 \begin{DoxyParams}{Parameters}
-{\em x} & \\
+{\em num\+Bags} & number of Bags \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classLuggage_a31f8c6200d2f555d142688bd5e04e109}\label{classLuggage_a31f8c6200d2f555d142688bd5e04e109}} 
+\mbox{\Hypertarget{classLuggage_aa2715709432083a5b2eb277960137564}\label{classLuggage_aa2715709432083a5b2eb277960137564}} 
+\index{Luggage@{Luggage}!getnumBags@{getnumBags}}
+\index{getnumBags@{getnumBags}!Luggage@{Luggage}}
+\doxysubsubsection{\texorpdfstring{getnumBags()}{getnumBags()}}
+{\footnotesize\ttfamily int Luggage\+::getnum\+Bags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Get \mbox{\hyperlink{classLuggage}{Luggage}}\textquotesingle{}s number of bags \begin{DoxyReturn}{Returns}
+number of bags 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLuggage_a88ce32ab1e0221bacb403002758ddd14}\label{classLuggage_a88ce32ab1e0221bacb403002758ddd14}} 
 \index{Luggage@{Luggage}!haveLuggage@{haveLuggage}}
 \index{haveLuggage@{haveLuggage}!Luggage@{Luggage}}
 \doxysubsubsection{\texorpdfstring{haveLuggage()}{haveLuggage()}}
-{\footnotesize\ttfamily bool Luggage\+::have\+Luggage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Luggage\+::have\+Luggage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-obulamu! -\/ Function to determine the number of bags! 
+Does it have bags 
 \begin{DoxyParams}{Parameters}
 {\em luggage} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+if \mbox{\hyperlink{classLuggage}{Luggage}} has bags 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classLuggage_ae2e5ee0e2d6f1204a8c2ffce8de15f85}\label{classLuggage_ae2e5ee0e2d6f1204a8c2ffce8de15f85}} 
+\index{Luggage@{Luggage}!setnumBags@{setnumBags}}
+\index{setnumBags@{setnumBags}!Luggage@{Luggage}}
+\doxysubsubsection{\texorpdfstring{setnumBags()}{setnumBags()}}
+{\footnotesize\ttfamily void Luggage\+::setnum\+Bags (\begin{DoxyParamCaption}\item[{int}]{num\+Bags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set \mbox{\hyperlink{classLuggage}{Luggage}}\textquotesingle{}s number of bags 
+\begin{DoxyParams}{Parameters}
+{\em num\+Bags} & \\
+\hline
+\end{DoxyParams}
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Airline/Luggage.\+h\item 
-Airline/Luggage.\+cpp\end{DoxyCompactItemize}
+Airline/Luggage.\+h\end{DoxyCompactItemize}

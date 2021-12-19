@@ -73,14 +73,12 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1635d12a770246bc545708a883f71e86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLuggage.html#a1635d12a770246bc545708a883f71e86">Luggage</a> (int numBags)</td></tr>
 <tr class="separator:a1635d12a770246bc545708a883f71e86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f8c6200d2f555d142688bd5e04e109"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLuggage.html#a31f8c6200d2f555d142688bd5e04e109">haveLuggage</a> ()</td></tr>
-<tr class="separator:a31f8c6200d2f555d142688bd5e04e109"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2e5ee0e2d6f1204a8c2ffce8de15f85"><td class="memItemLeft" align="right" valign="top"><a id="ae2e5ee0e2d6f1204a8c2ffce8de15f85"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setnumBags</b> (int numBags)</td></tr>
+<tr class="memitem:ae2e5ee0e2d6f1204a8c2ffce8de15f85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLuggage.html#ae2e5ee0e2d6f1204a8c2ffce8de15f85">setnumBags</a> (int numBags)</td></tr>
 <tr class="separator:ae2e5ee0e2d6f1204a8c2ffce8de15f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab07e6a2a131b26fb30e23dae8d70e290"><td class="memItemLeft" align="right" valign="top"><a id="ab07e6a2a131b26fb30e23dae8d70e290"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>getnumBags</b> ()</td></tr>
-<tr class="separator:ab07e6a2a131b26fb30e23dae8d70e290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2715709432083a5b2eb277960137564"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLuggage.html#aa2715709432083a5b2eb277960137564">getnumBags</a> () const</td></tr>
+<tr class="separator:aa2715709432083a5b2eb277960137564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ce32ab1e0221bacb403002758ddd14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLuggage.html#a88ce32ab1e0221bacb403002758ddd14">haveLuggage</a> () const</td></tr>
+<tr class="separator:a88ce32ab1e0221bacb403002758ddd14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1635d12a770246bc545708a883f71e86"></a>
@@ -102,13 +100,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getnumBags</b> ()</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>obulamu! - numBags = number of <a class="el" href="classLuggage.html">Luggage</a> bags </p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">x</td><td></td></tr>
+    <tr><td class="paramname">numBags</td><td>number of Bags </td></tr>
   </table>
   </dd>
 </dl>
@@ -116,33 +114,98 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getnumBags</b> ()</td>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a31f8c6200d2f555d142688bd5e04e109"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31f8c6200d2f555d142688bd5e04e109">&#9670;&nbsp;</a></span>haveLuggage()</h2>
+<a id="aa2715709432083a5b2eb277960137564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2715709432083a5b2eb277960137564">&#9670;&nbsp;</a></span>getnumBags()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Luggage::getnumBags </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Get <a class="el" href="classLuggage.html">Luggage</a>'s number of bags </p><dl class="section return"><dt>Returns</dt><dd>number of bags </dd></dl>
+
+</div>
+</div>
+<a id="a88ce32ab1e0221bacb403002758ddd14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88ce32ab1e0221bacb403002758ddd14">&#9670;&nbsp;</a></span>haveLuggage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool Luggage::haveLuggage </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p>obulamu! - Function to determine the number of bags! </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Does it have bags </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">luggage</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>if <a class="el" href="classLuggage.html">Luggage</a> has bags </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<a id="ae2e5ee0e2d6f1204a8c2ffce8de15f85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2e5ee0e2d6f1204a8c2ffce8de15f85">&#9670;&nbsp;</a></span>setnumBags()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Luggage::setnumBags </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numBags</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set <a class="el" href="classLuggage.html">Luggage</a>'s number of bags </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numBags</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>Airline/<a class="el" href="Luggage_8h_source.html">Luggage.h</a></li>
-<li>Airline/Luggage.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
