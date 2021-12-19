@@ -8,18 +8,19 @@
 
 class Luggage {
     int numBags{};
+
 public:
 
     Luggage() = default;
 
     /**
-     * obulamu! - numBags = number of Luggage bags
+     * numBags = number of Luggage bags
      * @param x
      */
     explicit Luggage(int numBags);
 
     /**
-     * obulamu! - Function to determine the number of bags!
+     * Function to determine the number of bags!
      * @param luggage
      * @return
      */

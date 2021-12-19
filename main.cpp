@@ -4,6 +4,7 @@
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
 #include "App.h"
+#include "Airline/Passenger.h"
 #include <iostream>
 #include <thread>
 
@@ -16,6 +17,8 @@ int main(int argc, char* argv[]) {
 
 
     class Airline Pluto;
+    class Passenger p1("");
+
     Pluto.loadAirports();
     Pluto.loadLandTransport();
     Pluto.loadPlanes();
@@ -40,34 +43,7 @@ int main(int argc, char* argv[]) {
                 switch (passenger_choice) {
                     /** BuyTicket which is a Menu for Ticket managing */
                     case 1:
-
-                        buy_ticket_choice = BuyTicket(Pluto);
-
-                        switch (buy_ticket_choice) {
-                            /** Flight Number */
-                            case 1:
-                                break;
-
-                            /** Flight Duration */
-                            case 2:
-                                break;
-
-                            /** Departure Date */
-                            case 3:
-                                break;
-
-                            /** Departure Local */
-                            case 4:
-                                break;
-
-                            /** Arrival Local */
-                            case 5:
-                                break;
-
-                            /** Go to Main Menu */
-                            case 0:
-                                break;
-                        }
+                        BuyTicket(Pluto);
                         break;
 
                     /** Flights which is a Menu for Flights consulting */
