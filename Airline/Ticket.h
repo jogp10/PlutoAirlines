@@ -11,7 +11,6 @@
 
 class Ticket {
     int group=1;
-    int flightNum;
     Luggage luggage{};
     Flight flight{};
 
@@ -25,7 +24,7 @@ public:
      * Each Ticket must be related to a Flight, whether it can take Luggage and if the Ticket belongs to a
      * Passenger that is travelling with a group or not.
      */
-    explicit Ticket(const int flightNum, int group = 1, Luggage luggage = Luggage(0));
+    explicit Ticket(const Flight& flight, int group = 1, Luggage luggage = Luggage(0));
 
     //Setters
     /**
@@ -45,12 +44,6 @@ public:
     void setGroup(int group);
 
     //Getters
-    /**
-     * get Ticket's flight num
-     * @return
-     */
-    int getFlightNum() const;
-
     /**
      * Get Ticket's flight
      * @return

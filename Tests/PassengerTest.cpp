@@ -19,9 +19,9 @@ TEST(passenger_1, a_setPassenger){
     Airplane a1("Quim", "A1", 100);
     Flight f1(12345, "2022-23-12 14:23","Porto", "Lisbon", 145, "Quim");
     a1.addFlight(f1);
-    Ticket t1(f1.getFLightNum(), 1, Luggage(2));
+    Ticket t1(f1, 1, Luggage(2));
     EXPECT_TRUE(p1.buyTicket(t1));
     f1.minusAvailableSeats(f1.getAvailableSeat());
-    Ticket t2(f1.getFLightNum());
+    Ticket t2(f1);
     EXPECT_FALSE(p1.buyTicket(t2));
 }
