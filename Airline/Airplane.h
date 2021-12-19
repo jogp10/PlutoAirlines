@@ -69,13 +69,6 @@ public:
 
 
     /**
-     * Set Airplane's TraveFlightl plan
-     * @param flights
-     */
-    void setFlights(vector<Flight>& flightS);
-
-
-    /**
      * Add new Flight to Travel plan
      * @param flight
      */

@@ -22,25 +22,18 @@ void Airplane::setCapacity(const int &capacitY) {
     this->capacity = capacitY;
 }
 
-void Airplane::setFlights(vector<Flight>& flightS) {
-    flights.clear();
-    for(auto &i: flightS){
-        i.setAvailableSeats(capacity);
-        i.setAirplanePlate(plate);
-    }
-    this->flights=flightS;
-    this->sortFLights(flights, 0, flights.size());
-}
 
 void Airplane::addFlight(Flight &flight) {
     flight.setAvailableSeats(capacity);
     flights.push_back(flight);
+    updateFlights();
     this->sortFLights(flights, 0, flights.size());
 }
 
 void Airplane::addService(Service& service) {
     service.airplane_plate=plate;
     services.push(service);
+    updateServices();
 }
 
 string Airplane::getPlate() const{
