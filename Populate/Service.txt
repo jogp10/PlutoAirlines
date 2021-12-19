@@ -1,8 +1,64 @@
+Josefina
 MAINTENANCE
 José Alberto
-2021-01-01 12:00
-Josefina
+2021-10-01 12:00
+Quim Roscas
 CLEAN
 José Alberto
-2023-01-01 12:00
+2023-08-01 12:00
+Dora
+CLEAN
+José Alberto
+2021-06-01 12:00
 Quim Roscas
+CLEAN
+José Alberto
+2021-03-01 12:00
+Alfonso
+CLEAN
+José Alberto
+2022-02-01 12:00
+Roz
+MAINTENANCE
+Alberto Jorge
+2021-06-01 12:00
+Leake
+MAINTENANCE
+Alberto Jorge
+2021-07-01 12:00
+Murrow
+MAINTENANCE
+Alberto Jorge
+2021-12-01 12:00
+Pittford
+MAINTENANCE
+Alberto Jorge
+2021-11-01 12:00
+Mandado
+MAINTENANCE
+Alberto Jorge
+2024-10-01 12:00
+Bushill
+MAINTENANCE
+Carla Barbosa
+2022-09-01 12:00
+Paulo
+CLEAN
+Carla Barbosa
+2021-07-01 12:00
+Babbe
+CLEAN
+Carla Barbosa
+2022-03-01 12:00
+Lamming
+CLEAN
+Carla Barbosa
+2024-04-01 12:00
+Bushill
+MAINTENANCE
+Irina Guiomar
+2021-04-01 12:00
+Leake
+MAINTENANCE
+Irina Guiomar
+2020-02-01 12:00

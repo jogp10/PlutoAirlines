@@ -4,3 +4,13 @@ Lisboa
 LSB
 Miami
 MMI
+Berlim
+BLM
+Frankfurt
+FKT
+New York
+JFK
+Londres
+LND
+Sydney
+SDN
