@@ -246,11 +246,6 @@ int FlightsShow(class Airline airline) {
         }
         cerr << "Input a valid operation! (0, 1, 2, 3 or 4 to proceed)" << endl;
     }
-
-    //Filter by departure local code
-    //Filter by arrival local code
-    //Filter by departure date date
-    //Filter by time travel smaller than max
 }
 
 int AirportPassenger() {
