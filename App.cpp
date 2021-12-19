@@ -80,7 +80,7 @@ int BuyTicket(class Airline &airline) {
 
     /** Getting flight's choice */
     int flight_choice = ShowFlights(airline);
-    Flight chosen_flight = airline.getFlights()[flight_choice--];
+    Flight chosen_flight = airline.getFlights()[flight_choice - 1];
 
     Ticket ticket(chosen_flight.getFLightNum(), group_size, luggage);
     ticket.setFlight(chosen_flight);
@@ -99,7 +99,7 @@ int BuyTicket(class Airline &airline) {
 int GroupSize() {
     int group_size;
 
-    cout << endl << "What is your goup size?" << endl;
+    cout << endl << "What is your group size?" << endl;
 
     /** groupSize execution (asking for group_size) */
     while (true) {
