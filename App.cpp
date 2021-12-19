@@ -71,11 +71,68 @@ int Passenger() {
 }
 
 int BuyTicket(class Airline airline) {
+    /** Getting group size */
+    int group_size = GroupSize();
+
+    /** Getting Luggage size */
+    int numLuggage = LuggageSize();
+    Luggage luggage(numLuggage);
+
+    /** Getting flight's choice */
     int flight_choice = ShowFlights(airline);
     Flight chosen_flight = airline.getFlights()[flight_choice--];
 
-    //Ticket(...);
+    //Ticket(chosen_flight.getFLightNum(), );
     //addTicket;
+}
+
+int GroupSize() {
+    int group_size;
+
+    cout << "What is your goup size?" << endl;
+    cout << "Choose 0 (zero) if you want to cancel operation." << endl;
+
+    /** groupSize execution (asking for group_size) */
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> group_size;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        if (group_size == 0) { return 0; }
+        else if (group_size > 0) { return group_size; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation!" << endl;
+    }
+}
+
+int LuggageSize() {
+    int luggage_size;
+
+    cout << "How many luggage do you want to take with you?" << endl;
+    cout << "Choose 0 (zero) if you want to cancel operation." << endl;
+
+    /** LuggageSize execution (asking for group_size) */
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: ";
+        cin >> luggage_size;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        if (luggage_size == 0) { return 0; }
+        else if (luggage_size > 0) { return luggage_size; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation!" << endl;
+    }
 }
 
 int ShowFlights(class Airline airline) {

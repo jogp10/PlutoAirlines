@@ -18,10 +18,13 @@ int Passenger();
 
 int BuyTicket(Airline airline);
 /**/
+int GroupSize();
 
-/**/
+int LuggageSize();
 
 int ShowFlights(class Airline airline);
+/**/
+
 
 int Flights();
 /**/
