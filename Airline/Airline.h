@@ -114,7 +114,7 @@ public:
     /**
      * Filter the Flights by travel duration
      * @param max max travel duration time
-     * @return vector containing Flights with time travel smalled than max
+     * @return vector containing Flights with time travel smaller than max
      */
     vector<Flight> filterDuration(const int max);
 

@@ -30,7 +30,12 @@ int main(int argc, char* argv[]) {
 
     int menu_choice, passenger_choice, worker_choice;
 
-    int buy_ticket_choice, flights_choice;
+    int buy_ticket_choice, flights_show_choice, airport_passenger_choice;
+
+    string depLocal, arrLocal, depDate;
+    int maxTime;
+
+    vector<Flight> flights_filtered;
 
     while (true) {
         /** Initiating Menu */
@@ -50,39 +55,62 @@ int main(int argc, char* argv[]) {
 
                     /** Flights which is a Menu for Flights consulting */
                     case 2:
-                        flights_choice = Flights();
+                        flights_show_choice = FlightsShow(Pluto);
 
-                        switch (flights_choice) {
-                            /** Flight Number */
+                        switch (flights_show_choice) {
+                            /** Filter by departure local code */
                             case 1:
+                                cout << "What is the Departure Local?" << endl;
+                                cin >> depLocal;
+
+                                flights_filtered = Pluto.filterFromX(depLocal);
+
                                 break;
 
-                                /** Flight Duration */
+                            /** Filter by arrival local code */
                             case 2:
+                                cout << "What is the Arrival Local?" << endl;
+                                cin >> arrLocal;
+
+                                flights_filtered = Pluto.filterToX(arrLocal);
                                 break;
 
-                                /** Departure Date */
+                            /** Filter by departure date */
                             case 3:
+                                cout << "What is the Departure Date?" << endl;
+                                cin >> depDate;
+
+                                flights_filtered = Pluto.filterbyDateX(depDate);
                                 break;
 
-                                /** Departure Local */
+                            /** Filter by time travel smaller than max */
                             case 4:
+                                cout << "What is the Maximum Travel Time?" << endl;
+                                cin >> maxTime;
+
+                                flights_filtered = Pluto.filterDuration(maxTime);
                                 break;
 
-                                /** Arrival Local */
-                            case 5:
-                                break;
-
-                                /** Go to Main Menu */
+                            /** Go back to Main Menu */
                             case 0:
                                 break;
+                        }
+
+                        cout << endl;
+                        cout << "This are your choice of Flights:" << endl;
+                        for (auto i: flights_filtered) {
+                            cout << "- " << i.getFLightNum() << ", " ;
+                            cout << i.getDepartureDate().getDate() << ", " ;
+                            cout << i.getDepartureLocal() << ", " << i.getArrivalLocal() << ", " ;
+                            cout << i.getFlightDuration().getHourMin() << ", ";
+                            cout << i.getAirplanePlate() << endl;
                         }
 
                         break;
 
                     /** Airport which is a Menu for getting subways, trains and stuff */
                     case 3:
-                        int airport_passenger_choice = AirportPassenger();
+                        airport_passenger_choice = AirportPassenger();
 
                         switch (airport_passenger_choice) {
                             /** Subways */
