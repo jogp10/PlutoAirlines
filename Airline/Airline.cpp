@@ -307,7 +307,7 @@ vector<Service> Airline::loadServices() {
     vector<Service> result;
 
     ifstream file_service;
-    file_service.open("Populate/LandTransport.txt");
+    file_service.open("Populate/Service.txt");
 
     while (getline(file_service, type)) {
         getline(file_service, name);
