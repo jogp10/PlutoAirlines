@@ -207,6 +207,52 @@ int Flights() {
     }
 }
 
+int FlightsShow(class Airline airline) {
+    int flights_show_choice;
+    vector<Flight> flights = airline.getFlights();
+
+    cout << endl;
+    cout << "This are the flights: " << endl;
+    for (const auto& i: flights) {
+        cout << "- " << i.getFLightNum() << ", " ;
+        cout << i.getDepartureDate().getDate() << ", " ;
+        cout << i.getDepartureLocal() << ", " << i.getArrivalLocal() << ", " ;
+        cout << i.getFlightDuration().getHourMin() << ", ";
+        cout << i.getAirplanePlate() << endl;
+    }
+
+    cout << endl;
+    cout << "Filter flights by: " << endl;
+    cout << "1) Departure Local" << endl;
+    cout << "2) Arrival Local" << endl;
+    cout << "3) Departure Date" << endl;
+    cout << "4) Time Travel" << endl;
+    cout << "0) Go Back" << endl;
+
+    /** Flights Menu Filter execution (asking for flights_show_choice) */
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> flights_show_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        if (flights_show_choice == 0) { return 0; }
+        else if (flights_show_choice == 1 || flights_show_choice == 2 || flights_show_choice == 3 ||
+                flights_show_choice == 4 ) { return flights_show_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (0, 1, 2, 3 or 4 to proceed)" << endl;
+    }
+
+    //Filter by departure local code
+    //Filter by arrival local code
+    //Filter by departure date date
+    //Filter by time travel smaller than max
+}
+
 int AirportPassenger() {
     int airport_passenger_choice;
 

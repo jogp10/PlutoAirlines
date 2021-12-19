@@ -28,7 +28,7 @@ int ShowFlights(class Airline airline);
 
 int Flights();
 /**/
-//int flightNum();
+int FlightsShow(class Airline airline);
 /**/
 
 int AirportPassenger();
