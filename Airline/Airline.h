@@ -124,6 +124,36 @@ public:
      */
     bool removeAirport(const Airport& p);
 
+
+    /**
+     *
+     * @return
+     */
+    vector<Flight> loadFlights();
+
+    /**
+     *
+     * @return
+     */
+    vector<Airplane> loadPlanes();
+
+    /**
+     *
+     * @return
+     */
+    vector<Airport> loadAirports();
+
+    /**
+     *
+     * @return
+     */
+    vector<LandTransport> loadLandTransport();
+
+    /**
+     *
+     * @return
+     */
+    vector<Service> loadServices();
 };
 
 

@@ -11,70 +11,15 @@
 using namespace std;
 
 int main(int argc, char* argv[]) {
-    /*
+    
     testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
-    */
+    //return RUN_ALL_TESTS();
+
 
     class Airline Pluto;
-
-    /** Filling Airplanes vector */
-    string namePlane, typePlane, platePlane, objPlane, name ;
-
-    ifstream file_airplanes;
-    file_airplanes.open("Populate/Airplane.txt");
-
-    while(getline(file_airplanes, namePlane)) {
-        getline(file_airplanes, typePlane);
-        getline(file_airplanes, platePlane);
-
-        class Airplane plane(namePlane, typePlane, stoi(platePlane));
-
-        Pluto.addAirplane(plane);
-    }
-
-    file_airplanes.close();
-
-
-    /** Filling Airports vector */
-    string nameAirport, codeAirport;
-
-    ifstream file_airport;
-    file_airport.open("Populate/Airport.txt");
-
-    while (getline(file_airport, nameAirport)) {
-        getline(file_airport, codeAirport);
-
-        class Airport airport(nameAirport, codeAirport);
-
-        Pluto.addAirport(airport);
-    }
-
-    file_airport.close();
-
-
-    /** Filling Flights vector */
-    string flightNum, departureDate, departureLocal, arrivalLocal, flightDuration, airplanePlate;
-
-    ifstream file_flight;
-    file_flight.open("Populate/Flight.txt");
-
-    while (getline(file_flight, flightNum)) {
-        getline(file_flight, departureDate);
-        getline(file_flight, departureLocal);
-        getline(file_flight, arrivalLocal);
-        getline(file_flight, flightDuration);
-        getline(file_flight, airplanePlate);
-
-        class Flight flight(stoi(flightNum), departureDate, departureLocal, arrivalLocal,
-                stoi(flightDuration), airplanePlate);
-
-        Pluto.addFlight(flight);
-    }
-
-    file_flight.close();
-
-
+    Pluto.loadPlanes();
+    Pluto.loadAirports();
+    Pluto.loadFlights();
 
     int menu_choice, passenger_choice, worker_choice;
 

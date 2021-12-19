@@ -24,6 +24,7 @@ void Airline::addAirport(const Airport& airport) {
     airports.push_back(airport);
 }
 
+
 void Airline::addFlight(Flight &flight) {
     for(auto& i: airplanes){
         if(i.getPlate()==flight.getAirplanePlate()){
@@ -185,4 +186,70 @@ bool Airline::removeAirport(const Airport &p) {
         }
     }
     return false;
+}
+
+vector<Airplane> Airline::loadPlanes() {
+    string namePlane, typePlane, platePlane, objPlane, name ;
+    vector<Airplane> result;
+
+    ifstream file_airplanes;
+    file_airplanes.open("Populate/Airplane.txt");
+
+    while(getline(file_airplanes, namePlane)) {
+        getline(file_airplanes, typePlane);
+        getline(file_airplanes, platePlane);
+
+        class Airplane plane(namePlane, typePlane, stoi(platePlane));
+
+        result.push_back(plane);
+    }
+    this->setAirplanes(result);
+    file_airplanes.close();
+    return result;
+}
+
+vector<Airport> Airline::loadAirports() {
+    /** Filling Airports vector */
+    string nameAirport, codeAirport;
+    vector<Airport> result;
+
+    ifstream file_airport;
+    file_airport.open("Populate/Airport.txt");
+
+    while (getline(file_airport, nameAirport)) {
+        getline(file_airport, codeAirport);
+
+        class Airport airport(nameAirport, codeAirport);
+
+        result.push_back(airport);
+    }
+    this->setAirports(result);
+    file_airport.close();
+    return result;
+}
+
+vector<Flight> Airline::loadFlights() {
+    /** Filling Flights vector */
+    string flightNum, departureDate, departureLocal, arrivalLocal, flightDuration, airplanePlate;
+    vector<Flight> result;
+
+    ifstream file_flight;
+    file_flight.open("Populate/Flight.txt");
+
+    while (getline(file_flight, flightNum)) {
+        getline(file_flight, departureDate);
+        getline(file_flight, departureLocal);
+        getline(file_flight, arrivalLocal);
+        getline(file_flight, flightDuration);
+        getline(file_flight, airplanePlate);
+
+        class Flight flight(stoi(flightNum), departureDate, departureLocal, arrivalLocal,
+                            stoi(flightDuration), airplanePlate);
+
+        result.push_back(flight);
+        this->addFlight(flight);
+    }
+
+    file_flight.close();
+    return result;
 }
