@@ -22,8 +22,6 @@ int main(int argc, char* argv[]) {
     Pluto.loadServices();
     Pluto.loadFlights();
     Pluto.loadTickets();
-    Pluto.write("Populate/Airport.txt", "Pluto");
-    Airline::write("Populate/Airport.txt", "Porto PRT");
 
     int menu_choice, passenger_choice, worker_choice;
 

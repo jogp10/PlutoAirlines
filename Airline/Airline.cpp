@@ -227,6 +227,9 @@ bool Airline::removeFlight(const Flight &f) {
 }
 
 bool Airline::removeAirport(const Airport &p) {
+    fstream file("Populate/Airport.txt");
+
+
     for (int i = 0; i < flights.size(); i++) {
         if (flights[i].getDepartureLocal() == p.getCode() || flights[i].getArrivalLocal() == p.getCode()) {
             removeFlight(flights[i]);
