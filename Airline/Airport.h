@@ -13,6 +13,7 @@ static unordered_map<string, TransType> const table = {{"NONE", TransType::NONE}
                                                        {"BUS", TransType::SUBWAY}, {"TRAIN", TransType::TRAIN}};
 
 class LandTransport{
+    Hour freq, start, end;
     TransType transType;
     double distance;
     vector<Hour> schedule = vector<Hour>();
@@ -58,6 +59,22 @@ public:
     string getAirportCode() const {return airportcode;};
 
     /**
+     *
+     * @return
+     */
+    Hour getFreq() const {return freq;};
+    /**
+     *
+     * @return
+     */
+    Hour getStart() const {return start;};
+    /**
+     *
+     * @return
+     */
+    Hour getEnd() const {return end;};
+
+    /**
      * Get next passage of transport
      * @return Date
      */
@@ -86,6 +103,11 @@ public:
      */
     Airport(const string& name1, const string& code1): name(name1), code(code1), bst(LandTransport(NONE)){};
 
+    /**
+     *
+     * @return
+     */
+    string getAirportName() const {return name;};
     /**
      * Get Airport's code
      * @return

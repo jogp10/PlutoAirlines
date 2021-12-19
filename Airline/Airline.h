@@ -169,7 +169,7 @@ public:
      */
     vector<Ticket> loadTickets();
 
-    void write(string file, string content);
+    static void write(const string& file, const string& content);
 };
 
 

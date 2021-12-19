@@ -4,8 +4,9 @@
 
 #include "Airport.h"
 
-LandTransport::LandTransport(TransType transType1, double distance1, Hour freq1, Hour start_hour, Hour end_hour, string airportCode):transType(transType1), distance(distance1) {
-    this->setSchedule(freq1, start_hour, end_hour);
+LandTransport::LandTransport(TransType transType1, double distance1, Hour freq1, Hour start_hour, Hour end_hour, string airportCode):
+            transType(transType1), distance(distance1), freq(freq1), start(start_hour), end(end_hour) {
+    this->setSchedule(freq, start, end);
     this->airportcode=airportCode;
 }
 

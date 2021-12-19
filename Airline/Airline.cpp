@@ -9,10 +9,19 @@ void Airline::addAirplane(Airplane& airplane, bool write) {
     for(auto &f: airplane.getFlights()) flights.push_back(f);
     updateFlights();
     airplanes.push_back(airplane);
+    if(write) {
+        string content = airplane.getPlate() + " " + airplane.getType() + " " +
+                        to_string(airplane.getCapacity());
+        Airline::write("Populate/Airplane.txt", content);
+    }
 }
 
 void Airline::addAirport(const Airport& airport, bool write) {
     airports.push_back(airport);
+    if(write) {
+        string content = airport.getAirportName() + " " + airport.getCode();
+        Airline::write("Populate/Airport.txt", content);
+    }
 }
 
 
@@ -24,6 +33,15 @@ void Airline::addFlight(Flight &flight, bool write) {
         }
     }
     flights.push_back(flight);
+    if(write) {
+        string content = to_string(flight.getFLightNum()) + " " +
+                        flight.getDepartureDate().getDate() + " " +
+                        flight.getDepartureLocal() + " " +
+                        flight.getArrivalLocal() + " " +
+                to_string(flight.getFlightDuration().getHour()*60+flight.getFlightDuration().getMinute()) + " "+
+                flight.getAirplanePlate();
+        Airline::write("Populate/Flight.txt", content);
+    }
 }
 
 void Airline::addService(Service &service, bool write) {
@@ -31,6 +49,12 @@ void Airline::addService(Service &service, bool write) {
         if(i.getPlate()==service.airplane_plate){
             i.addService(service);
         }
+    }
+    if(write) {
+        string content = to_string(service.type) + " " +
+                            service.name + " " + service.date.getDate() + " " +
+                            service.airplane_plate;
+        Airline::write("Populate/Service.txt", content);
     }
 }
 
@@ -40,6 +64,13 @@ void Airline::addLandTransport(LandTransport &landTransport, bool write) {
         if(i.getCode()==code){
             i.insert(landTransport);
         }
+    }
+    if(write) {
+        string content = to_string(landTransport.getTransType()) + " " +
+                        to_string(landTransport.getDistance()) + " " + landTransport.getFreq().getHourMin() + " "+
+                        landTransport.getStart().getHourMin() + " " +
+                        landTransport.getEnd().getHourMin();
+        Airline::write("Populate/LandTransport.txt", content);
     }
 }
 
@@ -51,6 +82,10 @@ void Airline::addTicket(Ticket &t, Passenger p, bool write) {
             t.setFlight(i);
             i.minusAvailableSeats(t.getGroup());
         }
+    }
+    if(write) {
+        string content = to_string(t.getFlightNum()) + " " + to_string(t.getGroup()) + " " + to_string(t.getLuggage().getnumBags());
+        Airline::write("Populate/Ticket.txt", content);
     }
 }
 
@@ -88,7 +123,7 @@ void mergeSort(vector<Flight> &v, vector<Flight> &tmpArr, int left, int right){
 
 void mergeSort(vector<Flight>& v) {
     vector<Flight> tmpArr(v.size());
-    mergeSort(v, tmpArr, 0, v.size()-1);
+    mergeSort(v, tmpArr, 0, (int)v.size()-1);
 }
 
 void Airline::updateFlights() {
@@ -107,9 +142,9 @@ bool operator> (const Flight& lhs, const Flight& rhs){
 }
 
 
-int BinarySearch(const vector<Flight> &v, Flight el)
+int BinarySearch(const vector<Flight> &v, const Flight& el)
 {
-    int left = 0, right = v.size() - 1;
+    int left = 0, right = (int) v.size() - 1;
     while (left <= right)
     {
         int middle = (left + right) / 2;
@@ -180,7 +215,7 @@ bool Airline::removeAirplane(const Airplane &a) {
 
 bool Airline::removeFlight(const Flight &f) {
     int ind=0;
-    for(ind; ind<flights.size(); ind++){
+    for(;ind<flights.size(); ind++){
         if(flights[ind].getFLightNum()==f.getFLightNum()) break;
     }
     string plate = flights.at(ind).getAirplanePlate();
@@ -348,12 +383,12 @@ vector<Ticket> Airline::loadTickets() {
     return result;
 }
 
-void Airline::write(string file, string content) {
+void Airline::write(const string& file, const string& content) {
     ofstream file_generic(file, ios::app);
 
     if(file_generic.fail()) return;
     vector<string> strings;
-    string word="";
+    string word;
     for(auto i: content){
         if(i==' ') {
             strings.push_back(word);
@@ -361,6 +396,7 @@ void Airline::write(string file, string content) {
         }
         else word+=i;
     }
-    for(auto i:strings) file_generic << endl << i;
+    strings.push_back(word);
+    for(const auto& i:strings) file_generic << endl << i;
     file_generic.close();
 }
