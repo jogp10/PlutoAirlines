@@ -27,8 +27,17 @@ class Airplane {
 
 
 private:
+    /**
+     * Update Services based on real present time
+     */
     void updateServices();
+    /**
+     * Update Flights based on real present time
+     */
     void updateFlights();
+    /**
+     * Sort Flights with QuickSort
+     */
     void sortFLights(vector<Flight> &f, unsigned left, unsigned right);
 
 public:
@@ -38,8 +47,6 @@ public:
      * @param capacity
      */
     explicit Airplane(const string& plate, const string& type, int capacity);
-
-    explicit Airplane(ifstream file);
 
     /**
      * Set Airplane's plate

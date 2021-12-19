@@ -6,19 +6,23 @@
 
 void Airline::setAirplanes(const vector<Airplane>& airplaneS) {
     this->airplanes=airplaneS;
-    for(auto &i: airplanes) updateFlights(i);
+    for(auto &i: airplanes)
+        for(auto &j: i.getFlights()){
+            flights.push_back(j);
+        }
+    updateFlights();
 }
 
 
 void Airline::addAirplane(Airplane& airplane) {
-    updateFlights(airplane);
+    for(auto &f: airplane.getFlights()) flights.push_back(f);
+    updateFlights();
     airplanes.push_back(airplane);
 }
 
 void Airline::addAirport(const Airport& airport) {
     airports.push_back(airport);
 }
-
 
 void Airline::addFlight(Flight &flight) {
     for(auto& i: airplanes){
@@ -74,11 +78,6 @@ void Airline::updateFlights() {
             flights.push_back(j);
         }
     }
-    mergeSort(flights);
-}
-
-void Airline::updateFlights(Airplane &a) {
-    for(auto &i: a.getFlights()) flights.emplace_back(i);
     mergeSort(flights);
 }
 

@@ -14,7 +14,7 @@ add_executable(PlutoAirlines main.cpp
         Airline/Date.cpp Airline/Date.h
         Airline/Service.h
         Airline/bst.h
-        Airline/LuggageTransport.h
+        Airline/LuggageTransport.cpp Airline/LuggageTransport.h
         App.cpp App.h
 
         Tests/AirlineTest.cpp

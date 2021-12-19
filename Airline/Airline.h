@@ -43,13 +43,11 @@ public:
      */
     void addAirport(const Airport& airport);
 
-
     /**
      * Add flight
      * @param flight
      */
-    void addFlight(Flight& flight);
-
+    void addFlight(Flight &flight);
 
     /**
      * Get Airline's airplanes
@@ -75,11 +73,6 @@ public:
      */
     void updateFlights();
 
-    /**
-     * Update Airline next planned flights
-     * @param Airplane
-     */
-    void updateFlights(Airplane &a);
 
     /**
      * Filter flights from X
