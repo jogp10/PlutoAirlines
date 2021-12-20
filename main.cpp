@@ -120,7 +120,8 @@ int main(int argc, char* argv[]) {
                                 cout << endl;
                                 cout << "The subways are: " << endl;
                                 for (auto i: Pluto.getAirports()[airport_subway_choice -1].getSubway() ) {
-                                    cout << "- " << to_string(i.getTransType()) << ", " << i.getDistance() << ", " ;
+                                    auto itr= invtable.find(i.getTransType());
+                                    cout << "- " << itr->second << ", " << i.getDistance() << ", " ;
                                     cout << i.next().getHourMin() << endl;
                                 }
 

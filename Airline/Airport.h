@@ -13,6 +13,8 @@
 enum TransType {NONE, TRAIN, SUBWAY, BUS};
 unordered_map<string, TransType> const table = {{"NONE", TransType::NONE}, {"SUBWAY", TransType::SUBWAY},
                                                        {"BUS", TransType::SUBWAY}, {"TRAIN", TransType::TRAIN}};
+unordered_map<TransType, string> const invtable = {{TransType::NONE, "NONE"}, {TransType::SUBWAY, "SUBWAY"},
+                                                   {TransType::BUS, "BUS"}, {TransType::TRAIN, "TRAIN"}};
 
 class LandTransport{
     Hour freq, start, end;
