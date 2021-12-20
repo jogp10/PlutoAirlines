@@ -12,7 +12,7 @@ void Airline::addAirplane(Airplane& airplane, bool write) {
     if(write) {
         string content = airplane.getPlate() + " " + airplane.getType() + " " +
                         to_string(airplane.getCapacity());
-        Airline::write("Populate/Airplane.txt", content);
+        Airline::write("../Populate/Airplane.txt", content);
     }
 }
 
@@ -21,7 +21,7 @@ void Airline::addAirport(const Airport& airport, bool write) {
     airports.push_back(airport);
     if(write) {
         string content = airport.getAirportName() + " " + airport.getCode();
-        Airline::write("Populate/Airport.txt", content);
+        Airline::write("../Populate/Airport.txt", content);
     }
 }
 
@@ -41,7 +41,7 @@ void Airline::addFlight(Flight &flight, bool write) {
                         flight.getArrivalLocal() + " " +
                 to_string(flight.getFlightDuration().getHour()*60+flight.getFlightDuration().getMinute()) + " "+
                 flight.getAirplanePlate();
-        Airline::write("Populate/Flight.txt", content);
+        Airline::write("../Populate/Flight.txt", content);
     }
 }
 
@@ -55,7 +55,7 @@ void Airline::addService(Service &service, bool write) {
     if(write) {
         string content = service.airplane_plate + " " + to_string(service.type) + " " +
                             service.name + " " + service.date.getDate();
-        Airline::write("Populate/Service.txt", content);
+        Airline::write("../Populate/Service.txt", content);
     }
 }
 
@@ -72,7 +72,7 @@ void Airline::addLandTransport(LandTransport &landTransport, bool write) {
                         to_string(landTransport.getDistance()) + " " + landTransport.getFreq().getHourMin() + " "+
                         landTransport.getStart().getHourMin() + " " +
                         landTransport.getEnd().getHourMin();
-        Airline::write("Populate/LandTransport.txt", content);
+        Airline::write("../Populate/LandTransport.txt", content);
     }
 }
 
@@ -88,7 +88,7 @@ void Airline::addTicket(Ticket &t, Passenger p, bool write) {
     }
     if(write) {
         string content = to_string(t.getFlightNum()) + " " + to_string(t.getGroup()) + " " + to_string(t.getLuggage().getnumBags());
-        Airline::write("Populate/Ticket.txt", content);
+        Airline::write("../Populate/Ticket.txt", content);
     }
 }
 
@@ -168,6 +168,7 @@ int BinarySearch(const vector<Flight> &v, const Flight& el)
 
 
 vector<Flight> Airline::filterFromX(const string& code) {
+    updateFlights();
     vector<Flight> result;
     vector<Flight> tmp = flights;
     Flight f1(0, "2999-12-30 23:59", code, "", 1, "");
@@ -215,9 +216,9 @@ bool Airline::removeAirplane(const Airplane &a) {
     vector<string> del;
     del.push_back(a.getPlate());
     del.push_back(to_string(3));
-    Airline::del("Populate/Airplane.txt", del);
+    Airline::del("../Populate/Airplane.txt", del);
     del[1]=to_string(4);
-    Airline::del("Populate/Service.txt", del);
+    Airline::del("../Populate/Service.txt", del);
     for(auto itr=airplanes.begin(); itr!=airplanes.end(); ++itr){
         if(itr->getPlate()==a.getPlate()){
             for(auto &f: itr->getFlights()){
@@ -235,9 +236,9 @@ bool Airline::removeFlight(const Flight &f) {
     vector<string> del;
     del.push_back(to_string(f.getFLightNum()));
     del.push_back(to_string(6));
-    Airline::del("Populate/Flight.txt", del);
+    Airline::del("../Populate/Flight.txt", del);
     del[1]=to_string(3);
-    Airline::del("Populate/Ticket.txt", del);
+    Airline::del("../Populate/Ticket.txt", del);
     int ind=0;
     for(;ind<flights.size(); ind++){
         if(flights[ind].getFLightNum()==f.getFLightNum()) break;
@@ -255,10 +256,10 @@ bool Airline::removeAirport(const Airport &p) {
     vector<string> del;
     del.push_back(p.getAirportName());
     del.push_back(to_string(2));
-    Airline::del("Populate/Airport.txt", del);
+    Airline::del("../Populate/Airport.txt", del);
     del[0]=p.getCode();
     del[1]=to_string(6);
-    Airline::del("Populate/LandTransport.txt", del);
+    Airline::del("../Populate/LandTransport.txt", del);
 
     for (int i = 0; i < flights.size(); i++) {
         if (flights[i].getDepartureLocal() == p.getCode() || flights[i].getArrivalLocal() == p.getCode()) {
@@ -281,7 +282,7 @@ vector<Airplane> Airline::loadPlanes() {
     vector<Airplane> result;
 
     ifstream file_airplanes;
-    file_airplanes.open("Populate/Airplane.txt");
+    file_airplanes.open("../Populate/Airplane.txt");
 
     while(getline(file_airplanes, namePlane)) {
         getline(file_airplanes, typePlane);
@@ -303,7 +304,7 @@ vector<Airport> Airline::loadAirports() {
     vector<Airport> result;
 
     ifstream file_airport;
-    file_airport.open("Populate/Airport.txt");
+    file_airport.open("../Populate/Airport.txt");
 
     while (getline(file_airport, nameAirport)) {
         getline(file_airport, codeAirport);
@@ -324,7 +325,7 @@ vector<Flight> Airline::loadFlights() {
     vector<Flight> result;
 
     ifstream file_flight;
-    file_flight.open("Populate/Flight.txt");
+    file_flight.open("../Populate/Flight.txt");
 
     while (getline(file_flight, flightNum)) {
         getline(file_flight, departureDate);
@@ -351,7 +352,7 @@ vector<LandTransport> Airline::loadLandTransport() {
     vector<LandTransport> result;
 
     ifstream file_landtransport;
-    file_landtransport.open("Populate/LandTransport.txt");
+    file_landtransport.open("../Populate/LandTransport.txt");
 
     while (getline(file_landtransport, airportCode)) {
         getline(file_landtransport, transType);
@@ -380,7 +381,7 @@ vector<Service> Airline::loadServices() {
     vector<Service> result;
 
     ifstream file_service;
-    file_service.open("Populate/Service.txt");
+    file_service.open("../Populate/Service.txt");
 
     while (getline(file_service, airplanePlate)) {
         getline(file_service, type);
@@ -407,7 +408,7 @@ vector<Ticket> Airline::loadTickets() {
     vector<Ticket> result;
 
     ifstream file_ticket;
-    file_ticket.open("Populate/Ticket.txt");
+    file_ticket.open("../Populate/Ticket.txt");
 
     while (getline(file_ticket, flightnum)) {
         getline(file_ticket, group);
@@ -445,7 +446,7 @@ void Airline::write(const string& file, const string& content) {
 
 void Airline::del(const char* file1, const vector<string>& del) {
     ifstream file(file1);
-    ofstream o("Populate/temp.txt");
+    ofstream o("../Populate/temp.txt");
     int count=stoi(del[1]);
     string line;
     while(getline(file, line)){
@@ -460,5 +461,5 @@ void Airline::del(const char* file1, const vector<string>& del) {
     o.close();
     file.close();
     remove(file1);
-    rename("Populate/temp.txt", file1);
+    rename("../Populate/temp.txt", file1);
 }

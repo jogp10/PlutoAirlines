@@ -52,11 +52,13 @@ public:
      * @return type of LandTransport
      */
     TransType getTransType() const {return transType;};
+
     /**
      * Get LandTransport's distance to the airport
      * @return distance
      */
     double getDistance() const {return distance;};
+
     /**
      * Get LandTransport's Airport
      * @return Airport code
@@ -68,11 +70,13 @@ public:
      * @return frequency
      */
     Hour getFreq() const {return freq;};
+
     /**
      * Get LandTransport's starting hour
      * @return
      */
     Hour getStart() const {return start;};
+
     /**
      * Get LandTransport's last hour
      * @return
@@ -155,7 +159,6 @@ public:
      * @return Fursthest LandTransport
      */
     LandTransport getMaxDistance() const {return bst.findMax();};
-
     /**
      * Get next transport
      * @return Next LandTransport to pass by
