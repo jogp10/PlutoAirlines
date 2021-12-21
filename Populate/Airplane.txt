@@ -5,25 +5,25 @@ Josefina
 A320
 120
 Alberto
-Boeing 737
+Boeing-737
 200
 Paulo
-Boeing 737
+Boeing-737
 150
 Quim Roscas
-Boeing 737
+Boeing-737
 250
 José
 A310
 295
 José Araujo
-Boeing 747
+Boeing-747
 300
 Alfonso
-Boeing 777
+Boeing-777
 100
 Mandado
-Boeing 767
+Boeing-767
 300
 Pittford
 A321

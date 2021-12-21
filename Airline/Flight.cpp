@@ -23,5 +23,3 @@ void Flight::minusAvailableSeats(int ticketsBought, Luggage luggagE) {
 bool Flight::operator<(const Flight &a) const {
     return this->getDepartureDate()<a.getDepartureDate();
 }
-
-

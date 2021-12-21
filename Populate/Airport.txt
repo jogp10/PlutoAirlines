@@ -14,3 +14,5 @@ Londres
 LND
 Sydney
 SDN
+Hawai
+HAI
