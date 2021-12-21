@@ -353,6 +353,7 @@ int AirportBus(class Airline airline) {
     cout << endl;
     cout << "What City?" << endl;
 
+    /** Asking for Buses execution */
     while (true) {
         this_thread::sleep_for(chrono::milliseconds(250));
         cout << "Option: "; cin >> airport_bus_choice;
@@ -404,8 +405,8 @@ int Airline() {
 
     /** Airline Menu Interface */
     cout << endl;
-    cout << "1) Add Airports" << endl;
-    cout << "2) Add Airplanes" << endl;
+    cout << "1) Add Airport" << endl;
+    cout << "2) Add Airplane" << endl;
     cout << "0) Go Back" << endl;
 
     /** Airline Menu execution (asking for airline_choice) */
@@ -459,12 +460,11 @@ int Airplanes() {
     /** Airplanes Menu Interface */
     cout << endl;
     cout << "1) Add Flights" << endl;
-    cout << "2) Set Flights" << endl;
-    cout << "3) Get Flights" << endl;
-    cout << "4) Get Last 20 Flights" << endl;
-    cout << "5) Add Services" << endl;
-    cout << "6) Get Services" << endl;
-    cout << "7) Get Past Services" << endl;
+    cout << "2) Get Flights" << endl;
+    cout << "3) Get Last 20 Flights" << endl;
+    cout << "4) Add Service" << endl;
+    cout << "5) Get Services" << endl;
+    cout << "6) Get Past Services" << endl;
     cout << "0) Go Back" << endl;
 
     /** Airplanes Menu execution (asking for airplanes_choice */
@@ -476,13 +476,37 @@ int Airplanes() {
         if (cin.fail()) { cin.ignore(10000, '\n'); }
         if (airplanes_choice == 0) { return 0; }
         else if (airplanes_choice == 1 || airplanes_choice == 2 || airplanes_choice == 3 ||
-                 airplanes_choice == 4 || airplanes_choice == 5 || airplanes_choice == 6 ||
-                 airplanes_choice == 7) { return airplanes_choice; }
+                 airplanes_choice == 4 || airplanes_choice == 5 || airplanes_choice == 6 )
+                 { return airplanes_choice; }
 
         else {
             cin.clear();
             cin.ignore(10000, '\n');
         }
-        cerr << "Input a valid operation! (0, 1, 2, 3, 4, 5, 6 or 7 to proceed)" << endl;
+        cerr << "Input a valid operation! (0, 1, 2, 3, 4, 5 or 6 to proceed)" << endl;
     }
+}
+
+int ShowAirplanes(class Airline airline) {
+    int airplane_service_choice, count = 1;
+
+    for (auto i: airline.getAirplanes()) {
+        cout << count << ") " << i.getPlate() << ", " << i.getType() << endl;
+    }
+
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> airplane_service_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        else if (airplane_service_choice <= count && airplane_service_choice > 0) { return airplane_service_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (1 to " << airline.getAirports().size() << " to proceed)" << endl;
+    }
+
 }

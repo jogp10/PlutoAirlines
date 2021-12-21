@@ -57,7 +57,7 @@ int Airport();
 
 int Airplanes();
 /**/
-
+int ShowAirplanes(class Airline airline);
 /**/
 
 #endif //MAIN_CPP_APP_H
