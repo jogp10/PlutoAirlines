@@ -33,7 +33,7 @@ int main(int argc, char* argv[]) {
     string depLocal, arrLocal, depDate;
     int maxTime;
 
-    int airport_subway_choice;
+    int airport_subway_choice, airport_train_choice, airport_bus_choice;
 
     vector<Flight> flights_filtered;
 
@@ -129,10 +129,30 @@ int main(int argc, char* argv[]) {
 
                             /** Trains */
                             case 2:
+                                airport_train_choice = AirportTrain(Pluto);
+
+                                cout << endl;
+                                cout << "The trains are: " << endl;
+                                for (auto i: Pluto.getAirports()[airport_train_choice -1].getTrain() ) {
+                                    auto itr= invtable.find(i.getTransType());
+                                    cout << "- " << itr->second << ", " << i.getDistance() << ", " ;
+                                    cout << i.next().getHourMin() << endl;
+                                }
+
                                 break;
 
                             /** Bus */
                             case 3:
+                                airport_bus_choice = AirportBus(Pluto);
+
+                                cout << endl;
+                                cout << "The trains are: " << endl;
+                                for (auto i: Pluto.getAirports()[airport_bus_choice -1].getBus() ) {
+                                    auto itr= invtable.find(i.getTransType());
+                                    cout << "- " << itr->second << ", " << i.getDistance() << ", " ;
+                                    cout << i.next().getHourMin() << endl;
+                                }
+
                                 break;
 
                             /** By Distance */

@@ -313,6 +313,62 @@ int AirportSubway(class Airline airline) {
 
 }
 
+int AirportTrain(class Airline airline){
+    int count = 1, airport_train_choice;
+
+    cout << endl;
+    for (const auto i: airline.getAirports()) {
+        cout << count << ") " << i.getAirportName() << endl;
+        count++;
+    }
+
+    cout << endl;
+    cout << "What City?" << endl;
+
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> airport_train_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        else if (airport_train_choice <= count && airport_train_choice > 0) { return airport_train_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (1 to " << airline.getAirports().size() << " to proceed)" << endl;
+    }
+}
+
+int AirportBus(class Airline airline) {
+    int count = 1, airport_bus_choice;
+
+    cout << endl;
+    for (const auto i: airline.getAirports()) {
+        cout << count << ") " << i.getAirportName() << endl;
+        count++;
+    }
+
+    cout << endl;
+    cout << "What City?" << endl;
+
+    while (true) {
+        this_thread::sleep_for(chrono::milliseconds(250));
+        cout << "Option: "; cin >> airport_bus_choice;
+
+        if (cin.eof()) { return 0; }
+        if (cin.fail()) { cin.ignore(10000, '\n'); }
+        else if (airport_bus_choice <= count && airport_bus_choice > 0) { return airport_bus_choice; }
+
+        else {
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cerr << "Input a valid operation! (1 to " << airline.getAirports().size() << " to proceed)" << endl;
+    }
+}
+
 //--------------------------
 int Worker() {
     int worker_choice;

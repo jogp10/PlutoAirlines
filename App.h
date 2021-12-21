@@ -34,6 +34,10 @@ int FlightsShow(class Airline airline);
 int AirportPassenger();
 /**/
 int AirportSubway(class Airline airline);
+
+int AirportTrain(class Airline airline);
+
+int AirportBus(class Airline airline);
 /**/
 
 

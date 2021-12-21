@@ -3,6 +3,7 @@
 //
 
 #include "Date.h"
+#include <ctime>
 
 Hour::Hour(string date) {
     string hours, minutes;
