@@ -26,6 +26,10 @@ int main(int argc, char* argv[]) {
     Pluto.loadFlights();
     Pluto.loadTickets();
 
+    //class Airport Miami("Miami", "MMI");
+    //Pluto.removeAirport(Miami);
+
+
     int menu_choice, passenger_choice, worker_choice;
 
     int buy_ticket_choice, flights_show_choice, airport_passenger_choice;
